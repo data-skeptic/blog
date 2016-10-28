@@ -11,6 +11,7 @@ import nbformat
 from nbconvert import HTMLExporter
 import hashlib
 import datetime
+import rpy2.robjects as robjects
 
 def unzip(source_filename, dest_dir):
 	zf = zipfile.ZipFile(source_filename)
@@ -88,6 +89,8 @@ def execute_plan(plan, s3, bucket, table):
 			i = uri.rfind('.')
 			ext = uri[i:]
 			s3key = uri[:i] + '.htm'
+			if s3key[0]=='/':
+				s3key = s3key[1:]
 			print([bucket, s3key])
 			res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
 			if item['isNew']:
@@ -144,8 +147,16 @@ def md(absfile):
 	return html
 
 def knitr(absfile):
-	# TODO: use knitr
-	return "Not supported"
+	r = robjects.r("""
+		library('knitr')
+		knit('{}')
+		""".format(absfile))
+	fname = r[0]
+	f = open(fname, 'r')
+	c = f.read()
+	f.close()
+	os.remove(fname)
+	return c
 
 def nbconvert(absfile):
 	f = open(absfile, 'r')
