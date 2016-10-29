@@ -50,20 +50,21 @@ def get_content_dict(table):
 		d[uri] = item
 	return d
 
-def new_content_render_plan(repo_root, src_dict, content_dict, parsers):
+def new_content_render_plan(repo_root, src_dict, content_dict, parsers, ignore):
 	plan = []
 	s = len(repo_root)
 	srcs = src_dict.keys()
 	oldHash = None
 	for src in srcs:
 		uri = src[s:]
-		isNew = True
-		if content_dict.has_key(uri):
-			isNew = False
-			oldHash = content_dict[uri]['hash']
-		ext = uri[uri.rfind('.'):]
-		parser = parsers[ext]
-		plan.append({"absfile": src, "uri": uri, "parser": parser, "isNew": isNew, "oldHash": oldHash})
+		if not(uri in ignore):
+			isNew = True
+			if content_dict.has_key(uri):
+				isNew = False
+				oldHash = content_dict[uri]['c_hash']
+			ext = uri[uri.rfind('.'):]
+			parser = parsers[ext]
+			plan.append({"absfile": src, "uri": uri, "parser": parser, "isNew": isNew, "oldHash": oldHash})
 	return plan
 
 def execute_plan(plan, s3, bucket, table):
@@ -74,9 +75,11 @@ def execute_plan(plan, s3, bucket, table):
 		parser = item['parser']
 		absfile = item['absfile']
 		uri = item['uri']
-		contents = parser(absfile)
+		f = open(absfile, 'r')
+		c = f.read()
+		f.close()
 		m = hashlib.md5()
-		m.update(contents.encode('utf-8').strip())
+		m.update(c)
 		hash = m.hexdigest()
 		render = True
 		if not(item['isNew']):
@@ -85,22 +88,22 @@ def execute_plan(plan, s3, bucket, table):
 			else:
 				render = True
 		if render:
+			contents = parser(absfile)
 			fake_handle = StringIO(contents.encode('utf-8'))
 			i = uri.rfind('.')
 			ext = uri[i:]
 			s3key = uri[:i] + '.htm'
 			if s3key[0]=='/':
 				s3key = s3key[1:]
-			print([bucket, s3key])
+			print('Deploying to: ' + bucket + s3key)
 			res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
 			if item['isNew']:
 				response = table.put_item(
 					Item={
 						'uri': uri,
-						'release_date': '2016-05-05',
 						'ext': ext,
 						'last_rendered': n,
-						'hash': hash,
+						'c_hash': hash,
 						'date_discovered': n
 					}
 				)
@@ -109,7 +112,7 @@ def execute_plan(plan, s3, bucket, table):
 					Key={
 						'uri': uri
 					},
-					UpdateExpression="set last_rendered = :n, hash=:h",
+					UpdateExpression="set last_rendered = :n, c_hash=:h",
 					ExpressionAttributeValues={
 						':n': n,
 						':h': hash
@@ -119,10 +122,10 @@ def execute_plan(plan, s3, bucket, table):
 			summary.append({"uri": uri})
 	return summary
 
-def send_summary(ses, summary, branch, bucket):
+def send_summary(ses, summary, branch, bucket, recipients, efrom):
     response = ses.send_email(
         Source='kyle@dataskeptic.com',
-        Destination={'ToAddresses': ['kylepolich@gmail.com']},
+        Destination={'ToAddresses': recipients},
         Message={
             'Subject': {
                 'Data': 'Deploying ' + branch + ' to ' + bucket
@@ -133,7 +136,7 @@ def send_summary(ses, summary, branch, bucket):
                 }
             }
         },
-        ReplyToAddresses=['kyle@dataskeptic.com']
+        ReplyToAddresses=efrom
     )
 
 def clean_up(dest):
@@ -173,6 +176,8 @@ if __name__ == "__main__":
     branch = 'dev'
     tblName = 'blog'
     bucket = 'dev.dataskeptic.com'
+    emails = ['kylepolich@gmail.com']
+    ignore = ['/README.md']
     #
     parsers = {
         '.md': md,
@@ -191,13 +196,10 @@ if __name__ == "__main__":
     # TODO: Check that no router paths match blog folders, /blog approx match goes to /blog/ml/2016/blah
     src_dict = get_src_dict(repo_root, filename, parsers)
     content_dict = get_content_dict(table)
-    plan = new_content_render_plan(repo_root, src_dict, content_dict, parsers)
-    summary = execute_plan(plan, s3, bucket, table)
+    plan = new_content_render_plan(repo_root, src_dict, content_dict, parsers, ignore)
+    summary = execute_plan(plan, s3, bucket, table, emails, ['kyle@dataskeptic.com'])
     send_summary(ses, summary, branch, bucket)
     clean_up(dest)
-
-# TODO: Blog.js is a wrapper that puts headerless stuff in the middle (query for only release date in past)
-# TODO: UI to update dynamo and add tags, release date, author, prettyname, title, tags
 
 
 
