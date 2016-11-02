@@ -197,8 +197,8 @@ if __name__ == "__main__":
     src_dict = get_src_dict(repo_root, filename, parsers)
     content_dict = get_content_dict(table)
     plan = new_content_render_plan(repo_root, src_dict, content_dict, parsers, ignore)
-    summary = execute_plan(plan, s3, bucket, table, emails, ['kyle@dataskeptic.com'])
-    send_summary(ses, summary, branch, bucket)
+    summary = execute_plan(plan, s3, bucket, table)
+    send_summary(ses, summary, branch, bucket, emails, ['kyle@dataskeptic.com'])
     clean_up(dest)
 
 
