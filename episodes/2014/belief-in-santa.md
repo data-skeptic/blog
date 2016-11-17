@@ -1,11 +1,3 @@
-<? include("../header.php") ?>
+## Belief in Santa
 
-<div id="bbody">
-<h1>Belief in Santa</h1>
-
-<p>Thanks for checking out this older episode of the podcast.  Early on, I didn't always write show notes, however, I am planning to go back and
-write notes for every episode including this one.  In the meantime, feel free to leave comments, questions, and suggestions in the space below.  Thanks!</p>
-
-</div>
-
-<? include("../footer.php") ?>
+In this quick holiday episode, we touch on how one would approach modeling the statistical distribution over the probability of belief in Santa Claus given age.
