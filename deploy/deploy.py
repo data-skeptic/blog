@@ -74,44 +74,44 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
     return plan
 
 def get_title(absfilename, contents):
-	lcontents = contents.lower()
-	i = -1
-	c = 1
-	while i==-1 and c < 6:
-		otag = '<h' + str(c) + '>'
-		ctag = '</h' + str(c) + '>'
-		i = lcontents.find(otag)
-		j = lcontents.find(ctag)
-		c += 1
-	if i >= 0:
-		return contents[i+len(otag):j]
-	i = absfilename.rfind('/')
-	j = absfilename.rfind('.')
-	fname = absfilename[i+1:j]
-	fname = fname.replace('-', ' ').replace('_', ' ')
-	fname = fname.title()
-	return fname
+    lcontents = contents.lower()
+    i = -1
+    c = 1
+    while i==-1 and c < 6:
+        otag = '<h' + str(c) + '>'
+        ctag = '</h' + str(c) + '>'
+        i = lcontents.find(otag)
+        j = lcontents.find(ctag)
+        c += 1
+    if i >= 0:
+        return contents[i+len(otag):j]
+    i = absfilename.rfind('/')
+    j = absfilename.rfind('.')
+    fname = absfilename[i+1:j]
+    fname = fname.replace('-', ' ').replace('_', ' ')
+    fname = fname.title()
+    return fname
 
 def get_pretty_name(absfilename, title):
-	i = absfilename.rfind('/')
-	if absfilename[i+1:].lower() == 'readme.htm':
-		return '/' + absfilename[0:i+1]
-	pn = title.lower().replace(' ', '-')
-	valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
-	pn2 = ''.join(c for c in pn if c in valid_chars)
-	i = absfilename.rfind('/')
-	return '/' + absfilename[0:i] + '/' + pn2
+    i = absfilename.rfind('/')
+    if absfilename[i+1:].lower() == 'readme.htm':
+        return '/' + absfilename[0:i+1]
+    pn = title.lower().replace(' ', '-')
+    valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
+    pn2 = ''.join(c for c in pn if c in valid_chars)
+    i = absfilename.rfind('/')
+    return '/' + absfilename[0:i] + '/' + pn2
 
 def get_desc(contents):
-	lcontents = contents.lower()
-	i = lcontents.find('<p>')
-	if i != -1:
-		j = lcontents.find('</p>', i)
-		desc = contents[i+3:j-4]
-		desc = re.sub('<[^<]+?>', '', desc)
-		if desc != '':
-			return desc
-	return 'desc'
+    lcontents = contents.lower()
+    i = lcontents.find('<p>')
+    if i != -1:
+        j = lcontents.find('</p>', i)
+        desc = contents[i+3:j-4]
+        desc = re.sub('<[^<]+?>', '', desc)
+        if desc != '':
+            return desc
+    return 'desc'
 
 def execute_plan(plan, s3, bucket, table, env):
     summary = []
@@ -120,6 +120,7 @@ def execute_plan(plan, s3, bucket, table, env):
     tomorrow = now + datetime.timedelta(days=1)
     publish_date = tomorrow.strftime('%Y-%m-%d')
     for item in plan:
+    	print(item['uri'])
         parser = item['parser']
         absfile = item['absfile']
         uri = item['uri']
@@ -140,6 +141,8 @@ def execute_plan(plan, s3, bucket, table, env):
             author = 'Kyle'
             title = get_title(absfile, contents)
             desc = get_desc(contents)
+            if type(contents) == str:
+            	contents = unicode(contents, 'utf-8')
             fake_handle = StringIO(contents.encode('utf-8'))
             a = len(bucket)+1
             i = uri.rfind('.')
@@ -207,6 +210,9 @@ def md(absfile):
     f = open(absfile, 'r')
     c = f.read()
     f.close()
+    if type(c) == str:
+    	c = c.replace('\x97', '-')
+        c = unicode(c, 'utf-8')
     html = markdown.markdown(c)
     return html
 
@@ -234,6 +240,8 @@ def knitr(absfile):
     f = open(fname, 'r')
     c = f.read()
     f.close()
+    if type(c) == str:
+        c = unicode(c, 'utf-8')
     c2 = html_inline(c)
     os.remove(fname)
     # TODO: remove directory also
@@ -272,8 +280,8 @@ if __name__ == "__main__":
     ]
     #
     for env in environments:
-    	branch = env['branch']
-    	bucket = env['bucket']
+        branch = env['branch']
+        bucket = env['bucket']
         print("Running for " + branch)
         dest = '/tmp/' + str(uuid.uuid1()) + '/'
         filename = download(repo, branch, dest)
