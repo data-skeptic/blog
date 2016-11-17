@@ -1,4 +1,3 @@
 ## Ant Colony Optimization
 
-Thanks for checking out this older episode of the podcast.  Early on, I didn't always write show notes, however, I am planning to go back and
-write notes for every episode including this one.  In the meantime, feel free to leave comments, questions, and suggestions in the space below.  Thanks!
+In this week's mini episode, Linhda and Kyle discuss Ant Colony Optimization - a numerical / stochastic optimization technique which models its search after the process ants employ in using random walks to find a goal (food) and then leaving a pheremone trail in their walk back to the nest. We even find some way of relating the city of San Francisco and running a restaurant into the discussion.
