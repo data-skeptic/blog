@@ -1,3 +1,3 @@
 ## Noise
 
-Thanks for checking out this older episode of the podcast.  Early on, I didn't always write show notes, however, I am planning to go back and write notes for every episode including this one.  In the meantime, feel free to leave comments, questions, and suggestions in the space below.  Thanks!
+Our topic for this week is "noise" as in signal vs. noise. This is not a signal processing discussions, but rather a brief introduction to how the work noise is used to describe how much information in a dataset is useless (as opposed to useful).
