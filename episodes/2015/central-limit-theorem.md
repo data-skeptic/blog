@@ -1,0 +1,3 @@
+## The Central Limit Theorem
+
+The central limit theorem is an important statistical result which states that typically, the mean of a large enough set of independent trials is approximately normally distributed.  This episode explores how this might be used to determine if an amazon parrot like Yoshi produces or or less waste than an African Grey, under the assumption that the individual distributions are not normal.

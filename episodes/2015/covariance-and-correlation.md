@@ -1,0 +1,3 @@
+## Covariance and Correlation
+
+The degree to which two variables change together can be calculated in the form of their covariance.  This value can be normalized to the correlation coefficient, which has the advantage of transforming it to a unitless measure strictly bounded between -1 and 1.  This episode discusses how we arrive at these values and why they are important.

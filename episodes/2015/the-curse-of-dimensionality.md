@@ -1,0 +1,7 @@
+## The Curse of Dimensionality
+
+More features are not always better!  With an increasing number of features to consider, machine learning algorithms suffer from the curse of dimensionality, as they have a wider set and often sparser coverage of examples to consider.  This episode explores a real life example of this as Kyle and Linhda discuss their thoughts on purchasing a home.
+
+The curse of dimensionality was defined by Richard Bellman, and applies in several slightly nuanced cases.  This mini-episode discusses how it applies on machine learning.
+
+This episode does not, however, discuss a slightly different version of the curse of dimensionality which appears in decision theoretic situations.  Consider the game of chess.  One must think ahead several moves in order to execute a successful strategy.  However, thinking ahead another move requires a consideration of every possible move of every piece controlled, and every possible response one's opponent may take.  The space of possible future states of the board grows exponentially with the horizon one wants to look ahead to.  This is present in the notably useful <a href="https://en.wikipedia.org/wiki/Bellman_equation">Bellman equation</a>.
