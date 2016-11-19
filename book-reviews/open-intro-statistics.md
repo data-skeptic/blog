@@ -16,3 +16,4 @@ While that last comment might oversell this book's "personality", it's matter-of
 of the relevant methods and concepts without an intimidating page count.
 
 If you're new to statistics, or coming back after a bad experience, this is a great resource to get started.
+
