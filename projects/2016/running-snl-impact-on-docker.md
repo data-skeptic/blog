@@ -6,9 +6,11 @@ As one ought to do when concerned with a fragile configuration problem, we turne
 
 If you'd like to try our code, you need to first have `git` and `docker` installed.  Next, clone our library and build the image it contains.
 
-```
-$ git clone https://github.com/data-skeptic/CausalImpact.git <br/>
-$ cd CausalImpact/ <br/>
+```bash
+$ git clone https://github.com/data-skeptic/CausalImpact.git 
+
+$ cd CausalImpact/ 
+
 $ docker build .
 ```
 
