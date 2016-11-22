@@ -8,9 +8,11 @@ If you'd like to try our code, you need to first have `git` and `docker` install
 
 ```
 $ git clone https://github.com/data-skeptic/CausalImpact.git 
-
+```
+```
 $ cd CausalImpact/ 
-
+```
+```
 $ docker build .
 ```
 
