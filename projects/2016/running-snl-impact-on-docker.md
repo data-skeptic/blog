@@ -6,11 +6,11 @@ As one ought to do when concerned with a fragile configuration problem, we turne
 
 If you'd like to try our code, you need to first have `git` and `docker` installed.  Next, clone our library and build the image it contains.
 
----
-$ git clone https://github.com/data-skeptic/CausalImpact.git
-$ cd CausalImpact/
+```
+$ git clone https://github.com/data-skeptic/CausalImpact.git <br/>
+$ cd CausalImpact/ <br/>
 $ docker build .
----
+```
 
 This will create a Docker Image that is properly configured to run our app and answer on port 3838.  Make a note of the imageID that is returned at the very end.  I got `Successfully built c7d816670255`.
 
