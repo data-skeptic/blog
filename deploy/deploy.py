@@ -120,7 +120,6 @@ def execute_plan(plan, s3, bucket, table, env):
     tomorrow = now + datetime.timedelta(days=1)
     publish_date = tomorrow.strftime('%Y-%m-%d')
     for item in plan:
-    	print(item['uri'])
         parser = item['parser']
         absfile = item['absfile']
         uri = item['uri']
@@ -137,6 +136,7 @@ def execute_plan(plan, s3, bucket, table, env):
             else:
                 render = True
         if render:
+            print(item['uri'])
             contents = parser(absfile)
             author = 'Kyle'
             title = get_title(absfile, contents)
