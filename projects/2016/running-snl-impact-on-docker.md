@@ -12,16 +12,15 @@ $ cd CausalImpact/
 $ docker build .
 ```
 
-This will create a Docker Image that is properly configured to run our app and answer on port 3838.  Make a note of the imageID that is returned at the very end.  I got `4b0e85e3d48e`.
+This will create a Docker Image that is properly configured to run our app and answer on port 3838.  Make a note of the imageID that is returned at the very end.  I got `Successfully built c7d816670255`.
 
 If you'd like to try making some changes, you can fork our repository, and replace our repo with yours in the Dockerfile to get switch over to your version in one line of code.
 
-When you're ready to run things, run the docker 
+When you're ready to run things, run the docker with the command below.
 
 ```
-$ docker run -p 3838:3838 4b0e85e3d48e
+$ docker run -p 3838:3838 c7d816670255
 ```
--i -t 
 
 That's all it takes to get things running.  So long as you leave that Docker container running, the Shinyapp will be active.  I chose port 3838 as the port I wanted to have it answer on.  By adding the parameter `-p 3838:3838`, I'm asking docker to map that open 3838 port of the container to my local machine so that I can access it in my normal browser by visiting [http://localhost:3838/](http://localhost:3838/).
 
