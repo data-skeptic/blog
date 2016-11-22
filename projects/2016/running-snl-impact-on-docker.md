@@ -27,3 +27,4 @@ $ docker run -p 3838:3838 c7d816670255
 That's all it takes to get things running.  So long as you leave that Docker container running, the Shinyapp will be active.  I chose port 3838 as the port I wanted to have it answer on.  By adding the parameter `-p 3838:3838`, I'm asking docker to map that open 3838 port of the container to my local machine so that I can access it in my normal browser by visiting [http://localhost:3838/](http://localhost:3838/).
 
 If you make an interesting improvement or add a cool feature, we'd be interested in seeing your Pull Request.
+
