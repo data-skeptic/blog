@@ -1,4 +1,4 @@
-## A Primer on React.js and Redux for Data Visualization Professionals
+## A Primer on React.js for Data Visualization Professionals
 
 I try to never take for granted that my background, like all our backgrounds, is unique.  Two data scientists can easily find they have nothingin common.  For me, this is an opportunity to help others bridge the various gaps between the knowledge they currently have and what's within arm's reach.
 
