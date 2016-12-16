@@ -7,3 +7,5 @@ Now a break
 $x=2$
 
 more above
+
+And some inline $9^9$ stuff so that $2^2 = 4$ can be tested.
