@@ -2,5 +2,8 @@
 
 $H(X) = - \\sum\\limits_{i=1}^n P(x_i) \\cdot \\text{log}_2 P(x_i)$
 
+Now a break
 
-Done
+$x=2$
+
+more above
