@@ -1,0 +1,33 @@
+## Sponsors in 2017
+
+Since starting Data Skeptic in 2014, I've had a number of businesses approach me to do some advertising on the podcast.  I've had a blanket "no ads" policy regardless of who came knocking.  It's not that I'm ungrateful or have some objection to the show bringing in revenue.  I simply didn't want to have to worry about any hassle.  I wanted to focus every minute I could dedicate to Data Skeptic to the show's content.
+
+I've learned a lot in the last few years.  I believe the show has gotten better in a number of ways.  According to stats published by Libsyn, my podcast is now in the top 2% of *all* podcasts by download numbers.  It's a steep long tail, though.  I'm just a drop in the bucket of what Maron or Hardcore History do.
+
+I've launched a number of shows that go above and beyond our typical format.  Episodes like [Causal Impact](http://dataskeptic.com/blog/episodes/2016/causal-impact) and [Potholes](http://dataskeptic.com/blog/episodes/2016/potholes) are frequently cited by fans who write in and I was even approached to turn Potholes into a story for a national publication (the timing ended up not being good for me though).  The production on these shows is rewarding but prohibitively time consuming without outside assistance.
+
+In 2017 we plan to expand into some video content.  We want to do more hand's on projects like [SNL Impact](http://snl.dataskeptic.com/) and continue to develop the [OpenHouse Project](http://openhouseproject.co/).  Mostly, we want to get people using data science tools and applying techniques beyond just hearing about them.
+
+In 2016, we started doing text transcriptions of the show which also contained rich references.  These transcripts make the show cite-able in Wikipedia, enable hearing empaired people to listen, and allow anyone to track down old episodes via Google search.  I had to pause that effort due to the expense, but I am eager to resume it.
+
+The reality is, as the show has grown, so have the expenses.  I haven't a single regret for what I've invested in Data Skeptic, but it's now gotten a little beyond what I can justify to Linhda as a hobby.  Forecasts have us heading into mid-life crisis spending territory in the near future.
+
+I want to continue to expand the reach and quality of Data Skeptic, and invest in bespoke projects.  I can't do that alone, so I've added a membership component to the show so that fans can help give back and keep us going.  The Data Skeptic podcast is (and always will be) free.  Membership is an optional way for people to show their support.  There are also going to be some secret member's only things that happen as well, and some surprise gifts for the higher levels.
+
+In addition to the Membership, I'm going to be taking on some sponsors for the show.  Part of why I've kept Data Skeptic entirely ad-free so far is that I had concerns about conflicts of interest.  Would I be hesitant to call out some BS from a current or potential advertiser?  Would I compromise on the show's content to appease and advertiser?  Would people enjoy the show less if there were ads?
+
+I believe the answeres are no, no, and maybe.  Let's unpack that.
+
+Regarding how I may or may not censor myself for a current or future advertiser, all I can offer is my word that this will never happen.  Feel free to be skeptical and judge the future for yourself.  Call me out on it if you think I've gone astray.  If indeed I have, I'd appreciate the nudge back on course.  The reality is, the amount of ad dollars a show of Data Skeptic's size can command are non-trivial but certainly not a replacement for an income.   My estimates are that advertisements will make the show break-even.  I'll still need to maintain a more "traditional" income just as I've done since the start of the show.  In no way am I ungrateful to any organization that believes in Data Skeptic and wants to reach it's listeners, but the market rates, while generous and critical, are not enough to get me to censor myself to save one deal.  I think people percieve Data Skeptic as a place of integrity with a worthwhile and committed mission.  Giving people no doubt of that is of infinitely more value than any advertiser backing out.
+
+I'm going to be picky about who we bring on as advertisers as well.  I mostly plan to only working with organizations that have some relevance to the audience.  I am infinitely grateful to Audible, Dollar Shave Club, Casper, Loot Crate, etc., for supporting so many shows I love.  However, their messages feel foreign in the Data Skeptic feed.  I'm interested in people with products and services targetted at data science, skeptics, and science more broadly.  This isn't to say that I wouldn't accept underwriting from a completely random personal choice like my favorite lumber: Bohnhoff Lumber, just outside of LA (call me! :) )
+
+My second question - would I compromise on the show's content to appease an advertiser?  I guess that's a matter of opinion.  If an advertiser insisted I have one of their employees as a guest, and give them free reign to say anything they want, I'm not sure I'd allow it.  If I did, I would clearly mark such an episode as a sponsored interview in the feed.  With that label, I don't think I actually have a problem with it.  You'll get the same caliber of interview I always do, and you're free to skip it, just as you can skip any episode, if it's not to your liking.
+
+To be honest, though, I'm actually less interested in a paid placement interview and more interested in going onsite at a company and getting hands-on helping their entire team tell the story of their products and services.  There's a much higher cost to that sort of production, so we'll see if Data Skeptic does any of that.
+
+My firmest commitment is this: when ads appear on data skeptic or sponsors are taken on, a clear and unambiguous demarcation will be done.  I don't plan to follow the Gimlet standard of having specific advertising music, but I'll make sure it's always clear what aspects of any content are advertisements.
+
+Lastly - will listeners enjoy the show less if there are ads?  Perhaps some people will be.  I encourage them to become members and ask for our ad-free member's only feed.  I did a survey earlier this year and if the responses are to be trusted, most people won't be terribly bothered by ads.  I hope to keep them relevant to our content, hold a certain bar for who is allowed to advertise, and keep the ad content interesting in and of itself.
+
+I hope with listener support and the backing of a few visionary advertisers that believe in or work, we can continue to grow, example, and improve Data Skeptic in 2017 and beyond.
