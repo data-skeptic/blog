@@ -16,7 +16,7 @@ I want to continue to expand the reach and quality of Data Skeptic, and invest i
 
 In addition to the Membership, I'm going to be taking on some sponsors for the show.  Part of why I've kept Data Skeptic entirely ad-free so far is that I had concerns about conflicts of interest.  Would I be hesitant to call out some BS from a current or potential advertiser?  Would I compromise on the show's content to appease and advertiser?  Would people enjoy the show less if there were ads?
 
-I believe the answeres are no, no, and maybe.  Let's unpack that.
+I believe the answers are no, no, and maybe.  Let's unpack that.
 
 Regarding how I may or may not censor myself for a current or future advertiser, all I can offer is my word that this will never happen.  Feel free to be skeptical and judge the future for yourself.  Call me out on it if you think I've gone astray.  If indeed I have, I'd appreciate the nudge back on course.  The reality is, the amount of ad dollars a show of Data Skeptic's size can command are non-trivial but certainly not a replacement for an income.   My estimates are that advertisements will make the show break-even.  I'll still need to maintain a more "traditional" income just as I've done since the start of the show.  In no way am I ungrateful to any organization that believes in Data Skeptic and wants to reach it's listeners, but the market rates, while generous and critical, are not enough to get me to censor myself to save one deal.  I think people percieve Data Skeptic as a place of integrity with a worthwhile and committed mission.  Giving people no doubt of that is of infinitely more value than any advertiser backing out.
 
