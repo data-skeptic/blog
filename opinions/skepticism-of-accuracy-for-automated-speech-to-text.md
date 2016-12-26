@@ -1,0 +1,25 @@
+## Skepticism of Accuracy for Automated Speech to Text
+
+In the past year, I started paying to have [Data Skeptic transcripts](http://dataskeptic.com/blog/transcripts/) produced.  These help the content reach a wider audience in numerous ways and make the content cite-able on Wikipedia.  I've interviewed many experts who made original statements not otherwise found on the Internet right here on Data Skeptic.  For that reason alone, allowing that content to be cite-able is important.
+
+As was announced in a recent episode, we paused these transcriptions due to the cost.  While not individually expensive, each episode adds up for this weekly show.  We also recently opened up our [membership](http://dataskeptic.com/members) option so that listeners who choose to can support Data Skeptic.  Contributions go to initiatives like these transcriptions.  It's a nice economics experiment, in a way.  We believe the transcriptions are valuable and we shall see if the market agrees.
+
+Several listeners, being very generous with their time, reached out and offered to transcribe our episodes via machine transcription models.  Many services have become available in the last few years.  Two well known ones are IBM's Watson and Azure Cognitive Services.  I've used both and tried several of the start-ups in the long tail of other people attacking this problem.
+
+In all our attempts to use services like this, we've had disappointing results.  While I do believe that the methodologies (recurrent neural networks and perhaps other approaches) to solve speech to text at the accuracy I'm looking for exist, and I believe the computing power to find good models *probably* exists as well, we don't have this technology of adequate quality today.
+
+The accuracy required, of course, depends on your use case.  I imagine inexpensive or free apps to translate streaming audio and podcasts (independent of the show's transcription) must exist and be very welcoming to the deaf.  If I lost the ability to hear, I'd rather have a poor transcription than none at all.  The existing technologies absolutely meet that minimum bar.
+
+Don't get me wrong, there are some impressive demos out there.  Yet, the most impressive demos are almost always given on the best possible white room conditions.  Speech to text can be more difficult under other conditions, including people with accents or people for whom English is not their first language.  While I believe machines will eventually surpass even our own ability to process variation in people's speech, we're not quite there yet.
+
+In our attempts to use machine transcription for Data Skeptic, we found some troublesome results.  The accuracy we found in practice doesn't match the boastful accuracy of white-room demos.
+
+So are error filled transcripts better than no transcripts?  It seems like "yes", but I need to disagree based on our experiences.  When reviewing the automated results, we found several cases where guests were made to say the *opposite* of what they actually said.  A "not" lost in one case, "doesn't" changed to "does into", and other semantic changing mistakes.  If you translate "food" into "foot", the reader can usually infer the correction from context.  But the semantic changes that are not obvious errors really bother me.
+
+We even had one guest's words mistakenly translated into "in our collaboration with ISIS, ..." While I presume most readers would have understood this to be an obvious machine transcription error, I still cannot allow one of my guest's to have their words mis-transcribed in a way that makes them sound like a terrorist.  I don't really believe they'd be retaliated against or anything.  I just couldn't face the embarrassment of a guest having to point out the error.  Thus, we'd have to edit these things manually anyway.
+
+For the time being, and presumably the next few years, we'd need to audit any output of machine transcription.  There might be some optimization to our workflow having transcribers start from a machine generated base and do a clean up pass.  That's not something I have the time for unfortunately, so I'd need my transcribers to still do an audit.
+
+The human transcriber I've employed in the past also does a fantastic job of adding deep links to the transcripts.  When a guest mentions a specific reference, company, tool, etc., they have taken the time to find those links and add them to the transcripts.  This is not only beneficial to the reader/listener who might check the show notes for follow up, it is also a contribution to the SEO and findability of things important to my guests.  For what that's worth, I want to stay committed to having well hyperlinked transcripts as well.
+
+So overall, while machine transcription is promising, and we may do some internal experiments with human-in-the-loop transcription, for quality concerns, correctness of key factual statements, and deep linking, we don't want to adopt fully automated transcription at this time.  If these developments advance at all, we'll eagerly update people via the blog on the technology we've adopted.
