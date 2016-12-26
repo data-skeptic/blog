@@ -1,3 +1,5 @@
+## Trusting Machine Learning Models with LIME
+
 **INTRO VOICE-OVER**: Data Skeptic features interviews with experts on topics related to data science, alal through the eye of scientific skepticism. 
 
 **HOST**: [Marco Tulio Riberio](http://homes.cs.washington.edu/~marcotcr/) is a Ph.D. student at the University of Washington. He has a Bachelors and Masters Degree in Computer Science and is currently researching methods for making [machine learning more interpretable and trustworthy](http://arxiv.org/abs/1602.04938). To this end, he created LIME, or [locally interpretable model-agnostic explanations](https://github.com/marcotcr/lime). It is this project that I invited him here to discuss today; Marco welcome to Data Skeptic.

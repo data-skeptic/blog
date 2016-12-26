@@ -1,4 +1,4 @@
-#Data Skeptic: Predictive Models on Random Data
+## Predictive Models on Random Data
 
 **INTRO VOICE-OVER:** Data Skeptic features interviews with experts on topics related to data science, all through the eye of scientific skepticism. 
 

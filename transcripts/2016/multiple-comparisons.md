@@ -1,4 +1,5 @@
-#Data Skeptic: Multiple Comparisons and Conversion Optimization
+## Multiple Comparisons and Conversion Optimization
+
 **INTRO VOICE-OVER:** Data Skeptic features interviews with experts on topics related to data science, all through the eye of scientific skepticism.
 
 **HOST:** Chris Stucchio is a former high-frequency trader, physicist, startup founder and bodyguard. He's currently a gambler and the director of data science at Wingify. He's a strong believer in automated reasoning, formal methods and the power of computers to liberate us from the tyranny of humans making decisions. You might like his blog at [chrisstucchio.com](www.chrisstuccio.com).
