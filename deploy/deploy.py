@@ -1,9 +1,12 @@
+# sudo npm install --global mathjax-node
+
 import json
 import boto3
 import os
 import fileinput
 import re
 import base64
+import sha
 import mimetypes
 import wget
 import uuid
@@ -113,6 +116,16 @@ def get_desc(contents):
             return desc
     return 'desc'
 
+def next_delimiter(s, a, delim='$'):
+    i = s.find(delim, a)
+    if i == -1:
+        return -1
+    if i > 0:
+        before = s[i-1]
+        if before == '\\':
+            return next_delimiter(s, a+1)
+    return i
+
 def execute_plan(plan, s3, bucket, table, env):
     summary = []
     now = datetime.datetime.now()
@@ -143,6 +156,37 @@ def execute_plan(plan, s3, bucket, table, env):
             desc = get_desc(contents)
             if type(contents) == str:
             	contents = unicode(contents, 'utf-8')
+            i = 0
+            ranges = []
+            while i < len(contents):
+                i = next_delimiter(contents, i)
+                if i != -1:
+                    j = next_delimiter(contents, i+1)
+                    if j != -1:
+                        ranges.append([i, j+1])
+                if i == -1 or j == -1:
+                    i = len(contents)
+                else:
+                    i = j + 1
+            i = len(ranges) - 1
+            while i >= 0:
+                r = ranges[i]
+                b = r[0]
+                e = r[1]
+                latex = contents[b+1:e-1]
+                cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
+                cmd += '"' + latex + '"'
+                rendered = os.popen(cmd).read()
+                fname = sha.new(rendered).hexdigest() + ".svg"
+                # TODO: Check if it already exists since has is unique
+                fake_handle = StringIO(rendered.encode('utf-8'))
+                svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + fname
+                print(svguri)
+                res = s3.Bucket(bucket).put_object(Key="latex/" + fname, Body=fake_handle, ContentType='image/svg+xml')
+                imgTag = "<img className='latex-svg' src='" + svguri + "' alt='" + latex + "' />"
+                contents = contents[0:b] + imgTag + contents[e:len(contents)]
+                i -= 1
+            #
             fake_handle = StringIO(contents.encode('utf-8'))
             a = len(bucket)+1
             i = uri.rfind('.')
