@@ -1,4 +1,4 @@
-# What Happens After the First Pedestrian Death from an Automated Vehicle?
+## What Happens After the First Pedestrian Death from an Automated Vehicle?
 
 Certain things are inevitable.  We're going to have automated vehicles within my lifetime.  We are going to have a pedestrian killed by being hit by a self driving car within my lifetime.
 
