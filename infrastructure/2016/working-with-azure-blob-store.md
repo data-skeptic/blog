@@ -6,7 +6,7 @@ I found some of the documentation a little lacking, so I thought I'd do a rather
 
 To get started, you'll need to create a storage account.
 
-![Create Azure Storage Account](azure-append-blob-0.png)
+![Create Azure Storage Account](https://s3.amazonaws.com/dataskeptic.com/infrastructure/2016/azure-append-blob-0.png)
 
 The wizard is pretty self explanatory.
 
@@ -19,9 +19,9 @@ For setting these on my development machine (a mac), I added these two lines to 
 
 The above values are, of course, fake, but I wanted to provide the access key in a recognizable format to help you find yours.  The screenshots below may help you
 
-![Find Azure Storage access key step 1](azure-append-blob-1.png)
+![Find Azure Storage access key step 1](https://s3.amazonaws.com/dataskeptic.com/infrastructure/2016/azure-append-blob-1.png)
 
-![Find Azure Storage access key step 2](azure-append-blob-creds.png)
+![Find Azure Storage access key step 2](https://s3.amazonaws.com/dataskeptic.com/infrastructure/2016/azure-append-blob-creds.png)
 
 The screenshots above show me working within the Azure dashboard.  I generally do that for tasks that I perform rarely, such as looking up keys or creating services, even though those functions can also be scripted.  From here forward, let's switch to scripts for doing operations I frequently perform.
 
