@@ -2,3 +2,4 @@
 .Rhistory
 *.config
 .ipynb_checkpoints/
+*.pkl
