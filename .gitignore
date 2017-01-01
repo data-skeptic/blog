@@ -3,3 +3,5 @@
 *.config
 .ipynb_checkpoints/
 *.pkl
+*.xml
+*.csv
