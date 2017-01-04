@@ -16,7 +16,7 @@ Although we will certainly review blind submissions, as in all open source, it's
 
 1. Fork [https://github.com/data-skeptic/blog](https://github.com/data-skeptic/blog).
 
-![fork blog repo](imgs-using-git-as-a-cms/fork-blog-repo.png)
+![fork blog repo](src-using-git-as-a-cms/fork-blog-repo.png)
 
 2. Create a branch in your fork with a name loosely describing your topic.
 
@@ -30,13 +30,13 @@ Although we will certainly review blind submissions, as in all open source, it's
 
 7. Create a pull request.
 
-![new pull request](imgs-using-git-as-a-cms/new-pull-request.png)
+![new pull request](src-using-git-as-a-cms/new-pull-request.png)
 
 8. Review your commits and hit "Create pull request".
 
 9. Write a short message in your comment describing the post.
 
-![pull comment](imgs-using-git-as-a-cms/pull-comment.png)
+![pull comment](src-using-git-as-a-cms/pull-comment.png)
 
 10. Wait patiently for us to review!
 
@@ -48,7 +48,7 @@ If your post does analysis on some large CSV (or other file), if the size is tri
 
 If you have external images that you don't or can't embed in your submission, follow these steps:
 
-* Create a directory called `imgs-my-blog-post-title/`.
+* Create a directory called `src-my-blog-post-title/`.
 * Put your images there.
 * Ensure that your source files that reference them are using relative paths.
 * Commit the images.
