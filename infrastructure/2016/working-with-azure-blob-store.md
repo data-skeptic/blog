@@ -1,4 +1,4 @@
-# Working with Azure Blob Store
+## Working with Azure Blob Store
 
 I recently heard that Azure Blob Storage added an Append Blob type which is optimized for append-only blobs.  Depending on what "optimized" actually means, this might be a wonderful solution for a project I'm currently working on, so I needed to check it out.
 
