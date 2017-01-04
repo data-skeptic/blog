@@ -16,7 +16,7 @@ Although we will certainly review blind submissions, as in all open source, it's
 
 1. Fork [https://github.com/data-skeptic/blog](https://github.com/data-skeptic/blog).
 
-![imgs-using-git-as-a-cms/fork-blog-repo.png]
+![fork blog repo](imgs-using-git-as-a-cms/fork-blog-repo.png)
 
 2. Create a branch in your fork with a name loosely describing your topic.
 
@@ -30,13 +30,13 @@ Although we will certainly review blind submissions, as in all open source, it's
 
 7. Create a pull request.
 
-![imgs-using-git-as-a-cms/new-pull-request.png]
+![new pull request](imgs-using-git-as-a-cms/new-pull-request.png)
 
 8. Review your commits and hit "Create pull request".
 
 9. Write a short message in your comment describing the post.
 
-![imgs-using-git-as-a-cms/pull-comment.png]
+![pull comment](imgs-using-git-as-a-cms/pull-comment.png)
 
 10. Wait patiently for us to review!
 
