@@ -144,7 +144,7 @@ We can look at statistical tests for being able to assert that, and so I think t
 
 And once I had the math behind me, I said, well, okay, we are going to find most of these fragments are pieces that we already know, so because most of the pieces were probably the ones that survived, we can build the printed scores that musicologists have been making since the 19th century. Especially since World War II - there's a 24-volume, beautiful green set of books called [Polyphonic Music of the 14th Century](http://www.worldcat.org/title/polyphonic-music-of-the-fourteenth-century/oclc/491470464), and I think it's about 8,000 pages or something like that. I have a project where we entered it all into the computer. There was just no substitute if you want high-quality data for entering.
 
-I thank my collaborator Ana Grau for really organizing this whole project.
+I thank my collaborator [Anna Grau](https://depaul.academia.edu/AnnaGrau) for really organizing this whole project.
 
 So I have that as a data set, so I'm planning on releasing that set as soon as I can get what copyright concerns there are for 14th century music. Once I can, it will be the only data set of every known piece of music written on an entire century that's out there. So that's pretty exciting. We can't do that with every piece of 20th century music. It's just too big too, with too many copyrights, but we can do that with another era.
 
@@ -168,7 +168,7 @@ How can we manipulate a particular scale algorithmically? So I'll use that in my
 
 **Mike**: Some of the things that we are trying to do with Music21 and Score Follower is an attempt to automatically reduce a large, complicated score into the most important elements so you can follow along and have it synced with an audio file. That's something I've done with Vladimir Viro of [Peachnote](http://www.peachnote.com/).
 
-Another project I've done with a great young researcher named Mora Church is to use music theory examples embodied in the Music21 library to improve what's called OMR. It's the musical equivalent of optical character recognition. The output for that is very promising, but it's not yet at the level that you can immediately use in any particular project. So we can use music theory to improve the OMR and, you know, maybe a third of the time we can take what was definitely wrong and make it absolutely right with what's written on the page, depending on what the problem is.
+Another project I've done with a great young researcher named [Maura Church](http://www.maurachurch.com/) is to use music theory examples embodied in the Music21 library to improve what's called OMR. It's the musical equivalent of optical character recognition. The output for that is very promising, but it's not yet at the level that you can immediately use in any particular project. So we can use music theory to improve the OMR and, you know, maybe a third of the time we can take what was definitely wrong and make it absolutely right with what's written on the page, depending on what the problem is.
 
 Host: Well, Mike, this has been fascinating. Thanks so much for coming on to share some of the story about Music21 and ways people can use it. I hope everyone goes out and checks out the website.
 
