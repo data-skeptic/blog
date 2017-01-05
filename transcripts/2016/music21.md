@@ -54,7 +54,7 @@ From there, it would be easy to go through and transpose all the chords so we mi
 
 From there, it will be really easy to just put it into a counter object and put it all out and say, oh, I don't know, probably it's going to be G Major that's Bache's favorite chord. You know these are the things that come up, and then the fun begins, because as a musicologist, I want to know why. I want to suddenly have this data that has taken me years to get before.
 
-And I can carve it in probably half an hour or an hour, and then I can start asking, well, you know, why is that his favorite chord? Why is it different from **Bantaverni's** favorite chord, who composed at the beginning of the Baroque era? With Bache dying in 1750, and **Monteverdi** living around the 1600s, and in this 150-year period that we tend to just throw together as the Baroque, what changed and how is that interesting?
+And I can carve it in probably half an hour or an hour, and then I can start asking, well, you know, why is that his favorite chord? Why is it different from Bantaverni's favorite chord, who composed at the beginning of the Baroque era? With Bache dying in 1750, and Monteverdi living around the 1600s, and in this 150-year period that we tend to just throw together as the Baroque, what changed and how is that interesting?
 
 **Host**: We started out at four loops where we load all the Bache pieces. Can Music21 help me find those pieces?
 
