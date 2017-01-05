@@ -38,15 +38,15 @@ So in other words, now it's possible. We completely use data to our approach and
 
 **HUI**: In New York City say for instance, they 8 to 10 trucks and they are routinely moving those bicycles around. So basically, our research is trying to develop some optimized strategy. So we help try to schedule these rebalancing efforts in a more optimized way. 
 
-So say for instance, we help them on how actually they can allocate their resource – their trucks and also try to make some plan for terminals and also help them for the scheduling for those kinds of continually. 
+So say for instance, we help them on how actually they can allocate their resource - their trucks and also try to make some plan for terminals and also help them for the scheduling for those kinds of continually. 
 
-**HOST**: I see. So the service trucks move the bikes from station to station to rebalance and your optimization allows them to do so more efficiently. So if people working in New York City on bike sharing system haven't read your paper yet, maybe one naïve thing they might try is go to the station that's most full, has the most bikes, and then take them to the most empty statement and drop them off there and then just repeat that process. Why would that be a poor solution? 
+**HOST**: I see. So the service trucks move the bikes from station to station to rebalance and your optimization allows them to do so more efficiently. So if people working in New York City on bike sharing system haven't read your paper yet, maybe one naive thing they might try is go to the station that's most full, has the most bikes, and then take them to the most empty statement and drop them off there and then just repeat that process. Why would that be a poor solution? 
 
 **HUI**: You mean the passenger? Tourist? 
 
 **HOST**: The trucks. 
 
-**HUI**: OK. Right now, the trucks, they can do this more like there's no guidance. So in other words, so we have more than 300 stations available there. For the common case, right now what they are doing is based on their experiences. Say for instance, they may receive the phone call or they may have those kinds of demands and they try to – say for instance, station A, they received the phone call, say, station A they're out of bicycle. Then they try to say bring some bicycle from the nearby station into that station. However, those situations are purely based on the experience. There's no guidance from all these different resource called the data effect. 
+**HUI**: OK. Right now, the trucks, they can do this more like there's no guidance. So in other words, so we have more than 300 stations available there. For the common case, right now what they are doing is based on their experiences. Say for instance, they may receive the phone call or they may have those kinds of demands and they try to - say for instance, station A, they received the phone call, say, station A they're out of bicycle. Then they try to say bring some bicycle from the nearby station into that station. However, those situations are purely based on the experience. There's no guidance from all these different resource called the data effect. 
 
 So our purpose is we try to understand the complete situation for every station. Say for instance, we know exactly for every station how many bicycles are available there. And also, we make the prediction in the next time period. So how many bicycles available in each station, we based on the current situation and also we based on our prediction result and we can do this optimized solution to try to schedule say for instance, for those 8 to 10 trucks more effectively. In this way, we can make the most use of all the bicycles available in the system. 
 
@@ -162,7 +162,7 @@ Once we have these results that we can fit into the cluster results. So basicall
 
 **HOST**: And in terms of measuring the performance of your system, how do you go about calculating that? 
 
-**HUI**: So basically, as we described, our approach – we have a unique perspective. First, that we consider about the impact from the **[0:21:27]** **outlier**. We illustrate that even our validation, if we have all these **outlier** stations, in other words, their demand becomes extremely large value, a number value, and that the existing truck cannot be satisfied, if we remove this **outlier** our solution becomes more doable. So we first illustrate the impact from outlier. So in other words, we must remove this outlier before we can do any rebalancing operation. 
+**HUI**: So basically, as we described, our approach - we have a unique perspective. First, that we consider about the impact from the **[0:21:27]** **outlier**. We illustrate that even our validation, if we have all these **outlier** stations, in other words, their demand becomes extremely large value, a number value, and that the existing truck cannot be satisfied, if we remove this **outlier** our solution becomes more doable. So we first illustrate the impact from outlier. So in other words, we must remove this outlier before we can do any rebalancing operation. 
 
 The second validation, we try to validate the importance of this dynamic prediction for different pick-up stations and also drop-off stations. After adding this dynamic prediction for the drop-off prediction and also pick-up demands then we can actually improve our results significantly. 
 
@@ -186,7 +186,7 @@ The second validation, we try to validate the importance of this dynamic predict
 
 **HUI**: Right. And this research can also be validated by many other researchers because all this data is publicly available and also our strategy and our approach becomes very informative in the paper and that people can repeat our experiments and also can actually implement our strategy. 
 
-In my research group, I have been working for different types of problems. The solution to these problems – actually, we now reached the experiences from our many other data-related projects. For data-manning practitioner, it's extremely important to start from the real world problem and also the real world data and that you eventually come up to the solution which can be repeatable and also can be implemented by the industry or other researchers. This actually I believe has a lot of meaning to the society and also to the industry. 
+In my research group, I have been working for different types of problems. The solution to these problems - actually, we now reached the experiences from our many other data-related projects. For data-manning practitioner, it's extremely important to start from the real world problem and also the real world data and that you eventually come up to the solution which can be repeatable and also can be implemented by the industry or other researchers. This actually I believe has a lot of meaning to the society and also to the industry. 
 
 **HOST**: Absolutely. Maybe a wrap up, could you mention some of the other projects your research group is working on?
 
