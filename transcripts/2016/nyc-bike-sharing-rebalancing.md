@@ -162,7 +162,7 @@ Once we have these results that we can fit into the cluster results. So basicall
 
 **HOST**: And in terms of measuring the performance of your system, how do you go about calculating that? 
 
-**HUI**: So basically, as we described, our approach - we have a unique perspective. First, that we consider about the impact from the **[0:21:27]** **outlier**. We illustrate that even our validation, if we have all these **outlier** stations, in other words, their demand becomes extremely large value, a number value, and that the existing truck cannot be satisfied, if we remove this **outlier** our solution becomes more doable. So we first illustrate the impact from outlier. So in other words, we must remove this outlier before we can do any rebalancing operation. 
+**HUI**: So basically, as we described, our approach - we have a unique perspective. First, that we consider about the impact from the outlier. We illustrate that even our validation, if we have all these outlier stations, in other words, their demand becomes extremely large value, a number value, and that the existing truck cannot be satisfied, if we remove this outlier our solution becomes more doable. So we first illustrate the impact from outlier. So in other words, we must remove this outlier before we can do any rebalancing operation. 
 
 The second validation, we try to validate the importance of this dynamic prediction for different pick-up stations and also drop-off stations. After adding this dynamic prediction for the drop-off prediction and also pick-up demands then we can actually improve our results significantly. 
 

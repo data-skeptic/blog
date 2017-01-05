@@ -1,5 +1,3 @@
-# sudo npm install --global mathjax-node
-
 import json
 import boto3
 import os
@@ -73,7 +71,14 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
                 oldHash = content_dict[uri]['c_hash']
             ext = uri[uri.rfind('.'):]
             parser = parsers[ext]
-            plan.append({"absfile": src, "uri": uri, "parser": parser, "isNew": isNew, "oldHash": oldHash})
+            fname = os.path.basename(src)
+            path = src[0:len(src) - len(fname)]
+            p = fname.rfind('.')
+            d = path + "src-" + fname[0:p]
+            srcfiles = []
+            if os.path.isdir(d):
+                srcfiles = os.listdir(d)
+            plan.append({"absfile": src, "srcfiles": srcfiles, "uri": uri, "parser": parser, "isNew": isNew, "oldHash": oldHash})
     return plan
 
 def get_title(absfilename, contents):
@@ -211,6 +216,20 @@ def execute_plan(plan, s3, bucket, table, env):
                         'rendered': s3key,
                         'title': title
                     }
+            x = os.path.basename(s3key)
+            a = s3key.rfind('/')
+            b = s3key.rfind('.')
+            dname = 'src-' + s3key[a+1:b]
+            keypath = s3key[0:len(s3key)-len(x)] + dname + '/'
+            for src in item['srcfiles']:
+                s3key2 = keypath + src
+                print 'Deploying source file: ' + s3key2
+                i = absfile.rfind('/')
+                abspath = absfile[0:i]
+                fp = open(abspath + '/' + dname + '/' + src, 'rb')
+                data = fp.read()
+                fp.close()
+                res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data)
             if item['isNew']:
                 response = table.put_item(
                     Item=ritem
@@ -255,7 +274,11 @@ def md(absfile):
     c = f.read()
     f.close()
     if type(c) == str:
-    	c = c.replace('\x97', '-')
+        c = c.replace('\x92', '\'')
+        c = c.replace('\x93', '"')
+        c = c.replace('\x94', '"')
+        c = c.replace('\x96', '-')
+        c = c.replace('\x97', '-')
         c = unicode(c, 'utf-8')
     html = markdown.markdown(c)
     return html
