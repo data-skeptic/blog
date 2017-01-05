@@ -76,7 +76,7 @@ However, because our prediction is based on this combined multiple factors so ev
 
 **HOST**: Makes sense. I think one of the strengths of your approach is that it's data-driven. So I was wondering if you could tell me a little bit about the raw data sets you have available. Where does your data come from? 
 
-**HUI**: We have multiple data sources. One data source is the data from **[0:10:46]** system. This data can be publicly available and because they provide API so actually if you work with the API you can actually have this data free in a real time way to get all this data. 
+**HUI**: We have multiple data sources. One data source is the data from the bike share system. This data can be publicly available and because they provide API so actually if you work with the API you can actually have this data free in a real time way to get all this data. 
 
 So we have the location data for each station and also we have the demand information from every station. Say for instance, we connect with the API so every 5 seconds, we actually can read the data. So we exactly know how many bicycles are available in each station. And also, we get to access to the weather report for the New York City. So we have the weather data as well. So all these data we can have from public domain. 
 
