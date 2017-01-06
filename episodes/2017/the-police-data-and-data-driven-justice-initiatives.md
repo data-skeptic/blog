@@ -1,6 +1,6 @@
 ## The Police Data Initiative and the Data Driven Justice Initiative
 
-In this episode I speak with Clarence Wardell and Kelly Jin about their mutual service as part of the White House's Police Data Initiative and Data Driven Justice Iniiative respectively.
+In this episode I speak with Clarence Wardell and Kelly Jin about their mutual service as part of the White House's Police Data Initiative and Data Driven Justice Initiative respectively.
 
 The [Police Data Initiative](https://publicsafetydataportal.org/) was organized to use open data to increase transparency and community trust as well as to help police agencies use data for internal accountability.  The PDI emerged from recommendations made by the [Task Force on 21st Century Policing](https://www.whitehouse.gov/blog/2015/04/09/using-technology-and-data-improve-community-policing-police-data-initiative).
 
