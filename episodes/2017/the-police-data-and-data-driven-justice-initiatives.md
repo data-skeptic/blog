@@ -18,6 +18,8 @@ The [Data Driven Justice Initiative](https://www.whitehouse.gov/datadrivenjustic
 
 * [Call to Action: Data-Driven Justice Initiative, Disrupting Cycle of Incarceration](https://www.whitehouse.gov/datadrivenjustice)
 
+* [WeQuantLA.com](https://wequantla.com/)
+
 <div class="row">
 	<div class="col-xs-12 col-sm-3">
 		<img alt="Clarence Wardell of the US Digital Services team at the White House" src="src-the-police-data-and-data-driven-justice-initiatives/clarence-wardell.png" />
