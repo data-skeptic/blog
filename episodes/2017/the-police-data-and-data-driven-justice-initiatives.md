@@ -20,13 +20,13 @@ The [Data Driven Justice Initiative](https://www.whitehouse.gov/datadrivenjustic
 
 <div class="row">
 	<div class="col-xs-12 col-sm-3">
-		<img alt="Clarence Wardell of the US Digital Services team at the White House" src="src-the-police-data-and-data-drive-justice-initiatives/clarence-wardell.png" />
+		<img alt="Clarence Wardell of the US Digital Services team at the White House" src="src-the-police-data-and-data-driven-justice-initiatives/clarence-wardell.png" />
 	</div>
 	<div class="col-xs-12 col-sm-9">
 		Clarence Wardell III is a member of the U.S. Digital Service team at the White House, and was previously a Presidential Innovation Fellow.  As a fellow he worked with the U.S. Department of Energy and the White House on open data initiatives.  He co-organized and lead the White House Police Data Initiative, which is the topic I invited him here to discuss today.
 	</div>
 	<div class="col-xs-12 col-sm-3">
-		<img alt="Kelly Jin of the White House Office of Science and Technology Policy" src="src-the-police-data-and-data-drive-justice-initiatives/kelly-jin.png" />
+		<img alt="Kelly Jin of the White House Office of Science and Technology Policy" src="src-the-police-data-and-data-driven-justice-initiatives/kelly-jin.png" />
 	</div>
 	<div class="col-xs-12 col-sm-9">
 		Kelly Jin serves as policy advisor to the U.S. Chief Technology Officer and the Chief Data Scientist in the White House Office of Science and Technology Policy. Previously, Kelly served as Citywide Analytics Manager at the City of Boston and helped build and co-led Boston's Analytics Team. In her current role, she's helping to scale the President's Data-Driven Justice (DDJ) initiative, which I've invited her here to discuss today.
