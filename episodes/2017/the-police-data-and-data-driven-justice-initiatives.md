@@ -28,6 +28,9 @@ The [Data Driven Justice Initiative](https://www.whitehouse.gov/datadrivenjustic
 		Clarence Wardell III is a member of the U.S. Digital Service team at the White House, and was previously a Presidential Innovation Fellow.  As a fellow he worked with the U.S. Department of Energy and the White House on open data initiatives.  He co-organized and lead the White House Police Data Initiative, which is the topic I invited him here to discuss today.
 	</div>
 </div>
+
+<div class="clear" />
+
 <div class="row">
 	<div class="col-xs-12 col-sm-3">
 		<img alt="Kelly Jin of the White House Office of Science and Technology Policy" src="src-the-police-data-and-data-driven-justice-initiatives/kelly-jin.png" />
