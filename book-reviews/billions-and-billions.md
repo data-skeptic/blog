@@ -1,6 +1,6 @@
 ## Billions and Billions by Carl Sagan
 
-Given the name of my website, its quite bayesian to infer that I'm a fan of Carl Sagan.  I believe most people recognize him by name even if they're not familiar with his body of work.  As Carl discusses in the opening, the very title "Billions and Billions" is probably the phrase the most quickly evokes thoughts of Carl.  If the creators of the game Taboo had used Carl as the object to be guessed, surly "billions" would be the first restricted word, likely followed by "Johnny Carson", "Voyager", "Cosmos", and I would hope "skeptic".
+Given the name of my website, its quite bayesian to infer that I'm a fan of Carl Sagan.  I believe most people recognize him by name even if they're not familiar with his body of work.  As Carl discusses in the opening, the very title "Billions and Billions" is probably the phrase the most quickly evokes thoughts of Carl.  If the creators of the game Taboo had used Carl as the object to be guessed, surely "billions" would be the first restricted word, likely followed by "Johnny Carson", "Voyager", "Cosmos", and I would hope "skeptic".
 
 Although his achievements as a science communicator are widely known, I'm not certain as large of the population knows the importance Carl has in the skeptical movement.  While this book does belong in the "armchair science reading" section of a good bookstore, it's themes are not entirely those one would expect knowing Carl's most prominent works.
 
