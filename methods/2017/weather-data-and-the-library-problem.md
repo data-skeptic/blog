@@ -20,7 +20,7 @@ Yet some integration is required.  That takes time, and time has a cost which we
 
 The librarian can make a decision based on a model which does not include the weather forecast as a signal.  We'll call that the uninformed decision $D_u$.  The librarian might also have access to a theoretically superior model which does use the weather data and make a more informed decision $D_i$ based on that prediction.
 
-Let a function $U$ exist which calculates the expected utility (perhaps dollars saved) for each decision $D_*$.  In other words $U : D_* \rightarrow \mathbb{R}$.
+Let a function $U$ exist which calculates the expected utility (perhaps dollars saved) for each decision $D_x$.  In other words $U : D_x \rightarrow \mathbb{R}$.
 
 I'm going to skip over some important decision theory about those decisions, but it might be worth a follow up post on the subject.
 
