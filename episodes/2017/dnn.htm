@@ -1,0 +1,210 @@
+<html>
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js"></script>
+</head>
+<body>
+<svg id="nn-container"></svg>
+<script>
+drawCircle = function(c, centerX, centerY, radius, weight, clickable) {
+	var id = centerX + ":" + centerY
+	var mask = "#00?"
+	if (weight < 0) {
+		mask = "#?00"
+		weight *= -1
+	}
+	var h = Math.floor(15 * weight).toString(16)
+	var fill = mask.replace("?", h)
+	c.append("circle").attr("id", id).attr("class", "node").attr("fill", fill).attr("cx", centerX).attr("cy", centerY).attr("r", radius);
+	if (clickable) {
+		var circle = document.getElementById(id)
+		circle.addEventListener('click', function(e) {
+			// Update some variable instead and re-render
+			var id = e.target.id
+			var fill = circle.getAttribute("fill")
+			if (fill == "#000") {
+				circle.setAttribute("fill", "#fff")
+			} else {
+				circle.setAttribute("fill", "#000")
+			}
+		})		
+	}
+}
+drawLine = function(c, start, end, radius) {
+	var x1 = start.x + radius
+	var y1 = start.y
+	var x2 = end.x - radius
+	var y2 = end.y
+	c.append("line").attr("class", "edge").attr("x1", x1).attr("y1", y1).attr("x2", x2).attr("y2", y2)
+}
+drawText = function(c, x, y, s, align) {
+	var t = c.append('text').attr("class", "label").attr("x", x).attr("y", y).attr("text-anchor", align).text(s)
+}
+
+dotProduct = function(v1, v2) {
+	var res = []
+	for (var i=0; i < v1.length; i++) {
+		var val = v1[i] * v2[i]
+		res.push(val)
+	}
+	return res
+}
+
+sum = function(arr) {
+	var s = 0
+	for (var i=0; i < arr.length; i++) {
+		s += arr[i]
+	}
+	return s
+}
+
+bound = function(x) {
+	var y = 1.0 / (1 + Math.exp(-10 * x))
+	y = y * 2 - 1
+	return y
+}
+
+generateWeights = function(nn, inputs) {
+	var layers = []
+	var prev_layer = inputs
+	for (var i=0; i < nn.hidden.length + 1; i++) {
+		var weights = nn.weights[i]
+		var nodes = weights.length
+		var layer = []
+		for (var n=0; n < nodes; n++) {
+			var out = bound(sum(dotProduct(prev_layer, weights[n])))
+			layer.push(out)
+		}
+		layers.push(layer)
+		console.log([prev_layer, layer])
+		prev_layer = layer
+	}
+	return layers
+}
+
+drawNN = function(c, w, h, nn, inputs, hpadding, vpadding) {
+	var layers = nn.hidden.length + 2
+	var hspace = (w - 2 * hpadding) / layers
+	var allpositions = []
+	var radius = hspace/8
+	var weights = generateWeights(nn, inputs)
+	for (var i=0; i < layers; i++) {
+		var positions = []
+		var centerX = hspace/2 + i * hspace + hpadding
+		var nodes = 0
+		if (i==0) {
+			nodes = nn.inputs.length
+		} else if (i == layers-1) {
+			nodes = nn.outputs.length
+		} else {
+			nodes = nn.hidden[i-1]
+		}
+	    var vspace = h / nodes
+	    for (var j=0; j < nodes; j++) {
+		    var centerY = vspace/2 + j * vspace;
+		    var clickable = false
+		    if (i==0) {
+		    	clickable = true
+		    }
+		    var weight = 0
+		    if (i > 0) {
+			    weight = weights[i-1][j]
+		    } else {
+		    	weight = inputs[j]
+		    }
+		    var circle = drawCircle(c, centerX, centerY, radius, weight, clickable)
+		    positions.push({x: centerX, y: centerY})
+	    }
+	    allpositions.push(positions)
+	}
+	for (var i=0; i < layers-1; i++) {
+		var startCol = allpositions[i]
+		var nextCol = allpositions[i+1]
+		for (var j=0; j < startCol.length; j++) {
+			var start = startCol[j]
+			for (var k=0; k < nextCol.length; k++) {
+				var end = nextCol[k]
+				drawLine(c, start, end, radius)
+			}
+			if (i==0) {
+				var x = start.x - radius - 2
+				var y = start.y
+				var s = nn.inputs[j]
+				drawText(c, x, y, s, "end")
+			}
+		}
+	}
+	var i = allpositions.length-1
+	var startCol = allpositions[i]
+	for (var j=0; j < startCol.length; j++) {
+		var start = startCol[j]
+		var x = start.x + radius + 2
+		var y = start.y
+		var s = nn.outputs[j]
+		drawText(c, x, y, s, "start")
+	}
+}
+var nn = {
+	inputs:  ["Bacon", "Cheese", "Eggs", "Flour", "Lettuce", "Milk", "Oil", "Potatoe", "Spinach", "Sugar", "Tomatoe"],
+	hidden:  [5],
+	outputs: ["BLT", "Cake", "Grilled Cheese", "Ice Cream", "Loaded Baked Potatoe", "Mashed Potatoes", "Omlet", "Pizza", "Quesadilla", "Spanakopita"],
+	weights: [
+		[
+		//   bac  che  egg  flo  let  mlk  oil  pot  spi  sug  tom
+			[0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 ], // dairy
+			[0.0, 0.0, 0.2, 1.0, 0.0, 0.2, 0.4, 0.0, 0.0, 0.1, 0.0 ], // Bread
+			[-.5, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0 ], // Produce
+			[-.5, 0.0, 0.0, 0.0, 0.0, 0.0, -.5, 0.0, 1.0, 2.0, 0.0 ], // Sweet, not savory
+			[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ], // ?
+		],
+		[
+		//  dairy brea prod swee ?
+			[0.0, 1.0, 1.0, -1., 0.0],  // BLT
+			[0.0, 1.0, 0.0, 1.0, 0.0],  // Cake
+			[1.0, 1.0, 0.0, 0.0, 0.0],  // Grilled Cheese
+			[1.0, 0.0, 0.0, 1.0, 0.0],  // Ice Cream
+			[0.0, 0.0, 1.0, -1., 0.0],  // Loaded Baked Potatoe
+			[1.0, 0.0, 1.0, 0.0, 0.0],  // Masked Potatoes
+			[1.0, 0.0, 1.0, 0.0, 0.0],  // Omlet
+			[1.0, 1.0, 1.0, 0.0, 0.0],  // Pizza
+			[1.0, 1.0, 0.5, 0.0, 0.0],  // Quesadilla
+			[0.0, 1.0, 0.0, -.5, 0.0]   // Spanakopita
+		]
+	]
+}
+var c = d3.select("#nn-container")
+var w = 800
+var h = 800
+var hpadding = 50
+var vpadding = 2
+var inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+drawNN(c, w, h, nn, inputs, hpadding, vpadding)
+
+var inputs = [1,2,3,4]
+generateWeights(nn, inputs)
+</script>
+<style>
+#tutorial {
+	border:1px solid #000000;
+}
+#nn-container {
+	width: 800;
+	height: 800;
+}
+.node {
+	stroke: black;
+	stroke-width: 1;
+}
+.node-on {
+	stroke: red;
+}
+.edge {
+	stroke-width: 1;
+	stroke: black;
+}
+.label {
+	font-family: sans-serif;
+	font-size: 20px;
+}
+</style>
+</body>
+</html>
