@@ -5,27 +5,85 @@
 <body>
 <svg id="nn-container"></svg>
 <script>
-drawCircle = function(c, centerX, centerY, radius, weight, clickable) {
-	var id = centerX + ":" + centerY
+
+var v = 1
+var nn = {
+	inputs:  ["Carrots", "Cheese", "Eggs", "Flour", "Gravy", "Milk", "Potatoes", "Sugar", "Tomatoes", "Yeast"],
+	hidden:  [4],
+	outputs: ["Cake", "Ice Cream", "Omlet (Veggie)", "Pizza", "Poutine", "Veggie Pot Pie"],
+	weights: [
+		[
+		//   car  che  egg  flr  gra  mlk  pot  sug  tom  yea
+			[0.0, 1.0, 1.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0 ], // dairy
+			[0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 ], // Bread
+			[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0 ], // Produce
+			[0.0, 0.0, 0.0, 0.0, -1., 0.0, 0.0, 1.0, 0.0, 0.0 ], // Sweet/Savory
+		],
+		[
+		//  dairy brea prod sws 
+			[v/5,  3*v, -2*v, v/5],  // Cake
+			[2*v, -5*v, -v,  2*v],  // Ice Cream
+			[v, -2*v,  v,  -v],  // Omlet
+			[v,  v,  v, -2*v],  // Pizza
+			[v, -2*v,  v, -5*v],  // Poutine
+			[-2*v,  v,  v, -v]   // Veggie Pot Pie
+		]
+	]
+}
+
+var inputs = [0, 0, 0, 0, 0, 1, 0, 1, 0, 0]
+
+manageClick = function(id) {
+	var circle = document.getElementById(id)
+	var fill = circle.getAttribute("fill")
+	if (fill == "#000") {
+		circle.setAttribute("fill", "#fff")
+	} else {
+		circle.setAttribute("fill", "#000")
+	}
+
+	var pos = id.split(":")[1]
+	console.log("--------")
+	inputs[pos] = inputs[pos] * -1 + 1
+	var weights = generateWeights(nn, inputs)
+	console.log(weights[0])
+	console.log(weights[1])
+	for (var i=0; i < weights.length; i++) {
+		var col = weights[i]
+		for (var j=0; j < col.length; j++) {
+			var label = (i+1) + ":" + j
+			var weight = weights[i][j]
+			var mask = "#???"
+			if (weight < 0) {
+				mask = "#?00"
+				weight *= -1
+			}
+			var h = Math.floor(15 * weight).toString(16)
+			var fill = mask.replace("?", h).replace("?", h).replace("?", h)
+			var node = document.getElementById(label)
+			console.log([label, fill])
+			node.setAttribute("fill", fill)
+
+		}
+	}
+}
+
+drawCircle = function(c, label, centerX, centerY, radius, weight, clickable) {
+	var id = label
 	var mask = "#00?"
 	if (weight < 0) {
 		mask = "#?00"
 		weight *= -1
 	}
 	var h = Math.floor(15 * weight).toString(16)
-	var fill = mask.replace("?", h)
+	var fill = mask.replace("?", h).replace("?", h).replace("?", h)
 	c.append("circle").attr("id", id).attr("class", "node").attr("fill", fill).attr("cx", centerX).attr("cy", centerY).attr("r", radius);
 	if (clickable) {
 		var circle = document.getElementById(id)
 		circle.addEventListener('click', function(e) {
 			// Update some variable instead and re-render
 			var id = e.target.id
-			var fill = circle.getAttribute("fill")
-			if (fill == "#000") {
-				circle.setAttribute("fill", "#fff")
-			} else {
-				circle.setAttribute("fill", "#000")
-			}
+			manageClick(id)
 		})		
 	}
 }
@@ -57,13 +115,14 @@ sum = function(arr) {
 	return s
 }
 
-bound = function(x) {
+activation = function(x) {
 	var y = 1.0 / (1 + Math.exp(-10 * x))
 	y = y * 2 - 1
 	return y
 }
 
 generateWeights = function(nn, inputs) {
+	console.log(inputs)
 	var layers = []
 	var prev_layer = inputs
 	for (var i=0; i < nn.hidden.length + 1; i++) {
@@ -71,11 +130,11 @@ generateWeights = function(nn, inputs) {
 		var nodes = weights.length
 		var layer = []
 		for (var n=0; n < nodes; n++) {
-			var out = bound(sum(dotProduct(prev_layer, weights[n])))
+			var dp = dotProduct(prev_layer, weights[n])
+			var out = activation(sum(dp))
 			layer.push(out)
 		}
 		layers.push(layer)
-		console.log([prev_layer, layer])
 		prev_layer = layer
 	}
 	return layers
@@ -85,8 +144,9 @@ drawNN = function(c, w, h, nn, inputs, hpadding, vpadding) {
 	var layers = nn.hidden.length + 2
 	var hspace = (w - 2 * hpadding) / layers
 	var allpositions = []
-	var radius = hspace/8
+	var radius = hspace/12
 	var weights = generateWeights(nn, inputs)
+	console.log(weights)
 	for (var i=0; i < layers; i++) {
 		var positions = []
 		var centerX = hspace/2 + i * hspace + hpadding
@@ -111,7 +171,8 @@ drawNN = function(c, w, h, nn, inputs, hpadding, vpadding) {
 		    } else {
 		    	weight = inputs[j]
 		    }
-		    var circle = drawCircle(c, centerX, centerY, radius, weight, clickable)
+	    	var label = i + ":" + j
+		    var circle = drawCircle(c, label, centerX, centerY, radius, weight, clickable)
 		    positions.push({x: centerX, y: centerY})
 	    }
 	    allpositions.push(positions)
@@ -127,7 +188,7 @@ drawNN = function(c, w, h, nn, inputs, hpadding, vpadding) {
 			}
 			if (i==0) {
 				var x = start.x - radius - 2
-				var y = start.y
+				var y = start.y + radius/3
 				var s = nn.inputs[j]
 				drawText(c, x, y, s, "end")
 			}
@@ -138,48 +199,19 @@ drawNN = function(c, w, h, nn, inputs, hpadding, vpadding) {
 	for (var j=0; j < startCol.length; j++) {
 		var start = startCol[j]
 		var x = start.x + radius + 2
-		var y = start.y
+		var y = start.y + radius/3
 		var s = nn.outputs[j]
 		drawText(c, x, y, s, "start")
 	}
 }
-var nn = {
-	inputs:  ["Bacon", "Cheese", "Eggs", "Flour", "Lettuce", "Milk", "Oil", "Potatoe", "Spinach", "Sugar", "Tomatoe"],
-	hidden:  [5],
-	outputs: ["BLT", "Cake", "Grilled Cheese", "Ice Cream", "Loaded Baked Potatoe", "Mashed Potatoes", "Omlet", "Pizza", "Quesadilla", "Spanakopita"],
-	weights: [
-		[
-		//   bac  che  egg  flo  let  mlk  oil  pot  spi  sug  tom
-			[0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 ], // dairy
-			[0.0, 0.0, 0.2, 1.0, 0.0, 0.2, 0.4, 0.0, 0.0, 0.1, 0.0 ], // Bread
-			[-.5, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0 ], // Produce
-			[-.5, 0.0, 0.0, 0.0, 0.0, 0.0, -.5, 0.0, 1.0, 2.0, 0.0 ], // Sweet, not savory
-			[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ], // ?
-		],
-		[
-		//  dairy brea prod swee ?
-			[0.0, 1.0, 1.0, -1., 0.0],  // BLT
-			[0.0, 1.0, 0.0, 1.0, 0.0],  // Cake
-			[1.0, 1.0, 0.0, 0.0, 0.0],  // Grilled Cheese
-			[1.0, 0.0, 0.0, 1.0, 0.0],  // Ice Cream
-			[0.0, 0.0, 1.0, -1., 0.0],  // Loaded Baked Potatoe
-			[1.0, 0.0, 1.0, 0.0, 0.0],  // Masked Potatoes
-			[1.0, 0.0, 1.0, 0.0, 0.0],  // Omlet
-			[1.0, 1.0, 1.0, 0.0, 0.0],  // Pizza
-			[1.0, 1.0, 0.5, 0.0, 0.0],  // Quesadilla
-			[0.0, 1.0, 0.0, -.5, 0.0]   // Spanakopita
-		]
-	]
-}
+
 var c = d3.select("#nn-container")
 var w = 800
 var h = 800
 var hpadding = 50
 var vpadding = 2
-var inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 drawNN(c, w, h, nn, inputs, hpadding, vpadding)
 
-var inputs = [1,2,3,4]
 generateWeights(nn, inputs)
 </script>
 <style>
