@@ -4,6 +4,8 @@ Prior work has shown that people's response to competition is in part predicted 
 
 Our discussion centers around [Gender, Competition and Performance: Evidence from Real Tournaments](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2858984) from Backus, Cubel, Guid, Sanchez-Pages, and Mañas.  A summary of their paper can also be found [here](http://voxeu.org/article/women-competitive-environments-evidence-expert-chess).
 
+<br/><br/><br/>
+
 <div class="row">
 	<div class="col-xs-12 col-sm-3">
 		<img alt="Peter Backus" src="src-studying-competition-and-gender-through-chess/peter-backus.jpg" />
