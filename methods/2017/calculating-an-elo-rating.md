@@ -24,7 +24,7 @@ Once the outcome is known, the updated Elo rating $r'_i$ is given by:
 
 $r'_i = r_i + K \cdot \big(S_i - E_i \big)$
 
-Notice how this hinges on the expectation of a win $E_i$.  If the game is expected to be a fair match (equally skilled competitors, $E_i=0.5$) then we should expect a draw ($S_i=0.5) as a common outcome, which would not update the score.
+Notice how this hinges on the expectation of a win $E_i$.  If the game is expected to be a fair match (equally skilled competitors, $E_i=0.5$) then we should expect a draw ($S_i=0.5$) as a common outcome, which would not update the score.
 
 Similarily, a chess novice competing against a grand master would have a very low expectation of winning, so a loss would only come with the expense of a few points.  A win, on the other hand, would provide a huge difference, and thus, earn the upstart player $K$ points.  A finite value of $K$ also means that a new prodigy player must still engage in many matches to raise their score.
 
