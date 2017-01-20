@@ -14,7 +14,7 @@ Our discussion centers around [Gender, Competition and Performance: Evidence fro
 		<p><a href="https://twitter.com/awesomnomics">@awesomnomics</a></p>
 	</div>
 	<div class="col-xs-12 col-sm-9">
-		Peter Backus has a PhD in economics and is currently a Lecturer in Economics at the University of Manchester and a Fellow at the Institut d'Economia de Barcelona (IEB).  Peter is also a former guest of the show from back in 2014 when we discussed the economics of charitable giving and other interesting economic topics.  His research has covered topics including the economics of charities, the private provisioning of public goods, and the study of gender differences in competition.
+		[Peter Backus](http://www.manchester.ac.uk/research/peter.backus/) has a PhD in economics and is currently a Lecturer in Economics at the University of Manchester and a Fellow at the Institut d'Economia de Barcelona (IEB).  Peter is also a former guest of the show from back in 2014 when we discussed the economics of charitable giving and other interesting economic topics.  His research has covered topics including the economics of charities, the private provisioning of public goods, and the study of gender differences in competition.
 	</div>
 </div>
 
