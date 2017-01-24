@@ -14,7 +14,7 @@ To save you a rather long and frustrating story, eventually I developed a system
 
 ![](src-bees-lasers-and-machine-learning/tagged_bees.jpeg)
 
-This simple logic appeared to work alright during the first few days of filming, however as the reflective properties of the tags became duller over the course of an experiment, I quickly realised that I was going to need something a little more sophisticated to solve my problem. Basically the challenge had ceased to be a matter of identifying a dark shape on a bright background, but identifying a dark shape on a slighter less dark background.
+This simple logic appeared to work alright during the first few days of filming, however as the reflective properties of the tags became duller over the course of an experiment, I quickly realised that I was going to need something a little more sophisticated to solve my problem. Basically the challenge had ceased to be a matter of identifying a dark shape on a bright background, but identifying a dark shape on a slightly less dark background.
 
 At this stage machine learning was merely a fancy term that I had seen mentioned on a few blogs, but I started to try and learn more about it to see if it could use it to solve my tag classification problem. I made every mistake imaginable along the way. I ended up spending a while trying to train a lot of predictive models on the raw pixel intensities. I also didn’t take things like rotation into account, and because I was flattening the images to fit into a row in my dataframes, I was losing a lot of shape information too.
 
