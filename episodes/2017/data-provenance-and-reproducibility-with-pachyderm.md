@@ -6,6 +6,8 @@ During the show, Daniel mentioned the [Gopher Data Science](https://github.com/g
 
 Supplemental music is [Lee Rosevere's](https://twitter.com/LeeRosevere) [Let's Start at the Beginning](https://www.youtube.com/watch?v=7MeY-EdcAzc).
 
+<br/>
+
 <a href="https://www.periscopedata.com/skeptics"><img alt="Periscope Data" src="src-data-provenance-and-reproducibility-with-pachyderm/periscope-data.jpg" /></a>
 
 Thanks to Periscope Data for sponsoring this episode.  More about them at [periscopedata.com/skeptics](https://www.periscopedata.com/skeptics)
@@ -21,6 +23,6 @@ Thanks to Periscope Data for sponsoring this episode.  More about them at [peris
 		<p><a href="https://twitter.com/dwhitena">@dwhitena</a></p>
 	</div>
 	<div class="col-xs-12 col-sm-9">
-		[Daniel Whitenack](https://www.linkedin.com/in/danielwhitenack) has a PhD in computation physics from Purdue University.  He's worked in a diverse set of industries developing data science applications and is a frequent speaker at conferences.  He's the maintainer of the Go kernel for Project Jupyter and is presently a data scientist at lead developer advocate at [Pachyderm Inc](http://pachyderm.io/).  Daniel also teaches corporate and public data science and engineering courses with [Arden Labs](https://www.ardanlabs.com/).
+		<a href="https://www.linkedin.com/in/danielwhitenack">Daniel Whitenack</a> has a PhD in computation physics from Purdue University.  He's worked in a diverse set of industries developing data science applications and is a frequent speaker at conferences.  He's the maintainer of the Go kernel for Project Jupyter and is presently a data scientist at lead developer advocate at <a href="http://pachyderm.io/">Pachyderm Inc</a>.  Daniel also teaches corporate and public data science and engineering courses with <a href="https://www.ardanlabs.com/">Arden Labs</a>.
 	</div>
 </div>
