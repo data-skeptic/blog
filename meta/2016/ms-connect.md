@@ -35,9 +35,9 @@
 			</div>
 			<div class="col-xs-12 col-sm-6 tbd">
 				<br/>
-				Coming back on Feb 24
+				Coming on Feb 17th,
 				<br/>
-				for our interview with
+				our interview with
 				<br/>
 				Raghu Ramakrishnan!
 			</div>
