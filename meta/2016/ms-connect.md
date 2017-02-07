@@ -31,7 +31,7 @@
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<iframe style="border: solid 1px #dedede;"  src="https://app.stitcher.com/splayer/f/50561/48491856" width="100%" height="250" frameborder="0" scrolling="no"></iframe>
+				<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/4900119/height/90/width/250/theme/custom/autonext/no/thumbnail/yes/autoplay/no/preload/no/no_addthis/no/direction/backward/no-cache/true/render-playlist/no/custom-color/87A93A/" height="90" width="250" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 			</div>
 			<div class="col-xs-12 col-sm-6 tbd">
 				<br/>
