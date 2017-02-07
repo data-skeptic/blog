@@ -4,15 +4,15 @@
 	background-color: #fff;
 }
 .tbd {
-	align: center;
-	font-size: 14pt;
-	padding: 20px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #222;
-	height: 125px;
-	text-align: center;
-	background-color: #ddd;
+    align: center;
+    font-size: 12pt;
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #222;
+    height: 107px;
+    text-align: center;
+    background-color: #ddd;
 }
 .ep1 {
 	border-style: solid;
