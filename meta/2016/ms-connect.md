@@ -35,7 +35,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-6 tbd">
 				<br/>
-				Coming back on Feb ??
+				Coming back on Feb 24
 				<br/>
 				for our interview with
 				<br/>
@@ -49,11 +49,10 @@
 		<br/><br/>
 
 		<div class="row">
-			<div class="col-xs-1"></div>
-			<div class="col-xs-10 col-sm-5">
+			<div class="col-xs-12 col-sm-6">
 				<iframe width="100%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/298977904&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 			</div>
-			<div class="col-xs-10 col-sm-5">
+			<div class="col-xs-12 col-sm-6">
 				<iframe width="100%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/298981714&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 			</div>
 		</div>
