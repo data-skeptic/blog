@@ -3,18 +3,21 @@
 .mscmain {
 	background-color: #fff;
 }
-.aest {
-}
 .tbd {
 	align: center;
-	font-size: 18pt;
+	font-size: 14pt;
 	padding: 20px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #222;
-	height: 250px;
+	height: 125px;
 	text-align: center;
 	background-color: #ddd;
+}
+.ep1 {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #222;
 }
 </style>
 
@@ -30,7 +33,7 @@
 		<p>We recorded several interviews while there and are releasing two episodes of content.  Check them out below, as well as a few extras!</p>
 
 		<div class="row">
-			<div class="col-xs-12 col-sm-6">
+			<div class="col-xs-12 col-sm-6 ep1">
 				<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/4900119/height/90/width/250/theme/custom/autonext/no/thumbnail/yes/autoplay/no/preload/no/no_addthis/no/direction/backward/no-cache/true/render-playlist/no/custom-color/87A93A/" height="90" width="250" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 			</div>
 			<div class="col-xs-12 col-sm-6 tbd">
