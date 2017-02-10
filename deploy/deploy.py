@@ -17,6 +17,7 @@ import nbformat
 from nbconvert import HTMLExporter
 import hashlib
 import datetime
+import BeautifulSoup as soup
 import rpy2.robjects as robjects
 
 def unzip(source_filename, dest_dir):
@@ -83,16 +84,13 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
 
 def get_title(absfilename, contents):
     lcontents = contents.lower()
-    i = -1
     c = 1
-    while i==-1 and c < 6:
-        otag = '<h' + str(c) + '>'
-        ctag = '</h' + str(c) + '>'
-        i = lcontents.find(otag)
-        j = lcontents.find(ctag)
+    b = soup.BeautifulSoup(contents)
+    while c < 6:
+        tag = b.find('h' + str(c))
+        if tag != None:
+            return tag.text.replace('&#182;', '')
         c += 1
-    if i >= 0:
-        return contents[i+len(otag):j]
     i = absfilename.rfind('/')
     j = absfilename.rfind('.')
     fname = absfilename[i+1:j]
@@ -216,6 +214,7 @@ def execute_plan(plan, s3, bucket, table, env):
                         'rendered': s3key,
                         'title': title
                     }
+            print ritem
             x = os.path.basename(s3key)
             a = s3key.rfind('/')
             b = s3key.rfind('.')
