@@ -1,6 +1,6 @@
 A number of controversies related to retractions in academic journals have occurred in recent years.  Two in particular come to mind.
 
-I recall the case of Michael LaCour, whose result showed that people reported less opposition or discrimination with regard to homosexuals if they had interacted with an out person.  When other researchers attempted to replicate this, they didn't find the result.  When they asked to see his data, LaCour was unable to produce the original survey data.  The paper on which he was a co-author was retracted, as it should have been.
+I recall the case of Michael LaCour, whose work claimed that people who interacted with a gay person were less likely to oppose gay marriage.  When other researchers attempted to replicate this, they didn't find the result.  When they asked to see his data, LaCour was unable to produce the original survey data.  The paper on which he was a co-author was retracted, as it should have been.
 
 Similarly, though more damaging, is the case of Andrew Wakefield whose cherry picked study falsely asserted a link between vacines and autism (a claim which still has no evidence to support it).  Wakefield also failed to disclose he had an interest in a competitive vaccine method, thus presenting a significant conflict of interest.  His paper was also retracted, as it should have been.
 
