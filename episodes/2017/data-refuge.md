@@ -13,6 +13,7 @@ References to things mentioned in the show:
 * bit rot
 * CKAN
 * https://datproject.org/
+* https://en.wikipedia.org/wiki/BagIt
 
 
 <br/><br/><br/>
