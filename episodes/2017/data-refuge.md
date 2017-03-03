@@ -12,7 +12,7 @@ The cornerstone of DataRefuge is its documentation of a clear "chain of custody.
 
 Verification of the data is also done in a series of steps to ensure that the data is useable and trustworthy. After a dataset is harvested, it gets checked against the original source copy of the data and makes sure it is complete. Then, digital preservation experts inspect the dataset again to make sure that the content is correct and reflects the right information. The data gets packaged into a [bagit](https://en.wikipedia.org/wiki/BagIt) file (or "bag") so that any future changes will be recognizable in the future. The bagit files move to describers who spot check for errors and then create a descriptive record in the [DataRefuge CKAN repository](https://github.com/datarefuge/ckanext-datarefuge_theme) for each baglinks. After adding more metadata, the describes make the record public.
 
-A larger version of DataRefuge is a controlled collection of public scientific datasets under the codenamed [Project Svalbard](https://github.com/datproject/svalbard), which takes the name of the underground backup library of plant DNA located in the Svalbard Global Seed Vault in the Arctic.Project Svalbard uses the peer-to-peer data-sharing tools created by the [Dat Project](https://datproject.org/). 
+A related project to DataRefuge is [Project Svalbard](https://github.com/datproject/svalbard), a controlled collection of public scientific datasets under the codenamed.  It which takes the name of the underground backup library of plant DNA located in the Svalbard Global Seed Vault in the Arctic.  Project Svalbard also uses the peer-to-peer data-sharing tools created by the [Dat Project](https://datproject.org/). 
 
 
 References to things mentioned in the show:
