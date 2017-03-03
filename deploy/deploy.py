@@ -133,7 +133,10 @@ def execute_plan(plan, s3, bucket, table, env):
     summary = []
     now = datetime.datetime.now()
     n = now.strftime('%Y-%m-%d')
-    tomorrow = now + datetime.timedelta(days=1)
+    if env != 'dev':
+        tomorrow = now + datetime.timedelta(days=1)
+    else:
+        tomorrow = now
     publish_date = tomorrow.strftime('%Y-%m-%d')
     for item in plan:
         parser = item['parser']
@@ -273,6 +276,7 @@ def md(absfile):
     c = f.read()
     f.close()
     if type(c) == str:
+        c = c.replace('\x91', '`')
         c = c.replace('\x92', '\'')
         c = c.replace('\x93', '"')
         c = c.replace('\x94', '"')
