@@ -276,6 +276,13 @@ def md(absfile):
     c = f.read()
     f.close()
     if type(c) == str:
+        c = c.replace('\xe2\x80\x9c', '"')
+        c = c.replace('\xe2\x80\x99', "'")
+        c = c.replace('\xe2\x80\x9d', '"')
+        c = c.replace('\xe2\x80\x93', "-")
+        c = c.replace('\xe2\x80\x98', "'")
+        c = c.replace('\xe2\x80\x94', "-")
+        
         c = c.replace('\x91', '`')
         c = c.replace('\x92', '\'')
         c = c.replace('\x93', '"')
