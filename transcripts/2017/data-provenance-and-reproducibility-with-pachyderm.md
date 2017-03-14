@@ -118,9 +118,9 @@ To get started, it’s actually just a few commands to deploy Pachyderm locally 
 
 **Host:** So pretty much every company I’ve ever consulted for has a unique mix of different persistent layer technologies or databases or whatever the case maybe in languages and who knows what else in terms of architecture. What is Pachyderm compatible with? 
 
-**Daniel:** Well, Pachyderm is powered by the container ecosystem, and so its language and framework agnostic. In other words, you can do Python, Java, Scala, **Go, R, MATLAB**, whatever sort of analyses you want within Pachyderm. But as far as what it’s backed by the technology that it’s backed by, Pachyderm runs on top of Kubernetes, which if people aren’t familiar, that’s an open-source orchestration framework from Google that basically allows you to distribute container-based processing over a cluster. 
+**Daniel:** Well, Pachyderm is powered by the container ecosystem, and so its language and framework agnostic. In other words, you can do Python, Java, Scala, Go, R, MATLAB, whatever sort of analyses you want within Pachyderm. But as far as what it’s backed by the technology that it’s backed by, Pachyderm runs on top of Kubernetes, which if people aren’t familiar, that’s an open-source orchestration framework from Google that basically allows you to distribute container-based processing over a cluster. 
 
-Data that’s stored in Pachyderm in this data versioning scheme that I mentioned that’s backed by any object store of your choice so it could S3 or GFS or even an on-premises solution or custom solution. We just implemented **a menu client** which is basically supports any S3 compatible object store. 
+Data that’s stored in Pachyderm in this data versioning scheme that I mentioned that’s backed by any object store of your choice so it could S3 or GFS or even an on-premises solution or custom solution. We just implemented a client which is basically supports any S3 compatible object store. 
 
 So there are a lot of options as far as compatibility. But I think one of the main things that I really enjoyed as a data scientist is you can utilize all these languages and frameworks so you don’t have to restrict yourself to only one. 
 
@@ -152,7 +152,7 @@ And even in scenarios where let’s say that your data got corrupted and you com
 
 **Daniel:** Yeah. So in Pachyderm, actually the language mirrors that of Git although the actual file structure is slightly different but the language is similar. So you make commits into a repository and then you have a list of those commits over time. 
 
-And combined with this provenance thing, like let’s say in that scenario where a certain forecast created a certain bad result, you can issue a command called **“flash commit.”** Basically, what that tells you is what the commit was that produced that bad result that you ended up with so you can see that’s part of the provenance sort of thing. 
+And combined with this provenance thing, like let’s say in that scenario where a certain forecast created a certain bad result, you can issue a command called “flash commit.” Basically, what that tells you is what the commit was that produced that bad result that you ended up with so you can see that’s part of the provenance sort of thing. 
 
 So then you can go back and say, “Well, it was this commit that happened. What was the commit before that?” And then what you can do is roll back your data to that previous commit and update your analyses so that it’s like you’re going back in time to that previous snapshot. There is a lot of tooling around that currently in place and then we’re continually adding new things in the newest release in 1.4, which will be in March, there’s going to be even more tooling around those sorts of interactions. 
 
