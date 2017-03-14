@@ -78,7 +78,7 @@ So I think it’s definitely a piece of the puzzle at the same time. I had a fri
 
 *Host: So I’m going to personalize your dashboard and that’s going to be really easy using their tool. So I was glad I could share this with you so you could see firsthand now. But Periscope Data isn’t just for like one analyst working in isolation. It’s really great for a data teams and for collaboration.* 
 
-*Linda: Head to PeriscopeData.com/Skeptics to start a totally free trial. If you sign up at [PeriscopeData.com/Skeptics](www.periscopedata.com/skeptics), you will receive one of their famous Periscope Data mugs.* 
+*Linda: Head to PeriscopeData.com/Skeptics to start a totally free trial. If you sign up at [PeriscopeData.com/Skeptics](http://www.periscopedata.com/skeptics), you will receive one of their famous Periscope Data mugs.* 
 
 *Host: Yes. And in addition to that mug, they will send you a bag of coffee so you can work as fast as they do. I really appreciate Periscope Data support this week. Their tool has helped me out a lot. I think it can help you out too. If you’re part of a data team that does rapid data exploration and you want to go straight from sequel into charts in a nice dashboard and things like that, head on over PeriscopeData.com/Skeptics to learn more.* 
 
@@ -240,6 +240,6 @@ And yeah, I appreciate being here. It has been a great conversation. And I’ll 
 
 **Daniel:** Great. Yeah. Hope it goes well and we definitely value feedback from the community. That’s what we’re looking for right now. I’m so excited to see all the things going on with it. 
 
-**Host**: Thanks again to Periscope Data for sponsoring this episode. More about them at [PeriscopeData.com/Skeptics](www.periscopedata.com/skeptics). And that will be on the show notes as well. 
+**Host**: Thanks again to Periscope Data for sponsoring this episode. More about them at [PeriscopeData.com/Skeptics](http://www.periscopedata.com/skeptics). And that will be on the show notes as well. 
 
-**Outro:** Data Skeptic is a listener-supported program. To support the show, visit [DataSkeptic.com](www.dataskeptic.com) and click on the membership tab.
+**Outro:** Data Skeptic is a listener-supported program. To support the show, visit [DataSkeptic.com](https://dataskeptic.com) and click on the membership tab.
