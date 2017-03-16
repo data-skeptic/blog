@@ -1,3 +1,5 @@
+## IP Address Honeypot
+
 On a recent episode of the [Criminal podcast](http://thisiscriminal.com/episode-61-vanish-2-17-2017/), they mentioned an interesting case I was unaware of.  Apparently, [Patrick McDermott](https://en.wikipedia.org/wiki/Patrick_McDermott), in a presumed attempt to escape debt, faked his own death and fled to Mexico.  From the Wikipedia page, it sounds like there may be some doubt about whether or not he is alive, however, a detail in the case is particularly interesting to me.
 
 Dateline NBC set up a (now defunct) website called FindPatrickMcDermott.com.  They promoted this site on their TV program and elsewhere, encouraging anyone to contirbute anonymous tips about Mr. McDermott's possible whereabouts.  I'm not aware of any useful leads they had submitted, however, like most websites, their webserver logged metadata about all incoming requests.
