@@ -31,17 +31,17 @@ But what will your opponent do?  If they trust that you are behaving randomly, t
 
 Granted, if one person *does* deviate, the other has some incentive to deviate as well.  The idea of an equilibria is based upon this argueably shakey position.  An equilibria is based on the strategies selected by *all* participants.  The equilibria does not specify how anyone should behave if a player chooses to engage in off-equilibria play.  In this sense, game theory is incomplete.  It doesn't fully specify the decisions an agent needs to make outside the equilibria itself.  That's probably a topic for another blog post, however.  Let's get back to why the Vickery auction is compelling.
 
-The bid a participant choses to offer can be categorized into three buckets.  Let us first define $V_i$ to represent agent $i$'s true valuation $V$ of the auctioned item.  Let us define the bid of agent $i$ to be $b_i$.  This gives us strategies for which $b_i < V_i$, $b_i = V_i$, and $b_i > V_i$.  Let's explore each case.
+The bid a participant choses to offer can be categorized into three buckets.  Let us first define $V_i$ to represent agent $i$'s true valuation $V$ of the auctioned item.  Let us define the bid of agent $i$ to be $b_i$.  This gives us strategies for which $b_i \lt V_i$, $b_i = V_i$, and $b_i \gt V_i$.  Let's explore each case.
 
 First, we assume the auction mechanism is known.  A Vickery auction is a second place auction, meaning that the highest bidder wins, but they have to pay 0.01 more than the person who bid right below them.  If Kyle bids 10 and Linhda bids 8, then Kyle wins, but he must pay 8.01 to collect the prize.
 
-To analyze each outcome, lets think of ourselves as agent $i$, and we will either win or lose the auction.  In cases where we win, let's call the 2nd place bidder agent $h$.  In cases where we lose, let's call the winning bidder agent $j$.  This notation is a bit different from what you'd find in the literature, but a it is handy because $h < i < j$.
+To analyze each outcome, lets think of ourselves as agent $i$, and we will either win or lose the auction.  In cases where we win, let's call the 2nd place bidder agent $h$.  In cases where we lose, let's call the winning bidder agent $j$.  This notation is a bit different from what you'd find in the literature, but a it is handy because $h \lt i \lt j$.
 
-For strategies involving $b_i < V_i$ (underbidding), either $i$ will win or lose the auction.
+For strategies involving $b_i \lt V_i$ (underbidding), either $i$ will win or lose the auction.
 
-If you (agent $i$) wins, they pay $V_h$.  Since $i$ won the auction, we know that $V_i > V_h$, so regardless of what $b_i$ was, the cost is the same.  Thus, there is no incentive to raise your bid above the unknown value of $V_h$.
+If you (agent $i$) wins, they pay $V_h$.  Since $i$ won the auction, we know that $V_i \gt V_h$, so regardless of what $b_i$ was, the cost is the same.  Thus, there is no incentive to raise your bid above the unknown value of $V_h$.
 
-If instead, you (agent $i$) loses, then it means $b_i < b_j$.  Darn, you lost!  Did you offer a bid $b_i < V_i$?  That would be a stupid thing to do.  If you could have bid more but still less than or equal to your true valuation, then you'd have stood to benefit from winning the auction.
+If instead, you (agent $i$) loses, then it means $b_i \lt b_j$.  Darn, you lost!  Did you offer a bid $b_i \lt V_i$?  That would be a stupid thing to do.  If you could have bid more but still less than or equal to your true valuation, then you'd have stood to benefit from winning the auction.
 
 Thus, if you are underbidding you might miss out on potential wins that would have been profitable.  Even if you win while underbidding, you don't really benefit from it because the potential for "savings" doesn't exist since you pay a price that depends on your highest ranked competitor.
 
@@ -49,17 +49,17 @@ From the above arguement, we can establish that underbidding is irrational.  But
 
 Let's assume you're not likely to win the auction, could you somehow impose a cost on your winning opponent?  After all, if you are the second place bidder, then your opponent is going to pay a price that you set.  Wouldn't you want that to be as high as possible to exhaust their budget?
 
-Again, we have two possibilities.  Either you will win or you will lose.  If you happen to win, the definition of overbidding specifies that $b_i > V_i$.  In other words, you will leave the auction remorseful and feeling like you are worse off than when you arrived.  Thus, winning while overbidding is a disaster that backfires on you.
+Again, we have two possibilities.  Either you will win or you will lose.  If you happen to win, the definition of overbidding specifies that $b_i \gt V_i$.  In other words, you will leave the auction remorseful and feeling like you are worse off than when you arrived.  Thus, winning while overbidding is a disaster that backfires on you.
 
 How about overbidding and losing?  Yes, this could damage your opponent, but it's a strategy that is not without risk.  We should admit though, that there might be some benefit here, so let's put a pin in that and move on.
 
-The third and final possibility is bidding your true valuation (i.e. $b_i = V_i$), which I'm arguing is the optimal thing for you to do.  If you win the auction, then you pay price $b_h$.  Since $b_h \le b_i$, you at least got a fiar price, and maybe you got some savings if $b_h < b_i$.  If, instead you lose, then you net 0 from the process.  Although someone else won, you did not overpay.
+The third and final possibility is bidding your true valuation (i.e. $b_i = V_i$), which I'm arguing is the optimal thing for you to do.  If you win the auction, then you pay price $b_h$.  Since $b_h \le b_i$, you at least got a fiar price, and maybe you got some savings if $b_h \lt b_i$.  If, instead you lose, then you net 0 from the process.  Although someone else won, you did not overpay.
 
 So compare these two outcomes.
 
-When you bid your true valuation, you will, at worse, achive a wash, but at best, have some savings when $b_h < b_i$.
+When you bid your true valuation, you will, at worse, achive a wash, but at best, have some savings when $b_h \lt b_i$.
 
-However, if you bid $b_i > V_i$, then a loss brings you no added benefit (equivalent reward earned to winning when $b_i = V_i$).  In this sense, both bidding your true valuation and overbidding each have an outcome that is net zero.  However, if you happen to win when overbidding, you end up losing value.  The alternate case under the equilibria strategy could earn you some savings if the runner up has a value $b_h < b_i$.
+However, if you bid $b_i \gt V_i$, then a loss brings you no added benefit (equivalent reward earned to winning when $b_i = V_i$).  In this sense, both bidding your true valuation and overbidding each have an outcome that is net zero.  However, if you happen to win when overbidding, you end up losing value.  The alternate case under the equilibria strategy could earn you some savings if the runner up has a value $b_h \lt b_i$.
 
 What's better, some chance of no value with some chance of savings, or some chance of no value with some chance of losing money?  It seems of your three options, underbidding, overbidding, or bidding your true value, the best results are likely to be achieved when bidding your true value.
 
