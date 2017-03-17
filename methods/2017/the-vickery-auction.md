@@ -1,5 +1,6 @@
 ## The Vickery Auction
 
+
 In tomorrow's episode of the podcast, I'll be discussing online ad auction markets with my guest.  Many of these ad serving platforms run as a real time auction, and a good deal of study has gone into deciding on the best mechanism for running those auctions.  By mechanism, I mean the process by which all participants get to offer bids, and the system decides which bid to accept, and what to charge the winner.
 
 In truth, real online ad auctions are a bit more complex that what I'll describe in this post, but at their core is some idea either directly using or inspired by the concept of the Vickery auction.  In this style of auction, the person with the highest bid wins, but they have to pay the price offered by the second highest bidder.  Isn't the auction house losing money this way?  A specious case could be made for this claim, but if you trust the equilibria strategy, this mechanism has a few nice properties.  The equilibria strategy (discussed below) suggests that the "smartest" players should bid their actual true value derived from winning the auction as their bid.
