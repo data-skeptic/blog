@@ -45,7 +45,3 @@ In this Data Skeptic episode, Kyle is joined by guest [Ruggiero Cavallo](http://
 </div>
 
 <div class="clear" />
-
-
-
-
