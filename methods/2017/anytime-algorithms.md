@@ -2,7 +2,7 @@ Anytime Algorithms
 
 On the last episode of Data Skeptic, Ruggiero Cavallo discussed an algorithm he and his co-authors devised for optimizing ad auction placement.  One interesting feature of their algorithm was that it calls into the category known as anytime algorithms.
 
-All algorithms are functions that map from some given input to a an output.  For example, an algorithm exists which can be given an input of arithmetic instructions such as: $(7-2) * 5 + 1$, and return an output of $26$.  Obviously, there are several steps involved in arriving at that answer (subtract, multiply, add).  If you interrupted this algorithm early and asked for a bet guest of the answer, it could not have a useful guess.
+All algorithms are functions that map from some given input to a an output.  For example, an algorithm exists which can be given an input of arithmetic instructions such as: $(7-2) \cdot 5 + 1$, and return an output of 26.  Obviously, there are several steps involved in arriving at that answer (subtract, multiply, add).  If you interrupted this algorithm early and asked for a bet guest of the answer, it could not have a useful guess.
 
 In contrast, an anytime algorithm is one which can be halted early and is always able to provide some output.  If you interrupt the algorithm before it has a chance to halt "naturally", you may end up with an output that is a sub-optimal answer to the problem being worked on, but a decent output, and one which should monotonically increase with time.
 
