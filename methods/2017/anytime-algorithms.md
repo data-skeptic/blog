@@ -1,4 +1,4 @@
-Anytime Algorithms
+## Anytime Algorithms
 
 On the last episode of Data Skeptic, Ruggiero Cavallo discussed an algorithm he and his co-authors devised for optimizing ad auction placement.  One interesting feature of their algorithm was that it calls into the category known as anytime algorithms.
 
