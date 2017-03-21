@@ -23,3 +23,4 @@ In the screenshot below, you can see the most recent 10 episodes of Data Skeptic
 Check it out for yourself at [https://www.periscopedata.com/skeptics](https://www.periscopedata.com/skeptics).
 
 <img src="src-periscope-cohort-charts/cohort.png" />
+
