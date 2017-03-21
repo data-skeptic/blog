@@ -8,7 +8,7 @@ We have a system that inserts all our stats into a mysql database.  The table ca
 
 However, a much harder question is, how do the most recent episodes compare to each other in terms of the decline in downloads?
 
-I'd been putting off looking into this important bit of analytics simply because it was going to take me a little time to do the non-trivial data munging to answer the question.  However, all that changed when I discovered PeriscopeData's cohort grid option.
+I'd been putting off looking into this important bit of analytics simply because it was going to take me a little time to do the non-trivial data munging to answer the question.  However, all that changed when I discovered Periscope Data's cohort grid option.
 
 The cohort grid works like an Excel Pivot table.  I could have done my analysis in Excel, but with [Periscope Data](https://www.periscopedata.com/skeptics), the charts are always up to date and can be scheduled for delivery to my inbox every morning.
 
