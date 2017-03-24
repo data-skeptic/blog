@@ -42,7 +42,7 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <img src="src-feed-forward-neural-networks/img1.svg" />
 
-$A(x) = \left\{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x < 0 \end{array} \right.$
+$A(x) = \left \{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x < 0 \end{array} \right.$
 
 $Output = A(w_0 \cdot Bias + w_1 \cdot Input1 + w_2 \cdot Input2)$
 
@@ -71,5 +71,7 @@ Universal approximation theorem tells us that any continuous function can be tig
 Other types neural networks have less strict structal definitions.  The various ways one might relax this constraint generate other classes of neural networks that often have interesting properties.  We'll get into some of these in future mini-episodes.
 
 
+
+SPONSOR
 
 
