@@ -1,6 +1,6 @@
 ## Feed Forward Neural Networks
 
-In a feed forward neural network, neurons cannot form a cycle.  In this episode, we explore how such a network would be able to represent three common logical opperators: OR, AND, and XOR.  The XOR opperation is the interesting case.
+In a feed forward neural network, neurons cannot form a cycle.  In this episode, we explore how such a network would be able to represent three common logical operators: OR, AND, and XOR.  The XOR operation is the interesting case.
 
 Below are the truth tables that describe each of these functions.
 
@@ -68,7 +68,7 @@ No.  It is not possible to represent XOR with a single layer.  It requires two l
 
 In the above example, the weights computed for the middle hidden node capture the essence of why this works.  This node activates when recieving two positive inputs, thus contributing a heavy penalty to be summed by the output node.  If a single input is 1, this node will not activate.
 
-Universal approximation theorem tells us that any continuous function can be tightly approximated using a neural network with only a single hidden layer and a finite number of neurons.  With this in mind, a feed forward neural network should be adaquet for any applications.  However, in practice, other network architectures and the allowance of more hidden layers are empirically motivated.
+Universal approximation theorem tells us that any continuous function can be tightly approximated using a neural network with only a single hidden layer and a finite number of neurons.  With this in mind, a feed forward neural network should be adequate for any applications.  However, in practice, other network architectures and the allowance of more hidden layers are empirically motivated.
 
 Other types neural networks have less strict structal definitions.  The various ways one might relax this constraint generate other classes of neural networks that often have interesting properties.  We'll get into some of these in future mini-episodes.
 
