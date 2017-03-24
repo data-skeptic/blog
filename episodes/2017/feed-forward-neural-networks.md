@@ -42,9 +42,9 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <img src="src-feed-forward-neural-networks/img1.svg" />
 
-$A(x) = \Bigg\{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x < 0 \end{array}$
+$A(x) = \Bigg\{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x \lt 0 \end{array}$
 
-$Output = A(w_0 \cdot Bias + w_1 \cdot Input1 + w_2 \cdot Input2)$
+$Output = A(w_0 \cdot Bias + w_1 \cdot Input_1 + w_2 \cdot Input_2)$
 
 </center>
 
@@ -62,7 +62,9 @@ How about XOR?
 
 No.  It is not possible to represent XOR with a single layer.  It requires two layers.  The image below shows how it could be done with two laters.
 
+<center>
 <img src="src-feed-forward-neural-networks/XOR_perceptron_net.png" />
+</center>
 
 In the above example, the weights computed for the middle hidden node capture the essence of why this works.  This node activates when recieving two positive inputs, thus contributing a heavy penalty to be summed by the output node.  If a single input is 1, this node will not activate.
 
@@ -72,6 +74,14 @@ Other types neural networks have less strict structal definitions.  The various 
 
 
 
-SPONSOR
+Supplemental music is [Lee Rosevere's](https://twitter.com/LeeRosevere) [Let's Start at the Beginning](https://$
+
+<br/>
+
+<a href="https://www.periscopedata.com/skeptics"><img alt="Periscope Data" src="src-data-provenance-and-reproducibility-with-pachyderm/periscope-data.jpg" /></a>
+
+Check out our recent blog post on how we're using [Periscope Data cohort charts](/blog/sponsored/2017/periscope-data-cohort-charts).
+
+Thanks to Periscope Data for sponsoring this episode.  More about them at [periscopedata.com/skeptics](https://www.periscopedata.com/skeptics)
 
 
