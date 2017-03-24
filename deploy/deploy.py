@@ -180,8 +180,11 @@ def execute_plan(plan, s3, bucket, table, env):
                 b = r[0]
                 e = r[1]
                 latex = contents[b+1:e-1]
+                # TODO: revisit and fix encoding
+                latex = latex.replace('&amp;', '&')
                 cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
                 cmd += '"' + latex + '"'
+                print(cmd)
                 rendered = os.popen(cmd).read()
                 fname = sha.new(rendered).hexdigest() + ".svg"
                 # TODO: Check if it already exists since has is unique
@@ -290,7 +293,8 @@ def md(absfile):
         c = c.replace('\x96', '-')
         c = c.replace('\x97', '-')
         c = unicode(c, 'utf-8')
-    html = markdown.markdown(c)
+    html = markdown.markdown(c, extensions=['markdown.extensions.tables'])
+
     return html
 
 def replacement(match):
