@@ -44,7 +44,7 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <img src="https://s3.amazonaws.com/dataskeptic-static/img/2017/img1.svg" />
 
-$A(x) = \begin{cases}1 & x \geq 0\\-1 & x < 0\end{cases}$
+$A(x) = \begin{cases}1 & x \geq 0 \\ -1 & x < 0\end{cases}$
 
 $Output = A(w_0 \cdot Bias + w_1 \cdot Input_1 + w_2 \cdot Input_2)$
 
