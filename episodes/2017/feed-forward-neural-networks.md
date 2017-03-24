@@ -42,7 +42,6 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <img src="src-feed-forward-neural-networks/img1.svg" />
 
-
 $A(x) = \Bigg\{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x \lt 0 \end{array}$
 
 $Output = A(w_0 \cdot Bias + w_1 \cdot Input_1 + w_2 \cdot Input_2)$
