@@ -42,7 +42,9 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <img src="src-feed-forward-neural-networks/img1.svg" />
 
-$A(x) = \Bigg \{ \begin{array}{ll} 1 & \quad x \geq 0 \\\\ -1 & \quad x \lt 0 \end{array}$
+<img src="https://s3.amazonaws.com/dataskeptic-static/img/2017/img1.svg" />
+
+$A(x) = \Bigg \{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x \lt 0 \end{array}$
 
 $Output = A(w_0 \cdot Bias + w_1 \cdot Input_1 + w_2 \cdot Input_2)$
 
@@ -63,7 +65,7 @@ How about XOR?
 No.  It is not possible to represent XOR with a single layer.  It requires two layers.  The image below shows how it could be done with two laters.
 
 <center>
-<img src="src-feed-forward-neural-networks/XOR_perceptron_net.png" />
+<img src="/src-feed-forward-neural-networks/XOR_perceptron_net.png" />
 </center>
 
 In the above example, the weights computed for the middle hidden node capture the essence of why this works.  This node activates when recieving two positive inputs, thus contributing a heavy penalty to be summed by the output node.  If a single input is 1, this node will not activate.
