@@ -40,11 +40,9 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <center>
 
-<img src="src-feed-forward-neural-networks/img1.svg" />
-
 <img src="https://s3.amazonaws.com/dataskeptic-static/img/2017/img1.svg" />
 
-$A(x) = \begin{cases}1 & x \geq 0 \\ -1 & x < 0\end{cases}$
+$A(x) = \Bigg \{ \begin{array}{ll} 1 & x \geq 0  \newline -1 & x \lt 0 \end{array}$
 
 $Output = A(w_0 \cdot Bias + w_1 \cdot Input_1 + w_2 \cdot Input_2)$
 
