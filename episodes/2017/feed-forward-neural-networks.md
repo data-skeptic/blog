@@ -63,7 +63,7 @@ How about XOR?
 No.  It is not possible to represent XOR with a single layer.  It requires two layers.  The image below shows how it could be done with two laters.
 
 <center>
-<img src="/src-feed-forward-neural-networks/XOR_perceptron_net.png" />
+<img src="src-feed-forward-neural-networks/XOR_perceptron_net.png" />
 </center>
 
 In the above example, the weights computed for the middle hidden node capture the essence of why this works.  This node activates when recieving two positive inputs, thus contributing a heavy penalty to be summed by the output node.  If a single input is 1, this node will not activate.
