@@ -15,7 +15,6 @@ Below are the truth tables that describe each of these functions.
 |1|1|1|
 
 
-
 ### OR Truth Table
 
 |Input 1|Input 2||Output|
@@ -24,7 +23,6 @@ Below are the truth tables that describe each of these functions.
 |0|1|1|
 |1|0|1|
 |1|1|1|
-
 
 
 ### XOR Truth Table
@@ -44,7 +42,7 @@ Let's consider the perceptron described below.  First we see the visual represen
 
 <img src="src-feed-forward-neural-networks/img1.svg" />
 
-$A(x) = \left\{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x < 0 \end{array} \right$
+$A(x) = \left\{ \begin{array}{ll} 1 & \quad x \geq 0 \\ -1 & \quad x < 0 \end{array} \right.$
 
 $Output = A(w_0 \cdot Bias + w_1 \cdot Input1 + w_2 \cdot Input2)$
 
