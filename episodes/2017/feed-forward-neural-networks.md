@@ -76,7 +76,6 @@ Other types neural networks have less strict structal definitions.  The various 
 
 <a href="https://www.periscopedata.com/skeptics"><img alt="Periscope Data" src="src-data-provenance-and-reproducibility-with-pachyderm/periscope-data.jpg" /></a>
 
-
 Check out our recent blog post on how we're using [Periscope Data cohort charts](/blog/sponsored/2017/periscope-data-cohort-charts).
 
 Thanks to Periscope Data for sponsoring this episode.  More about them at [periscopedata.com/skeptics](https://www.periscopedata.com/skeptics)
