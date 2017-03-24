@@ -72,10 +72,6 @@ Universal approximation theorem tells us that any continuous function can be tig
 
 Other types neural networks have less strict structal definitions.  The various ways one might relax this constraint generate other classes of neural networks that often have interesting properties.  We'll get into some of these in future mini-episodes.
 
-
-
-Supplemental music is [Lee Rosevere's](https://twitter.com/LeeRosevere) [Let's Start at the Beginning](https://$
-
 <br/>
 
 <a href="https://www.periscopedata.com/skeptics"><img alt="Periscope Data" src="src-data-provenance-and-reproducibility-with-pachyderm/periscope-data.jpg" /></a>
