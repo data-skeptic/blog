@@ -38,7 +38,6 @@ The AND and OR functions should seem very intuitive.  Exclusive or (XOR) if true
 
 Let's consider the perceptron described below.  First we see the visual representation, then the Activation function $A$, followed by the formula for calculating the output.
 
-
 <center>
 
 <img src="src-feed-forward-neural-networks/img1.svg" />
