@@ -1,5 +1,9 @@
 ## Poker-bots Hit a New Milestone in AI
 
+<center>
+  <img src="src-poker-bots/cards.jpg" />
+</center>
+
 Two separate artificial intelligence (AI) programs recently surpassed humans in a game that was once considered too difficult for artificial intelligence to master. Each one of these events represents a significant milestone in AI by beating professional poker players at Heads-up (two player only) [No-Limit Texas Hold'em](https://www.partypoker.com/how-to-play/school/heads-up.html), one of the more complex variants of poker.
  
 The first reported computer program to outplay human professionals in Heads-up no-limit Texas Hold'em poker came in December 2016, when an AI system called [DeepStack](http://www.sciencemag.org/news/2017/03/artificial-intelligence-goes-deep-beat-humans-poker) played a total of 44,852 hands against 33 professional players. Developed by a team of computer scientists from the University of Alberta along with research collaborators from Charles University in Prague and Czech Technical University, DeepStack beat each of the 11 players who finished their match, 10 of them by statistically significant margins. The team recently published their study in the [March issue of Science](http://science.sciencemag.org/content/early/2017/03/01/science.aam6960).
