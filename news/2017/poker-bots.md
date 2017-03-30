@@ -1,7 +1,7 @@
 ## Poker-bots Hit a New Milestone in AI
 
 <center>
-  <img src="src-poker-bots/cards.jpg" />
+    <img src="src-poker-bots/cards.jpg" />
 </center>
 
 Two separate artificial intelligence (AI) programs recently surpassed humans in a game that was once considered too difficult for artificial intelligence to master. Each one of these events represents a significant milestone in AI by beating professional poker players at Heads-up (two player only) [No-Limit Texas Hold'em](https://www.partypoker.com/how-to-play/school/heads-up.html), one of the more complex variants of poker.
