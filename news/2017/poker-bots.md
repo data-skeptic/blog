@@ -47,6 +47,7 @@ Unlike DeepStack, Libratus does not use neural networks and plays with end-game 
 
 So which one is better? It’s hard to compare the abilities of Libratus with DeepStack without them playing against each other. Both poker bots can only play against one other player. Both AIs also played just enough hands to have statistically significant wins. Perhaps the next challenge for both Libratus and DeepStack to tackle would be to play against multiple players all at once. 
 
+
 ### Conclusion
 
 Poker involves unique challenges not present in complete information games, and these two poker-bots mark a huge milestone in AI. Game-playing AIs that can understand incomplete information scenarios have important real-life implications. One of the next challenges for AIs is to learn how mimic complex human decision-making to tackle real-world issues with incomplete information.
