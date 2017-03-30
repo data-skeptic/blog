@@ -8,7 +8,7 @@ A more detailed explanation of Patreon’s A/B testing framework can be found [h
  
 Other useful links to topics mentioned during the show:
 
-[OMR research](http://www.academia.edu/7709124/Improving_Rhythmic_Transcriptions_via_Probability_Models_Applied_Post-OMR
+[OMR research](http://www.academia.edu/7709124/Improving_Rhythmic_Transcriptions_via_Probability_Models_Applied_Post-OMR)
  
 [Patreon blog](https://blog.patreon.com/)
 
