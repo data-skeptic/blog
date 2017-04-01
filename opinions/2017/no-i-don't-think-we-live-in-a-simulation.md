@@ -25,3 +25,4 @@ So perhaps a universe simulating machine would have sub-routines that perform qu
 If you believe that our universe is a simulation, then it naturally follows that you must believe conscious artificial intelligence is possible; it logically follows.  Although, you can also reject the antecedent (our universe *isn't* a simulation) and still accept the consequent (AI is possible).
 
 While I'm open to the possibility that simulated universes exist.  Perhaps a more advanced alien civilization lives elsewhere in our universe and has created one.  Maybe one day we will create one.  I'm even open to the possibility that we do indeed live in a simulation.  But I don't believe it follows logically from the belief that simulated universes are possible.  When in discussions on this matter, a good skeptic will remind their conversation partners that the burden of proof lies with the person making the claim.
+
