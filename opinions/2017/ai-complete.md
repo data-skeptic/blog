@@ -61,3 +61,4 @@ A good deal of stand-up comedy requires historical and/or cultural context to ap
 Yet, for every celebrated comedic genius, there's dozens of jokes on gum wrappers, puns, and Family Circus which hardly elicit our higher level intellectual capabilities to parse.
 
 Overall the concept of AI-Complete is a neat idea.  However, I'm at a loss for what else to put into the class besides conversation / the Turing Test.  There are certainly interesting aspects of some humor that belong, but I'm not sure how to separate humor into jokes which require generalized intelligence to understand and more crass chuckling.
+
