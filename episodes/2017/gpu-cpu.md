@@ -1,0 +1,3 @@
+## GPU CPU
+
+There's more than one type of computer processor.  The central processing unit (CPU) is typically what one means when they say "processor".  GPUs were introduced to be highly optimized for doing floating point computations in parallel.  These types of operations were very useful for high end video games, but as it turns out, those same processors are extremely useful for machine learning.  In this mini-episode we discuss why.
