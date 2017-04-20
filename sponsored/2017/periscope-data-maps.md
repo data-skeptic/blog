@@ -16,10 +16,15 @@ The first step was to develop my query to get the data out of my database.  Belo
 
 ```
 SELECT latitude, longitude
+
 , max(listing_timestamp) as last_sale_date
+
 , max(price) as price
+
 , max(raw_address) as raw_address
+
 FROM open_house_data
+
 GROUP BY latitude, longitude
 ```
 
