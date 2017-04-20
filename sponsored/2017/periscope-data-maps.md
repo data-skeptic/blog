@@ -27,21 +27,22 @@ Those of you paying close attention might raise a skeptical eye to the query abo
 
 The first thing to do is to select the Map as the chart type.  I then have the option of working with latitude/longitude data or GeoJSON.  My data is in lat/lng.
 
-<img src="src-periscope-data-maps/ss1.png" />
+<img src="src-periscope-data-maps/ss1.png" width="400" />
 
 Periscope Data already figured out my latitude and longitude columns, presumable from the column names.  I checked `price` for the `weight` configuration, since I want the radius of each point to reflect the price.
 
-<img src="src-periscope-data-maps/ss2.png" />
+<img src="src-periscope-data-maps/ss2.png" width="400" />
 
 Next, I'm going to select the Bubbles Series Type.  I think I'll be interested to try Heatmap and Clusters for other projects, but the Bubbles suit this use case well.
 
-<img src="src-periscope-data-maps/ss3.png" />
+<img src="src-periscope-data-maps/ss3.png" width="400" />
 
 That's all there was to it!  I went from SQL query to interactive map in about 20 seconds.  This is ideal for adhoc geographic analysis.  Lastly I can even copy that map to my clipboard with one click, making it a convenient thing to drop in an email or slack message.
 
-<img src="src-periscope-data-maps/ss4.png" />
+<img src="src-periscope-data-maps/ss4.png" width="800" />
 
 If you'd like to learn more about my experience with Periscope Data, check out the video below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aglpJrMp0M4" frameborder="0" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/aglpJrMp0M4" frameborder="0" allowfullscreen></iframe></center>
 
+<br/><br/><br/>
