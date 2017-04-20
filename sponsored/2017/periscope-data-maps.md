@@ -4,7 +4,7 @@ On the [OpenHouse](https://dataskeptic.com/episodes/2017/openhouse) episode of D
 
 Below is a screenshot of a recent one I made.  Take a look at it and then below I'll explain the map and how I created it.
 
-<img src="src-periscope-data-map/periscope-data-map.png" />
+<img src="src-periscope-data-maps/periscope-data-map.png" />
 
 There's a particular set of properties I was doing some analysis on which I download from the Open House API and loaded to a MySQL database for ease.  I connected that MySQL database to Periscope Data and then proceeded to make a random sample on a map plot of a particular area's home sales data.  The circles center on the home they describe and their radius is relative to the price most recently paid for that home.
 
