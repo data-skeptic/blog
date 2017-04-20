@@ -14,7 +14,7 @@ I'll go over the steps I took to create this.
 
 The first step was to develop my query to get the data out of my database.  Below is my query.  I am grouping by latitude and longitude.  I know that multi-unit building will share the same lat/lng, but that's fine for my purposes.  Periscope Data actually has an elegant way of handling it.  When there are multiple records to the same point, they appear in the tool tip as a list.
 
-```
+<pre>
 SELECT latitude, longitude
 
 , max(listing_timestamp) as last_sale_date
@@ -26,7 +26,7 @@ SELECT latitude, longitude
 FROM open_house_data
 
 GROUP BY latitude, longitude
-```
+</pre>
 
 Those of you paying close attention might raise a skeptical eye to the query above.  I'm getting the max `listing_timestamp` as the latest sale date.  I also get the max `price`, which the average viewer will interpret as the price at the last sale date.  If the property has ever declined in value, this won't be true.  That's an important point, but it's a concern for another post.  Let's move on to the chart configuration.
 
