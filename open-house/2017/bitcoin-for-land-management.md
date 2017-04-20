@@ -2,7 +2,7 @@
 
 Bitcoin has been gaining popularity as a next-gen digital currency. The security, visibility and efficiency offered through the blockchain — a [secure, highly encrypted network](https://www.bloomberg.com/news/articles/2016-08-25/this-is-your-company-on-blockchain) that serves as the foundation for all Bitcoin transactions — make it highly useful when it comes to thwarting cyber criminals and would-be identity thieves.
 
-As a result, other industries are beginning to explore Bitcoin and blockchain technology for themselves. IBM has invested \$200 million in blockchain technology. New startup companies raised nearly \$300 million via the blockchain in the first half of 2016 and, according to some reports, [90 percent of major banks](http://expandedramblings.com/index.php/blockchain-statistics/) in North America and Europe are currently exploring the blockchain for their own applications.
+As a result, other industries are beginning to explore Bitcoin and blockchain technology for themselves. IBM has invested 200 million in blockchain technology. New startup companies raised nearly 300 million via the blockchain in the first half of 2016 and, according to some reports, [90 percent of major banks](http://expandedramblings.com/index.php/blockchain-statistics/) in North America and Europe are currently exploring the blockchain for their own applications.
 
 ### What Is Bitcoin? 
 
