@@ -35,6 +35,7 @@ Kyle recently did a youtube video exploring the Data Skeptic podcast download nu
 
 Supplemental music is [Lee Rosevere's](https://twitter.com/LeeRosevere) [Let's Start at the Beginning](https://www.youtube.com/watch?v=7MeY-EdcAzc).
 
+<hr/>
 
 ### Transcript
 
