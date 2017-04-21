@@ -2,48 +2,30 @@
 
 No reliable, complete database cataloging home sales data at a transaction level is available for the average person to access.  To a data scientist interesting in studying this data, our hands are complete tied.  Opportunities like testing sociological theories, exploring economic impacts, study market forces, or simply research the value of an investment when buying a home are all blocked by the lack of easy access to this dataset.  OpenHouse seeks to correct that by centralizing and standardizing all publicly available home sales transactional data.  In this episode, we discuss the achievements of OpenHouse to date, and what plans exist for the future.
 
+<table><tr>
+<td><a href="http://gallery.openhouseproject.co"><img src="src-openhouse/oh-logo.png" /></a></td>
+<td><a href="http://gallery.openhouseproject.co">Check out the OpenHouse gallery.</a></td>
+</tr></table>
 
-Zareen available data research
-Zareen any apis?
-Sameer data is spread out
-Zareen OH needs to exist
-Zareen scope problem
-Zareen MLS
-Joy introduction
-Zareen introduction
-Sameer introduction
-KP: why people would be motivated to help.  Learning opportunity on new technology
-Joy tools used
-KP: Architecture.  Front end, back end, database, etc.  Let's talk front end now, backend later
-KP: We moved dataskeptic.com to React based on this experience
-Joy why we choose react
-KP: Finish on React and promote gallery.openhouse.co
-PERISCOPE DATA AD
-KP: Backend discussion
-Sameer crawling / robots
-Sameer urllib / beautiful soup
-KP: more backend
-KP: I'm going to be at MS Build in Seattle May 10-12
-Sameer AWS Lambda
-KP: API & Elliot
-KP: Roadmap
-KP: Ways to contribute
-Joy Data Visualization
-Zareen quandal
-Sameer we need help
-Thanks to Periscope data, check out my recent video and blog post
-Also, Los Angeles, May 25 at Zefr, check the show notes for details
-I'm booking conferences for the rest of the year.  I'll announce more soon, if you want me, reach out now.
-Skeptical of and with data
+I also encourage everyone to check out the project Zareen mentioned which was her [Harry Potter word2vec](http://www.zareenfarooqui.com/w2v/) webapp and Joy's project doing [data visualization on Jawbone data](http://sleepmodel.herokuapp.com/).
 
+
+### Guests
 
 Thanks again to [@iamzareenf](https://twitter.com/iamzareenf), [@blueplastic](https://twitter.com/blueplastic), and [@joytafty](https://twitter.com/joytafty) for coming on the show.  Thanks to the numerous other volunteers who have helped with the project as well!
 
 
-Kyle is giving a [machine learning talk in Los Angeles](https://www.meetup.com/Los-Angeles-Machine-Learning-Data-Science/events/239333457/
+### Announcements and details
+
+* If you're interested in getting involved in OpenHouse, check out the [OpenHouse contributors quickstart page](http://openhouseproject.co/contributing/).
+
+* Kyle is giving a [machine learning talk in Los Angeles](https://www.meetup.com/Los-Angeles-Machine-Learning-Data-Science/events/239333457/
 ) on May 25th, 2017 at Zehr.
 
-Thanks to our sponsor for this episode <b>Periscope Data</b>
+
+### Sponsor
+
+Thanks to our sponsor for this episode <b>Periscope Data</b>.  The blog post demoing their maps option is on our blog titled [Periscope Data Maps](https://dataskeptic.com/blog/sponsored/2017/periscope-data-maps).
 
 <a href="https://www.periscopedata.com/skeptics"><img alt="Periscope Data" src="src-openhouse/periscope-data.jpg" /></a>
 
@@ -54,3 +36,95 @@ Kyle recently did a youtube video exploring the Data Skeptic podcast download nu
 Supplemental music is [Lee Rosevere's](https://twitter.com/LeeRosevere) [Let's Start at the Beginning](https://www.youtube.com/watch?v=7MeY-EdcAzc).
 
 
+### Transcript
+
+KYLE: Today on Data Skeptic, we're going to talk about the OpenHouse project.  Long time listeners will know some of the history of this.  A while ago, Linhda and I were looking to buy a house and I found myself disappointed to not have easy access to data on home sales that would be complete enough to run some regressions.  We were about to make the most significant financial choice of either of our lives without ready access to the exact data that might help us inform our decision. But data about home sales is public, isn't it?  You can Google just about any address and get details.  Indeed, on a one-off basis, it's relatively easy to use Google for research.  But what if I wanted a much larger sample of transactions in the last few years on a specific block?  This episode is the story, to date, of OpenHouse: a project that seeks to liberate transaction level home sales data for data scientists, sociologists, economists, and the generally curious, enabling easy access to transactional home sales data.  In this episode I talk to a few of the volunteers who helped with the project.  Let's start with Zareen who helped out a lot during our research phase, when we were still hoping to tap into some obscure but complete datasource.
+
+ZAREEN: The goal of the research that I did so far was to catalog all the open housing data that currently exists and determine whether it's licensing would allow us to reuse it and bundle it for the OpenHouse project.  I researched some of the most housing websites to determine what their source of data is, whether they offer any open source datasets to the public, and if so, to what granularity.  And also to see if they have an API for developers to use.  What I learned was, first of all, there's some very fundamental differences in what these sites were doing.  Some of the websites are simply listing services which serve as an advertising platform either for homeowners or agents.  Some of the sites are government sites which are all public records.  Some of them are closed to the public completely and are only available to brokers and real estate agents.  I found that this data is not very easily publicly accessible and the data that is accessible is not similar.  So its all different datasets at all different granularities.  And also the data that is available is not historical.  So there's no way for me to look at the same house's value every week or every month.  Or every time it's sold and do any kind of time series analysis with it.
+
+KYLE: How granular was the data that you were able to find at some of those sites.  Could anything get down to the exact housing transaction level you and I were both looking for?
+
+ZAREEN: No, it didn't.  So, there definitely is a lot of open data.  And there's different ways to slice it.  So you can slice it by state, city, zipcode, or neighborhood, but none of these sources let me actually get down to individual home granularity.  Everything I found was just metadata.
+
+KYLE: We've gotten a few questions from the public asking why OpenHouse exists.  Isn't this already available?  Real estate data is a bit like some optical illusions.  If you don't take the time to look intently, it might appear as though there's more to it than there is.  The prominent sites that provide data tend to make it available, as Zareen said, at best in some rolled up aggregation.  That doesn't help us if we want to calculate something like the added value the market assigns to an extra bedroom or something like that.  Even still, maybe we could validate our data with these aggregations, so long as we can access them programatically via API.
+
+ZAREEN: The sites that I looked at, I found about a fifty percent split between sites that were offering APIs and sites that didn't.  For example, Trulia, which, when I did this research, they did offer an API but it's been decommissioned.  Zillow does offer an API but the data that they release to the public is metadata and you know, like we mentioned, it's not to the level of granularity we want.  But, there's also some really interesting clauses in Zillow's terms of use which kind of restrict our use of it.  They state that users are not able to retrain copes of Zillow's data but can simply make API calls to the Zillow server.  And then immediately render that data to your users.  So you're also not allowed to show your users Zillow's data in bulk, but only on a transactional basis.  So this poses a real problem to a project like OpenHouse.  And then some sites that I researched that didn't have an API, or actually all of those sites didn't show any signs of moving towards APIs, so I don't think that's going to be an option any time soon.  Craig's List, for example, is one of those sites that is really restrictive with their data.  They don't have an API and the actually explicitly ban web crawlers from scrapping their data.
+
+KYLE: Let's take a step back and learn more about Zareen as well as our other guests today that you haven't heard from yet: Sameer and Joy.  I've been sitting on these interviews for a little bit, so these bios have atrophied a bit, but let's hear from everyone nonetheless.
+
+ZAREEN: So about eight months ago, I quit my software sales job to transition careers and get into data analytics.  So for the past couple of months I've been teaching myself python, SQL, data visualization, statistics, and some other technical topics like basic web development and AWS.  Mainly I've been learning just by hacking on my own projects for fun.
+
+KYLE: Oh very cool.  Any projects you want to highlight or send people to?
+
+ZAREEN: One of my favorite was a word2vec implementation for the Harry Potter text series. I build a website where you type in a word, any word from the Harry Potter books, and it pops out the seven most similar words from the Harry Potter books.  So, it was just a fun project to get to know a really interesting machine learning algorithm.
+
+KYLE: I put a link to Zareen's project in the show notes.  I have to admit, I couldn't really get onboard with the whole Harry Potter thing.  I'm more of a JRR Tolkien guy, I guess.  But Zareen's project is still interesting, so you should check that out.  We're going to do an episode on word2vec eventually.  It's a really neat algorithm, and she has a cool demo of it.  Let's meet Sameer.
+
+SAMEER: I'm a technology evangelist at Data Bricks where I help promote the adoption of Apache Spark.  I do this by teaching classes at conferences, local meetups, writing blog posts, and recording Youtube videos.
+
+KYlE: Do you have a quick reference I can put in the show notes and on this show where people can learn how the might develop their Apache Spark skills with you?
+
+SAMEER: The very best place is to check out the official Spark documentation which is at [spark.apache.org](http://spark.apache.org). 
+
+KYLE: So I'm here with contributor Joy.  To get started, maybe can you tell me somethign about your background specifically related to data science and to technology?
+
+JOY: Yeah, sure.  So I've been a data scientist at Intuit for two and a half years.  And my day to day work mostly has to do with doing ad hoc analysis on the data that came into the products.  Basically working all the data in relational databases.  Taking them and then doing supervised learning mostly using tools like SQL, Python, and Spark.  I've been enjoying doing that a lot.  Before that, I was an Insight Data Science Fellow.  This is a seven week post doc program that helped transition PhD data scientists or PhD scientists into industry data science.  So we basically get together and come up with data driven projects and try to use a combination of data analytics as well as machine learning to try to come up with data driven products.  And then we make presentations and try to go interview with different companies in industry.  Before that I did a PhD in bio-engineering at MIT and my work as to do with contour tracking in images and trying to apply hidden markov models on the objects that I was tracking.  On the side, I worked on a personal bio-metric tracking project.  I was looking at Jawbone data of one person, which is myself.  And I tried to build visualizations and that is my segue into industry data science.
+
+KYLE: Ok, with everyone introduced, let's get back to the discussion at hand.  Why is it difficult to find detailed datasets on home sales?
+
+KYLE: So if all of this data is available on various websites, why is it such a problem to centralize it?
+
+ZAREEN: From my research, I have not been able to find any suitable source which would meet all our needs.  So, I would say that OpenHouse as a project absolutely needs to exist because there's no other way to get this data.  It looks like we'll just have to continue working on this.
+
+KYLE: You also did some really high level research that I think gives us some good milemarkers that we want to shoot for.  For example, can you tell me about some of the statistics you collected like how many homes are in the United States?
+
+ZAREEN: According to the US Census data, as of July 2015, there were 134.8 million homes.  For reference, in April of 2010, there were 131.8 million homes.  So in the five years between 2010 and 2015, there's been about 3 million new homes.
+
+SAMEER: And, they're spread across about 3000 counties.  You know some states like Delaware have 3 counties, while Texas has 250.  Every county has it's own website.  But as engineers and data scientists, we want to study this US housing market for historic trends and making predictions for which areas might be hot to move into in the future.  To do this, though, we ideally need like a single file or database that has all of the data for 135 million households.  But the problem is that the data is scattered across as many as 3000 different websites.  So there's a challenge in crawling all of these websites and centralizing all of this data into one location.
+
+KYLE: It seems one of the most reliable sources of data, in the US, anyway, are county records.  They track all home sales data for a variety of reasons not the least of which is confirming ownership and establishing taxes.  We've had a good deal of success so far accessing data provided by some counties.  However, not every county is online with this data.  Those that are tend to have different formats and ways of accessing it.  In theory, all of these data people at counties could get together and decide to do something called federation.  Federation is a process in which similar services, even sometimes competitive services, all agree to a standard data format for exchanging data from one place to another.  There isn't really any federation for this data.  The closest thing that's out there is the MLS.
+
+ZAREEN: MLS stands for Multiple Listing Service.  The MLS is pretty much the primary source for all real estate listings for agents.  So essentially, if a house isn't listed on MLS, it's not or sale.
+
+KYLE: Small nit-pick correction here, the MLS doesn't necessarily include properties that are for sale by owner (or FISBOs).  I'm sure there are other corner case exceptions as well, but generally speaking, yes, any property actively for sale is probably on the MLS.  The MLS is a proprietary service, and it's not open to the general public.
+
+ZAREEN: It is only accessible for brokers or agents.  So normal people don't have access to MLS feeds. Even if you are a broker, you can only pay to have access to listings in a certain region.  So for example, if I'm a broker in Boston, I'm probably only paying for listings in Massachusetts and maybe a couple of other states in New England, and I don't have access to the entire US home listing dataset.  So, if I wanted to look at a listing in Florida, I would have to pay more to get access to Florida listings.  Another problem with MLS is that there's no single authoritative MLS and there's no universal data format across the regions.  So even if this data did become available to everybody, there would really be no easy way for developers to access this information.
+
+KYLE: Right so there's a definite gap we identified with OpenHouse.  The entire project is aimed at filling the gap left by the absence of federation.  We seek to find, centralize, standardize, and broadly, liberate this data to be more useful.  The efforts fall into four general areas.  First we need to find sources of data.  Then crawl them.  Then parse out the data.  And lastly, make that data available to people.  You can access our data via our API or via our front end.  Let's get back in touch with Joy to talk about the front end.
+
+KYLE: What kind of technologies, software packages, and tools and that kind of thing are you using in the work you're contributing to OpenHouse.
+
+JOY: When I first started helping out with OpenHouse, I was just looking for something to do and at the time I think we need help doing the frontend.  So I jumped on.  I'm actually not a front end programmer.  I have some experience with jQuery but I felt like I would like to get back into data visualization.  I have some experience with D3.js, so I want to get back in, so I decided to do that.  For that, I used React and D3 to build visualizations and then I used Chrome dev tools for debugging and for collaboration we use gitflor.  That pretty much sums it up.
+pretty much sums it up.
+
+KYLE: So, Joy and a few other contributors helped us make the choice to use a framework Facebook created called React for our front end.  By the way, you can see that front end by visiting gallery.openhouseproject.com.  We're calling it a beta release.  A few rough edges yet but overall looking really good.
+
+JOY: I have some experience with Node.js and a lot of people at work use Angular.js and I first was looking into Angular.js but I felt like it was such a steep learning curve.  And then one of the contributors to OpenHouse mentioned React.js so I looked into it and I felt like the learning curve is much less steep so I was watching tutorial videos for a few nights for 30 minutes each night and then after four or five days I was able to already start coding in React, which is really exciting.  The one benefit is that there's not much of a learning curve for React.  The code base is modular so its component focused.  I think that allows the team to be able to divide up the code component by component and basically work independently and the integrate the work back together.  Also because of this, I think its also easier for new members to contribute new components to the front end.
+
+KYLE: Why don't I take a minute and talk about the general architecture of our system.  I've been talking with Joy about the front end.  Again, thats at gallery.openhouseproject.co.  There we provide a web based interface where users can explore the data that's in our system.  There are some search options as well as a map you can scroll around on.  We've also got this cool feature I'm fond of where with one click, you can launch a new tab that has R running with a few starter lines of code letting you do analysis on the data.  That's it.  One click to start interacting with the data programmatically.  Scrolling around on the map is a little slow at present but we've got plans to speed that up with an intelligent caching layer.  If you do explore the map, you'll find there are areas where we have a lot of data and other places we've got little or no coverage at the moment, so we're working hard to fill the gaps both here in the United States and internationally as well if there's interest from the community .  The primary way we're working on filling in more listings is in our backend crawling system.  I'll tell you all about that in a minute, but first, a quick note from today's sponsor.
+
+PERISCOPE DATA AD
+
+KYLE: So our front end retrieves data from our server via our API.  How does the data get to the servers?  We have the ability to bulk load large data drops people might give us, but time has shown that most of our data comes from individual listings sent to us by contributors.  After a while, it became clear that we were going to have to do most of that crawling ourselves, so we built the OpenHouse web crawler.
+
+SAMEER: So a web crawler is an Internet Bot that systematically browses all of the links on a given domain and just like downloads every web page it finds.  A very common use case of crawling is indexing which is what Google or Bing uses it for.  And also scraping which is what data scientists typically use it for.  Indexing is the common use case from Google.  As web pages are downloaded, important keywords are identified and then the web pages are cataloged according to that keyword so they are easy to discover in the future.  Scraping is a little different.  It focuses more on transforming the unstructured data on the web, which is usually in HTML format, into structured data that can be stored and analyzed by a central database or spreadsheet.  A lot of website owners are sometimes suspicious of web crawlers because they can put heavy traffic on the web site.  So they often have a robots.txt file that is used to communicate with the bots and request them to crawl only parts of a website or none at all.
+
+KYLE: I want to make one thing clear here.  At OpenHouse we intend to be good citizens of the Internet.  If we crawl a web site, we identify precisely who we are with a user agent string.  Basically the same way some websites can tell that you're on Chrome or Firefox can be use to communicate that our bot is something different.  That format Sameer mentioned, the robots.txt file, its a convention for telling bots what to do.  We respect that.  If any domains tell us not to crawl them, we don't.  So far, no one has told us to stop, though.  What our bot downloads is the raw HTML of each web page.  Almost every domain name has a different format for it's page, so we're stuck with all these web pages we crawled and needing a way to process them.
+
+SAMEER: One of the most popular tools that engineers use to scrape the web is urllib3 with BeautifulSoup.  Both of these are open source python based libraries that are free to use.  Urllib3 is a Python module that's used to fetch and download URLs.  So now you have thousands of web pages downloaded locally.  Then you can use BeautifulSoup to extract the data out of each of those HTML web pages.  Beautiful Soup is technically an HTML parser, so you can tell it "find all the links" or "find all the links whose URL starts with food.com" or "find the table heading that's got green text and then give me that text".  So this puts valuable data that was once locked up in websites in your reach.  The important thing to understand here is that BeautifulSoup does not fetch the web page for you.  You have to do that using urllib3.
+
+KYLE: One of the easiest way people can contribute to OpenHouse is to give us links to pages that contain data we don't already have.  Help us find sources.  Anyone that can use a browser can do that.  You can find a way to submit URLs at openhouseproject.co.  Your suggestions go into our database and then we crawl that page and hold the raw data.  Then we need a way to parse out the information on it.  That's a second place where volunteers can help.  On our contributions page, we have a way that you can help us sort these recommended links to make sure they're valid, and if you know or want to learn Beautiful Soup, we also have a contributor page where you can request a file to parse, write up the 10-20 lines of Python code using Beautiful Soup that's usually required, and then submit that code back to us.  That's generally a pretty quick contribution.  After we have the content and a way to parse it, we then need to execute the code that parses it.  We're leveraging an idea called Serverless to do this.  There are several companies that offer this sort of solution.  The one we happen to be using is from AWS and it's called Lambda.
+
+SAMEER: Lambda is a new serverless computing platform from Amazon Web Services that was introduced in 2014.  You basically upload your code to Lambda and then Amazon runs it in response to triggers.  A trigger can come from a web browser like an HTTP endpoint or a mobile application or another AWS service.  Lambda runs your code only when it's trigger and uses only the compute resources needed.  So the cool thing is you only pay for the compute time you use and that's measured in hundred millisecond increments.  So this is different from the traditional EC2 infrastructure at Amazon where you get a dedicated server running 24/7 and you usually pay by the hour.
+
+KYLE: I've been having a ton of fun deploying Serverless architecture for OpenHouse and some commercial projects recently.  It's really well suited for a lot of data science projects and it takes the headache out of dev ops in a lot of ways.  Rather than worrying about our crawler servers crashing because we have a sudden surge of work, I just have to monitor the queues of work to make sure they aren't getting behind.  There's a lot more I have to say about the project.  We haven't even talked about the API yet, and I'm a little upset with myself I didn't get to interview Elliot who was instrumental in building that, or interview Scott who's been contributing on a number of fronts.  If you're interested in hearing about our roadmap or contributing to OpenHouse, join our Slack channel.  That's automated now.  Just visit dataskeptic.com, click on Contact Us, and you can sign up yourself.  In the OpenHouse channel we can tell you about what's going on and where to review low hanging fruit tasks that you might be interested in working on.  Not sure you have the technical skills necessary to help?  Forget about it.  Most people that listen to Data Skeptic love to learn as well as teach.  Let OpenHouse be your excuse to start flexing new technical muscles.  I talk to a lot of people that want to move ahead in their career but face the catch 22 of needing more experience.  Maybe we can help you build and demonstrate your ability as a stepping stone on your career path.
+
+KYLE: We want OpenHouse to reach a point where it has nearly full coverage of US based home sales and hopefully broad coverage internationally as well.  We want to be the go to place for people to look for reliable historic data for research and analytical purposes.
+
+SAMEER: But we need the help of volunteers to do this.
+
+KYLE: So drop on by and we'll route you to the contribute webpage that suits your goals and time commitment, however large or small.
+
+KYLE: Ok, a few important announcements before we go.  You should listen to these.  First up.  Los Angeles California.  May 25th, I'm presenting a talk at Zefr.  A link to the meetup page is in the show notes.  My talk is on machine learning with audio data.  Seattle, I'm going to be at Microsoft Build, May 10-12, but just attending there.  Maybe we'll have a bar night or something, let me know if you're interested.  San Diego, I'm headed your way in June, more details to follow.  Linhda and I are headed to New York later this year.  Please let me know if you've got space to host a talk.  We may have something in Germany too.  I'll be at Farcon in Minneapols in August giving a talk on Chatbots in eCommerce.  More details there as the time gets closer.  I'm booking up the rest of the year so if anyone wants to bring me out a conference, please let me know now so we can lock it in.
+
+KYLE: Lastly thanks to Periscope data for sponsoring this episode.  I just uploaded a video to Youtube where I used Periscope Data to build a dashboard with details about the podcast's download numbers.  Head on over to Youtube and subscribe to the Data Skeptic channel to check that out.  Until next time, keep thinking skeptically of and with data.
