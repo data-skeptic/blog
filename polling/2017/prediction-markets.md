@@ -34,11 +34,11 @@ When the Director of the FBI, James Comey, announced an investigation over Clint
 
 Accompanying the downdraft was a surge in the so-called fear gauge, aka the CBO Volatility Index or VIX, which measures implied volatility for the S&P 500 over the next 30 days.  Once Comey cleared Clinton in late October, the VIX climbed from 13 to 22 from Monday October 24 to Friday October 28, but slumped back down to 18.7 on Monday Oct 31.
 
-<a href="https://www.ft.com/content/77eebd4a-9faf-11e6-86d5-4e36b35c3550"><img src="src-prediction-markets/img5.png" width="500" /></a>
+<a href="https://www.ft.com/content/77eebd4a-9faf-11e6-86d5-4e36b35c3550"><img src="src-prediction-markets/img6.png" width="500" /></a>
 
 Nonetheless, the correlation between the index’s performance and the outcome of the election lacks sufficient empirical evidence. There have been too few elections since 1944 to make the S&P 500 Index statistically significant.
 
-<a href="https://www.bloomberg.com/news/articles/2016-09-30/this-chart-predicts-trump-will-win-unless-the-s-p-rallies-in-october"><img src="https://www.bloomberg.com/news/articles/2016-09-30/this-chart-predicts-trump-will-win-unless-the-s-p-rallies-in-october" width="500" /></a>
+<a href="https://www.bloomberg.com/news/articles/2016-09-30/this-chart-predicts-trump-will-win-unless-the-s-p-rallies-in-october"><img src="src-prediction-markets/img7.png" width="500" /></a>
 
 (Image source: [https://www.bloomberg.com/news/articles/2016-09-30/this-chart-predicts-trump-will-win-unless-the-s-p-rallies-in-october](https://www.bloomberg.com/news/articles/2016-09-30/this-chart-predicts-trump-will-win-unless-the-s-p-rallies-in-october))
 
