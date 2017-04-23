@@ -26,8 +26,6 @@ While most major polls and prediction markets had been forecasting a Clinton on 
 
 <img src="src-prediction-markets/img4.png" width="500" />
 
-<img src="src-prediction-markets/img5.png" width="500" />
-
 <i>Custom chart generated from MarketWatch.com showing the stock market performance from August 1 - October 31, 2016: [http://www.marketwatch.com/investing/index/SPX/](http://www.marketwatch.com/investing/index/SPX/)</i>
 
 When the Director of the FBI, James Comey, announced an investigation over Clinton’s new trove of emails, the S&P 500 slumped 3 percent over 9 trading sessions. Although the nine-day market descent gained impetus following the Oct. 28 bombshell announcement, the overall market performance from July 31st to October 31st is what matters most. The S&P 500 Index declined by 4.5 percent, which translated into an 86 percent chance of Trump’s winning on Election Day.
