@@ -36,7 +36,7 @@ The fact that The Economist’s latest projection has given Le Pen such a low ch
 
 The team starts by calculating a moving average of each candidate’s vote share, according to reputable election polls conducted throughout 2017, weighted by sample size. This moving average is the basis of the trendlines shown in the chart, which is updated daily:
 
-<img src="src-the-economist-talks-election-forecasting/img1.png" />
+<img src="src-the-economist-talks-election-forecasting/img1.png" width="800" />
 
 Then, they use a database of French election polls compiled by political scientists Christopher Wlezian and Will Jennings to calculate the historical error of polls leading up the actual election. Polls are generally more accurate in estimating the winner’s margin of victory as Election Day approaches.
 
@@ -44,7 +44,7 @@ To simplify, take the example of a two-candidate race, as in the U.S. Say that H
 
 The process for multiple candidates (in the first-round) is [slightly more involved](http://www.economist.com/blogs/graphicdetail/2017/04/election-forecasting), requiring a multivariate normal rather than a univariate normal distribution (the team had experimented with a Dirichlet distribution and a vector autoregression model, but “couldn't get it to behave,” said Kahloon), but that’s the general idea. Visually, they plot out the distribution of likely outcomes on Election Day for the five main first-round candidates:
 
-<img src="src-the-economist-talks-election-forecasting/img2.png" />
+<img src="src-the-economist-talks-election-forecasting/img2.png" width="800" />
 
 “This is, we think, the simplest way you could do it,” Kahloon told me.
 
