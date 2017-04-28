@@ -18,6 +18,8 @@ Thanks to our guests [Idrees Kahloon](https://twitter.com/ikahloon), [Jill Darli
 
 * [The Polls Missed Trump. We Asked Pollsters Why](https://fivethirtyeight.com/features/the-polls-missed-trump-we-asked-pollsters-why/)
 
+* [Mona Chalabi, Data Editor for the Guardian on the Partially Derivative Podcast](http://partiallyderivative.com/podcast/2016/11/22/mona-chalabi)
+
 * [How a mid-sized error led to a rash of bad forecasts](http://www.economist.com/news/united-states/21710024-how-mid-sized-error-led-rash-bad-forecasts-epic-fail)
 
 * [‘Model Talk’ Debriefs The 2016 Results](https://fivethirtyeight.com/features/model-talk-debriefs-the-2016-results/)
