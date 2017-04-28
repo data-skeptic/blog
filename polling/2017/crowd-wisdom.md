@@ -16,9 +16,7 @@ Consider a case from the study, where a group of people were given the following
 
 Prelec et al. devised a clever yet simple formula, called the [“surprisingly popular” solution](http://www.nature.com/nature/journal/v541/n7638/fig_tab/nature21054_F2.html) to the single question crowd wisdom problem. In addition to asking respondents, “Philadelphia is the capital of Pennsylvania, Yes or No?” respondents were also requested to assign a confidence rating and answer “What percentage of people in this survey will answer ‘yes’ to this question?” The key here is to compare the actual responses with the predicted responses.
 
-
 <img src="src-improving-accuracy-in-the-wisdom-of-crowds/nature21054-f1.jpg" width="800" />
-
 
 In the case where researchers asked, "Is Columbia is the capital of South Carolina, Yes or No?" respondents who answered “Yes” believed that the majority would agree with them. Those who answered “No” also predicted that the majority of people would also reply "No.” In other words, both groups believed that others would give the same answer as theirs.
 
