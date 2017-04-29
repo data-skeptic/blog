@@ -1,4 +1,4 @@
-##Improving acurracy in the wisdom of crowds
+## Improving accuracy in the wisdom of crowds
 
 In a [letter to Nature](http://www.nature.com/nature/journal/v75/n1949/abs/075450a0.html) published in 1907, Francis Galton described an event that had taken place at a county fair, where he asked roughly 800 people to guess the weight of an ox. The average estimate was 1,197 pounds. The actual weight was 1,198, which meant that the average guess was a near-perfect estimate. Many people who participated from the crowd were considered experts, such as farmers and butchers, but many people were non-experts who were just attending the fair. Also, none of them guessed the correct weight, and only one person guessed 1,197. The next closest guess was 1,199, which was given by two participants.  
 
