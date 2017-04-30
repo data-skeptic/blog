@@ -1,5 +1,6 @@
 ## Is Humor Truly AI-complete
 
+
 We recently posted a piece Kristine researched on [Computational Humor](https://dataskeptic.com/blog/news/2017/computational-humor).  As she mentioned, some researchers consider the idea of a machine creating humor to be in a class known as AI-Complete.  AI-Complete is defined to be the set of problems, tasks, games, behaviors, etc., for which if you develop a machine that can perform one of these tasks, it can likely perform all of them with a practical amount of tinkering.
 
 This definition is inspired by the idea of NP-Complete from computatonal theory.  The next few paragraphs will be a crash course in computational theory.
