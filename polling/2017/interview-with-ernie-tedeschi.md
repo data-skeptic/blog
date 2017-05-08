@@ -1,9 +1,9 @@
-## Interview with Ernie Tedeschi, DC-based Economist
+## Interview with Ernie Tedeschi, Economist, on Poll Re-Weighting
 
 Our recent episode [Opinion Polling for Presidential Elections](https://dataskeptic.com/blog/episodes/2017/opinion-polling-for-presidential-elections) featured segments from an interview with [Ernie Tedeschi](https://twitter.com/ernietedeschi).  This post contains the full transcript for that interview conducted by [Christine Zhang](https://twitter.com/christinezhang).  The player below also contains a link to the full recording from the Data Skeptic Bonus Feed.
 
 <audio controls>
-  <source src="https://s3.amazonaws.com/data-skeptic-bonus-feed/episodes/ernie-tedeschi.mp3" type="audio/mpeg">
+  <source src="https://s3.amazonaws.com/data-skeptic-bonus-feed/episodes/2017/ernie-tedeschi.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
