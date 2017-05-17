@@ -56,8 +56,7 @@ Here is a list of datasets that have come out since the election that can help u
 
 * The 2016 ANES consisted of a pre-election survey between September 7 and November 7, 2016 and a post-election survey between November 9 and January 8, 2017. It combined face-to-face interviews of 1,181 respondents with online surveys of 3,090 respondents.
 
-* For the first time, this year's ANES asked respondents for access to their Facebook timelines in an
-attempt to see how much individuals were posting about the election. However, according to research specialist Jamie Ventura, the ANES staff hasn't decided whether or how they will make this  information public. 
+* For the first time, this year's ANES asked respondents for access to their Facebook timelines in an attempt to see how much individuals were posting about the election. At this point, the ANES staff hasn't decided whether or how they will make this information public. 
 
 **How can I get it?**
 
