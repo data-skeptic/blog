@@ -1,3 +1,3 @@
-# Convolutional Neural Networks
+## Convolutional Neural Networks
 
 CNNs are characterized by their use of a group of neurons typically referred to as a filter or kernel.  In image recognition, this kernel is repeated over the entire image.  In this way, CNNs may achieve the property of translational invariance - once trained to recognize certain things, changing the position of that thing in an image should not disrupt the CNN's ability to recognize it.  In this episode, we discuss a few high level details of this important architecture.
