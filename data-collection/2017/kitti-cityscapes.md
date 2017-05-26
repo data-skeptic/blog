@@ -24,11 +24,11 @@ The [Cityscapes benchmark suite and a corresponding dataset]( https://arxiv.org/
  
 The Cityscapes dataset features two subsets: 5,000 detailed, pixel-level labeled images and 20,000 coarsely annotation images. The dataset is also annotated with 30 categories, of which 19 categories are included for training and evaluation. The training, validation, and test set contains 2975, 500, and 1525 high quality images, respectively. An additional 20000 images with coarse (polygonal) annotations are also provided but are only used for training. To date, Cityscapes is the largest and most diverse datasets for semantic segmentation of urban street scenes. 
  
-![Fine annotation](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2015/07/tuebingen00.png)
+<img src="https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2015/07/tuebingen00.png)" title="Fine annotation" alt="Fine annotation" width="800" />
  
-![Coarse annotation](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2015/07/saarbrucken01.png)
- 
-[![Video and GPS metadata](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2016/02/gpsMotionMeta_thumb.jpg](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/videos/gpsMotionMeta.mp4?id=3)
+<img src="https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2015/07/saarbrucken01.png" title="Coarse annotation" alt="Coarse annotation" width="800" />
+
+<img src="https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2016/02/gpsMotionMeta_thumb.jpg](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/videos/gpsMotionMeta.mp4?id=3" title="Video and GPS metadata" alt="Video and GPS metadata" width="800" />
 
 Creating large datasets, like Cityscapes, with pixel-wise semantic labels is known to be extremely challenging
 due to the amount of human effort required to accurately trace object boundaries. High-quality semantic labeling for the Cityscapes dataset was reported to require 90 minutes per image!
