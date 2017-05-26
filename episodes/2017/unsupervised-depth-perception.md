@@ -1,4 +1,4 @@
-## Automated Depth Perception
+## Unsupervised Depth Perception
 
 This episode is an interview with [Tinghui Zhou](https://people.eecs.berkeley.edu/~tinghuiz/).  In the recent paper "[Unsupervised Learning of Depth and Ego-motion from Video](https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/)", Tinghui and collaborators propose a deep learning architecture which is able to learn depth and pose information from unlabeled videos.  We discuss details of this project and it's applications.
 
@@ -16,3 +16,5 @@ This episode is an interview with [Tinghui Zhou](https://people.eecs.berkeley.ed
 </div>
 
 <div class="clear" />
+
+
