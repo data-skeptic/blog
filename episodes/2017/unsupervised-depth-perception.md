@@ -6,7 +6,7 @@ This episode is an interview with [Tinghui Zhou](https://people.eecs.berkeley.ed
 
 <div class="row">
 	<div class="col-xs-12 col-sm-3">
-		<img alt="Tinghui Zhou" src="src-unsupervised-depth-perception/tinghui-zhou.jpg" />
+		<img alt="Tinghui Zhou" src="src-unsupervised-depth-perception/tinghui-zhou.png" />
 		<br/>
 		<p><i>Tinghui Zhou</i></p>
 	</div>
