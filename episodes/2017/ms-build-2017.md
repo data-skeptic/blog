@@ -1,5 +1,4 @@
-This episode recaps the Microsoft Build Conference.  Kyle recently attended and shares some thoughts on cloud, databases, cognitive services, and artificial intelligence.  The episode includes interiews with Rohan Kumar
-and David Carmona.
+This episode recaps the Microsoft Build Conference.  Kyle recently attended and shares some thoughts on cloud, databases, cognitive services, and artificial intelligence.  The episode includes interviews with Rohan Kumar and David Carmona.
 
 A few other podcasts that covered the event as well:
 
