@@ -1,4 +1,4 @@
-## Mutli-Agent Diverse Generative Adversarial Networks
+## Multi-Agent Diverse Generative Adversarial Networks
 
 In this episode, Arnab Ghosh and Viveka Kulharia from Oxford University join Kyle in a lively discussion on one of the major pitfalls in generative adversarial networks-- mode collapse. Arnab and Viveka share a solution to tackle this problem, which they recently published [here](https://arxiv.org/pdf/1704.02906.pdf).
 
