@@ -27,7 +27,6 @@ Remove rasberry pi reference?
 		<img alt="Edward Choi, Doctor AI coauthor" src="src-doctor-ai/edward-choi.png" />
 		<br/>
 		<p><i>Edward Choi</i></p>
-		<p><a href="https://twitter.com/cwardell">@cwardell</a></p>
 	</div>
 	<div class="col-xs-12 col-sm-9">
 		Edward Choi received his M.S degree in Computer Science and Engineering from the Korea Advanced Institute of Science and Technology in 2009 and his B.S. degree in Computer Science and Engineering from Seoul National University in 2007. He is currently pursuing a PhD in Computer Science at Georgia Tech, under the supervision of Professor Jimeng Sun. Edward's main research interests include predictive modeling, temporal modeling, and healthcare analytics, specifically using representation learning and interpretable deep learning for predictive healthcare. Over the past years, he has held research internships at Sutter Health, DeepMind, and more recently, Google Research.  When he's not in the lab, Edward is a dilettante pianist, a low-budget traveler, a self-approved philosopher, and most of all, a gamer at heart.
