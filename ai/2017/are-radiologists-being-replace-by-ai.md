@@ -1,3 +1,5 @@
+<img src="src-are-radiologists-being-replace-by-ai.mdthoughts-on-the-chinese-room-problem/Radiologist_in_San_Diego_CA_2010.jpg" width=800 />
+
 ##Are radiologists being replaced by AI?
  
 The frightening, futurist portrayals of artificial intelligence and anthropomorphic robots portended in Hollywood films and sci-fi novels are fictional. In reality, AI is already changing our everyday lives, almost entirely in ways that benefit our society. Apple’s Siri, voice recognition, Google’s ability to recognize photos and videos of cats, weather forecasts, and email spam filtering, are all examples. Indeed, we’ve witnessed quantum leaps in the quantity and quality of a wide range of common technologies. 
