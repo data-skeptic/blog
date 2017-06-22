@@ -1,4 +1,4 @@
-<img src="src-are-radiologists-being-replace-by-ai.mdthoughts-on-the-chinese-room-problem/Radiologist_in_San_Diego_CA_2010.jpg" width=800 />
+<img src="src-are-radiologists-being-replace-by-ai/Radiologist_in_San_Diego_CA_2010.jpg" width=800 />
 
 ##Are radiologists being replaced by AI?
  
