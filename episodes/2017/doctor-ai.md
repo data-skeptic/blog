@@ -8,17 +8,17 @@ Using patient HER data, Edward’s research team developed a successful applicat
 
 The initialization of the RNN involved using skip-gram embeddings. More specifically, the input data included: a patient’s medical (ICD-9) diagnosis, medications, and procedure codes, which were time-stamped with the patient’s previous visit. (Note: the procedure code from the previous visit was used to predict the next visit’s procedure code) Below is the general architecture of the model. The diagram shows how they applied RNNs to solve the problem of forecasting of next visits’ time and procedure codes assigned for each visit:
 
-<img src="https://github.com/GokuMohandas/casual-digressions/blob/master/notes/images/docai/rnn.png" />
+<img src="src-doctor-ai/rnn.png" />
 
 The proposed neural network architecture receives input at each timestamp t<sub>i</sub> as the concatenation of the multi-hot input vector x <sub>i</sub> of the multi-label categories and the duration d<sub>i</sub> since the last event. So, x <sub>i</sub> is fed into the model to output y<sub>i+1</sub> and d<sub>i+1</sub> from the RNN, where y<sub>i+1</sub> are diagnosis and medication classes for the next visit and d<sub>i+1</sub> is the time until the next visit, which is labeled as: d<sub>i+1</sub> = t<sub>i+1</sub> – t<sub>i</sub>
 
 The medical and diagnosis multi-hot input vector is the input, which can be as large as 40, 000. Thus, the input goes through a second layer of embedding to become a lower dimensional vector, which was then passed through RNN (which was implemented with GRU in this particular study). The second input is d<sub>i</sub>, which is the duration since the last visit. They then feed this second input, d<sub>i</sub>, into the network to predict the multi-hot vector for the medication and diagnosis codes of the next visit using a softmax classifier. To predict the period of time until next visit, they use the ReLU activation function. 
 
-<img src="https://github.com/GokuMohandas/casual-digressions/blob/master/notes/images/docai/final_layer.png" />
+<img src="src-doctor-ai/final_layer.png" />
 
 As mentioned earlier, the multi-hot vectors x<sub>i</sub> of almost 40,000 dimensions were first projected to a lower dimensional space, then put into the GRU. Edward employed two approaches for embedding the medication and diagnosis codes. The first approach (1) was to train the embeddings with the RNN end-to-end. The second approach (2) was to pre-train the medication and diagnosis codes with a skip-gram method use these embeddings as the initialization, then refine the embedding weights for the RNN as they then train the model end-to-end.  The first and second approach were formulated as the following:
 
-<img src="https://github.com/GokuMohandas/casual-digressions/blob/master/notes/images/docai/embed.png" />
+<img src="src-doctor-ai/embed.png" />
 
 where [·, ·] is the concatenation operation used for appending the time duration to the multi-hot vector h<sup>(1)</sup> to make it an input vector to the GRU.
 
