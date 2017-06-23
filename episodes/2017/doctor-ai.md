@@ -40,11 +40,11 @@ Links related to things discussed this this episode:
 
 Other papers from Edward mentioned in the show:
 
-http://mp2893.com/docs/jamia2016.pdf
+[Using recurrent neural network models for early detection of heart failure onset](http://mp2893.com/docs/jamia2016.pdf)
 
-https://papers.nips.cc/paper/6321-retain-an-interpretable-predictive-model-for-healthcare-using-reverse-time-attention-mechanism
+[https://papers.nips.cc/paper/6321-retain-an-interpretable-predictive-model-for-healthcare-using-reverse-time-attention-mechanism](https://papers.nips.cc/paper/6321-retain-an-interpretable-predictive-model-for-healthcare-using-reverse-time-attention-mechanism)
 
-https://arxiv.org/abs/1611.07012
+[GRAM: Graph-based Attention Model for Healthcare Representation Learning](https://arxiv.org/abs/1611.07012)
 
 
 <div class="row">
