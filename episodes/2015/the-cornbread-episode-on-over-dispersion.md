@@ -1,6 +1,6 @@
 ## Cornbread and Overdispersion
 
-For our 50th episode we enduldge a bit by cooking Linhda's previously mentioned "healthy" cornbread.  This leads to a discussion of the statistical topic of overdispersion in which the variance of some distribution is larger than what one's underlying model will account for.
+For our 50th episode we indulgent a bit by cooking Linh Da's previously mentioned "healthy" cornbread.  This leads to a discussion of the statistical topic of overdispersion in which the variance of some distribution is larger than what one's underlying model will account for.
 
 ### Linhda's Healthy Cornbread Recipe<
 
@@ -13,16 +13,4 @@ For our 50th episode we enduldge a bit by cooking Linhda's previously mentioned 
 * 4 tablespoons baking powder
 * $\frac{1}{2}$ tsp salt
 
-<img src='/cornbread.jpg' width=300 />
-
- <script type="text/javascript" 
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true, 
-        processEnvironments: false, inlineMath: [ ['$','$'] ], 
-        displayMath: [ ['$$','$$'] ] }, 
-        asciimath2jax: {delimiters: [ ['$','$'] ] }, 
-        "HTML-CSS": {minScaleAdjust: 125 } });
-    </script>
-
-<? include("../footer.php") ?>
+<img src='src-the-cornbread-episode-on-over-dispersion/cornbread.jpg' width=300 />
