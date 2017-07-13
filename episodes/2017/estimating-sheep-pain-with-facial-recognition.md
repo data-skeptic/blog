@@ -2,6 +2,8 @@
 
 Animals can't tell us when they're experiencing pain, so we have to rely on other cues to help treat their discomfort. But it is often difficult to tell how much an animal is suffering. The sheep, for instance, is the most inscrutable of animals. However, determining a sheep's level of pain might have just gotten easier.
 
+If you're able to be in Minneapolis, MN on August 23rd or 24th, consider attending Farcon.  Get your tickets today via [https://farcon2017.eventbrite.com](https://farcon2017.eventbrite.com).
+
 <div class="row">
         <div class="col-xs-12 col-sm-3">
                 <img alt="Marwa Mahmoud" src="src-estimating-sheep-pain-with-facial-recognition/marwa-mahmoud.png" />
