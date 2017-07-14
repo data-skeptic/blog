@@ -6,7 +6,7 @@ If you're able to be in Minneapolis, MN on August 23rd or 24th, consider attendi
 
 <div class="row">
         <div class="col-xs-12 col-sm-3">
-                <img alt="Marwa Mahmoud" src="src-estimating-sheep-pain-with-facial-recognition/marwa-mahmoud.png" />
+                <img alt="Marwa Mahmoud" src="src-estimating-sheep-pain-with-facial-recognition/marwa-mahmoud.jpg" />
                 <br/>
                 <p><i>Marwa Mahmoud</i></p>
         </div>
