@@ -1,4 +1,4 @@
-# Estimating Sheep Pain with Facial Recognition
+## Estimating Sheep Pain with Facial Recognition
 
 Animals can't tell us when they're experiencing pain, so we have to rely on other cues to help treat their discomfort. But it is often difficult to tell how much an animal is suffering. The sheep, for instance, is the most inscrutable of animals. However, scientists have figured out a way to understand sheep facial expressions using artificial intelligence.
 
