@@ -12,7 +12,7 @@ $Pr(X \cap Y) = Pr(X)Pr(Y)$
 
 When this does not hold, we represent the statistical relationship as:
 
-$PR(X|Y)$
+$Pr(X|Y)$
 
 If $X$ and $Y$ are conditionally independent given $Z$, we write that as:
 
