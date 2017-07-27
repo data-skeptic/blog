@@ -7,7 +7,7 @@ All it needs is a single image of a design for a graphic user interface (GUI) to
 
 Below is an overview of the architecture of pix2code model. The visual component is handled by a convolutional neural network and the language part is handled by a Long Short Term Memory (i.e. a feedback network). 
 
-[Figure 1](https://user-images.githubusercontent.com/17261080/27221124-c9cadcc6-5287-11e7-9d38-c4234af92912.png)
+<img src="https://user-images.githubusercontent.com/17261080/27221124-c9cadcc6-5287-11e7-9d38-c4234af92912.png" width=800 />
 
 In order to train the neural network, Tony’s team at Ulzard Technologies needed to overcome three main problems. The first being computer vision, as computers won’t automatically understand the context and cannot instinctively identify the objects present, as well as their characteristics. Secondly, there is the language problem-- teaching the network to understand text so it could create the correct samples is a difficult task. Finally, the network had to be trained to understand the connections between code, text and corresponding images. In other words, the network needs to connect all three while generating codes.
 
