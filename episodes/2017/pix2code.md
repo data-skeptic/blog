@@ -41,7 +41,7 @@ http://uizard.io/
 
 <div class="row">
         <div class="col-xs-12 col-sm-3">
-                <img alt="Tony Beltramelli" src="src-tony-beltramelli/tony-beltramelli.jpg" />
+                <img alt="Tony Beltramelli" src="src-pix2code/tony-beltramelli.jpg" />
                 <br/>
                 <p><i>Tony Beltramelli</i></p>
         </div>
