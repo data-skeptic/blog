@@ -1,7 +1,7 @@
 ## pix2code
-In this episode, Tony Beltramelli of UIzard Technologies joins our host, Kyle Polich, to talk about the ideas behind his latest app that can transform graphic design into functioning code, as well as his previous work on spying with wearables.
+In this episode,  [Tony Beltramelli](https://tonybeltramelli.com/) of [UIzard Technologies](https://uizard.io/) joins our host, Kyle Polich, to talk about the ideas behind his latest app that can transform graphic design into functioning code, as well as his previous work on spying with wearables.
 
-Tony and his team at UIzard Technologies recently developed [pix2code](https://arxiv.org/pdf/1705.07962.pdf), which leverages deep learning to transform graphic user interface screenshots into lines of code. His novel approach is based on Convolutional and Recurrent Neural Networks that allows the generation of computer code from a single GUI screenshot as input. This new method is an achievement because mapping a structured image to a language description is a very difficult task.
+Tony and his team at UIzard Technologies recently developed [pix2code](https://arxiv.org/pdf/1705.07962.pdf), which leverages deep learning to transform graphic user interface screenshots into lines of code. [pix2code](https://github.com/tonybeltramelli/pix2code) takes a clever approach based on Convolutional and Recurrent Neural Networks that allows the generation of computer code from a single GUI screenshot as input. This new method is an achievement because mapping a structured image to a language description is a very difficult task.
 
 All it needs is a single image of a design for a graphic user interface (GUI) to work. Once the neural network is trained to recognize the image, it begins to produce the code that creates the graphical user interface. Moreover, the model can generate source code for a range of different platforms --iOS, Android, HTML, and so on-- from a single input image with over 77 percent accuracy. The trick to being multilingual is to use a special Domain Specific Language (DSL) that describes the UI and then is compiled to the specific language. 
 
@@ -20,23 +20,9 @@ Also, in this episode, Tony talks about his Master's thesis, titled [Deep-Spying
 
 The idea behind what Tony has coined "deep-spying" is that a hacker with access to the sensors (e.g. accelerometer and gyroscope) on a piece of wearable tech could use a malicious app to record the tiny motions of the wrist, process the data, and figure out which keys were entered. His study expanded on [previous work](https://www.ece.illinois.edu/newsroom/article/11762) done by Romit Roy Choudhury, an Associate Professor at the University of Illinois Urbana-Champaign, who showed how wearable devices, such as a Samsung Gear Live smartwatch, can be vulnerable to hackers.
 
-Using a deep learning algorithm, Recurrent Neural Network - Long Short-Term Memory (RNN-LSTM), Tony trained an artificial neural network to recognize when specific buttons on a keypad were being pressed, based on a smartwatch's motion sensor. Even without the training, the Deep-Spying model could infer keystrokes with reasonable accuracy. 
+Using a deep learning algorithm, Recurrent Neural Network - Long Short-Term Memory (RNN-LSTM), Tony trained an artificial neural network to recognize when specific buttons on a keypad were being pressed, based on a smartwatch's motion sensor. Even without the training, the Deep-Spying model could infer keystrokes with reasonable accuracy. The source code is available at [GitHub](https://github.com/tonybeltramelli/Deep-Spying).
 
 Here is a video demonstrating how Deep-Spying operates, by taking gyroscope and accelerometer data from a Sony SmartWatch 3: https://www.youtube.com/watch?v=ZBwSfvnoq5U
-
-
-
-https://github.com/tonybeltramelli/pix2code
-
-https://arxiv.org/abs/1705.07962
-
-https://tonybeltramelli.com/
-
-https://github.com/tonybeltramelli/Deep-Spying
-
-https://arxiv.org/abs/1512.05616
-
-http://uizard.io/
 
 
 <div class="row">
