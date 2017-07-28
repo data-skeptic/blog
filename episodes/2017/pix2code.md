@@ -22,7 +22,11 @@ The idea behind what Tony has coined "deep-spying" is that a hacker with access 
 
 Using a deep learning algorithm, Recurrent Neural Network - Long Short-Term Memory (RNN-LSTM), Tony trained an artificial neural network to recognize when specific buttons on a keypad were being pressed, based on a smartwatch's motion sensor. Even without the training, the Deep-Spying model could infer keystrokes with reasonable accuracy. The source code is available at [GitHub](https://github.com/tonybeltramelli/Deep-Spying).
 
-Here is a video demonstrating how Deep-Spying operates, by taking gyroscope and accelerometer data from a Sony SmartWatch 3: https://www.youtube.com/watch?v=ZBwSfvnoq5U
+Here is a video demonstrating how Deep-Spying operates, by taking gyroscope and accelerometer data from a Sony SmartWatch 3: [https://www.youtube.com/watch?v=ZBwSfvnoq5U](https://www.youtube.com/watch?v=ZBwSfvnoq5U)
+
+[Farcon](http://minneanalytics.org/farcon-2017/) will take place in Minneapolis, MN on August 22-23, 2017.
+
+The [Data Science Conference](https://www.ideassn.org/socal-2017/) will take place in Pasadena on October 21-22, 2017.
 
 
 <div class="row">
