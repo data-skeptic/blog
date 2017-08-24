@@ -42,11 +42,10 @@ Every so often, someone asks a question that's direct and very effective at gett
 
 ### Customer First Data Science Through Analytics, Product Management, and Customer Experience
 
-@davemathias
-worklearnplay.com
+
 Data Difference podcast
 
-Dave Mathias talks about the common but not often spoken about that disappointment that some organizations have with the fact that they haven't seen the ROI they wanted from an investment in data science.  There are many insights from the product management world that Dave presented which could be very useful in helping organizations get a better return on their investment.
+[Dave Mathias](http://worklearnplay.com/) ([@davemathias](https://twitter.com/DaveMathias)) talks about the common but not often spoken about that disappointment that some organizations have with the fact that they haven't seen the ROI they wanted from an investment in data science.  There are many insights from the product management world that Dave presented which could be very useful in helping organizations get a better return on their investment.
 
 Dave's talk was an insightful walk through his seven recommendations for customer first data science:
 
@@ -73,15 +72,22 @@ A particularly interesting point he made relates to the use of dimensionality re
 
 In a nice demonstration, Joseph showed the recommendations he received from a few popular sites. In each case the sites showed him the same recommendations as last time - the exact recommendation which did not cause him to buy anything.  
 
+The talk was a really great survey of the novel findings and results in the recommender system field and what researchers have been developing.
+
+As is evident from the talk title, a key thesis was that data mining is not the same thing as recommendation.  The most useless thing a recommender can do is recommend a product that you have already consumed and have no intention of consuming again.  This key insight highlights how typical data mining techniques are not well suited for the unique challenges that recommender systems face.  By their very nature, they seek to help with discovery.  Metrics of diversity and serendipity are critical, yet not common objectives in most machine learning.
+
+A particular anecdote that resonated with me related to Joseph's grandfather whose highest compliment was "that's not bad".  Some people's 3 starts is more appreciated by them than another person's 4 starts.  We all have our own sense of scaling and a world class recommendation system needs to understand and deal with this.
+
 As you will hear in our interview, Joseph is a very funny guy in addition to being a good presenter.  It's well worth catching one of his talks.
 
 ### My talk on Chatbots
 
 If you're interested in what I have to say about Chatbots, look elsewhere!  My presentation was exclusive to the FARCON attendees, and tailored to that audience.  Yet, I have more to say about Chatbots so stay tuned.  I was surprised anyone attended my session, because I had some truly stiff competition with other great talks happening in other rooms.
 
-### 3:15 
+### The Importance of Data Strategy and Governance for Data Science Success
+Winding up the day for me was a talk from Edward Chenard, Founder Cyberian Data.  A quote I appreciated from early in his talk was: "We often don't quantify our technology use.  We just assume new is good."
 
-### 4:15 
+
 
 
 
