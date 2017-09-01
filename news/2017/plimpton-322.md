@@ -1,5 +1,7 @@
 ## Plimpton 322
 
+> While I think my comments are still interesting, I recommend everyone be sure to review TTAndy's great reply providing a more insightful explanation of the true mathematical content of this story.
+
 I recently came across the Guardian's coverage of [Daniel Mansfield's work on an ancient mathematical tablet](https://www.theguardian.com/science/2017/aug/24/mathematical-secrets-of-ancient-tablet-unlocked-after-nearly-a-century-of-study?CMP=Share_iOSApp_Other).  I found the coverage to be deeply disappointing, in no small part to the misleading way, IMO, that Mansfield presents the result.
 
 The actual news seem to be that Mansfield has figured out how to read this ancient tablet.  The notion had been lost to time previously.  That's a legitimate achievement for which Mansfield should be lauded.  The translation revealed that this tablet contains a trigonometric table and evidence that the Babylonians understood Pythagoras's famous and deeply useful Pythagorean theorem ($a^2 + b^2 = c^2$).  This moves the discovery about 1000 years earlier in the human timeline!  Again, a discovery we should celebrate and one historians of mathematical discovery (and cultural forgetfulness) should take a keen and deep interest.
