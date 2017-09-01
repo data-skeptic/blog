@@ -15,13 +15,13 @@ In May 2017, Zillow launched the Zillow Prize, a competition administered throug
 
 ###Links mentioned during the interview:
 
-[Zillow Talk: The New Rules of Real Estate (book)](https://www.amazon.com/Zillow-Talk-Rules-Real-Estate/dp/1455574740)
+* [Zillow Talk: The New Rules of Real Estate (book)](https://www.amazon.com/Zillow-Talk-Rules-Real-Estate/dp/1455574740)
 
-[Zillow Price Competition via Kaggle](https://www.kaggle.com/c/zillow-prize-1) 
+* [Zillow Price Competition via Kaggle](https://www.kaggle.com/c/zillow-prize-1) 
 
-[Zillow’s data science blog](https://www.zillow.com/data-science/)
+* [Zillow’s data science blog](https://www.zillow.com/data-science/)
 
-[Careers at Zillow](https://www.zillow.com/careers/)
+* [Careers at Zillow](https://www.zillow.com/careers/)
 
 
 
