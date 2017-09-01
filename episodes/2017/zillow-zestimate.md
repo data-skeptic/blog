@@ -16,17 +16,14 @@ In May 2017, Zillow launched the Zillow Prize, a competition administered throug
 ###Links mentioned during the interview:
 
 [Zillow Talk: The New Rules of Real Estate (book)](https://www.amazon.com/Zillow-Talk-Rules-Real-Estate/dp/1455574740)
+
 [Zillow Price Competition via Kaggle](https://www.kaggle.com/c/zillow-prize-1) 
+
 [Zillow’s data science blog](https://www.zillow.com/data-science/)
+
 [Careers at Zillow](https://www.zillow.com/careers/)
 
 
-prize announced in may.  updated oct 1st.  ends oct15
 
-
-Publicly announced latest rebuild, released nationally
-
-Data sci blog
-
-Andrew Martin graduated from Stanford University in 2013 with an M.S. in Statistics. After earning his Master's degree, he began an independent consulting practice specializing in statistics. In 2014, Andrew joined Zillow's data science team as a Senior Data Scientist. He currently works as a Research Manager on the Zestimate team at Zillow's headquarters in Seattle, WA. Previously, Andrew received a B.S. in Computer and Information Sciences in 2006 from the University of Washington. From 2009 to 2011, Andrew worked at the Democratic National Committee as an Analytics Engineer for the Obama for America team.
-
+<!--Andrew Martin graduated from Stanford University in 2013 with an M.S. in Statistics. After earning his Master's degree, he began an independent consulting practice specializing in statistics. In 2014, Andrew joined Zillow's data science team as a Senior Data Scientist. He currently works as a Research Manager on the Zestimate team at Zillow's headquarters in Seattle, WA. Previously, Andrew received a B.S. in Computer and Information Sciences in 2006 from the University of Washington. From 2009 to 2011, Andrew worked at the Democratic National Committee as an Analytics Engineer for the Obama for America team.
+-->
