@@ -1,6 +1,6 @@
 ## Long Short Term Memory
 
-A LSTM network contains LSTM units instead of, or in addition to, other network units. A LSTM unit remembers values for either long or short time periods. The key to this ability is that it uses no activation function within its recurrent components. Thus, the stored value is not iteratively modified and the gradient does not tend to vanish when trained with backpropagation through time.
+A Long Short Term Memory (LSTM) is a neural unit, often used in Recurrent Neural Network (RNN) which attempts to provide the network the capacity to store information for longer periods of time. A LSTM unit remembers values for either long or short time periods. The key to this ability is that it uses no activation function within its recurrent components. Thus, the stored value is not iteratively modified and the gradient does not tend to vanish when trained with backpropagation through time.
 
 ### Typical LSTM
 <img src="src-long-short-term-memory/lstm.png" />
