@@ -1,3 +1,17 @@
 ## Recommender Systems (life from Farcon)
 
-<!-- Joseph A. Konstan is Distinguished McKnight Professor and Distinguished University Teaching Professor in the Department of Computer Science and Engineering at the University of Minnesota.  His research addresses a variety of human-computer interaction and ethical issues, including personalization, eliciting on-line participation, and designing computer systems to improve public health. He is probably best known for his work in collaborative filtering recommenders, such as the GroupLens project. Dr. Konstan (1993) holds a Ph.D. in Computer Science from UC Berkeley and B.A. in Computer Science (1987) from Harvard University. -->
+
+
+
+
+
+<!-- <div class="row">
+        <div class="col-xs-12 col-sm-3">
+                <img alt="Joseph Konstan" src="src-recommender-systems-live-from-farcon/joseph-konstan.jpg" />
+                <br/>
+                <p><i>Joseph Konstan</i></p>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+		Joseph A. Konstan is Distinguished McKnight Professor and Distinguished University Teaching Professor in the Department of Computer Science and Engineering at the University of Minnesota.  His research addresses a variety of human-computer interaction and ethical issues, including personalization, eliciting on-line participation, and designing computer systems to improve public health. He is probably best known for his work in collaborative filtering recommenders, such as the GroupLens project. Dr. Konstan (1993) holds a Ph.D. in Computer Science from UC Berkeley and B.A. in Computer Science (1987) from Harvard University.
+        </div>
+</div> -->
