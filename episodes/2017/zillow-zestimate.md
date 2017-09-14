@@ -24,6 +24,13 @@ In May 2017, Zillow launched the Zillow Prize, a competition administered throug
 * [Careers at Zillow](https://www.zillow.com/careers/)
 
 
-
-<!--Andrew Martin graduated from Stanford University in 2013 with an M.S. in Statistics. After earning his Master's degree, he began an independent consulting practice specializing in statistics. In 2014, Andrew joined Zillow's data science team as a Senior Data Scientist. He currently works as a Research Manager on the Zestimate team at Zillow's headquarters in Seattle, WA. Previously, Andrew received a B.S. in Computer and Information Sciences in 2006 from the University of Washington. From 2009 to 2011, Andrew worked at the Democratic National Committee as an Analytics Engineer for the Obama for America team.
--->
+<div class="row">
+        <div class="col-xs-12 col-sm-3">
+                <img alt="Andy Martin" src="src-zillow-zestimate/andy-martin.jpg" />
+                <br/>
+                <p><i>Andy Martin</i></p>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+		Andrew Martin graduated from Stanford University in 2013 with an M.S. in Statistics. After earning his Master's degree, he began an independent consulting practice specializing in statistics. In 2014, Andrew joined Zillow's data science team as a Senior Data Scientist. He currently works as a Research Manager on the Zestimate team at Zillow's headquarters in Seattle, WA. Previously, Andrew received a B.S. in Computer and Information Sciences in 2006 from the University of Washington. From 2009 to 2011, Andrew worked at the Democratic National Committee as an Analytics Engineer for the Obama for America team.
+        </div>
+</div>
