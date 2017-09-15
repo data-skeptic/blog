@@ -1,4 +1,4 @@
-## Recommender Systems (life from Farcon)
+## Recommender Systems (live from Farcon)
 
 Recommender systems play an increasingly important role in providing personalized content to online users. In this episode, host Kyle Polich joins Dr. Joseph Konstan, best known for his work in collaborative filtering recommenders, for a live recording at FARCON 2017 in Minneapolis, MN.
 
