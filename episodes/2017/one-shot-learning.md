@@ -8,4 +8,4 @@ The [Omniglot](https://www.omniglot.com/) dataset is a great use case for one sh
 
 There are several approaches to this technique including [Neural Turing Machines](https://arxiv.org/abs/1410.5401), [Memory-Augmented Neural Networks](https://arxiv.org/abs/1605.06065), and [Active One Shot Learning](https://cs.stanford.edu/~woodward/papers/active_one_shot_learning_2016.pdf).
 
-<img src="src-one-shot-learning/oneshot.png" />
+<img width=800 src="src-one-shot-learning/oneshot.png" />
