@@ -23,4 +23,16 @@ Deb Ray is slated to speak at the [Southern California Data Science Conference](
 [Sunspring](https://www.youtube.com/watch?v=LY7x2Ihqjmc)
 
 
+<div class="row">
+        <div class="col-xs-12 col-sm-3">
+                <img alt="Deb Ray" src="src-generative-ai-for-content-creation/deb-ray.jpg" />
+                <br/>
+                <p><i>Deb Ray</i></p>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+		Deb Ray is the CTO of End Cue, where his team of data scientists and engineers are building the company’s AI platform for analyzing and generating original content. Previously, he was the Chief Data Officer for VideoAmp, where he continues to serve as an Advisor.  Prior to that, he was the Chief Scientist at Pasadena Labs, a company he founded during his doctoral studies that built ML-based applications for clients like Microsoft and IAC. Deb holds a PhD in Machine Learning from Caltech and completed his undergrad from the University of Toronto, where he began doing research in Deep Learning and Computer Vision in Geoffrey Hinton's group. He has been involved in the field for over 10 years. He is also currently a fund-advisor and investor at the VC firm, Signalfire, and angel invests in AI and blockchain startups.
+        </div>
+</div>
+
+
 
