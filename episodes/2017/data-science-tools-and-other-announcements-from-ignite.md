@@ -1,4 +1,4 @@
-#Data Science Tools and Other Announcements from Ignite
+# Data Science Tools and Other Announcements from Ignite
 
 In this episode, Microsoft's Corporate Vice President for Cloud Artificial Intelligence, Joseph Sirosh, joins host Kyle Polich to share some of the Microsoft's latest and most exciting innovations in AI development platforms. Last month, Microsoft launched a set of three powerful new capabilities in Azure Machine Learning for advanced developers to exploit big data, GPUs, data wrangling and container-based model deployment. 
 
@@ -29,7 +29,7 @@ Azure CosmosDB database service and serverless Azure Functions that enables deve
 
 - Finally, a rich set of AI Solutions for Enterprises, designed to tackle high value, complex enterprise scenarios, helping companies speed up their digital transformation.
 
-##Links and Resources:
+## Links and Resources:
 
 [Joseph’s blog on AI announcements at Ignite](https://azure.microsoft.com/en-us/blog/tools-for-the-ai-driven-digital-transformation/)
 
