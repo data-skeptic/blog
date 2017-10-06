@@ -1,4 +1,4 @@
-## Recurrent Neural Network
+## Recurrent Neural Networks
 
 Thanks to our sponsor [brilliant.org](https://brilliant.org/dataskeptics) - a math and science learning platform that's fun to use.
 
