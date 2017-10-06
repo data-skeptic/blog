@@ -1,4 +1,4 @@
-# Data Science Tools and Other Announcements from Ignite
+## Data Science Tools and Other Announcements from Ignite
 
 In this episode, Microsoft's Corporate Vice President for Cloud Artificial Intelligence, Joseph Sirosh, joins host Kyle Polich to share some of the Microsoft's latest and most exciting innovations in AI development platforms. Last month, Microsoft launched a set of three powerful new capabilities in Azure Machine Learning for advanced developers to exploit big data, GPUs, data wrangling and container-based model deployment. 
 
