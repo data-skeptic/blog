@@ -29,7 +29,7 @@ Azure CosmosDB database service and serverless Azure Functions that enables deve
 
 - Finally, a rich set of AI Solutions for Enterprises, designed to tackle high value, complex enterprise scenarios, helping companies speed up their digital transformation.
 
-## Links and Resources:
+### Links and Resources:
 
 [Joseph’s blog on AI announcements at Ignite](https://azure.microsoft.com/en-us/blog/tools-for-the-ai-driven-digital-transformation/)
 
