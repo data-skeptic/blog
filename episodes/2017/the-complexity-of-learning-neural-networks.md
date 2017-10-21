@@ -1,4 +1,4 @@
-# The Complexity of Learning Neural Networks
+## The Complexity of Learning Neural Networks
 
 Over the past several years, we have seen many success stories in machine learning brought about by deep learning techniques.  While the practical success of deep learning has been phenomenal, the formal guarantees have been lacking. Our current theoretical understanding of the many techniques that are central to the current ongoing big-data revolution is far from being sufficient for rigorous analysis, at best. In this episode of Data Skeptic, our host Kyle Polich welcomes guest John Wilmes, a mathematics post-doctoral researcher at Georgia Tech, to discuss the efficiency of neural network learning through complexity theory.
 
