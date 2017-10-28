@@ -12,6 +12,8 @@ John and his colleagues demonstrated that comprehensive lower bound ruled any po
  
 ##Links to Resources
 
+[Computational Complexity Complexitycast](https://player.fm/series/computational-complexity-complexitycast)
+
 [On the Complexity of Learning Neural Networks](https://arxiv.org/pdf/1707.04615.pdf)
 
 [Training a 3-Node Neural Network is NP-Complete](https://people.csail.mit.edu/rivest/pubs/BR93.pdf)
