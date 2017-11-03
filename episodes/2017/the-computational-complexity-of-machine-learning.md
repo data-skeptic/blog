@@ -1,6 +1,6 @@
-# The Computational Complexity of Machine Learning
+## The Computational Complexity of Machine Learning
 
-In this episode, Professor Michael Kearns from the University of Pennsylvania joins host Kyle Polich to talk about his doctoral research on the computational complexity of machine learning. Michael's doctoral thesis gave an early broad overview of computational learning theory, in which he emphasizes the mathematical study of efficient learning algorithms by machines or computational systems. 
+In this episode, Professor Michael Kearns from the University of Pennsylvania joins host Kyle Polich to talk about the computational complexity of machine learning, complexity in game theory, and algorithmic fairness. Michael's doctoral thesis gave an early broad overview of computational learning theory, in which he emphasizes the mathematical study of efficient learning algorithms by machines or computational systems. 
 
 When we look at machine learning algorithms they are almost like meta-algorithms in some sense. For example, given a machine learning algorithm, it will look at some data and build some model, and it’s going to behave presumably very differently under different inputs. But does that mean we need new analytical tools? Or is a machine learning algorithm just the same thing as any deterministic algorithm, but just a little bit more tricky to figure out anything complexity-wise? In other words, is there some overlap between the good old-fashioned analysis of algorithms with the analysis of machine learning algorithms from a complexity viewpoint? And what is the difference between strategies for determining the complexity bounds on samples versus algorithms?
 
