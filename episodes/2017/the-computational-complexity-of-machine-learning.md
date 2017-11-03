@@ -8,6 +8,7 @@ A big area of machine learning (and in the analysis of learning algorithms in ge
 
 Another interesting topic of discussion is the difference between sample complexity and computational complexity. An active area of research is how one should regularize their models so that they're balancing the complexity with the goodness of fit to fit their large training sample size. 
 
+As mentioned, a good resource for getting started with correlated equilibria is: [https://www.cs.cornell.edu/courses/cs684/2004sp/feb20.pdf](https://www.cs.cornell.edu/courses/cs684/2004sp/feb20.pdf)
 
 
 
