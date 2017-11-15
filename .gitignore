@@ -6,3 +6,7 @@
 *.pkl
 *.xml
 *.csv
+*.key
+*.keys
+*.pickle
+*.wav
