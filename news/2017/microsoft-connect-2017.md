@@ -30,7 +30,7 @@ Announced today was a major step forward in portability of .NET code.  Essential
 Again, despite dabbling a bit, I'm not really a mobile developer.  If I was, I'd be more curious about another announcement: Visual Studio App Center.  This appears to be a one stop shop for managing continuous integration, version distribution, deployment, crash reports, testing, and iteration cycles.
 
 
-## Azure Container Service (AKS)
+### Azure Container Service (AKS)
 
 I was very interested to learn about Azure Container Service.  Naturally, this is a competitor for AWS's ECS (EC2 Container Service).  However, some features that aren't part of ECS were announced that caught my attention.  New feature announced today allow you to use Azure as a debugging environment.  This means instead of debugging your code locally, you "Debug As" to the cloud.
 
