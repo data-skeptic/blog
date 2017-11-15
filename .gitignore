@@ -10,3 +10,4 @@
 *.keys
 *.pickle
 *.wav
+creds.*
