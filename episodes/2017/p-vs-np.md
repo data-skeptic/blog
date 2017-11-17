@@ -15,7 +15,6 @@ Links to Check Out:
 
 [Computational Complexity](http://blog.computationalcomplexity.org/) – Lance’s long-running blog, and a great place to see what else is going on in theoretical computation.
 
-
 <div class="row">
         <div class="col-xs-12 col-sm-3">
                 <img alt="Lance Fortnow" src="src-solving-the-p-np-problem/lance-fortnow.jpg" />
