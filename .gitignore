@@ -3,6 +3,7 @@
 *.config
 *.properties
 .ipynb_checkpoints/
+*.pyc
 *.pkl
 *.xml
 *.csv
@@ -11,3 +12,9 @@
 *.pickle
 *.wav
 creds.*
+gcloud-lang-api-key.json
+
+ideas/**
+tools-and-techniques/2017/photos/*
+
+*.sqlite
