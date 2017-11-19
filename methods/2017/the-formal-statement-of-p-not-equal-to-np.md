@@ -2,7 +2,7 @@
 
 In the last episode of Data Skeptic, I asked Lance Fortnow about whether or not is was possible P vs NP was ill-posed.  He correctly pointed out that, while some surprising result come emerge (like showing its impossible to solve it), it can't be ill-posed, because the problem has a formal mathematical statement.  That statement is below.
 
-$\exists L \in NP \hspace{5pt} \text{s.t.} \hspace{5pt} \forall M \in T, p \in P \hspace{5pt} \exists x \hspace{5pt} \text{s.t.} \hspace{5pt} M(x) \ne L(x) \hspace{5pt} \text{or} \hspace{5pt} M(x) \hspace{5pt} \text{runs for} > p(|x|) \hspace{5pt} \text{steps}$
+$\exists L \in NP \hspace{5pt}$ such that $\forall M \in T, p \in P \hspace{5pt} \exists x \hspace{5pt}$ such that $M(x) \ne L(x) \hspace{5pt}$ or $M(x)$ runs for > $p(|x|)$ steps.
 
 This blog post is a deconstruction of this definition and a some color commentary about it.
 
@@ -40,7 +40,7 @@ $\exists x \hspace{5pt} \text{s.t.} \hspace{5pt} M(x) \ne L(x) \hspace{5pt}$
 
 Which is to say that the machine $M$ doing its very best effort to compute the correct output for $L$ applied to input $x$, there exists at least one $x$ where they are going to disagree, or...
 
-$M(x) \hspace{5pt} \text{runs for} > p(|x|) \hspace{5pt} \text{steps}$
+$M(x)$ runs for > $p(|x|)$ steps.
 
 Which is to say that machine $M$ is going to run for more than a polynomial number of steps, which by definition, means $M$ is not getting it's work done in polynomial time.
 
