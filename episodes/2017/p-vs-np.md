@@ -1,4 +1,4 @@
-## Solving the P-NP Problem
+## P vs NP
 
 In this week's episode, host Kyle Polich interviews author Lance Fortnow about whether P will ever be equal to NP and solve all of life’s problems. At the heart of the P-NP problem is the question "are there problems for which the answers can be checked by computers, but not found in a reasonable time?" If there are such problems, then P does not equal NP. However, if all answers can be found easily as well as checked (if only we found out how) then P equals NP. 
 
