@@ -2,7 +2,7 @@
 
 In the last episode of Data Skeptic, I asked Lance Fortnow about whether or not is was possible P vs NP was ill-posed.  He correctly pointed out that, while some surprising result come emerge (like showing its impossible to solve it), it can't be ill-posed, because the problem has a formal mathematical statement. That statement is below.
 
-$\exists L \in NP$ such that $\forall M \in T, p \in P \hspace{5pt} \exists x \hspace{5pt}$ such that $M(x) \ne L(x) \hspace{5pt}$ or $M(x)$ runs for > $p(|x|)$ steps.
+$\exists L \in NP$ such that $\forall M \in T, p \in P \hspace{5pt} \exists x$ such that $M(x) \ne L(x)$ or $M(x)$ runs for > $p(|x|)$ steps.
 
 This blog post is a deconstruction of this definition and a some color commentary about it.
 
@@ -36,7 +36,7 @@ So the first part of the definition simply states that there must be at least on
 
 On to this [universal quantifier](https://en.wikipedia.org/wiki/Universal_quantification): $\forall M \in T, p \in P$.  $T$ is the set of all Turing machines.  In other words, its literally the set of every possible program that every could be written.  $P$ is the set of all polynomials (i.e. $x^2$, $x^3$, $x^4$, ... $x^k$ for any arbitrarily large $k$).  So this bit of the definition just says that for all combinations of possible Turing Machines and Polynomials, either...
 
-$\exists x \hspace{5pt} \text{s.t.} \hspace{5pt} M(x) \ne L(x) \hspace{5pt}$
+$\exists x$ such that $M(x) \ne L(x)$
 
 Which is to say that the machine $M$ doing its very best effort to compute the correct output for $L$ applied to input $x$, there exists at least one $x$ where they are going to disagree, or...
 
