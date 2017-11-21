@@ -10,9 +10,10 @@ import wget
 import uuid
 import string
 import zipfile
+import sys
 import markdown
 import shutil
-from io import StringIO
+import io
 import nbformat
 from nbconvert import HTMLExporter
 import hashlib
@@ -24,15 +25,16 @@ def unzip(source_filename, dest_dir):
     zf = zipfile.ZipFile(source_filename)
     zf.extractall(dest)
 
-def download(repo, branch, dest):
+def get_filename(repo, branch):
+    filename = repo[repo.rfind('/')+1:] + '-' + branch + '.zip'
+    return filename
+
+def download(repo, branch, dest, filename):
     src = repo + '/archive/' + branch +'.zip'
     if not(os.path.isdir(dest)):
         os.mkdir(dest)
-    r1 = wget.download(src)
-    unzip(r1, dest)
-    os.remove(r1)
-    filename = repo[repo.rfind('/')+1:] + '-' + branch 
-    return filename
+    fname = wget.download(src)
+    os.rename(fname, filename)
 
 def get_src_dict(repo_root, parent, parsers):
     d = {}
@@ -67,7 +69,7 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
         uri = bucket + uri
         if not(uri in ignore):
             isNew = True
-            if content_dict.has_key(uri):
+            if uri in content_dict:
                 isNew = False
                 oldHash = content_dict[uri]['c_hash']
             ext = uri[uri.rfind('.'):]
@@ -135,7 +137,6 @@ def render_uri(s3, bucket, absfile, parser):
     contents = parser(absfile)
     if type(contents) != str:
         contents = contents.encode('utf-8')
-    author = 'Kyle'
     title = get_title(absfile, contents)
     desc = get_desc(contents)
     i = 0
@@ -158,7 +159,7 @@ def render_uri(s3, bucket, absfile, parser):
         b = r[0]
         e = r[1]
         latex = contents[b+1:e-1]
-        print("latex:", latex)
+        #print("latex:", latex)
         # TODO: revisit and fix encoding
         aa = '&amp;'
         bb = '&'
@@ -168,11 +169,12 @@ def render_uri(s3, bucket, absfile, parser):
         #latex = latex.replace('\\', '')
         fname = latex + ".svg"
         fname = fname.replace('\\', '_')
+        fname = fname.replace(' ', '_')
+        fname = fname.replace('=', '_')
         s3key = "latex/" + fname
         objs = list(buck.objects.filter(Prefix=s3key))
         if len(objs) > 0:
-            print('In s3')
-            #rendered_map[s3key] = True
+            rendered_map[s3key] = True
         #
         svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + fname
         if s3key in rendered_map:
@@ -218,12 +220,14 @@ def execute_plan(plan, s3, bucket, table, env):
         parser = item['parser']
         absfile = item['absfile']
         uri = item['uri']
-        f = open(absfile, 'r')
+        f = open(absfile, 'rb')
         c = f.read()
         f.close()
-        m = hashlib.md5()
-        m.update(c)
-        hash = m.hexdigest()
+        #m = hashlib.md5()
+        #m.update(c)
+        #hash = m.hexdigest()
+        hash = hashlib.md5(c).hexdigest()
+        #print("hash", hash)
         render = True
         if not(item['isNew']):
             if item['oldHash'] == hash:
@@ -231,9 +235,10 @@ def execute_plan(plan, s3, bucket, table, env):
             else:
                 render = True
         if render:
-            print(uri)
             contents = render_uri(s3, bucket, absfile, parser)
-            fake_handle = StringIO(contents.encode('utf-8'))
+            title = get_title(absfile, contents)
+            desc = get_desc(contents)
+            fake_handle = io.BytesIO(contents.encode('utf-8'))
             a = len(bucket)+1
             i = uri.rfind('.')
             ext = uri[i:]
@@ -242,7 +247,10 @@ def execute_plan(plan, s3, bucket, table, env):
                 s3key = s3key[1:]
             print('Deploying to: ' + bucket + '/' + s3key)
             prettyname = get_pretty_name(s3key, title)
+            print(type(s3key))
+            print(bucket)
             res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
+            author = 'Kyle'
             ritem = {
                         'uri': uri,
                         'ext': ext,
@@ -379,6 +387,11 @@ if __name__ == "__main__":
     tblName = 'blog'
     emails = ['kylepolich@gmail.com']
     ignore = ['/README.md']
+    clean = True
+    for item in sys.argv:
+        if item == '--noclean':
+            clean = False
+            print("No cleaning")
     #
     parsers = {
         '.md': md,
@@ -401,16 +414,25 @@ if __name__ == "__main__":
         bucket = env['bucket']
         print("Running for " + branch)
         dest = '/tmp/' + str(uuid.uuid1()) + '/'
-        filename = download(repo, branch, dest)
-        repo_root = dest + filename
+        os.makedirs(dest)
+        filename = get_filename(repo, branch)
+        if not(os.path.exists(filename)):
+            print("Didn't find " + filename)
+            download(repo, branch, dest, filename)
+        x = unzip(filename, dest)
+        if clean:
+            os.remove(filename)
         # TODO: Check that no router paths match blog folders, /blog approx match goes to /blog/ml/2016/blah
+        repo_root = dest + 'blog-' + branch
         src_dict = get_src_dict(repo_root, filename, parsers)
         content_dict = get_content_dict(table)
         plan = new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, ignore)
         summary = execute_plan(plan, s3, bucket, table, branch)
         if len(summary) > 0:
             send_summary(ses, summary, branch, bucket, emails, ['kyle@dataskeptic.com'])
-        clean_up(dest)
+        if clean:
+            os.remove(filename)
+            clean_up(dest)
 
 
 
