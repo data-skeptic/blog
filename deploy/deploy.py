@@ -431,7 +431,8 @@ if __name__ == "__main__":
         if len(summary) > 0:
             send_summary(ses, summary, branch, bucket, emails, ['kyle@dataskeptic.com'])
         if clean:
-            os.remove(filename)
+            if os.path.exists(filename):
+                os.remove(filename)
             clean_up(dest)
 
 
