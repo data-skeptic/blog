@@ -14,7 +14,7 @@ This is where the idea of $NP$-Completeness comes into the picture.  In part bec
 
 As mentioned in recent episodes two examples of problems in NP are Clique (like determining if there's a group of people where every single person in the group is mutually friends with one another and the group has at least 100 members) and Sudoku (the puzzle game).  On the surface, these problems appear to have very little in common.
 
-Imagine you have a nice efficient Python algorithm for solving Clique problems in a file called `clique_solver.py`.  It accepts graphs in a specific format, and returns the answer to questions about the largest clique.  But what if despite having this very valuable piece of code, you actually don't care much for Clique.  Your true passion in life is solving Sudoku puzzles efficiently, but alas, you haven't been able to write a nice efficient file called `sudoku_solver.py`.
+Imagine you have a nice efficient Python algorithm for solving Clique problems in a file called `clique_solver.py`. It accepts graphs in a specific format, and returns the answer to questions about the largest clique.  But what if despite having this very valuable piece of code, you actually don't care much for Clique.  Your true passion in life is solving Sudoku puzzles efficiently, but alas, you haven't been able to write a nice efficient file called `sudoku_solver.py`.
 
 No problem!
 
