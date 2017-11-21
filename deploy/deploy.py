@@ -85,7 +85,7 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
 def get_title(absfilename, contents):
     lcontents = contents.lower()
     c = 1
-    b = soup.BeautifulSoup(contents)
+    b = soup.BeautifulSoup(contents, "lxml")
     while c < 6:
         tag = b.find('h' + str(c))
         if tag != None:
@@ -129,13 +129,15 @@ def next_delimiter(s, a, delim='$'):
             return next_delimiter(s, a+1)
     return i
 
-def render_uri(absfile):
+def render_uri(s3, bucket, absfile, parser):
+    buck = s3.Bucket(bucket)
+    rendered_map = {}
     contents = parser(absfile)
+    if type(contents) != str:
+        contents = contents.encode('utf-8')
     author = 'Kyle'
     title = get_title(absfile, contents)
     desc = get_desc(contents)
-    if type(contents) == str:
-        contents = unicode(contents, 'utf-8')
     i = 0
     ranges = []
     while i < len(contents):
@@ -149,25 +151,54 @@ def render_uri(absfile):
         else:
             i = j + 1
     i = len(ranges) - 1
+    # Go backwards because this is destructive of the source
+    # Backwards makes debugging easier
     while i >= 0:
         r = ranges[i]
         b = r[0]
         e = r[1]
         latex = contents[b+1:e-1]
+        print("latex:", latex)
         # TODO: revisit and fix encoding
-        latex = latex.replace('&amp;', '&')
-        cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
-        cmd += '"' + latex + '"'
-        print(cmd)
-        rendered = os.popen(cmd).read()
-        # TODO: use prettier filenames
-        fname = hashlib.sha224(rendered).hexdigest() + ".svg"
-        # TODO: Check if it already exists since has is unique
-        fake_handle = StringIO(rendered.encode('utf-8'))
+        aa = '&amp;'
+        bb = '&'
+        if type(latex) != str:
+            latex = latex.decode('utf-8')
+        latex = latex.replace(aa, bb)
+        #latex = latex.replace('\\', '')
+        fname = latex + ".svg"
+        fname = fname.replace('\\', '_')
+        s3key = "latex/" + fname
+        objs = list(buck.objects.filter(Prefix=s3key))
+        if len(objs) > 0:
+            print('In s3')
+            #rendered_map[s3key] = True
+        #
         svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + fname
-        print(svguri)
-        res = s3.Bucket(bucket).put_object(Key="latex/" + fname, Body=fake_handle, ContentType='image/svg+xml')
+        if s3key in rendered_map:
+            pass
+        else:
+            cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
+            cmd += '"' + latex + '"'
+            rendered = os.popen(cmd).read()
+            # TODO: use prettier filenames
+            #fname = hashlib.sha224(rendered.encode('utf-8')).hexdigest() + ".svg"
+            print(cmd)
+            f = open(fname, 'w')
+            f.write(rendered)
+            f.close()
+            # TODO: Check if it already exists since has is unique
+            #fake_handle = StringIO(rendered)
+            f = open(fname, 'rb')
+            fake_handle = f
+            print(svguri)
+            fname = fname.encode('utf-8')
+            res = buck.put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml')
+            os.remove(fname)
+            rendered_map[s3key] = True
         imgTag = "<img className='latex-svg' src='" + svguri + "' alt='" + latex + "' />"
+        if type(contents) != str:
+            contents = contents.decode('utf-8')
         contents = contents[0:b] + imgTag + contents[e:len(contents)]
         i -= 1
     #
@@ -201,7 +232,7 @@ def execute_plan(plan, s3, bucket, table, env):
                 render = True
         if render:
             print(uri)
-            contents = render_uri(absfile)
+            contents = render_uri(s3, bucket, absfile, parser)
             fake_handle = StringIO(contents.encode('utf-8'))
             a = len(bucket)+1
             i = uri.rfind('.')
@@ -298,9 +329,8 @@ def md(absfile):
         c = c.replace('\x94', '"')
         c = c.replace('\x96', '-')
         c = c.replace('\x97', '-')
-        c = unicode(c, 'utf-8')
+        #c = c.encode('utf-8')
     html = markdown.markdown(c, extensions=['markdown.extensions.tables'])
-
     return html
 
 def replacement(match):
