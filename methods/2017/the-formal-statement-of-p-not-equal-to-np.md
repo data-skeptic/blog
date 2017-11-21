@@ -1,8 +1,8 @@
 ## The Formal Statement of P not equal to NP
 
-In the last episode of Data Skeptic, I asked Lance Fortnow about whether or not is was possible P vs NP was ill-posed.  He correctly pointed out that, while some surprising result come emerge (like showing its impossible to solve it), it can't be ill-posed, because the problem has a formal mathematical statement.  That statement is below.
+In the last episode of Data Skeptic, I asked Lance Fortnow about whether or not is was possible P vs NP was ill-posed.  He correctly pointed out that, while some surprising result come emerge (like showing its impossible to solve it), it can't be ill-posed, because the problem has a formal mathematical statement. That statement is below.
 
-$\exists L \in NP \hspace{5pt}$ such that $\forall M \in T, p \in P \hspace{5pt} \exists x \hspace{5pt}$ such that $M(x) \ne L(x) \hspace{5pt}$ or $M(x)$ runs for > $p(|x|)$ steps.
+$\exists L \in NP$ such that $\forall M \in T, p \in P \hspace{5pt} \exists x \hspace{5pt}$ such that $M(x) \ne L(x) \hspace{5pt}$ or $M(x)$ runs for > $p(|x|)$ steps.
 
 This blog post is a deconstruction of this definition and a some color commentary about it.
 
@@ -58,7 +58,7 @@ The question of $P$ vs $NP$ is not about cherry picked examples, but on whether 
 
 What if you had a machine $M$ which, given input $x$ ran for polynomial time and gave the same result as $L(x)$ most of the time?  In fact, let's say $M(x) = L(x)$ in all cases except for one very puzzling input $x'$.  Couldn't you start with $M$ and create $M'$ which as a few additional line of code to first checks if the input equals $x'$, if so output the correct response which you've hardcoded, if not, run as normal?
 
-This idea is wrong on a number of levels.  In fact, it's kind of flawed from the beginning since we state in the definition $\forall M \in T$, which means we considered every possible Turing Machine that every could be.  For a given $M$ drawn at random, there's a high likelihood you could find some $M'$ which is a little closer to $L$.  However, the idea of "hardcoding the pre-calculated outputs of tricky inputs" can only take you so far.  You're either going to end up with a description that's infinitely long or you're going to hit some other barrier along the way.  Unless, of course, $P=NP$.
+This idea is wrong on a number of levels.  In fact, it's kind of flawed from the beginning since we state in the definition $\forall$ $M \in T$, which means we considered every possible Turing Machine that every could be.  For a given $M$ drawn at random, there's a high likelihood you could find some $M'$ which is a little closer to $L$.  However, the idea of "hardcoding the pre-calculated outputs of tricky inputs" can only take you so far.  You're either going to end up with a description that's infinitely long or you're going to hit some other barrier along the way.  Unless, of course, $P=NP$.
 
 While the formal definition, for me, is not as intuitively satisfying as an English description using phrases like "witness string" and "polynomial time verification", it's important to recognize that this is the formal definition.  Understanding it can give you a greater appreciation for the problem as well as highlight the mathematical qualifications necessary to resolve this conjecture one way or the other.
 
