@@ -1,0 +1,5 @@
+language: python
+  - "3.5"
+
+script:
+  - python3 deploy/deloy.py
