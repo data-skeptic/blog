@@ -2,7 +2,7 @@ language: python
   - "3.5"
 
 script:
-  - python3 deloy.py
+  - python3 deploy.py
 
 notifications:
   email:
