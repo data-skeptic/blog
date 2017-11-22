@@ -18,3 +18,4 @@ ideas/**
 tools-and-techniques/2017/photos/*
 
 *.sqlite
+jupyterhub_cookie_secret
