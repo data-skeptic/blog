@@ -1,5 +1,4 @@
 boto3
-fileinput
 re
 base64
 hashlib
