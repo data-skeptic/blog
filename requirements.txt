@@ -6,4 +6,3 @@ nbformat
 nbconvert
 bs4
 rpy2
-mimetypes
