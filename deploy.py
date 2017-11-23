@@ -67,7 +67,11 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
     for src in srcs:
         uri = src[s:]
         uri = bucket + uri
-        if not(uri in ignore):
+        publish = True
+        for ig in ignore:
+            if ignore in uri:
+                publish = False
+        if publish:
             isNew = True
             if uri in content_dict:
                 isNew = False
@@ -185,7 +189,7 @@ def render_uri(s3, bucket, absfile, parser):
             rendered = os.popen(cmd).read()
             # TODO: use prettier filenames
             #fname = hashlib.sha224(rendered.encode('utf-8')).hexdigest() + ".svg"
-            print(cmd)
+            #print(cmd)
             f = open(fname, 'w')
             f.write(rendered)
             f.close()
@@ -193,7 +197,7 @@ def render_uri(s3, bucket, absfile, parser):
             #fake_handle = StringIO(rendered)
             f = open(fname, 'rb')
             fake_handle = f
-            print(svguri)
+            #print(svguri)
             fname = fname.encode('utf-8')
             res = buck.put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml')
             os.remove(fname)
@@ -247,8 +251,6 @@ def execute_plan(plan, s3, bucket, table, env):
                 s3key = s3key[1:]
             print('Deploying to: ' + bucket + '/' + s3key)
             prettyname = get_pretty_name(s3key, title)
-            print(type(s3key))
-            print(bucket)
             res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
             author = 'Kyle'
             ritem = {
