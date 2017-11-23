@@ -1,10 +1,17 @@
+sudo: required
+
+dist: "trusty"
+
 language: python
+
+r:
+  - release
+
+python:
   - "3.5"
 
 before_install:
   - "pip3 install -r requirements.txt"
-
-dist: "trusty"
 
 script:
   - python3 deploy.py
