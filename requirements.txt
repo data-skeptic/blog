@@ -4,5 +4,6 @@ uuid
 markdown
 nbformat
 nbconvert
+lxml
 bs4
 rpy2
