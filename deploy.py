@@ -404,8 +404,8 @@ if __name__ == "__main__":
     region = os.environ['region']
     dynamodb = boto3.resource('dynamodb', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     table = dynamodb.Table(tblName)
-    s3 = boto3.resource('s3')
-    ses = boto3.client('ses')
+    s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
+    #ses = boto3.client('ses', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     #
     environments = [
         {'branch': 'dev', 'bucket': 'dev.dataskeptic.com'}
@@ -431,8 +431,8 @@ if __name__ == "__main__":
         content_dict = get_content_dict(table)
         plan = new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, ignore)
         summary = execute_plan(plan, s3, bucket, table, branch)
-        if len(summary) > 0:
-            send_summary(ses, summary, branch, bucket, emails, ['kyle@dataskeptic.com'])
+        #if len(summary) > 0:
+        #    send_summary(ses, summary, branch, bucket, emails, ['kyle@dataskeptic.com'])
         if clean:
             if os.path.exists(filename):
                 os.remove(filename)
