@@ -1,7 +1,6 @@
 boto3
 wget
 uuid
-zipfile
 markdown
 shutil
 nbformat
