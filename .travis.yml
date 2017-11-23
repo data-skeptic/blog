@@ -1,13 +1,19 @@
 language: python
   - "3.5"
 
-install:
-  - pip install -r requirements.txt
+before_install:
+  - "pip3 install -r requirements.txt"
 
-sudo: required
+dist: "trusty"
 
 script:
   - python3 deploy.py
+
+addons:
+  apt:
+    packages:
+      - "python3"
+      - "python3-pip"
 
 notifications:
   email:
