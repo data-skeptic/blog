@@ -1,0 +1,8 @@
+boto3
+wget
+uuid
+markdown
+nbformat
+nbconvert
+bs4
+rpy2
