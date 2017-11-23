@@ -402,7 +402,7 @@ if __name__ == "__main__":
     accessKey = os.environ['accessKey']
     secretKey = os.environ['secretKey']
     region = os.environ['region']
-    dynamodb = boto3.resource('dynamodb', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region=region)
+    dynamodb = boto3.resource('dynamodb', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     table = dynamodb.Table(tblName)
     s3 = boto3.resource('s3')
     ses = boto3.client('ses')
