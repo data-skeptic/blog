@@ -33,4 +33,3 @@ notifications:
       - kyle@dataskeptic.com
     on_success: never
     on_failure: always
-
