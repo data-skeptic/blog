@@ -2,7 +2,6 @@ boto3
 wget
 uuid
 markdown
-shutil
 nbformat
 nbconvert
 bs4
