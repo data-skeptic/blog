@@ -1,6 +1,4 @@
 boto3
-hashlib
-mimetypes
 wget
 uuid
 zipfile
@@ -10,3 +8,4 @@ nbformat
 nbconvert
 bs4
 rpy2
+mimetypes
