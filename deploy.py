@@ -69,7 +69,7 @@ def new_content_render_plan(repo_root, bucket, src_dict, content_dict, parsers, 
         uri = bucket + uri
         publish = True
         for ig in ignore:
-            if ignore in uri:
+            if uri.find(ignore) >= 0:
                 publish = False
         if publish:
             isNew = True
