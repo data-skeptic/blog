@@ -1,27 +1,8 @@
 ## Azure Databricks
 
-Gusts
-Ali Ghodsi
-co-fuonder ceo databricks
-john chirapurath
-Gm for data platform marketing
+I sat down with [Ali Ghodsi](https://people.eecs.berkeley.edu/~alig/), CEO and found of Databricks, and [John Chirapurath](https://twitter.com/originaljgc), GM for Data Platform Marketing at Microsoft related to the recent announcement of Azure Databricks.
 
-Background on databricks
-If you already know, skip ahead until you hear other voices
-For those of you not already in the know, let's take the long way around
-big data
-single machine
-distributed computing
-map reduce paradigm
-hadoop
-Spark
-Memory optimization
-RDDs, DataSets, DataFrames
-language invaraince
-MLLib
-SparkML
-Hard parts are cluster, scheduling, interface
-Databricks solves all those
-We're vendor agnostic, there are many other options
-Why Databricks on Azure
+When I heard about the announcement, my first thoughts were two fold.  First, the possibility of optimized integrations with existing Azure services.  This would be a big benefit to heavy Azure users who also want to use Spark.  Second, the benefits of active directory to control Databricks access for large enterprise.
+
+Hear Ali and JG's thoughts and comments on what makes Azure Databricks a novel offering.
 
