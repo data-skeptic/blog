@@ -51,7 +51,7 @@ We've covered [CosmosDB](https://dataskeptic.com/blog/episodes/2017/cosmos-db) p
 
 ### Azure Databricks
 
-One of the most surprising announcements for me was Azure Databricks.  I'll be blogging about that separately.
+One of the most surprising announcements for me was Azure Databricks.  I did an episode on this topic, which can be found [here](https://dataskeptic.com/blog/episodes/2017/azure-databricks).
 
 
 ### Cognitive Services
