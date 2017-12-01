@@ -1,5 +1,18 @@
 ## Quantum Computing
 
+In this episode Scott Aaronson, a professor at the University of Texas at Austin, explains what a quantum computer is, potential applications, the types of problems they are good at solving and much more. Kyle and Scott have a lively discussion about the capabilities and limits of quantum computers, and computational complexity.
+
+What is a quantum computer and how is it different from your usual understanding of a computer? And what does not as a computer? Scott elucidates the potential and the limits of quantum computing, giving an overview of the state of research. He covers not only what we could expect from quantum computers in the future, but also what we probably shouldn't.  
+
+A quantum computer is a computer that exploits the amplitude associated with the different classical states. Scott and Kyle also discuss the importance of negative, and complex, probability amplitudes in understanding quantum effects and quantum computing. 
+
+So when can I expect a working quantum computer on my desk? And what can we see from a “useful” quantum computer? One use that Scott mentions is the use of a quantum computer to break public key cryptography. But whether that a useful application for humanity is debatable, according to Scott. 
+
+Finally, today's episode relates back to our current theme of discussion: computational complexity. Scott talks about connection between classical complexity theory and quantum computing problems, and from there, quantum machine learning algorithms. Tune in to hear more.
+
+
+### Links to the sources referenced during the show
+
 https://www.scottaaronson.com/blog/
 
 https://complexityzoo.uwaterloo.ca/Complexity_Zoo
