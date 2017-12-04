@@ -13,13 +13,13 @@ Finally, today's episode relates back to our current theme of discussion: comput
 
 ### Links to the sources referenced during the show
 
-https://www.scottaaronson.com/blog/
+[https://www.scottaaronson.com/blog/](https://www.scottaaronson.com/blog/)
 
-https://complexityzoo.uwaterloo.ca/Complexity_Zoo
+[https://complexityzoo.uwaterloo.ca/Complexity_Zoo](https://complexityzoo.uwaterloo.ca/Complexity_Zoo)
 
-https://www.amazon.com/Quantum-Computing-since-Democritus-Aaronson/dp/0521199565
+[https://www.amazon.com/Quantum-Computing-since-Democritus-Aaronson/dp/0521199565](https://www.amazon.com/Quantum-Computing-since-Democritus-Aaronson/dp/0521199565)
 
-https://www.scottaaronson.com/papers/qml.pdf
+[https://www.scottaaronson.com/papers/qml.pdf](https://www.scottaaronson.com/papers/qml.pdf)
 
 
 ---
