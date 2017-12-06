@@ -27,9 +27,11 @@ She outlined the technical response to how we can combat bias in algorithms in f
 
 *Awareness* - Last, and perhaps most importantly, is awareness.  There is no perfect solution, criteria, or technique which can perfectly detect the types of biases that could arise in machine learning systems.  An awareness of what could go wrong is critical.
 
+
 ## Model interpretability
 
 We first covered the topic of model interpretability last year in an episode called [Trusting Machine Learning Models With Lime](https://dataskeptic.com/blog/episodes/2016/trusting-machine-learning-models-with-lime).  Lime has grown in popularity since that time and inspired many further work, two of which were presented as part of the Algorithms and Optimization track at NIPS.
+
 
 ### Streaming Weak Submodularity: Interpreting Neural Networks on the Fly
 
@@ -40,6 +42,7 @@ This question can be approached as a subset selection problem.  Divide the image
 Unfortunately, subset selection is $NP-Hard$ as well as provably hard to approximate.  However, their work seems to present the "Streak" algorithm which can do this efficiently under some constraints.  I haven't been able to read this paper in great detail yet to provide to core insight, but their reported empirical results claim similar explanations to LIME with faster runtimes.
 
 [Streaming Weak Submodularity: Interpreting Neural Networks on the Fly](https://arxiv.org/abs/1703.02647)
+
 
 ### A Unified Approach to Interpreting Model Predictions
 
@@ -52,6 +55,7 @@ Two desirable properties of any model interpretation framework are consistency a
 Source code available at github:
 
 [https://github.com/slundberg/shap](https://github.com/slundberg/shap)
+
 
 ### Communication Efficient Distributed Learning of Discrete Distributions
 
@@ -70,6 +74,4 @@ Their work is based on k-histograms.  Since we're talking about the real world, 
 This paper establishes a nice lower bounds.  The derivation gets a bit technical and I don't have an elegant way to summarize it, so if this problem setup is an interesting one to you, I recommend checking out their excellent paper linked to below.
 
 [http://papers.nips.cc/paper/7218-communication-efficient-distributed-learning-of-discrete-distributions.pdf](Communication Efficient Distributed Learning of Discrete Distributions)
-
-
 
