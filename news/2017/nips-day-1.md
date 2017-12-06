@@ -48,7 +48,7 @@ Unfortunately, subset selection is $NP-Hard$ as well as provably hard to approxi
 
 Lundberg and Lee's presentation included a nice survey of interpretation frameworks (see below) including a few from the game theory literature that I was not familiar with (shown in blue).
 
-<img src="src-nips-day-1/nips-2.jpg" />
+<img src="src-nips-day-1/nips-2.jpg" width=800 />
 
 Two desirable properties of any model interpretation framework are consistency and local accuracy.  With these motivating criteria, the authors present the concept of SHAP (SHapley Additive exPlanations) values.  The authors claim this perspective we can unify all the other frameworks under two parameters, and that these two parameters can be optimally tuned.  I'm very interested to explore that claim further.
 
