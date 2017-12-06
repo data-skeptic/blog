@@ -74,4 +74,3 @@ Their work is based on k-histograms.  Since we're talking about the real world, 
 This paper establishes a nice lower bounds.  The derivation gets a bit technical and I don't have an elegant way to summarize it, so if this problem setup is an interesting one to you, I recommend checking out their excellent paper linked to below.
 
 [http://papers.nips.cc/paper/7218-communication-efficient-distributed-learning-of-discrete-distributions.pdf](Communication Efficient Distributed Learning of Discrete Distributions)
-
