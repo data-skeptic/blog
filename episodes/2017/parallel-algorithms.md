@@ -8,7 +8,7 @@ The adage "take your computation to where your data lives" best encapsulates the
 
 While a lot has been written and shared about scaling up computer infrastructure to handle more in parallel, not as much attention has been paid to the computational complexity perspective on parallel algorithms.
 
-Are there certain problems which can be solved in polynomial time by a cluster of parallel computers that cannot be solved in polynomial time by a single-threaded system?  Currently, we do not know.  At a high level this is similar to the open conjecture [P vs NP](https://dataskeptic.com/blog/episodes/2017/p-vs-np).  We call this question $NC$ vs $P$ or $P=NC$?
+Are there certain problems which can be solved in polynomial time by a cluster of parallel computers that cannot be solved in polynomial time by a single-threaded system?  Currently, we do not know.  At a high level this is similar to the open conjecture [P vs NP](https://dataskeptic.com/blog/episodes/2017/p-vs-np).  We call this question $NC$ vs $P$ or $P = NC$?
 
 $NC$ stands for Nick's class, named after one of the most influential researchers in this area, [Nick Pippenger](https://en.wikipedia.org/wiki/Nick_Pippenger).  If you read the formal definition of $NC$, it is the set of problems that are efficiently solvable by circuits with polylogarithmic depth and polynomial size.  I'll break down each piece of that independently.
 
@@ -24,6 +24,6 @@ Lastly, the circuits must be polynomial in size, where the size is measured by t
 
 Complexity classes like $NC$, and circuits more generally, are very useful tools for attempting to establish lower bounds.  This is an active area of research which seems to have a lot of open problems which a PhD student might be able to solve.
 
-One open problem is $P \stackrel{?}{=} NC$.  In other words, are there any algorithms that can be solved using parallel computing which *cannot* be solved in polynomial time on a single threaded system.  Granted, parallel algorithms offer major speed ups.  A single threaded algorithm will take longer, but might it always be polynomial $n^{k}$ with some really large $k$?  This problem is unsolved.
+One open problem is $P$ vs $NC$.  In other words, are there any algorithms that can be solved using parallel computing which *cannot* be solved in polynomial time on a single threaded system.  Granted, parallel algorithms offer major speed ups.  A single threaded algorithm will take longer, but might it always be polynomial $n^{k}$ with some really large $k$?  This problem is unsolved.
 
-Resolving whether or not $P=NC$ would likely provide extremely useful insights about how we should approach engineering massive scale computing infrastructure and high performance computing.
+Resolving whether or not $P = NC$ would likely provide extremely useful insights about how we should approach engineering massive scale computing infrastructure and high performance computing.
