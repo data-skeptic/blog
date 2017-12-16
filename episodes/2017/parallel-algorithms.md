@@ -1,6 +1,6 @@
 ## Parallel Algorithms
 
-When computers became commodity hardware and storage became incredibly cheap, we entered the era of so-call "big" data.  Most definitions of big data will include something about not being able to process all the data on a single machine.  Distributed computing is required for such large datasets.
+When computers became commodity hardware and storage became incredibly cheap, we entered the era of so-call "big" data.  Most definitions of big data will include something about not being able to process all the data on a single machine.  Distributed/parallel computing is required for such large datasets.
 
 Getting an algorithm to run on data spread out over a variety of different machines introduced new challenges for designing large scale systems.  First there are concerns about the best strategy for spreading that data over many machines in an orderly fashion.  Resolving ambiguity or disagreements across sources is sometimes required.
 
