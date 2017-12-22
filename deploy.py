@@ -126,8 +126,6 @@ def render_uri(s3, bucket, absfile, parser):
     buck = s3.Bucket(bucket)
     rendered_map = {}
     contents = parser(absfile)
-    print("----------------------------")
-    print(contents[0:200])
     #if type(contents) == bytes:
     #    contents = contents.decode('utf-8')
     title = get_title(absfile, contents)
@@ -234,13 +232,15 @@ def execute_plan(plan, s3, s3client, bucket, table, env):
     summary = []
     for item in plan:
         srcfiles = plan['srcfiles']
-        render_item(s3, s3client, table, srcfiles, item, env)
+        s3key = item['rendered']
+        isNew = not(post_already_exists(table, item_metadata, s3client, bucket, s3key))
+        render_item(s3, s3client, table, srcfiles, item, env, isNew)
         uri = item['uri']
         summary.append({"uri": uri})
     return summary
 
 
-def render_item(s3, s3client, table, srcfiles, item, env):
+def render_item(s3, s3client, table, srcfiles, item, env, isNew):
     logger.debug("render_item")
     ext = item['ext']
     parser = parsers[ext]
@@ -252,7 +252,6 @@ def render_item(s3, s3client, table, srcfiles, item, env):
     f.close()
     chash = hashlib.md5(c).hexdigest()
     render = True
-    isNew = not(exists_in_s3(s3client, bucket, s3key))
     if not(isNew):
         if item['oldHash'] == chash:
             render = False
@@ -275,11 +274,10 @@ def render_item(s3, s3client, table, srcfiles, item, env):
             "env": env,
             "hash": chash
         }
-        render_blog(s3, s3client, table, item_metadata)
+        render_blog(s3, s3client, table, item_metadata, isNew)
 
 
-def exists_in_s3(client, bucket, s3key):
-    return False
+def post_already_exists(table, item_metadata, client, bucket, s3key):
     response = client.list_objects_v2(
         Bucket=bucket,
         Prefix=s3key,
@@ -287,10 +285,15 @@ def exists_in_s3(client, bucket, s3key):
     for obj in response.get('Contents', []):
         print(obj['Key'], '=', s3key)
         if obj['Key'] == s3key:
-            return True
+            uri = item_metadata['uri']
+            response = table.get_item(
+                Key={"uri": uri}
+            )
+            if 'Item' in response:
+                return True
     return False
 
-def render_blog(s3, s3client, table, item_metadata):
+def render_blog(s3, s3client, table, item_metadata, isNew):
     logger.debug("render_blog")
     absfile = item_metadata['absfile']
     srcfiles = item_metadata['srcfiles']
@@ -303,11 +306,6 @@ def render_blog(s3, s3client, table, item_metadata):
     env = item_metadata['env']
     now = datetime.datetime.now()
     n = now.strftime('%Y-%m-%d')
-    if env != 'dev':
-        tomorrow = now + datetime.timedelta(days=1)
-    else:
-        tomorrow = now
-    publish_date = tomorrow.strftime('%Y-%m-%d')
     desc = get_desc(contents)
     if desc == '':
         desc = title
@@ -327,7 +325,6 @@ def render_blog(s3, s3client, table, item_metadata):
         f.close()
     fake_handle = io.BytesIO(contents.encode('utf-8'))
     res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
-    #print(res)
     x = os.path.basename(s3key)
     a = s3key.rfind('/')
     b = s3key.rfind('.')
@@ -345,6 +342,7 @@ def render_blog(s3, s3client, table, item_metadata):
     author = 'Kyle'
     if env == 'prod':
         env = 'master'
+    publish_date = datetime.datetime(2099,1,1)
     ritem = {
         'uri': uri,
         'ext': ext,
@@ -355,20 +353,19 @@ def render_blog(s3, s3client, table, item_metadata):
         'author': author,
         'desc': desc,
         'prettyname': prettyname,
-        'publish_date': publish_date,
+        'publish_date': str(publish_date.date()),
         'rendered': s3key,
         'title': title,
         'absfile': absfile
     }
-    isNew = not(exists_in_s3(s3client, bucket, s3key))
     save_item(isNew, table, ritem, uri, n)
 
 
 def save_item(isNew, table, ritem, uri, n):
     logger.info("Updating database for " + uri)
-    print(ritem)
     if isNew:
         logger.debug("isNew")
+        print(ritem)
         response = table.put_item(
             Item=ritem
         )
@@ -492,7 +489,7 @@ def render_latest_for_env(s3client, env, repo, table):
         clean_up(dest)
 
 
-def render_one(s3, s3client, absfile, bucket, env):
+def render_one(table, s3, s3client, absfile, bucket, env):
     logger.debug("render_one")
     cwd = os.getcwd()
     key = '/blog'
@@ -542,8 +539,9 @@ def render_one(s3, s3client, absfile, bucket, env):
         "rendered": s3key,
         "oldHash": "" # always re-render in manual mode
     }
-    logger.debug("Going to render " + bucket + s3key)
-    render_item(s3, s3client, table, srcfiles, item_metadata, env)
+    logger.debug("Going to render " + bucket + '/' + s3key)
+    isNew = not(post_already_exists(table, item_metadata, s3client, bucket, s3key))
+    render_item(s3, s3client, table, srcfiles, item_metadata, env, isNew)
     return True
 
 
@@ -583,7 +581,7 @@ if __name__ == "__main__":
             else:
                 bucket = 'dataskeptic.com'
             logger.debug("Rendering locally")
-            ran_locally = render_one(s3, s3client, absfile, bucket, env)
+            ran_locally = render_one(table, s3, s3client, absfile, bucket, env)
     #
     if not(ran_locally):
         repo = 'https://github.com/data-skeptic/blog'

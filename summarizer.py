@@ -13,10 +13,10 @@ def get_desc(contents):
         j = lcontents.find('</p>', i)
         desc = contents[i+3:j-4]
         desc = re.sub('<[^<]+?>', '', desc)
-        if desc != '':
-            return desc
     else:
         desc = ''
+    if desc[-1] == '<':
+        desc = desc[:-1]
     return desc
 
 
@@ -56,11 +56,11 @@ if __name__ == '__main__':
     else:
         absfilename = sys.argv[1]
         i = absfilename.rfind('.')
-        if i != -1 and i+1 < len(absfilename):
-            ext = absfilename[i+1:]
+        if i != -1:
+            ext = absfilename[i:]
             if ext in parsers:
                 parser = parsers[ext]
-                content = parser(absfilename)
+                contents = parser(absfilename)
                 desc = get_desc(contents)
                 title = get_title(absfilename, contents)
                 print(title)
