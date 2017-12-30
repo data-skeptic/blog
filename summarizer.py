@@ -15,8 +15,9 @@ def get_desc(contents):
         desc = re.sub('<[^<]+?>', '', desc)
     else:
         desc = ''
-    if desc[-1] == '<':
-        desc = desc[:-1]
+    if len(desc) > 0:
+        if desc[-1] == '<':
+            desc = desc[:-1]
     return desc
 
 

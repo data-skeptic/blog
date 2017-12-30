@@ -234,13 +234,13 @@ def execute_plan(plan, s3, s3client, bucket, table, env):
         srcfiles = plan['srcfiles']
         s3key = item['rendered']
         isNew = not(post_already_exists(table, item_metadata, s3client, bucket, s3key))
-        render_item(s3, s3client, table, srcfiles, item, env, isNew)
+        render_item(s3, s3client, bucket, table, srcfiles, item, env, isNew)
         uri = item['uri']
         summary.append({"uri": uri})
     return summary
 
 
-def render_item(s3, s3client, table, srcfiles, item, env, isNew):
+def render_item(s3, s3client, bucket, table, srcfiles, item, env, isNew):
     logger.debug("render_item")
     ext = item['ext']
     parser = parsers[ext]
@@ -324,6 +324,7 @@ def render_blog(s3, s3client, table, item_metadata, isNew):
         f.write(contents)
         f.close()
     fake_handle = io.BytesIO(contents.encode('utf-8'))
+    print("bucket=" + bucket + " s3key=" + s3key)
     res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
     x = os.path.basename(s3key)
     a = s3key.rfind('/')
@@ -448,20 +449,6 @@ def imgs_to_s3(buck, imgs):
 
 
 
-def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
-    i = absfile.rfind('/')
-    buck = s3.Bucket(bucket)
-    bucketpath = 'http://s3.amazonaws.com/' + bucket + '/' + absfile[0:i+1] + 'src-' + fname + '/'
-    c2, imgs = get_r_images(title, fname, bucketpath, contents)
-    imgs_to_s3(buck, imgs)
-    if os.path.exists(fname + '.html'):
-        os.remove(fname + '.html')
-    for img in imgs:
-        os.remove(img['src'])
-    return c2
-
-
-
 
 def render_latest_for_env(s3client, env, repo, table):    
     ignore = ['/README.md']
@@ -487,6 +474,19 @@ def render_latest_for_env(s3client, env, repo, table):
         if os.path.exists(filename):
             os.remove(filename)
         clean_up(dest)
+
+
+def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
+    i = absfile.rfind('/')
+    buck = s3.Bucket(bucket)
+    bucketpath = 'http://s3.amazonaws.com/' + bucket + '/' + absfile[0:i+1] + 'src-' + fname + '/'
+    c2, imgs = get_r_images(title, fname, bucketpath, contents)
+    imgs_to_s3(buck, imgs)
+    if os.path.exists(fname + '.html'):
+        os.remove(fname + '.html')
+    for img in imgs:
+        os.remove(img['src'])
+    return c2
 
 
 def render_one(table, s3, s3client, absfile, bucket, env):
@@ -541,7 +541,7 @@ def render_one(table, s3, s3client, absfile, bucket, env):
     }
     logger.debug("Going to render " + bucket + '/' + s3key)
     isNew = not(post_already_exists(table, item_metadata, s3client, bucket, s3key))
-    render_item(s3, s3client, table, srcfiles, item_metadata, env, isNew)
+    render_item(s3, s3client, bucket, table, srcfiles, item_metadata, env, isNew)
     return True
 
 
