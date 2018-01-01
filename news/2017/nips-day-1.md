@@ -1,12 +1,12 @@
 ## NIPS Day 2
 
-<img src="src-nips-day-1/badge.jpg" />
+<img class="blog-full-width-img" src="src-nips-day-1/badge.jpg" />
 
 The Neural Information Processing Systems conference (NIPS) reached a record 7850 registered attendees this year.  679 papers were accepted out of 3590 submissions (18.9% acceptance rate).  The accepted papers where 90% academic and 10% industry submissions.
 
 Day 1 of NIPS featured tutorials and trainings.  Day 2 kicks off talks, posters, and demos.
 
-The first invited speaker was Brendan Frey who gave a talk titled [Reprogramming the Human Genome Using AI]](https://dataskeptic.com/blog/news/2017/reprogramming-the-human-genome-using-ai) which I blogged about independently.
+The first invited speaker was Brendan Frey who gave a talk titled [Reprogramming the Human Genome Using AI](https://dataskeptic.com/blog/news/2017/reprogramming-the-human-genome-using-ai) which I blogged about independently.
 
 
 ## The Trouble with Bias
