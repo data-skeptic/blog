@@ -2,12 +2,14 @@ import json
 import boto3
 import os
 import fileinput
+import pandas as pd
 import re
 import base64
 import hashlib
 import mimetypes
 import wget
 import uuid
+import sqlalchemy
 import string
 import zipfile
 import sys
@@ -71,44 +73,6 @@ def get_src_dict(repo_root, parent):
                 if ext in suffixes:
                     d[path + '/' + file] = True
     return d
-
-def get_content_dict(table):
-    response = table.scan()
-    items = response['Items']
-    d = {}
-    for item in items:
-        uri = item['uri']
-        d[uri] = item
-    return d
-
-def new_content_render_plan(repo_root, bucket, src_dict, content_dict, ignore):
-    plan = []
-    s = len(repo_root)
-    srcs = src_dict.keys()
-    oldHash = None
-    for src in srcs:
-        uri = src[s:]
-        uri = bucket + uri
-        publish = True
-        for ig in ignore:
-            if uri.find(ig) >= 0:
-                publish = False
-        if publish:
-            isNew = True
-            if uri in content_dict:
-                isNew = False
-                oldHash = content_dict[uri]['c_hash']
-            ext = uri[uri.rfind('.'):]
-            fname = os.path.basename(src)
-            path = src[0:len(src) - len(fname)]
-            p = fname.rfind('.')
-            d = path + "src-" + fname[0:p]
-            srcfiles = []
-            if os.path.isdir(d):
-                srcfiles = os.listdir(d)
-            plan.append({"absfile": src, "srcfiles": srcfiles, "uri": uri, "isNew": isNew, "oldHash": oldHash})
-    return plan
-
 
 
 def next_delimiter(s, a, delim='$'):
@@ -228,19 +192,7 @@ def render_and_upload_latex(latex, fname, buck, s3key):
     os.remove(fname)
 
 
-def execute_plan(plan, s3, s3client, bucket, table, env):
-    summary = []
-    for item in plan:
-        srcfiles = plan['srcfiles']
-        s3key = item['rendered']
-        isNew = not(post_already_exists(table, item_metadata, s3client, bucket, s3key))
-        render_item(s3, s3client, bucket, table, srcfiles, item, env, isNew)
-        uri = item['uri']
-        summary.append({"uri": uri})
-    return summary
-
-
-def render_item(s3, s3client, bucket, table, srcfiles, item, env, isNew):
+def render_item(s3, s3client, bucket, conn, srcfiles, item, env, blog_id):
     logger.debug("render_item")
     ext = item['ext']
     parser = parsers[ext]
@@ -252,6 +204,7 @@ def render_item(s3, s3client, bucket, table, srcfiles, item, env, isNew):
     f.close()
     chash = hashlib.md5(c).hexdigest()
     render = True
+    isNew = blog_id == -1
     if not(isNew):
         if item['oldHash'] == chash:
             render = False
@@ -274,26 +227,19 @@ def render_item(s3, s3client, bucket, table, srcfiles, item, env, isNew):
             "env": env,
             "hash": chash
         }
-        render_blog(s3, s3client, table, item_metadata, isNew)
+        render_blog(s3, s3client, conn, item_metadata, blog_id)
 
 
-def post_already_exists(table, item_metadata, client, bucket, s3key):
-    response = client.list_objects_v2(
-        Bucket=bucket,
-        Prefix=s3key,
-    )
-    for obj in response.get('Contents', []):
-        print(obj['Key'], '=', s3key)
-        if obj['Key'] == s3key:
-            uri = item_metadata['uri']
-            response = table.get_item(
-                Key={"uri": uri}
-            )
-            if 'Item' in response:
-                return True
-    return False
+def post_already_exists(conn, item_metadata, client, bucket, s3key):
+    src = s3key
+    df = pd.read_sql("SELECT blog_id FROM blog where src_file='{src}'".format(src=src), conn)
+    if df.shape[0] > 0:
+        logger.debug("exists, update")
+        return df.iloc[0]['blog_id']
+    logger.debug("not found, insert")
+    return -1
 
-def render_blog(s3, s3client, table, item_metadata, isNew):
+def render_blog(s3, s3client, conn, item_metadata, blog_id):
     logger.debug("render_blog")
     absfile = item_metadata['absfile']
     srcfiles = item_metadata['srcfiles']
@@ -341,66 +287,45 @@ def render_blog(s3, s3client, table, item_metadata, isNew):
         fp.close()
         res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data)
     author = 'Kyle'
-    if env == 'prod':
-        env = 'master'
-    publish_date = datetime.datetime(2099,1,1)
     ritem = {
         'uri': uri,
         'ext': ext,
-        'last_rendered': n,
         'c_hash': chash,
-        'date_discovered': n,
-        'env': env,
         'author': author,
         'desc': desc,
         'prettyname': prettyname,
-        'publish_date': str(publish_date.date()),
-        'rendered': s3key,
+        's3key': s3key,
         'title': title,
         'absfile': absfile
     }
-    save_item(isNew, table, ritem, uri, n)
+    save_item(blog_id, conn, ritem, uri, n)
 
 
-def save_item(isNew, table, ritem, uri, n):
+def save_item(blog_id, conn, ritem, uri, n):
     logger.info("Updating database for " + uri)
+    c_hash = ritem['c_hash']
+    prettyname = ritem['prettyname']
+    isNew = blog_id == -1
     if isNew:
         logger.debug("isNew")
-        print(ritem)
-        response = table.put_item(
-            Item=ritem
-        )
+        title        = ritem['title'].replace("'", "\\'")
+        author       = ritem['author']
+        abstract     = ritem['desc'].replace("'", "\\'")
+        src_file     = ritem['s3key']
+        guid         = ''
+        q = """
+            INSERT INTO blog (prettyname, title, author, abstract, date_created
+            , publish_date, last_rendered, src_file, c_hash, guid) VALUES 
+            ('{prettyname}', '{title}', '{author}', '{abstract}', Now()
+            , '2099-01-01', Now(), '{src_file}', '{c_hash}', '{guid}')
+            """.format(prettyname=prettyname, title=title, author=author, abstract=abstract, src_file=src_file, c_hash=c_hash, guid=guid)
+        r = conn.execute(q)
+        print("rowcount", r.rowcount)
     else:
         logger.debug("updating")
-        response = table.update_item(
-            Key={
-                'uri': uri
-            },
-            UpdateExpression="set last_rendered = :n, c_hash=:h",
-            ExpressionAttributeValues={
-                ':n': n,
-                ':h': ritem['c_hash']
-            },
-            ReturnValues="UPDATED_NEW"
-        )
+        t = "UPDATE blog SET c_hash={c_hash}, last_rendered=Now() WHERE blog_id='{blog_id}'"
+        q = t.format(c_hash=c_hash, blog_id=blog_id)
 
-
-def send_summary(ses, summary, branch, bucket, recipients, efrom):
-    response = ses.send_email(
-        Source='kyle@dataskeptic.com',
-        Destination={'ToAddresses': recipients},
-        Message={
-            'Subject': {
-                'Data': 'Deploying ' + branch + ' to ' + bucket
-            },
-            'Body': {
-                'Text': {
-                    'Data': json.dumps(summary)
-                }
-            }
-        },
-        ReplyToAddresses=efrom
-    )
 
 def clean_up(dest):
     shutil.rmtree(dest)
@@ -450,7 +375,7 @@ def imgs_to_s3(buck, imgs):
 
 
 
-def render_latest_for_env(s3client, env, repo, table):    
+def render_latest_for_env(s3client, env, repo, conn):    
     ignore = ['/README.md']
     branch = env['branch']
     bucket = env['bucket']
@@ -467,9 +392,9 @@ def render_latest_for_env(s3client, env, repo, table):
         os.remove(filename)
     # TODO: Check that no router paths match blog folders, /blog approx match goes to /blog/ml/2016/blah
     src_dict = get_src_dict(repo_root, filename)
-    content_dict = get_content_dict(table)
+    content_dict = None #get_content_dict(conn)
     plan = new_content_render_plan(repo_root, bucket, src_dict, content_dict, ignore)
-    summary = execute_plan(plan, s3, s3client, bucket, table, branch)
+    summary = execute_plan(plan, s3, s3client, bucket, conn, branch)
     if clean:
         if os.path.exists(filename):
             os.remove(filename)
@@ -489,7 +414,7 @@ def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     return c2
 
 
-def render_one(table, s3, s3client, absfile, bucket, env):
+def render_one(conn, s3, s3client, absfile, bucket, env):
     logger.debug("render_one")
     cwd = os.getcwd()
     key = '/blog'
@@ -540,9 +465,8 @@ def render_one(table, s3, s3client, absfile, bucket, env):
         "oldHash": "" # always re-render in manual mode
     }
     logger.debug("Going to render " + bucket + '/' + s3key)
-    isNew = not(post_already_exists(table, item_metadata, s3client, bucket, s3key))
-    render_item(s3, s3client, bucket, table, srcfiles, item_metadata, env, isNew)
-    return True
+    blog_id = not(post_already_exists(conn, item_metadata, s3client, bucket, s3key))
+    render_item(s3, s3client, bucket, conn, srcfiles, item_metadata, env, blog_id)
 
 
 
@@ -550,55 +474,27 @@ def render_one(table, s3, s3client, absfile, bucket, env):
 
 if __name__ == "__main__":
     logger.debug("Starting")
-    try:
-        accessKey = os.environ['accessKey']
-        secretKey = os.environ['secretKey']
-        logger.debug("keys found in environment")
-    except KeyError:
-        accessKey = None
-        secretKey = None
-    if accessKey == None:
-        config = json.load(open('config.json', 'r'))
-        accessKey = config['accessKey']
-        secretKey = config['secretKey']
+    #
+    if len(sys.argv) != 3:
+        print("ERROR: incorrect parameters")
+        print("USAGE: python3 deploy.py /meta/2018/post-name.md dev.json")
+        sys.exit(-1)
+
+    post_absfilename = sys.argv[1]
+    config_filename = sys.argv[2]
+    config = json.load(open(config_filename, 'r'))
+    accessKey = config['accessKey']
+    secretKey = config['secretKey']
+    bucket    = config['bucket']
+    db = config['db']
+
+    conn_template = 'mysql+pymysql://{}:{}@{}:{}/{}'
+    connstr = conn_template.format(db['username'], db['password'], db['host'], db['port'], db['database'])
+    conn = sqlalchemy.create_engine(connstr)
     region = "us-east-1"
     s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     s3client = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
-    dynamodb = boto3.resource('dynamodb', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
-    tblName = 'blog'
-    table = dynamodb.Table(tblName)
-    #
-    ran_locally = False
-    if len(sys.argv) > 1:
-        if sys.argv[1] == 'render':
-            absfile = sys.argv[2]
-            if len(sys.argv) > 3:
-                env = sys.argv[3]
-            else:
-                env = 'dev'
-            if env == 'dev':
-                bucket = 'dev.dataskeptic.com'
-            else:
-                bucket = 'dataskeptic.com'
-            logger.debug("Rendering locally")
-            ran_locally = render_one(table, s3, s3client, absfile, bucket, env)
-    #
-    if not(ran_locally):
-        repo = 'https://github.com/data-skeptic/blog'
-        emails = ['kylepolich@gmail.com']
-        clean = True
-        for item in sys.argv:
-            if item == '--noclean':
-                clean = False
-                print("No cleaning")
-        #
-        environments = [
-            {'branch': 'dev', 'bucket': 'dev.dataskeptic.com'}
-            ,{'branch': 'master', 'bucket': 'dataskeptic.com'}
-        ]
-        for env in environments:
-            render_latest_for_env(s3client, env, repo, table)
-
+    render_one(conn, s3, s3client, absfile, bucket, env)
 
 
 
