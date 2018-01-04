@@ -86,7 +86,7 @@ def next_delimiter(s, a, delim='$'):
     return i
 
 def render_uri(s3, bucket, absfile, parser):
-    logger.debug('render_uri')
+    logger.debug('render_uri: ' + bucket)
     buck = s3.Bucket(bucket)
     rendered_map = {}
     contents = parser(absfile)
@@ -188,7 +188,7 @@ def render_and_upload_latex(latex, fname, buck, s3key):
     fake_handle = f
     #print(svguri)
     fname = fname.encode('utf-8')
-    res = buck.put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml')
+    res = buck.put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml', ACL='public-read')
     os.remove(fname)
 
 
@@ -270,7 +270,6 @@ def render_blog(s3, s3client, conn, item_metadata, blog_id):
         f.write(contents)
         f.close()
     fake_handle = io.BytesIO(contents.encode('utf-8'))
-    print("bucket=" + bucket + " s3key=" + s3key)
     res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
     x = os.path.basename(s3key)
     a = s3key.rfind('/')
@@ -285,7 +284,7 @@ def render_blog(s3, s3client, conn, item_metadata, blog_id):
         fp = open(abspath + '/' + dname + '/' + src, 'rb')
         data = fp.read()
         fp.close()
-        res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data)
+        res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data, ACL='public-read')
     author = 'Kyle'
     ritem = {
         'uri': uri,
@@ -323,8 +322,10 @@ def save_item(blog_id, conn, ritem, uri, n):
         print("rowcount", r.rowcount)
     else:
         logger.debug("updating")
-        t = "UPDATE blog SET c_hash={c_hash}, last_rendered=Now() WHERE blog_id='{blog_id}'"
+        t = "UPDATE blog SET c_hash='{c_hash}', last_rendered=Now() WHERE blog_id='{blog_id}'"
         q = t.format(c_hash=c_hash, blog_id=blog_id)
+        r = conn.execute(q)
+        print("rowcount", r.rowcount)
 
 
 def clean_up(dest):
@@ -373,34 +374,6 @@ def imgs_to_s3(buck, imgs):
         res = buck.put_object(Key=s3key, Body=open(src, 'rb'))
 
 
-
-
-def render_latest_for_env(s3client, env, repo, conn):    
-    ignore = ['/README.md']
-    branch = env['branch']
-    bucket = env['bucket']
-    print("Running for " + branch)
-    dest = '/tmp/' + str(uuid.uuid1()) + '/'
-    repo_root = dest + 'blog-' + branch
-    os.makedirs(dest)
-    filename = get_filename(repo, branch)
-    if not(os.path.exists(filename)):
-        print("Didn't find " + filename)
-        download(repo, branch, dest, filename)
-    x = unzip(filename, dest)
-    if clean:
-        os.remove(filename)
-    # TODO: Check that no router paths match blog folders, /blog approx match goes to /blog/ml/2016/blah
-    src_dict = get_src_dict(repo_root, filename)
-    content_dict = None #get_content_dict(conn)
-    plan = new_content_render_plan(repo_root, bucket, src_dict, content_dict, ignore)
-    summary = execute_plan(plan, s3, s3client, bucket, conn, branch)
-    if clean:
-        if os.path.exists(filename):
-            os.remove(filename)
-        clean_up(dest)
-
-
 def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     i = absfile.rfind('/')
     buck = s3.Bucket(bucket)
@@ -426,7 +399,7 @@ def render_one(conn, s3, s3client, absfile, bucket, env):
         cwd = cwd + '/'
     uri = cwd[i+len(key):] + absfile
     uri = bucket + uri
-    ext = uri[uri.rfind('.'):]
+    ext = absfile[absfile.rfind('.'):]
     parser = parsers[ext]
     fname = os.path.basename(absfile)
     path = absfile[0:len(absfile) - len(fname)]
@@ -465,7 +438,7 @@ def render_one(conn, s3, s3client, absfile, bucket, env):
         "oldHash": "" # always re-render in manual mode
     }
     logger.debug("Going to render " + bucket + '/' + s3key)
-    blog_id = not(post_already_exists(conn, item_metadata, s3client, bucket, s3key))
+    blog_id = post_already_exists(conn, item_metadata, s3client, bucket, s3key)
     render_item(s3, s3client, bucket, conn, srcfiles, item_metadata, env, blog_id)
 
 
@@ -477,7 +450,7 @@ if __name__ == "__main__":
     #
     if len(sys.argv) != 3:
         print("ERROR: incorrect parameters")
-        print("USAGE: python3 deploy.py /meta/2018/post-name.md dev.json")
+        print("USAGE: python3 deploy.py meta/2018/post-name.md dev.json")
         sys.exit(-1)
 
     post_absfilename = sys.argv[1]
@@ -487,6 +460,7 @@ if __name__ == "__main__":
     secretKey = config['secretKey']
     bucket    = config['bucket']
     db = config['db']
+    env = config_filename.replace('.json', '')
 
     conn_template = 'mysql+pymysql://{}:{}@{}:{}/{}'
     connstr = conn_template.format(db['username'], db['password'], db['host'], db['port'], db['database'])
@@ -494,7 +468,7 @@ if __name__ == "__main__":
     region = "us-east-1"
     s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     s3client = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
-    render_one(conn, s3, s3client, absfile, bucket, env)
+    render_one(conn, s3, s3client, post_absfilename, bucket, env)
 
 
 
