@@ -5,6 +5,7 @@ More and more businesses are using chatbots for customer support to provide cust
 
 Recently, Data Skeptic decided to launch a chatbot to learn more about their audience and to provide more support. In the past 3 months, under Kyle Polich’s guidance, I built a chatbot with eight features. It can administer a survey in a messenger chat format, recommend episodes to listeners, send out reminders to listen to Data Skeptic on iTunes, Spotify, Stitcher, or at dataskeptic.com, show the profiles of Data Skeptic’s hosts, solve shopping issues at Data Skeptic and so on. This article will focus on the introduction to the survey and episode recommendation dialogs.
 
+<img src="src-hello-data-skeptics-chatbot/xfz-figure-1.jpg" width=800 />
 **_Figure 1_**.
 
 ### The architecture of the chatbot
@@ -29,6 +30,7 @@ To figure out what the next question should be based on the user’s response, w
 
 As with traditional surveys, respondents’ answers are important. In this project, they are saved as well in our database tables bot_survey_response_answers and bot_survey_responses for later analysis. (Table bot_survey_response_answers saves all answers to all questions, table bot_survey_responses saves the starting and ending times for a survey.) However, as opposed to traditional surveys, the chatbot has to identify whether two users are identical. For instance, someone taking a survey could get interrupted or give up before completing the questions. When he or she comes back to continue taking the survey, it would be annoying to answer the same questions again. To overcome this, the chatbot should build a profile for every user to store their data, so it is clear whether the survey is done, and if not, the file can be located. Once a survey is complete, an email containing a table with all questions and responses will be sent to Data Skeptic’s email. The process is described below in **Figure 2**.
 
+<img src="src-hello-data-skeptics-chatbot/xfz-figure-2.jpg" width=800 />
 **_Figure 2_**.
 
 ### Episode Recommendation dialog
@@ -43,12 +45,13 @@ To convert each episode’s descriptions and title into numerical features, I tr
 Since the word2vec model can capture certain semantic relationships, algebraic operations of word vectors are meaningful; hence, weighted average of all the word vectors can be used to represent descriptions of episodes. Here, the weighting factor is tf-idf (term frequency–inverse document frequency), and the listeners’ requests can be handled in the same way. Therefore, regardless of listeners’ requests, the descriptions of all episodes are represented as vectors. 
 
 Accordingly, we used cosine similarity to measure the similarity between a user’s request and an episode description. In the experiment, we found that when a user’s request is long, this method works well. However, when the listeners’ requests are short, the recommendation is not so ideal. In this case, we found that every word is important. Following this observation, we then adopted a different method, redefining the similarity between a request and an episode as:
-
+<img src="src-hello-data-skeptics-chatbot/xfz-equation.jpg" width=800 />
 
 where cos(r, e) is the cosine similarity of user’s request r and episode’s description e, w^r_i is the ith word in user’s request, w^e_l is the lth word in episode’s description. Basically, this method tries to find the words in the episode descriptions that are most similar to the words in a short request. It then uses a weighted average of the most similar words to measure the similarity between the request and an episode. 
 
 A special case would be if all the words in the request also happened to appear in an episode’s description. In this case, the similarity cos(r,e) would be 1. If there are more than one instance of such episode, then the title of those episodes will be considered. Below, in **Figure 3**, shows the algorithm:
 
+<img src="src-hello-data-skeptics-chatbot/xfz-figure-3.jpg" width=800 />
 **_Figure 3_**.
 
 After the chatbot is launched, the requests and recommendations will be recorded. Human involvement and use of the chatbot will help to improve the recommendation system: for new requests, in which the algorithm doesn’t work well, the recommended episodes can be adjusted manually by human beings. So next time, when the same or similar requests are made, the human interfered results will be returned. 
