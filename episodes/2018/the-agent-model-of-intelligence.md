@@ -4,7 +4,7 @@ In artificial intelligence, the term 'agent' is used to mean an autonomous, thin
 
 An agent is general term for any autonomous decision maker.  This is an intentionally broad definition.  It applies to human beings, some animals, some machines, and perhaps other categories as well.  Let's start with the definition and the get into a discussion.
 
-[IMG]
+<img src="src-the-agent-model-of-intelligence/agent-model-400.jpg" style="float: left; margin: 4px 10px 0px 0px; border: 1px solid #000000;" />
 
 An agent is anything that perceives things (perhaps imperfectly) about it's environment and can then make a decision to execute some actions which will have some (perhaps unpredictable) effect on the environment.  Whether an agent's sensors are biological eyes or cameras, cochlear nerves or omni-directional condenser microphones, the framework robustly describes an agent as a mapping from historical observations to a distribution over actions.
 
@@ -12,9 +12,9 @@ Let's define a set $A$ that contains all the actions an agent can take.  In a vi
 
 Similarly, let the set $\Omega$ contain all the observations an agent can make.  A simple electronic thermostat likely contains two sensors: one for the ambient temperature, one for the position of the temperature dial.
 
-We can now give a formal definition of an agent.  An agent is a function $f$ mapping a history of observations to a particular action:
+We can now give a formal definition of an agent.  An agent is a function $f$ mapping a history of observations $\omega$ (from time 0 to time $t$) to a particular action $a$:
 
-$f : \{\omega \in \Omega \}^* \rightarrow a \in A$
+$f$ : $\big( \omega \in \Omega \big)^t \rightarrow \Delta a \in A$
 
 Whatever series of observations the agent receives, out of all possible combinations, the agent should process those observations in some way and decide on an action to take.
 
