@@ -1,14 +1,14 @@
 ## Markov Decision Processes
 
-Formally, an MDP is given as the tuple $\big \langle S, A, T, R \big \rangle$.  The rest of this post will define each of these componenets.
+Formally, an MDP is given as the tuple $\big \langle S, A, T, R \big \rangle$.  The rest of this post will define each of these components.
 
 The variable $S$ is the set of all possible states.  In the simple game of tic-tac-toe, each of the 9 squares can have one of three values: blank, $X$, or $O$.  There can be no more than $3^9$ possible states, however, that includes many states which are not valid tic-tac-toe games in play.  For example, a board filled with all $X$ values could never be arrived at.  You should take $S$ to be the complete set of all possible states of any given game or environment.
 
-The variable $A$ is the set of all actions available to an agent.  This can be described in many different ways.  For example, the path of a video game character in a grid-based board game could have actions of GoUp, GoLeft, GoRight, GoDown.  Equivalently, the character could have the actions Rotate90Degrees and MoveForward to produce (relatively speaking) the same result.  Agents are given a no-action or "no-op" action in many settings.
+The variable $A$ is the set of all actions available to an agent.  This can be described in many different ways.  For example, the path of a video game character in a grid-based board game could have actions of *GoUp*, *GoLeft*, *GoRight*, *GoDown*.  Equivalently, the character could have the actions *Rotate90Degrees* and *MoveForward* to produce (relatively speaking) the same result.  Agents are given a non-action or *NoOp* (no operation) action in many settings.
 
 Due to the extreme computational demands of solving an MDP, one often wants to take great care in defining sets $S$ and $A$ to be complete yet minimalist.
 
-The variable $T$ is the transition function which specifies how the state evolves.  It takes as input, the current state, the action taken, and a next state.  It will return the probability that the proposed next state turns out to be the actual next state.  Consider a simple board game in which player $i$, currently in space $s_0$ commits to taking an action to move forward.  In this board game, to move forward, the player rolls a four sided die and advances their position forward that many spaces.  In this case, $T(s_i, GoForward, s_j)$ = 0.25 $\forall j$ s.t. $i < j < i + 4$. and $T$ returns 0.0 otherwise.  It can be formally written as $T : s_t \in S, a \in A, s_{t+1} \in S \rightarrow [0, 1]$.
+The variable $T$ is the transition function which specifies how the state evolves.  It takes as input, the current state, the action taken, and a next state.  It will return the probability that the proposed next state turns out to be the actual next state.  Consider a simple board game in which player $i$, currently in space $s_0$ commits to taking an action to move forward.  In this board game, to move forward, the player rolls a four sided die and advances their position forward that many spaces.  In this case, $T(s_i, GoForward, s_j) = 0.25 \hspace{5pt} \forall i, j \hspace{5pt} \text{s.t.} \hspace{5pt} i < j < i + 4$. and $T$ returns 0.0 otherwise.  It can be formally written as $T : s_t \in S, a \in A, s_{t+1} \in S \rightarrow [0, 1]$.
 
 Notice that $T$ depends on $s_t$ but does *not* depend on $s_{t-1}$.  Why should the transition function depend only on the current state and not on slightly older states?  While that is mathematically possible, it's unnecessary when the state is defined appropriately.  In constructing an MDP we must insist that the state be a "sufficient statistic".  That is to say, knowing the current state is enough.
 
@@ -16,7 +16,7 @@ In tic-tac-toe, several game paths could all lead to the same future state.  As 
 
 Requiring that the current state be descriptive enough to not require information from the past may, on the surface, appear incompatible with certain games.  In baseball, for example, a player remains at bat until a rule specifies that their turn at bat is over, such as when the accumulate three strikes.  This is why we consider the scoreboard to be part of the state.  A tabulation of the number of strikes and balls is always present and available for use in calculating the function $T$.
 
-The variable $R$ is the reward function.  It takes as input, the current state and the action taken, then returns a number representing the reward earned by the agent in that situation.  Formally, $R : s_t \in S, a \in A \rightarrow \mathbb{R}$.
+The variable $R$ is the reward function.  It takes as input, the current state and the action taken, then returns a number representing the reward earned by the agent in that situation.  Formally, $R : s_t \in S, a \in A \rightarrow \mathbb{R}$.  In case you're not familiar, $\mathbb{R}$ is all the real numbers.  If you'd rather map to all the rational numbers, that's fine.
 
 Notice that, unlike $T$, $R$ does not depend on the next state.  Does this mean that agents think only in the present and do not consider rewards earned in the future?  Absolutely not.  An agent should certainly consider the value of taking their next action given the current state.  Doing *just* this is called a "horizon zero" agent.  Let's discuss that further after we define what it means to solve an MDP.
 

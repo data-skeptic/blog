@@ -139,15 +139,18 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         b = r[0]
         e = r[1]
         latex = contents[b+1:e-1]
+        print('latex raw:', latex)
         if type(latex) != str:
             latex = latex.decode('utf-8')
-        #latex = latex.replace('&amp;', '&')
+        latex = latex.replace('&amp;', '&')
+        latex = latex.replace('&lt;', '<')
+        latex = latex.replace('&gt;', '>')
         #fname = fname.replace('\\', '_')
         #fname = fname.replace(' ', '_')
         #fname = fname.replace('=', '_')
         blatex = latex
-        latex = escape_latex(latex)
-        fname = latex + ".svg"
+        fname = escape_latex(latex)
+        fname = fname + ".svg"
         s3key = "latex/" + fname
         objs = list(buck.objects.filter(Prefix=s3key))
         if len(objs) > 0:
@@ -155,11 +158,16 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         else:
             rendered_map[s3key] = False
         #
-        svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + quote(fname)
+        print('================================')
+        print(fname, ' : ', quote(fname))
+        fnn = quote(fname).replace('%20', '+')
+        print('fnn', fnn)
+        svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + fnn
+        print(svguri)
         if rendered_map[s3key]:
             logger.debug("SVG already exists: " + s3key)
         else:
-            logger.debug("Going to render " + s3key)
+            logger.debug("Going to render " + latex)
             render_and_upload_latex(latex, fname, buck, s3key)
             rendered_map[s3key] = True
         imgTag = "<img className='latex-svg' src='" + svguri + "' alt='" + blatex + "' />"
@@ -178,7 +186,7 @@ def render_and_upload_latex(latex, fname, buck, s3key):
     rendered = os.popen(cmd).read()
     # TODO: use prettier filenames
     #fname = hashlib.sha224(rendered.encode('utf-8')).hexdigest() + ".svg"
-    #print(cmd)
+    print('fname', fname)
     f = open(fname, 'w')
     f.write(rendered)
     f.close()
@@ -300,6 +308,9 @@ def render_blog(s3, s3client, conn, item_metadata, blog_id):
     save_item(blog_id, conn, ritem, uri, n)
 
 
+def fix_string_for_db(s):
+    return s.replace(u"\u2018", "'").replace("’", "'").replace("'", "\\'")
+
 def save_item(blog_id, conn, ritem, uri, n):
     logger.info("Updating database for " + uri)
     c_hash = ritem['c_hash']
@@ -307,9 +318,9 @@ def save_item(blog_id, conn, ritem, uri, n):
     isNew = blog_id == -1
     if isNew:
         logger.debug("isNew")
-        title        = ritem['title'].replace("'", "\\'")
-        author       = ritem['author']
-        abstract     = ritem['desc'].replace("'", "\\'")
+        title        = fix_string_for_db(ritem['title'])
+        author       = fix_string_for_db(ritem['author'])
+        abstract     = fix_string_for_db(ritem['desc'])
         src_file     = ritem['s3key']
         guid         = ''
         q = """
