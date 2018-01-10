@@ -6,7 +6,8 @@ More and more businesses are using chatbots for customer support to provide cust
 Recently, Data Skeptic decided to launch a chatbot to learn more about their audience and to provide more support. In the past 3 months, under Kyle Polich’s guidance, I built a chatbot with eight features. It can administer a survey in a messenger chat format, recommend episodes to listeners, send out reminders to listen to Data Skeptic on iTunes, Spotify, Stitcher, or at dataskeptic.com, show the profiles of Data Skeptic’s hosts, solve shopping issues at Data Skeptic and so on. This article will focus on the introduction to the survey and episode recommendation dialogs.
 
 <img src="src-hello-data-skeptics-chatbot/xfz-figure-1.jpg" width=800 />
-**_Figure 1_**.
+
+**Figure 1**.
 
 ### The architecture of the chatbot
 There are many easy-to-use bot building frameworks that have been developed by companies, such as IBM Watson, Microsoft Bot Framework, LUIS, Wit.ai, Api.ai, Chatfuel. For this project, I adopted the Bot Framework (developed by Microsoft), which has a pre-built custom language understanding mode and it does a good job in interpreting time. The desktop application Bot Framework Emulator allowed me to test and debug the chatbot locally before launching the final version of the chatbot on the Data Skeptic website. 
@@ -31,7 +32,7 @@ To figure out what the next question should be based on the user’s response, w
 As with traditional surveys, respondents’ answers are important. In this project, they are saved as well in our database tables bot_survey_response_answers and bot_survey_responses for later analysis. (Table bot_survey_response_answers saves all answers to all questions, table bot_survey_responses saves the starting and ending times for a survey.) However, as opposed to traditional surveys, the chatbot has to identify whether two users are identical. For instance, someone taking a survey could get interrupted or give up before completing the questions. When he or she comes back to continue taking the survey, it would be annoying to answer the same questions again. To overcome this, the chatbot should build a profile for every user to store their data, so it is clear whether the survey is done, and if not, the file can be located. Once a survey is complete, an email containing a table with all questions and responses will be sent to Data Skeptic’s email. The process is described below in **Figure 2**.
 
 <img src="src-hello-data-skeptics-chatbot/xfz-figure-2.jpg" width=800 />
-**_Figure 2_**.
+**Figure 2**.
 
 ### Episode Recommendation dialog
 The Data Skeptic podcast has released more than 180 episodes either on great interviews with academics and practitioners or short 10–15 minute primer on topics like data science, statistics, machine learning, artificial intelligence and so on.  Since it is not totally ordered by topics, it is not an easy task for listeners to search for what they want among nearly 200 episodes. The good news is that a recommendation system is embedded into the chatbot so that listeners can tell the bot what topic they want to listen to, then the chatbot can give listeners recommendations according to their request. If listeners are too busy to listen to the recommended episodes now, the chatbot can help to set up a notification to remind them to listen to the podcasts at the time they want. 
@@ -52,7 +53,7 @@ where cos(r, e) is the cosine similarity of user’s request r and episode’s d
 A special case would be if all the words in the request also happened to appear in an episode’s description. In this case, the similarity cos(r,e) would be 1. If there are more than one instance of such episode, then the title of those episodes will be considered. Below, in **Figure 3**, shows the algorithm:
 
 <img src="src-hello-data-skeptics-chatbot/xfz-figure-3.jpg" width=800 />
-**_Figure 3_**.
+**Figure 3**.
 
 After the chatbot is launched, the requests and recommendations will be recorded. Human involvement and use of the chatbot will help to improve the recommendation system: for new requests, in which the algorithm doesn’t work well, the recommended episodes can be adjusted manually by human beings. So next time, when the same or similar requests are made, the human interfered results will be returned. 
 
