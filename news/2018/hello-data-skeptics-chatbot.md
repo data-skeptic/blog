@@ -46,7 +46,6 @@ To convert each episode’s descriptions and title into numerical features, I tr
 Since the word2vec model can capture certain semantic relationships, algebraic operations of word vectors are meaningful; hence, weighted average of all the word vectors can be used to represent descriptions of episodes. Here, the weighting factor is tf-idf (term frequency–inverse document frequency), and the listeners’ requests can be handled in the same way. Therefore, regardless of listeners’ requests, the descriptions of all episodes are represented as vectors. 
 
 Accordingly, we used cosine similarity to measure the similarity between a user’s request and an episode description. In the experiment, we found that when a user’s request is long, this method works well. However, when the listeners’ requests are short, the recommendation is not so ideal. In this case, we found that every word is important. Following this observation, we then adopted a different method, redefining the similarity between a request and an episode as:
-<img src="src-hello-data-skeptics-chatbot/xfz-equation.jpg" width=800 />
 
 where cos(r, e) is the cosine similarity of user’s request r and episode’s description e, w^r_i is the ith word in user’s request, w^e_l is the lth word in episode’s description. Basically, this method tries to find the words in the episode descriptions that are most similar to the words in a short request. It then uses a weighted average of the most similar words to measure the similarity between the request and an episode. 
 
