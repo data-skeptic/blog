@@ -1,4 +1,4 @@
-## Machine Learning and Neuroimaging
+## Neuroscience Frontiers
 
 Last week on Data Skeptic, we visited the Laboratory of Neuroimaging, or LONI, at USC and learned about their data-driven platform that enables scientists from all over the world to share, transform, store, manage and analyze their data to understand neurological diseases better. We talked about how neuroscientists measure the brain using data from MRI scans, and how that data is processed and analyzed to understand the brain. This week, we’ll continue the second half of our two-part episode on LONI.
 
