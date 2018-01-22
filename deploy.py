@@ -9,9 +9,9 @@ import hashlib
 import mimetypes
 import wget
 import uuid
-import sqlalchemy
 import string
 import zipfile
+import requests
 import sys
 import bs4
 import shutil
@@ -90,8 +90,6 @@ def render_uri(s3, bucket, absfile, parser):
     buck = s3.Bucket(bucket)
     rendered_map = {}
     contents = parser(absfile)
-    #if type(contents) == bytes:
-    #    contents = contents.decode('utf-8')
     title = get_title(absfile, contents)
     desc = get_desc(contents)
     i = 0
@@ -161,9 +159,7 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         print('================================')
         print(fname, ' : ', quote(fname))
         fnn = quote(fname).replace('%20', '+')
-        print('fnn', fnn)
         svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + fnn
-        print(svguri)
         if rendered_map[s3key]:
             logger.debug("SVG already exists: " + s3key)
         else:
@@ -184,23 +180,17 @@ def render_and_upload_latex(latex, fname, buck, s3key):
     cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
     cmd += '"' + latex + '"'
     rendered = os.popen(cmd).read()
-    # TODO: use prettier filenames
-    #fname = hashlib.sha224(rendered.encode('utf-8')).hexdigest() + ".svg"
-    print('fname', fname)
     f = open(fname, 'w')
     f.write(rendered)
     f.close()
-    # TODO: Check if it already exists since has is unique
-    #fake_handle = StringIO(rendered)
     f = open(fname, 'rb')
     fake_handle = f
-    #print(svguri)
     fname = fname.encode('utf-8')
     res = buck.put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml', ACL='public-read')
     os.remove(fname)
 
 
-def render_item(s3, s3client, bucket, conn, srcfiles, item, env, blog_id):
+def render_item(base_url, s3, s3client, bucket, srcfiles, item, env, blog_id):
     logger.debug("render_item")
     ext = item['ext']
     parser = parsers[ext]
@@ -235,19 +225,22 @@ def render_item(s3, s3client, bucket, conn, srcfiles, item, env, blog_id):
             "env": env,
             "hash": chash
         }
-        render_blog(s3, s3client, conn, item_metadata, blog_id)
+        render_blog(base_url, s3, s3client, item_metadata, blog_id)
 
 
-def post_already_exists(conn, item_metadata, client, bucket, s3key):
-    src = s3key
-    df = pd.read_sql("SELECT blog_id FROM blog where src_file='{src}'".format(src=src), conn)
-    if df.shape[0] > 0:
+def post_already_exists(base_url, s3key):
+    url = base_url + "/blog/list?src_file=" + s3key
+    r = requests.get(url)
+    lst = json.loads(r.content.decode('utf-8'))
+    if len(lst) > 0:
         logger.debug("exists, update")
-        return df.iloc[0]['blog_id']
-    logger.debug("not found, insert")
-    return -1
+        blog_id = lst[0]['blog_id']
+        return blog_id
+    else:
+        logger.debug("not found, adding as new")
+        return -1
 
-def render_blog(s3, s3client, conn, item_metadata, blog_id):
+def render_blog(base_url, s3, s3client, item_metadata, blog_id):
     logger.debug("render_blog")
     absfile = item_metadata['absfile']
     srcfiles = item_metadata['srcfiles']
@@ -298,45 +291,35 @@ def render_blog(s3, s3client, conn, item_metadata, blog_id):
         'uri': uri,
         'ext': ext,
         'c_hash': chash,
-        'author': author,
-        'desc': desc,
+        'author': fix_string_for_db(author),
+        'desc': fix_string_for_db(desc),
         'prettyname': prettyname,
         's3key': s3key,
-        'title': title,
+        'title': fix_string_for_db(title),
         'absfile': absfile
     }
-    save_item(blog_id, conn, ritem, uri, n)
+    save_item(base_url, blog_id, ritem)
 
 
 def fix_string_for_db(s):
     return s.replace(u"\u2018", "'").replace("’", "'").replace("'", "\\'")
 
-def save_item(blog_id, conn, ritem, uri, n):
-    logger.info("Updating database for " + uri)
-    c_hash = ritem['c_hash']
-    prettyname = ritem['prettyname']
-    isNew = blog_id == -1
-    if isNew:
-        logger.debug("isNew")
-        title        = fix_string_for_db(ritem['title'])
-        author       = fix_string_for_db(ritem['author'])
-        abstract     = fix_string_for_db(ritem['desc'])
-        src_file     = ritem['s3key']
-        guid         = ''
-        q = """
-            INSERT INTO blog (prettyname, title, author, abstract, date_created
-            , publish_date, last_rendered, src_file, c_hash, guid) VALUES 
-            ('{prettyname}', '{title}', '{author}', '{abstract}', Now()
-            , '2099-01-01', Now(), '{src_file}', '{c_hash}', '{guid}')
-            """.format(prettyname=prettyname, title=title, author=author, abstract=abstract, src_file=src_file, c_hash=c_hash, guid=guid)
-        r = conn.execute(q)
-        print("rowcount", r.rowcount)
+def save_item(base_url, blog_id, ritem):
+    data = {
+        "blog_id": blog_id,
+        "details": ritem
+    }
+    print(data)
+    url = base_url + "/blog/upsert"
+    print(url)
+    r = requests.post(url, json.dumps(data))
+    s = r.content.decode('utf-8')
+    o = json.loads(s)
+    print(o)
+    if o['success'] == 1:
+        print("Success!")
     else:
-        logger.debug("updating")
-        t = "UPDATE blog SET c_hash='{c_hash}', last_rendered=Now() WHERE blog_id='{blog_id}'"
-        q = t.format(c_hash=c_hash, blog_id=blog_id)
-        r = conn.execute(q)
-        print("rowcount", r.rowcount)
+        print(s)
 
 
 def clean_up(dest):
@@ -398,7 +381,7 @@ def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     return c2
 
 
-def render_one(conn, s3, s3client, absfile, bucket, env):
+def render_one(base_url, s3, s3client, absfile, bucket, env):
     logger.debug("render_one")
     cwd = os.getcwd()
     key = '/blog'
@@ -449,11 +432,8 @@ def render_one(conn, s3, s3client, absfile, bucket, env):
         "oldHash": "" # always re-render in manual mode
     }
     logger.debug("Going to render " + bucket + '/' + s3key)
-    blog_id = post_already_exists(conn, item_metadata, s3client, bucket, s3key)
-    render_item(s3, s3client, bucket, conn, srcfiles, item_metadata, env, blog_id)
-
-
-
+    blog_id = post_already_exists(base_url, s3key)
+    render_item(base_url, s3, s3client, bucket, srcfiles, item_metadata, env, blog_id)
 
 
 if __name__ == "__main__":
@@ -470,16 +450,13 @@ if __name__ == "__main__":
     accessKey = config['accessKey']
     secretKey = config['secretKey']
     bucket    = config['bucket']
-    db = config['db']
     env = config_filename.replace('.json', '')
+    base_url = config['api'] + env
 
-    conn_template = 'mysql+pymysql://{}:{}@{}:{}/{}'
-    connstr = conn_template.format(db['username'], db['password'], db['host'], db['port'], db['database'])
-    conn = sqlalchemy.create_engine(connstr)
     region = "us-east-1"
     s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     s3client = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
-    render_one(conn, s3, s3client, post_absfilename, bucket, env)
+    render_one(base_url, s3, s3client, post_absfilename, bucket, env)
 
 
 

@@ -2,11 +2,6 @@
 
 Our recent episode [Opinion Polling for Presidential Elections](https://dataskeptic.com/blog/episodes/2017/opinion-polling-for-presidential-elections) featured segments from an interview with Jill Darling.  This post contains the full transcript for that interview conducted by [Christine Zhang](https://twitter.com/christinezhang).  The player below also contains a link to the full recording from the Data Skeptic Bonus Feed.
 
-<audio controls>
-  <source src="https://s3.amazonaws.com/data-skeptic-bonus-feed/episodes/jill-darling.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
 *Can you walk me through the main factors that made the [L.A. Times/USC] poll so different from other polls?*
 
 Sure. Our poll was very different in a lot of different ways. It was an experimental poll. It had been piloted briefly in 2008 and then again for a whole pre-election season in 2012. This was basically its second outing in a full election season. The reason that we call it “experimental” is because it really does use techniques that are different than the sort of “tried-and-true” polling that everyone has been doing forever, which is often telephone-based if it's done right. It's maybe RDD -- in other words, random samples of telephone numbers -- that interviewers call to and screen for whether or not they're registered voters and then also ask some screening questions about whether or not they are going to be likely to vote in the upcoming election and then ask a normal categorical question of “if the election were held today would you vote for candidate A, or candidate B?” Generally if people are unsure, they might be leaning. “Today, are you leaning more towards candidate A candidate or candidate B?” 

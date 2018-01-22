@@ -4,5 +4,3 @@ Last year, Kyle had a chance to visit the Laboratory of Neuroimaging, or LONI, a
 
 To start off, we’ll be going over LONI’s primary data generating processes: the magnetic resonance imaging machine, or MRI machine. The MRI is a fantastic example of how a measurement tool gets pushed to extremes. In the case with the MRI, neuroscientists try to get clearer and clearer images of the brain’s finer details. But what exactly is it measuring when one gets the raw data? What does an MRI image represent?  Farshid will talk more about what an MRI represents and the steps his colleagues at LONI take to get that data into a format for analysis. We'll then learn about the LONI pipeline and computational tools being used in the lab from Ryan. 
 
-## Links
-
