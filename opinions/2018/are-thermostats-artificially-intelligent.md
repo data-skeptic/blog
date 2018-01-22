@@ -1,0 +1,23 @@
+## Are Thermostats Artificially Intelligent?
+
+Based on the definition I gave on the last episode of Data Skeptic, it seems so.  But that also seems like the wrong answer.
+
+If you find AI to be the wrong label for your thermostat, I will remind you that there was a time when regulating the temperature of a dwelling was a human task.  Deciding when and how many logs to throw into the fire was a human activity.  It is likely that the earliest thermostats were treated as suspect by early adopters not sure if it would keep them warm all night without interruption.  Today, there are few examples of technology that has become infinitely safe and infinitely ubiquitous as the thermostat has.
+
+There have been several historical examples of topics that were, at one time, labeled as AI, which today would certainly not be.  It was not too long ago that efficient search was considered AI.  Although search is included in most textbooks on AI, it's largely regarded as a topic that fits better when labeled more broadly as computer science.  For a time, some regarded chess playing as AI research, and while those efforts did yield advancements that gave momentum to where things are today, the state of the art chess playing algorithms are specialized systems constructed to be excellent at chess but poor and everything else.
+
+While a thermostat is, essentially, a very simple rule system that can be implemented fairly trivially in a mechanical way, machine learning models do not always have such simplicity.  There are countless examples of cases where humans tried to construct rule base systems and found that despite their best efforts, their hand-crafted decision making system performed pitifully in comparison to a machine learning based solution.
+
+So should we consider all machine learning to also be artificial intelligence?
+
+In truth, I think that question is not worth dwelling on for too long.  I don't think drawing find distinctions in this way is useful or instructive.  What I do want to point out, however, is that if you're not happy calling a thermostat AI, then I don't think you should call most machine learning models AI.
+
+The vast majority of machine learning implementations at work in the world today were trained in an offline fashion.  A dataset was assembled and split into training / test.  A model was created, inspected, improved, and eventually, deployed.  That deloyed model is nothing more than a static rules engine.  Sure, it isn't guaranteed to be as interpretable as the decision making process of a thermostat.  However, both a machine learning model and a thermostat have several noteworthy limitations in common.  Neither system is prepared to adapt to new ideas introduced which were not present in the training data.  Neither system will evolve if the data generating process changes or the relationship between input and output drifts with time.
+
+Admittedly, many people have deployed online learning systems.  When fast adaption is necessary or beneficial, this can certainly be done.  Yet ultimately, online learning generally means updating a set of pre-defined parameters to the most optimal values given an emphasis on recent observations.  Its a far cry from a language system that can notice and adapt to new concepts.  Or could there be some universal system out there which truly can adapt to any situation given a small fixed set of parameters?
+
+Extend these idea to the Turing test.  If you apply most machine learning approaches described in the literature today, no matter how large your training dataset is, there will always be topics and concepts introduced to a conversation which the static model is not prepared to handle.  Additionally, such a model would likely not possess the ability to quickly formulate new concepts with just a few examples.  As we've covered previously on the podcast, ideas like one-shot learning are a class of techniques that seek to deal with these situations.  There's great progress here, but there's certainly vast room for improvement.
+
+So as you decide when the label artificial intelligence is or isn't appropriate for certain machines, in addition to asking questions about how difficult it would be for a human to do the task the machine does, also ask yourself whether or not that machine is capable of the same rapid adaption you are when your environment experiences unpredictable and significant change.  This seems to be one of the key hallmarks of human sophistication, and it would be truly surprising if intelligent machines got to be intelligent without developing an analog of this ability.
+
+

@@ -1,12 +1,12 @@
 ## NIPS Day 2
 
-<img src="src-nips-day-1/badge.jpg" />
+<img class="blog-full-width-img" src="src-nips-day-1/badge.jpg" />
 
 The Neural Information Processing Systems conference (NIPS) reached a record 7850 registered attendees this year.  679 papers were accepted out of 3590 submissions (18.9% acceptance rate).  The accepted papers where 90% academic and 10% industry submissions.
 
 Day 1 of NIPS featured tutorials and trainings.  Day 2 kicks off talks, posters, and demos.
 
-The first invited speaker was Brendan Frey who gave a talk titled [Reprogramming the Human Genome Using AI]](https://dataskeptic.com/blog/news/2017/reprogramming-the-human-genome-using-ai) which I blogged about independently.
+The first invited speaker was Brendan Frey who gave a talk titled [Reprogramming the Human Genome Using AI](https://dataskeptic.com/blog/news/2017/reprogramming-the-human-genome-using-ai) which I blogged about independently.
 
 
 ## The Trouble with Bias
@@ -48,7 +48,7 @@ Unfortunately, subset selection is $NP-Hard$ as well as provably hard to approxi
 
 Lundberg and Lee's presentation included a nice survey of interpretation frameworks (see below) including a few from the game theory literature that I was not familiar with (shown in blue).
 
-<img src="src-nips-day-1/nips-2.jpg" />
+<img src="src-nips-day-1/nips-2.jpg" width=800 />
 
 Two desirable properties of any model interpretation framework are consistency and local accuracy.  With these motivating criteria, the authors present the concept of SHAP (SHapley Additive exPlanations) values.  The authors claim this perspective we can unify all the other frameworks under two parameters, and that these two parameters can be optimally tuned.  I'm very interested to explore that claim further.
 
@@ -74,4 +74,3 @@ Their work is based on k-histograms.  Since we're talking about the real world, 
 This paper establishes a nice lower bounds.  The derivation gets a bit technical and I don't have an elegant way to summarize it, so if this problem setup is an interesting one to you, I recommend checking out their excellent paper linked to below.
 
 [http://papers.nips.cc/paper/7218-communication-efficient-distributed-learning-of-discrete-distributions.pdf](Communication Efficient Distributed Learning of Discrete Distributions)
-

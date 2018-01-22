@@ -2,11 +2,6 @@
 
 Our recent episode [Opinion Polling for Presidential Elections](https://dataskeptic.com/blog/episodes/2017/opinion-polling-for-presidential-elections) featured segments from an interview with [Ernie Tedeschi](https://twitter.com/ernietedeschi).  This post contains the full transcript for that interview conducted by [Christine Zhang](https://twitter.com/christinezhang).  The player below also contains a link to the full recording from the Data Skeptic Bonus Feed.
 
-<audio controls>
-  <source src="https://s3.amazonaws.com/data-skeptic-bonus-feed/episodes/2017/ernie-tedeschi.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
 *I wanted to talk to you mainly about our your re-weighting of the USC/L.A. Times poll. What motivated you to undertake this exercise?*
 
 So my background is not in polling.  I'm an economist in the private sector and I do several different things. One of the things that I do is labor economics, so I work a lot with census data; in particular, one survey called the Current Population Survey, which is the monthly survey that the government conducts that ultimately leads to the unemployment numbers, labor force participation, and other labor market metrics that we see come out. If you see the news reports on the first Friday of every month, you'll see the “jobs number.” Part of that report comes from the Current Population Survey. Weighting in that survey is extremely important, because what you're doing is you're trying to get a snapshot of the U.S. population -- in particular, the adult population -- every month, and in order to you that you have to accurately weight the responses to the survey so that they reflect the American population at large. In other words, you're trying to take a survey of about a hundred and seventy five thousand respondents every month and use that to say something about an adult population of more than two hundred fifty million. So obviously how you weight each individual and that survey is very important. 

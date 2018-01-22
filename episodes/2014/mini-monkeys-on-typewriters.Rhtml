@@ -2,7 +2,7 @@
 
 <blockquote><p>
 A follow up discussion of this result appears in episode #74: 
-<a href="http://dataskeptic.com/epnotes/ep74_shakespeare-abiogenesis-and-exoplanets.php">Shakespeare, Abiogenesis, and Exoplanets</a>.
+<a href="https://dataskeptic.com/blog/episodes/2015/shakespeare-abiogenesis-and-exoplanets">Shakespeare, Abiogenesis, and Exoplanets</a>.
 I highly recommend you check that out in addition to or in place of this episode.
 </p></blockquote>
 
@@ -10,11 +10,11 @@ I highly recommend you check that out in addition to or in place of this episode
 
 <p>Many readers will be vaguely familar with the idea of "X number of monkeys banging on Y number of typewriters for Z number of years" - the idea being that such a setup would produce random sequences of letters.  The origin of this idea was the mathemetician Borel who was interested in whether or not 1,000,000 monkeys working for 10 hours per day might eventually reproduce the works of shakespeare.</p>
 
-<p>Let us define $SH$ to be the "Shakespeare Hyothesis" - the assertion that our monkeys might coincidentally reproduced the complete works of shakespeare at some point.  Let us further assume that the works appear in sequence in the order they were completed, lest we introduce an additional combinatorical problem of how likely the monkeys are to produce a the works in any order.</p>
+<p>Let us define $SH$ to be the "Shakespeare Hypothesis" - the assertion that our monkeys might coincidentally reproduced the complete works of shakespeare at some point.  Let us further assume that the works appear in sequence in the order they were completed, lest we introduce an additional combinatorical problem of how likely the monkeys are to produce a the works in any order.</p>
 
 <p>There are 884,421 total works in the complete works of shakespeare, and I'll estimate that on average, words have 5.1 of the 26 characters of the alphabet.  Thus...</p>
 
-$$Pr(SH) = \dfrac{1}{26^{884421 (5.1)}} = \dfrac{1}{26^{430547.1}} = \dfrac{1}{10^{10^{3.788584}}}$$
+$Pr(SH) = \dfrac{1}{26^{884421 (5.1)}} = \dfrac{1}{26^{430547.1}} = \dfrac{1}{10^{10^{3.788584}}}$
 
 <!--begin.rcode echo=FALSE
 perhour=80*120*5.1*60*10*1000000
@@ -25,7 +25,7 @@ end.rcode-->
 
 <p>Multiply that by 5.1 characters per word, 60 minutes per hour, 10 hours per day, and 1 million monkeys gives us...</p>
 
-$$ CharactersPerDay = 80 \cdot 120 \cdot 5.1 \cdot 60 \cdot 10 \cdot 1000000 = 2.9376 × 10^{13}$$
+$CharactersPerDay = 80 \cdot 120 \cdot 5.1 \cdot 60 \cdot 10 \cdot 1000000 = 2.9376 × 10^{13}$
 
 <p>Wow, that's alot of random text!  You could fit the complete works into that $3.3215 x 10^7$ times per day if you typed it out perfectly.  However, the monkeys will not deliberately type it, we're wondering if they might coincidentally do it.  As we showed above (when defining $Pr(SH)$), we're going to have to be exceptionally lucky, so we're going to need alot of failed attempts.</p>
 
@@ -39,20 +39,18 @@ $$ CharactersPerDay = 80 \cdot 120 \cdot 5.1 \cdot 60 \cdot 10 \cdot 1000000 = 2
 
 <p>Frustratingly, these extreme valued numbers cannot be handled by most statistical software and R (the language the show notes are written in) is no different.  So, let's go back to basics and see about computing this by hand.  The binomial distriution has this form:</p>
 
-$$Pr(X=k) = {n \choose k} p^k \big(1 -p\big)^{(n-k)}$$
+$Pr(X=k) = {n \choose k} p^k \big(1 -p\big)^{(n-k)}$
 
 <p>For our example, $k=0$, $n$ is the number of trials (which we will want to play with), and $p$ is the probability of success on a single trial.  Thus, we want to know:</p>
 
-$$1 - Pr\big(X=0\big) = 1 - {n \choose 0} p^0 \big(1 -p \big)^{(n-0)} \\
+$1 - Pr\big(X=0\big) = 1 - {n \choose 0} p^0 \big(1 -p \big)^{(n-0)} \\
 = 1 - \big(1 - 26 ^{-430547.1} \big)^{n} \\
 = 1 - \Bigg( \dfrac{26 ^{430547.1} - 1}{26 ^{430547.1}} \Bigg)^{n}
-$$
+$
 
 <p>An exact solution is still ellusive, but we can see that it is some very tiny value $\epsilon$.  Thus, if we are interested in finding the $n$ required to generate Shakespeare's works with $q=0.5$ probability, then...</p>
 
-$$
-log_{\epsilon}(0.5) = n
-$$
+$log_{\epsilon}(0.5) = n$
 
 <p>So even, if we don't have an exact solution, let's get something with pretty good precision, perhaps $\epsilon=0.999999999999$.  We'll then divide by the Characters Per Day previous calculated to determine the likelihood of success in a single day.</p>
 
@@ -64,14 +62,4 @@ print(success_single_day)
 end.rcode-->
 
 <p>So given this overly generous $\epsilon$, there's a <!--rinline success_single_day*100 -->% chance that one million monkeys on a million typewriters would reproduce the works of shakespeare in a single day.</p>
-
- <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true,
-        processEnvironments: false, inlineMath: [ ['$','$'] ],
-        displayMath: [ ['$$','$$'] ] },
-        asciimath2jax: {delimiters: [ ['$','$'] ] },
-        "HTML-CSS": {minScaleAdjust: 125 } });
-    </script>
 
