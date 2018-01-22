@@ -47,6 +47,8 @@ Since the word2vec model can capture certain semantic relationships, algebraic o
 
 Accordingly, we used cosine similarity to measure the similarity between a user’s request and an episode description. In the experiment, we found that when a user’s request is long, this method works well. However, when the listeners’ requests are short, the recommendation is not so ideal. In this case, we found that every word is important. Following this observation, we then adopted a different method, redefining the similarity between a request and an episode as:
 
+$cos(r,e) = \Sigma\limits_{i=1}^N \text{argmax}_l \big(cos(w_i^r, w_l^e)\big) \cdot tfidf(w_i^r)$
+
 where cos(r, e) is the cosine similarity of user’s request r and episode’s description e, w^r_i is the ith word in user’s request, w^e_l is the lth word in episode’s description. Basically, this method tries to find the words in the episode descriptions that are most similar to the words in a short request. It then uses a weighted average of the most similar words to measure the similarity between the request and an episode. 
 
 A special case would be if all the words in the request also happened to appear in an episode’s description. In this case, the similarity cos(r,e) would be 1. If there are more than one instance of such episode, then the title of those episodes will be considered. Below, in **Figure 3**, shows the algorithm:
