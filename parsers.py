@@ -68,10 +68,9 @@ def knitr(absfile):
     f.close()
     return c
 
-
-
 parsers = {
     '.md': md,
+    '.Rmd': knitr,
     '.Rhtml': knitr,
     '.ipynb': nbconverter
 }
