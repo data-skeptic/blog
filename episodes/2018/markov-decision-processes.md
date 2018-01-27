@@ -2,6 +2,8 @@
 
 Formally, an MDP is given as the tuple $\big \langle S, A, T, R \big \rangle$.  The rest of this post will define each of these components.
 
+**Thanks to [Springboard](https://sbdata.co/careerindatascience) for sponsoring this episode.**
+
 The variable $S$ is the set of all possible states.  In the simple game of tic-tac-toe, each of the 9 squares can have one of three values: blank, $X$, or $O$.  There can be no more than $3^9$ possible states, however, that includes many states which are not valid tic-tac-toe games in play.  For example, a board filled with all $X$ values could never be arrived at.  You should take $S$ to be the complete set of all possible states of any given game or environment.
 
 The variable $A$ is the set of all actions available to an agent.  This can be described in many different ways.  For example, the path of a video game character in a grid-based board game could have actions of *GoUp*, *GoLeft*, *GoRight*, *GoDown*.  Equivalently, the character could have the actions *Rotate90Degrees* and *MoveForward* to produce (relatively speaking) the same result.  Agents are given a non-action or *NoOp* (no operation) action in many settings.
@@ -29,4 +31,5 @@ Finding the optimal solution to an MDP can be computationally expensive on any n
 For finite horizon search, one calculates only $h$ steps ahead to determine the optimal action to take.  This is a technique that is commonly used in chess-playing algorithms: consider every possible path the game could take looking forward for $h$ moves.  Out of all those paths, select the one that is most beneficial to you, and execute the first action down that path.  When next the player needs to act, they can repeat the same process, with one more observation and a sliding lookahead window of size $h$.
 
 For infinite horizon search, one seeks a strategy that assumes the game continues to be played forever.  Commonly, playing forever is likely to yield infinite the possibility of infinite rewards.  Thus, one either tries to maximize for average reward or reward with discounting.  Reward with discounting involves ascribing less value to rewards earned further in the future.  For infinite horizon search, implementations typically stop searching when they can be sure that their current best policy is at least $\epsilon$ close to the actual optimal policy.
+
 
