@@ -1,0 +1,8 @@
+## Evolutionary Computation
+
+In this week’s episode, Kyle is joined by Risto Miikkulainen, a professor of computer science and neuroscience at the University of Texas at Austin. They talk about evolutionary computation, its applications in deep learning, and how it’s inspired by biology. They also discuss some of the things Sentient Technologies is working on in stock and finances, retail, e-commerce and web design, as well as the technology behind it-- evolutionary algorithms.
+
+Evolutionary algorithms are a class of problem solving algorithms that work similar to biological evolution in that it improves a population of individuals instead of just one individual. The common underlying idea behind these types of algorithms is the following: given a population of individuals, the environmental pressure causes natural selection (survival of the fittest) and this causes a rise in the fitness of the population. 
+
+Neuroevolution, or the evolution of artificial neural networks, is a machine learning approach that applies evolutionary algorithms to construct artificial neural networks for solving challenging reinforcement learning problems. Compared to traditional neural network learning (e.g. value-function based) methods, neuroevolution is highly general and especially strong in domains where the state of the world is not fully known. In other words, neuroevolution allows learning without explicit targets, with only sparse feedback, and with arbitrary neural models and network structures. Neuroevolution is an effective approach to solving reinforcement learning problems, and is most commonly applied in evolutionary robotics and artificial life.
+
