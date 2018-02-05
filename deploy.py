@@ -75,8 +75,36 @@ def get_src_dict(repo_root, parent):
     return d
 
 
+def contained_in_tag(s, pos, tag):
+    stag = "<" + tag.lower() + ""
+    etag = "</" + tag.lower() + ">"
+    before = s[0:pos].lower()
+    after  = s[pos:].lower()
+    i = before.rfind(stag)
+    if i == -1:
+        return False
+    i2 = before.rfind(etag)
+    if i2 != -1 and i < i2:
+        return False
+    j = after.find(etag)
+    if j == -1:
+        return False
+    j2 = after.find(stag)
+    if j2 < j:
+        return False
+    return True
+
+
 def next_delimiter(s, a, delim='$'):
     i = s.find(delim, a)
+    if i > 0:
+        check_for_preceeding_whitespace = s[i-1:i]
+        if not(check_for_preceeding_whitespace.isspace()):
+            return next_delimiter(s, i+1)
+        if contained_in_tag(s, i, "code"):
+            return next_delimiter(s, i+1)
+        if contained_in_tag(s, i, "pre"):
+            return next_delimiter(s, i+1)
     if i == -1:
         return -1
     if i > 0:
@@ -104,6 +132,11 @@ def render_uri(s3, bucket, absfile, parser):
             i = len(contents)
         else:
             i = j + 1
+    print(ranges)
+    for rang in ranges:
+        print(rang)
+        s = rang[0]
+        print(contents[s-20:s+200])
     updated_contents = replace_latex_with_svgs(ranges, contents, buck, rendered_map)
     a = absfile.rfind('/') + 1
     b = absfile.rfind('.')
@@ -137,7 +170,13 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         b = r[0]
         e = r[1]
         latex = contents[b+1:e-1]
-        print('latex raw:', latex)
+        m = len(latex)
+        if m > 1000:
+            print("Latex string is too long, probably an error if parsing")
+            sys.exit(-1)
+        if m > 100:
+            m = 100
+        print('latex raw:', latex[0:m])
         if type(latex) != str:
             latex = latex.decode('utf-8')
         latex = latex.replace('&amp;', '&')
@@ -150,7 +189,9 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         fname = escape_latex(latex)
         fname = fname + ".svg"
         s3key = "latex/" + fname
+        print('a ================================')
         objs = list(buck.objects.filter(Prefix=s3key))
+        print('b ================================')
         if len(objs) > 0:
             rendered_map[s3key] = False
         else:
@@ -225,6 +266,7 @@ def render_item(base_url, s3, s3client, bucket, srcfiles, item, env, blog_id):
             "env": env,
             "hash": chash
         }
+        print("======================================================")
         render_blog(base_url, s3, s3client, item_metadata, blog_id)
 
 
@@ -309,13 +351,10 @@ def save_item(base_url, blog_id, ritem):
         "blog_id": blog_id,
         "details": ritem
     }
-    print(data)
     url = base_url + "/blog/upsert"
-    print(url)
     r = requests.post(url, json.dumps(data))
     s = r.content.decode('utf-8')
     o = json.loads(s)
-    print(o)
     if o['success'] == 1:
         print("Success!")
     else:
@@ -436,6 +475,19 @@ def render_one(base_url, s3, s3client, absfile, bucket, env):
     render_item(base_url, s3, s3client, bucket, srcfiles, item_metadata, env, blog_id)
 
 
+def decode_base64(data):
+    """Decode base64, padding being optional.
+
+    :param data: Base64 data as an ASCII byte string
+    :returns: The decoded byte string.
+
+    """
+    missing_padding = len(data) % 4
+    if missing_padding != 0:
+        data += b'='* (4 - missing_padding)
+    return base64.decodestring(data)
+
+
 if __name__ == "__main__":
     logger.debug("Starting")
     #
@@ -457,7 +509,6 @@ if __name__ == "__main__":
     s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     s3client = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     render_one(base_url, s3, s3client, post_absfilename, bucket, env)
-
 
 
 

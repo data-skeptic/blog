@@ -1,4 +1,7 @@
 import markdown
+import os
+import shutil
+import base64
 import rpy2.robjects as robjects
 from nbconvert import HTMLExporter
 
@@ -68,9 +71,98 @@ def knitr(absfile):
     f.close()
     return c
 
+
+def html_parser(absfile):
+    last_slash = absfile.rfind('/') + 1
+    dname = absfile[0:last_slash]
+    inputFile = absfile[last_slash:]
+    if dname[-1] != "/":
+        dname += "/"
+    outputDirForImages = dname + "src-" + inputFile
+    # TODO: remove script
+    rendered_content_as_string = extract_images_save_locally(dname, inputFile, outputDirForImages)
+    rendered_content_as_string2 = remove_script_tags(rendered_content_as_string)
+    rendered_content_as_string2 = remove_remaining_elements_tags(rendered_content_as_string2)
+    return rendered_content_as_string2
+
+
+def remove_remaining_elements_tags(content):
+    content_lower = content.lower()
+    i = content_lower.find("<body")
+    if i != -1:
+        j = content_lower.find(">", i)
+        content = content[j+1:]
+        i = content_lower.find("</body", j+1)
+        content = content[:i]
+    return content
+
+
+def remove_script_tags(content):
+    content_lower = content.lower()
+    i = content_lower.find("<script")
+    if i != -1:
+        j = content_lower.find("</script>", i)
+        if j == -1:
+            print("ERROR: unclosed <script> tag")
+            sys.exit(-1)
+        content2 = content[0:i] + content[j + 9:]
+        return remove_script_tags(content2)
+    return content
+
+
+def extract_images_save_locally(dname, inputFile, outputDirForImages):
+    if outputDirForImages[-1] != "/":
+        outputDirForImages += "/"
+    absOutputDirForImages = dname + outputDirForImages
+    if os.path.exists(absOutputDirForImages):
+        shutil.rmtree(absOutputDirForImages)
+    os.makedirs(absOutputDirForImages)
+    f = open(dname + inputFile, 'r')
+    s = f.read()
+    f.close()
+    s_lower = s.lower()
+    i = -1
+    i = s_lower.find('src="data:image/', i+1)
+    c = 0
+    replacements = []
+    while i > 0:
+        print("iteration", c, i)
+        j = s_lower.find('"', i+5)
+        k = s_lower.find("image/", i)
+        m = s_lower.find(";", k)
+        n = s_lower.find(",", m)
+        b64s = s[n+1:j]
+        z = len(b64s) - 10
+        #try:
+        if 1==1:
+            base64encoding = base64.b64decode(b64s)
+            typ = s[k+6:m]
+            fname = outputDirForImages + "img_" + str(c) + '.' + typ
+            f = open(dname + fname, 'wb')
+            f.write(base64encoding)
+            f.close()
+            replacement = {"start": i+5, "end": j, "replacement": fname}
+        try:
+            replacements.append(replacement)
+        except:
+            print("Error on ", c)
+        i = s_lower.find('src="data:image/', i+1)
+        c += 1
+
+    for r in range(len(replacements)):
+        replacement = replacements[len(replacements)-r-1]
+        start = replacement['start']
+        end = replacement['end']
+        fname = replacement['replacement']
+        s = s[0:start] + fname + s[end:]
+    return s
+
+
 parsers = {
     '.md': md,
     '.Rmd': knitr,
     '.Rhtml': knitr,
-    '.ipynb': nbconverter
+    '.ipynb': nbconverter,
+    '.htm': html_parser,
+    '.html': html_parser
 }
