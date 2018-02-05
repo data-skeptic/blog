@@ -78,7 +78,8 @@ def html_parser(absfile):
     inputFile = absfile[last_slash:]
     if dname[-1] != "/":
         dname += "/"
-    outputDirForImages = dname + "src-" + inputFile
+    x = inputFile.rfind('.')
+    outputDirForImages = dname + "src-" + inputFile[0:x]
     # TODO: remove script
     rendered_content_as_string = extract_images_save_locally(dname, inputFile, outputDirForImages)
     rendered_content_as_string2 = remove_script_tags(rendered_content_as_string)
@@ -113,7 +114,7 @@ def remove_script_tags(content):
 def extract_images_save_locally(dname, inputFile, outputDirForImages):
     if outputDirForImages[-1] != "/":
         outputDirForImages += "/"
-    absOutputDirForImages = dname + outputDirForImages
+    absOutputDirForImages = outputDirForImages
     if os.path.exists(absOutputDirForImages):
         shutil.rmtree(absOutputDirForImages)
     os.makedirs(absOutputDirForImages)
@@ -126,7 +127,6 @@ def extract_images_save_locally(dname, inputFile, outputDirForImages):
     c = 0
     replacements = []
     while i > 0:
-        print("iteration", c, i)
         j = s_lower.find('"', i+5)
         k = s_lower.find("image/", i)
         m = s_lower.find(";", k)
@@ -138,10 +138,11 @@ def extract_images_save_locally(dname, inputFile, outputDirForImages):
             base64encoding = base64.b64decode(b64s)
             typ = s[k+6:m]
             fname = outputDirForImages + "img_" + str(c) + '.' + typ
-            f = open(dname + fname, 'wb')
+            f = open(fname, 'wb')
             f.write(base64encoding)
             f.close()
-            replacement = {"start": i+5, "end": j, "replacement": fname}
+            relative_filename = "/blog/" + fname
+            replacement = {"start": i+5, "end": j, "replacement": relative_filename}
         try:
             replacements.append(replacement)
         except:
