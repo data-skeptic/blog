@@ -114,7 +114,7 @@ def next_delimiter(s, a, delim='$'):
     return i
 
 def render_uri(s3, bucket, absfile, parser):
-    logger.debug('render_uri: ' + bucket)
+    print('render_uri')
     buck = s3.Bucket(bucket)
     rendered_map = {}
     contents = parser(absfile)
@@ -132,11 +132,6 @@ def render_uri(s3, bucket, absfile, parser):
             i = len(contents)
         else:
             i = j + 1
-    print(ranges)
-    for rang in ranges:
-        print(rang)
-        s = rang[0]
-        print(contents[s-20:s+200])
     updated_contents = replace_latex_with_svgs(ranges, contents, buck, rendered_map)
     a = absfile.rfind('/') + 1
     b = absfile.rfind('.')
@@ -266,7 +261,6 @@ def render_item(base_url, s3, s3client, bucket, srcfiles, item, env, blog_id):
             "env": env,
             "hash": chash
         }
-        print("======================================================")
         render_blog(base_url, s3, s3client, item_metadata, blog_id)
 
 
@@ -314,11 +308,13 @@ def render_blog(base_url, s3, s3client, item_metadata, blog_id):
         f.close()
     fake_handle = io.BytesIO(contents.encode('utf-8'))
     res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
+    print(s3key, res)
     x = os.path.basename(s3key)
     a = s3key.rfind('/')
     b = s3key.rfind('.')
     dname = 'src-' + s3key[a+1:b]
     keypath = s3key[0:len(s3key)-len(x)] + dname + '/'
+    print("SRCFILES", len(srcfiles))
     for src in srcfiles:
         s3key2 = keypath + src
         logger.info('Deploying source file: ' + s3key2)
@@ -328,6 +324,7 @@ def render_blog(base_url, s3, s3client, item_metadata, blog_id):
         data = fp.read()
         fp.close()
         res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data, ACL='public-read')
+        print(s3key2, res)
     author = 'Kyle'
     ritem = {
         'uri': uri,
@@ -406,7 +403,6 @@ def imgs_to_s3(buck, imgs):
         logger.debug("Pushing {src} to {key}".format(src=src, key=s3key))
         res = buck.put_object(Key=s3key, Body=open(src, 'rb'))
 
-
 def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     i = absfile.rfind('/')
     buck = s3.Bucket(bucket)
@@ -439,8 +435,10 @@ def render_one(base_url, s3, s3client, absfile, bucket, env):
     p = fname.rfind('.')
     d = path + "src-" + fname[0:p]
     srcfiles = []
+    print("----------------------------------")
     if os.path.isdir(d):
         srcfiles = os.listdir(d)
+    print(d, len(srcfiles))
     contents = parser(absfile)
     f = open(absfile, 'rb')
     c = f.read()
