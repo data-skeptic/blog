@@ -38,7 +38,7 @@ In order to do anything useful with a POMDP, you have to *know* this function.  
 
 So we now add $O$ and $\Omega$ to the tuple giving us the formal definition of a POMDP:
 
-$\big \langle S, A, T, R \Omega O \delta \big \rangle$
+$\big \langle S, A, T, R, \Omega, O, \delta \big \rangle$
 
 I snuck in an extra variable called $\delta$.  This is the discount factor.  It should also be there in the MDP definition, but our previous episode and blog entry left it out for simplicity.  This is a value in the range $[0, 1]$ which specifies how to value further expected rewards.  In other words, a dollar today is better than a dollar tomorrow.  But is it better than a two dollars tomorrow?  Probably not.  What's the minimum tomorrow value to be worth waiting for?  Depends on your discount factor $\delta$.
 
@@ -54,9 +54,9 @@ The algorithms for solving POMDPs are known.  Implementations like [pomdp-solve]
 	"A": {"BUY", "NO_BUY"},
 	"T": [...],
 	"R": [...],
-	"$\Omega$": {"PASS_INSPECTION", "FAIL_INSPECTION"},
+	"Omega": {"PASS_INSPECTION", "FAIL_INSPECTION"},
 	"O": [...],
-	"$\delta$": 0.752
+	"delta": 0.752
 }
 ```
 
@@ -73,12 +73,14 @@ So the policy that one gets by solving a POMDP comes in a very nice form.  How d
 ### LT Script
 Reminder of MDP, cut most from the show
 Partial Observability
-
-lady tiger
+lady tiger - prize and penalty
+how would you play?
+85%, -100 -1 10, 
+optimal is two counter
 change reward, change behavior
 solution is policy fsa ~ ai
-
 curse of dimensionality
+approximations of belief state, qomdps, deep pomdps.
 
 
 
