@@ -1,6 +1,6 @@
 ## AI Decision Making
 
-Making a decision is a complex task. Today's guest Dongho Kim discusses how he and his team at Prowler has been building a platform that will be accessible by way of APIs and a set of pre-made scripts for autonomous decision making based on probabilistic modeling, reinforcement learning, and game theory. The aim is so that an AI system could make decisions just as good as humans can. At the moment Prowler is focusing on multi-agent systems for the video game industry, smart city applications and stock trading or portfolio optimization.
+Making a decision is a complex task. Today's guest Dongho Kim discusses how he and his team at Prowler has been building a platform that will be accessible by way of APIs and a set of pre-made scripts for autonomous decision making based on probabilistic modeling, reinforcement learning, and game theory. The aim is so that an AI system could make decisions just as good as humans can. 
 
 **Today's episode is sponsored by the [Mendoza College of Business at Notre Dame](https://mendoza.nd.edu/dataskeptic), offering a MS in Business Analytics in their downtown Chicago campus.**
 
