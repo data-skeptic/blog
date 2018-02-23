@@ -95,26 +95,28 @@ def contained_in_tag(s, pos, tag):
     return True
 
 
-def next_delimiter(s, a, delim='$'):
+def next_delimiter(s, a, is_closing, delim='$'):
     i = s.find(delim, a)
     if i > 0:
         check_for_preceeding_whitespace = s[i-1:i]
-        if not(check_for_preceeding_whitespace.isspace()):
-            return next_delimiter(s, i+1)
-        if contained_in_tag(s, i, "code"):
-            return next_delimiter(s, i+1)
-        if contained_in_tag(s, i, "pre"):
-            return next_delimiter(s, i+1)
+        if a==5559:
+            print("@", check_for_preceeding_whitespace, s[i-10:i+5])
+        if not(is_closing) and not(check_for_preceeding_whitespace.isspace()) and not(check_for_preceeding_whitespace==">"):
+            print("here")
+            return next_delimiter(s, is_closing, i+1)
+        if contained_in_tag(s, i, "code"): # For R stuff
+            return next_delimiter(s, is_closing, i+1)
+        if contained_in_tag(s, i, "pre"):  # For R stuff
+            return next_delimiter(s, is_closing, i+1)
     if i == -1:
         return -1
     if i > 0:
         before = s[i-1]
         if before == '\\':
-            return next_delimiter(s, a+1)
+            return next_delimiter(s, is_closing, a+1)
     return i
 
 def render_uri(s3, bucket, absfile, parser):
-    print('render_uri')
     buck = s3.Bucket(bucket)
     rendered_map = {}
     contents = parser(absfile)
@@ -123,15 +125,16 @@ def render_uri(s3, bucket, absfile, parser):
     i = 0
     ranges = []
     while i < len(contents):
-        i = next_delimiter(contents, i)
+        i = next_delimiter(contents, i, False)
         if i != -1:
-            j = next_delimiter(contents, i+1)
+            j = next_delimiter(contents, i+1, True)
             if j != -1:
                 ranges.append([i, j+1])
         if i == -1 or j == -1:
             i = len(contents)
         else:
             i = j + 1
+    logger.debug("Found " + str(len(ranges)) + " latex statements to render.")
     updated_contents = replace_latex_with_svgs(ranges, contents, buck, rendered_map)
     a = absfile.rfind('/') + 1
     b = absfile.rfind('.')
@@ -184,16 +187,12 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         fname = escape_latex(latex)
         fname = fname + ".svg"
         s3key = "latex/" + fname
-        print('a ================================')
         objs = list(buck.objects.filter(Prefix=s3key))
-        print('b ================================')
         if len(objs) > 0:
             rendered_map[s3key] = False
         else:
             rendered_map[s3key] = False
         #
-        print('================================')
-        print(fname, ' : ', quote(fname))
         fnn = quote(fname).replace('%20', '+')
         svguri = "http://s3.amazonaws.com/" + bucket + "/latex/" + fnn
         if rendered_map[s3key]:

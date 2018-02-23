@@ -11,7 +11,7 @@ Lance thinks that solving P=NP would have quite the dramatic effect on society. 
 
 Links to Check Out:
 
-[Golden Ticket Book](https://press.princeton.edu/titles/9937.html) – Lance Fortnow's book about the P-NP puzzler.
+<a target="_blank" href="https://www.amazon.com/Golden-Ticket-NP-Search-Impossible/dp/0691156492/ref=sr_1_2?ie=UTF8&amp;qid=1519425553&amp;sr=8-2&amp;keywords=the+golden+ticket&_encoding=UTF8&tag=dataskeptic-20&linkCode=ur2&linkId=21c6ec35a8daa4132d68f4a52cb10975&camp=1789&creative=9325">The Golden Ticket by Lance Fortnow</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=dataskeptic-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> – Lance Fortnow's book about the P-NP problem.
 
 [Computational Complexity](http://blog.computationalcomplexity.org/) – Lance’s long-running blog, and a great place to see what else is going on in theoretical computation.
 
