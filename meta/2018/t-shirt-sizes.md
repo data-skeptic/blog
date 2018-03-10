@@ -8,7 +8,7 @@ What is probably more important to everyone is SIZING!  Below are our specificat
 
 ### Metric
 
-<table>
+<table border=1 cellpadding="5">
   <tr>
   	<td><b>Measurement</b></td>
     <td><b>Small</b></td>
@@ -40,7 +40,7 @@ What is probably more important to everyone is SIZING!  Below are our specificat
 
 ### Imperial
 
-<table>
+<table border=1 cellpadding="5">
   <tr>
   	<td><b>Measurement</b></td>
     <td><b>Small</b></td>
