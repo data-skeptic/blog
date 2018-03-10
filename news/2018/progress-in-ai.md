@@ -1,8 +1,12 @@
 ## Progress in AI
 
-Last year, the Electronic Frontier Foundation launched a project to track progress in the field of AI called the [EFF AI Progress Measurement](https://www.eff.org/ai/metrics).  This is an open source effort to document progress made in AI and open challenges faced by the community. Their research does a nice job summarizing progress made in various tasks such as computer vision an chess playing.  It is deeply linked to the research papers relevant and the performance of each.  If you want to forecast trends in AI, this is the dataset you want to use.
+Last year, the Electronic Frontier Foundation launched a project to track progress in the field of AI called the [EFF AI Progress Measurement](https://www.eff.org/ai/metrics).  This is an open source effort to document progress made in AI and open challenges faced by the community. Their research does a nice job summarizing progress made in various tasks such as computer vision and chess playing.  It is deeply linked to the research papers relevant and the performance of each.  If you want to forecast trends in AI, this is the dataset you want to use.
 
 For those of you that don't know about the EFF, its a non-profit that focuses on defending civil liberties in the digital world.  Readers are encouraged to independently review the positions the EFF takes on many matters.  I suspect most readers will agree with most of the EFF's positions.  If not, I'm certain you'll find that any disagreements originate from some fundamental difference rather than any lack of good rhetoric or understanding of technology.
+
+The EFF started this effort to centralize important problems, what approaches have been taken, and what progress has been made.
+
+The analysis demonstrates numerous advancements in computer vision, game playing, and other areas, for which machines now outperform their human counterparts on certain tasks.  Despite these achievements, no one would call such algorithms artificial general intelligence.  Surely progress in these areas contributes to the pursuit of AGI, but it seems that incremental progress on individual problems might not be the exact path.
 
 Their research is organized under 11 key sub-areas:
 

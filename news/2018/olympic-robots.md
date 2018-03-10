@@ -1,6 +1,4 @@
-##Olmypic Robots
-
-(Image)
+## Olympic Robots
 
 As the world's fifth biggest exporter and 10th-largest economy, South Korea has been known for its cutting-edge technology, having already deployed robotic teachers, industrial manufacturing workers, translators and service staff. This year at the Winter Olympics, which began on last Friday evening in South Korea, a fleet of eighty-five robots were deployed across the sporting venues in PyeongChang to provide a variety of services at these events, showcasing the nation’s robotic prowess. 
 
@@ -8,8 +6,9 @@ According to professor Jun-ho Oh, the director of the Institute for Robotics at 
 
 Some of the new technologies that South Korea has put together for this year’s Winter Olympics include: talking robot guides that can provide event information and recommend places for sightseeing in four languages (Korean, English, Chinese and Japanese), painting robots that can draw murals during the games, and 5-G equipped autonomous buses that can transport guests to and from the games’ twelve venues.
 
-Below is a view of where robots have been deployed.
+Below is a map of robots deployments.
 
+<img src="src-olympic-robots/robot-map.jpg" />
 
 Dr. Oh, who lead Team KAIST to win the [2015 DARPA Robotics Challenge](https://spectrum.ieee.org/automaton/robotics/humanoids/darpa-robotics-challenge-finals-winner) with an adaptable humanoid called DRC-HUBO, [told IEEE](https://spectrum.ieee.org/robotics/artificial-intelligence/robots-ready-to-ski-paint-and-clean-at-south-koreas-2018-winter-olympics) in an interview that he has three rules for designing eye-catching, crowd-pleasing robots that are also safe and reliable. First, he said, the robot must not make trouble. Secondly, it must do something new, even if that just means teaching an existing robot new tricks. Third, he said, the robot must be useful.
 
