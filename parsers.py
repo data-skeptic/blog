@@ -30,12 +30,19 @@ def md(absfile):
         c = c.replace('\xe2\x80\x93', "-")
         c = c.replace('\xe2\x80\x98', "'")
         c = c.replace('\xe2\x80\x94', "-")
-        c = c.replace('\x91', '`')
         c = c.replace('\x92', '\'')
         c = c.replace('\x93', '"')
         c = c.replace('\x94', '"')
         c = c.replace('\x96', '-')
         c = c.replace('\x97', '-')
+    i = c.find('```')
+    while i != -1:
+        j = c.find('```', i+3)
+        if j != -1:
+            c = c[0:i] + '<code><pre>' + c[i+3:j] + '</pre></code>' + c[j+3:]
+            i = c.find('```', j+3)
+        else:
+            i = -1
     html = markdown.markdown(c, extensions=['markdown.extensions.tables'])
     return html
 
