@@ -40,7 +40,7 @@ Azure CosmosDB database service and serverless Azure Functions that enables deve
 Quick Start Tutorials for [Data Preparation](https://docs.microsoft.com/en-us/azure/machine-learning/preview/tutorial-classifying-iris-part-1), [Build a model](https://docs.microsoft.com/en-us/azure/machine-learning/preview/tutorial-classifying-iris-part-2), [Deploy a model](https://docs.microsoft.com/en-us/azure/machine-learning/preview/tutorial-classifying-iris-part-3), [Advanced Data Preparation](https://docs.microsoft.com/en-us/azure/machine-learning/preview/tutorial-bikeshare-dataprep)
 
 ### Sponsored by Springboard
-Check out Springboard's [Data Science Career Track Bootcamp](https://sbdata.co/datascareer)
+Check out Springboard's [Data Science Bootcamp](https://sbdata.co/datascareer)
 
 <br/><br/><br/>
 
