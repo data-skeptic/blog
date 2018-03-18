@@ -1,6 +1,6 @@
 ## The Master Algorithm
 
-In this week’s episode, Kyle Polich interviews Pedro Domingos about his book, *The Master Algorithm: How the quest for the ultimate learning machine will remake our world*. In the book, Domingos describes what machine learning is doing for humanity, how it works and what it could do in the future. He also hints at the possibility of an ultimate learning algorithm, in which the machine uses it will be able to derive all knowledge — past, present, and future. 
+In this week’s episode, Kyle Polich interviews Pedro Domingos about his book, *The Master Algorithm: How the quest for the ultimate learning machine will remake our world*. In the book, Domingos describes what machine learning is doing for humanity, how it works and what it could do in the future. He also hints at the possibility of an ultimate learning algorithm that is capable of deriving all knowledge — past, present, and future - and doing anything we want, before we even ask.
 
 **Enter to win a copy of the book**. Details [here](https://dataskeptic.com/ma).
 
