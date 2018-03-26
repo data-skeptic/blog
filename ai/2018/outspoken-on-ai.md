@@ -1,6 +1,12 @@
 ## Outspoken on AI
 
-You may or may not agree with some or all of the perspectives featured here, but regardless, 
+Increasingly, public figures are commenting on artificial intelligence.  Some are optimistic while others are fatalistic.
+
+We picked a few noteworthy public figures and looked up their perspectives on artificial intelligence to share here.
+
+You'll notice that these are mainstream voices who (arguably) are not a part of the artificial intelligence research community.  Yet, this doesn't mean they can't be informed on the subject.  Their voices reach the average person, and thus, shape what the general public thinks and fears when it comes to AI.
+
+You may or may not agree with some or all of the perspectives featured here, but regardless, these are voices and perspectives which are influencing public opinion.  Do you agree or disagree?
 
 ### Jeff Bezos
 

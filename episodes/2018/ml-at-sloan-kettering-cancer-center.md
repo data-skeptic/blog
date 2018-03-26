@@ -1,4 +1,4 @@
-## Personalized Medicine
+## ML at Sloan Kettering Cancer Center
 
 For a long time, physicians have recognized that the tools they have aren't powerful enough to treat complex diseases, like cancer. In addition to data science and models, clinicians also needed actual products — tools that physicians and researchers can draw upon to answer questions they regularly confront, such as “what clinical trials are available for this patient that I’m seeing right now?” In this episode, our host Kyle interviews guests Alex Grigorenko and Iker Huerga from Memorial Sloan Kettering Cancer Center to talk about how data and technology can be used to prevent, control and ultimately cure cancer.
 

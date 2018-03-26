@@ -2,7 +2,9 @@
 
 Many data science courses and blogs cover the fun part of data science: designing machine (and deep) learning models for prediction. However, a precursor to the fun stuff is pulling the data from databases and preparing it for the machine learning algorithms we all love. 
 
-In the course of a data scientist's (and analyst's) work, they will likely need to know how to work with JSON arrays and objects. This blog post will highlight a neat way to parse through a JSON array within PostreSQL (Postgres) using [`cross join lateral`](https://www.postgresql.org/docs/9.6/static/queries-table-expressions.html)  and [`jsonb_to_recordset()`](https://www.postgresql.org/docs/9.6/static/functions-json.html). The combination of these two functions together allows us to create a (mini) table that we can use to join, manipulate, and filter within our main Postgres query.
+In the course of a data scientist's (and analyst's) work, they will likely need to know how to work with JSON arrays and objects. 
+
+This blog post will highlight a neat way to parse through a JSON array within PostreSQL (Postgres) using [`cross join lateral`](https://www.postgresql.org/docs/9.6/static/queries-table-expressions.html)  and [`jsonb_to_recordset()`](https://www.postgresql.org/docs/9.6/static/functions-json.html). The combination of these two functions together allows us to create a (mini) table that we can use to join, manipulate, and filter within our main Postgres query.
 
 Before coming across these two functions, I frequently used `jsonb_array_elements()` combined with`->>`, which I found a bit more clunky, to parse and prepare JSON arrays. It often required using a [CTE](https://www.postgresql.org/docs/9.6/static/queries-with.html) statement or nesting a query within the FROM statement.
 

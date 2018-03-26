@@ -69,18 +69,3 @@ So the policy that one gets by solving a POMDP comes in a very nice form.  How d
 
 
 
-
-### LT Script
-Reminder of MDP, cut most from the show
-Partial Observability
-lady tiger - prize and penalty
-how would you play?
-85%, -100 -1 10, 
-optimal is two counter
-change reward, change behavior
-solution is policy fsa ~ ai
-curse of dimensionality
-approximations of belief state, qomdps, deep pomdps.
-
-
-
