@@ -35,3 +35,5 @@ Here's a quick (and surprisingly human-ish) coversation I had with her this morn
 We'll be talking to Bruce Wilcox, the creator of Rose, in the next episode of the podcast.
 
 For the more ambitious of your, check out this step by step walkthrough from Giorgio Robino on [how to build your first chatbot using ChatScript](https://medium.freecodecamp.org/chatscript-for-beginners-chatbots-developers-c58bb591da8).  If any of you take a stab at it, please let us know how it goes!
+
+Or, just talk to Rose directly [here](http://ec2-54-215-197-164.us-west-1.compute.amazonaws.com/speech.php).
