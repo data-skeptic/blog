@@ -35,7 +35,7 @@ A study by IAPP estimated that, once the GDPR takes effect, at least 28,000 Data
 
 The new GDPR requires that a single person acts as the data protection officer (DPO). The data protection champion would be responsible for the following: Who does what on which data and where is it done? What is the impact of a process on the global system? And what are the performance metrics of the processes? 
 
-The principle is sound; however, some say that data governance is such a new field that.
+The principle is sound; however, some say that data governance is such a new field.
 
 While most of the coverage surrounding GDPR focuses on how companies collect, store and govern data, it's also important to note the implications for AI development. For example, how will machine learning applications be affected by GDPR?
 
