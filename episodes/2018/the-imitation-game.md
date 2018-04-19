@@ -1,6 +1,6 @@
 ## The Imitation Game
 
-This week on Data Skeptic, we begin the episode with a skit performance to introduce the topic of this show: The Imitation Game. We open with a scene in the distant future. The year is 2050, and company called Shamony is announcing their new product, Ada, the most advanced artificial intelligence agent. To prove its superiority, the lead scientist announces that it will use the Turing Test that Alan Turing proposed in 1950. During this we introduce Turing’s “objections” outlined in his famous paper, “Computing Machinery and Intelligence.”
+This week on Data Skeptic, we begin the episode with a skit performance to introduce the topic of this show: The Imitation Game. We open with a scene in the distant future. The year is 2027, and company called Shamony is announcing their new product, Ada, the most advanced artificial intelligence agent. To prove its superiority, the lead scientist announces that it will use the Turing Test that Alan Turing proposed in 1950. During this we introduce Turing’s “objections” outlined in his famous paper, “Computing Machinery and Intelligence.”
 
 Most of us has probably heard of the Turing Test. Suppose an interrogator is communicating by keyboard with entities that are hidden from view. Some are people and some are computers. The interrogator has to guess which is which. If a computer manages to fool the interrogator, it can be said to think.
 
