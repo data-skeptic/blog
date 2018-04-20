@@ -8,4 +8,25 @@ At least that’s the way the meaning of the Turing Test is usually put. But it�
 
 The Imitation Game involves a judge engaging in two conversations - one with a human acting natural and one with a machine pretending to be human. But what does it mean to imitate? To explore that question, we invited a professional performer and improv instructor, Holly Laurent, on our show. 
 
-We also discuss alternative ways to measure a machine’s humanity. For this, another guest, Peter Clark, joins us on the show to discuss the Winograd Schema Challenge, which tests common sense reasoning about the world. The challenge involves a small reading comprehension test about common sense knowledge. For example, “Tom threw his schoolbag down to Ray after he reached the [top/bottom] of the stairs. Who reached the [top/bottom] of the stairs?” Another example would be: “Thomson visited Cooper’s grave in 1765. At that date he had been [dead/travelling] for five years. Who had been [dead/travelling] for five years?”
+The third segment of this episode is an interview with Peter Clark from the Allen Institute for Artificial Intelligence about efforts to create question answering software and the corpus that they've put together to further these efforts.
+
+### 2027 Skit Cast
+
+[Kristine de Leon](https://dataskeptic.com/contributors/kristine)
+
+[Katherine Grant Suttie](http://katherinegrantsuttie.com/)
+
+[Earlisha Hackney](https://www.imdb.com/name/nm6654681/)
+
+[Samuel Hansen](https://relprime.com/)
+
+[Jeff Meyerson](https://softwareengineeringdaily.com/)
+
+[Karl Mamer](http://www.yrad.com/cs/)
+
+
+### Upcoming Events Announced
+
+Kyle will be giving a talk on Artificial Intelligence at [SkepticalCon](http://www.skepticalcon.com/) in Berkeley, CA on Sunday June 10th.
+
+Kyle will be giving a talk on AI, Machine Learning, and the Blockchain at the University of Chicago Gleacher Center on Saturday May 19th.  Get tickets [here](https://www.ideassn.org/chicago-2018/).
