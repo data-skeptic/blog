@@ -8,7 +8,12 @@ At least that’s the way the meaning of the Turing Test is usually put. But it�
 
 The Imitation Game involves a judge engaging in two conversations - one with a human acting natural and one with a machine pretending to be human. But what does it mean to imitate? To explore that question, we invited a professional performer and improv instructor, Holly Laurent, on our show. 
 
-The third segment of this episode is an interview with Peter Clark from the Allen Institute for Artificial Intelligence about efforts to create question answering software and the corpus that they've put together to further these efforts.
+The third segment of this episode is an interview with Peter Clark from the Allen Institute for Artificial Intelligence about efforts to create question answering software and the corpus that they've put together to further these efforts. What is a question and answering algorithm?The basic task is, given a question, try to find an answer. There are different types of questions, in which a system would have to find the answer. For example, there are some questions in the form of multiple sentences or paragraphs, and the task of a system is to locate that answer within a large corpus. But such questions assume that the answer is within that corpus. But Peter and his colleagues at the Allen Institute are focusing on questions in which the answers are not explicitly written down anywhere; instead, the system has to combine a couple of bits of information together to come up with the answer. 
+
+The type of challenge questions Peter is interested in requires knowledge that’s difficult to pin down. In other words, general common sense knowledge about the world is needed, combined with information in the question. An example of a challenge question is posed in a multiple choice format: Which property of a material can be determined just be looking at it? (A) luster, (B) mass, (C) weight or (D) hardness. The answer here is luster. Here’s another example question: Which item below is not made from a material grown in nature? (A) a cotton shirt (B) a wooden chair (C) a plastic spoon (D) a grass basket.
+
+Finding the answers to such questions taps into a common-sense picture of the world that even a child possesses. And it is this common sense that the AI behind voice assistants, chatbots, and translation software lacks.
+
 
 ### 2027 Skit Cast
 
