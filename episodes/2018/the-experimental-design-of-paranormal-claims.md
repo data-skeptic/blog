@@ -1,6 +1,6 @@
 ## The Experimental Design of Paranormal Claims
 
-In this episode of Data Skeptic, Kyle chats with Jerry Schwarz from the [Independent Investigations Group (IIG)](http://iighq.org/) about testing claims of the paranormal. The IIG is a volunteer-based organization dedicated to investigating paranormal or extraordinary claim from a scientific viewpoint. The group, headquartered at the the [Center for Inquiry-Los Angeles in Hollywood](https://cfila.org/), offers a $100,000 prize to anyone who can show, under proper observing conditions, evidence of any paranormal, supernatural, or occult power or event. 
+In this episode of Data Skeptic, Kyle chats with Jerry Schwarz from the [Independent Investigations Group (IIG)'s SF Bay Area chapter](http://iighq.org/index.php/iig-sf-bay-area) about testing claims of the paranormal. The [IIG](http://iighq.org) is a volunteer-based organization dedicated to investigating paranormal or extraordinary claim from a scientific viewpoint. The group, headquartered at the the [Center for Inquiry-Los Angeles in Hollywood](https://cfila.org/), offers a $100,000 prize to anyone who can show, under proper observing conditions, evidence of any paranormal, supernatural, or occult power or event. 
 
 It’s not always obvious how one should look into such claims statistically. Nevertheless, the IIG does a good job at critically examining fringe science and extraordinary claims from a rational, scientific viewpoint. Jerry describes his experiences in experimental design to test the different types of claims he has heard over the years.
 
