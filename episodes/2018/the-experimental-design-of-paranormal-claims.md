@@ -13,4 +13,6 @@ During this episode, we would also like our listeners to think about how this di
 The Independent Investigations Group in Los Angeles regularly meets at 11 a.m., on the [3rd Saturday](http://www.centerforinquiry.net/LA/events/independent_investigation_meeting/) of every month at the Center for Inquiry-LA in Hollywood.
 
 
-**CHICAGO** Tues, May 15, 6pm.  Come to our [Data Skeptic meetup](https://www.eventbrite.com/e/data-skeptic-at-the-mendoza-college-of-business-tickets-45689707144)
+**CHICAGO** Tues, May 15, 6pm.  Come to our [Data Skeptic meetup](https://www.eventbrite.com/e/data-skeptic-at-the-mendoza-college-of-business-tickets-45689707144).
+
+**CHICAGO** Saturday, May 19, 10am.  Kyle will be giving a talk at the [Chicago AI, Data Science, and Blockchain Conference 2018](https://www.eventbrite.com/e/chicago-ai-data-science-blockchain-conference-2018-tickets-44925991851).
