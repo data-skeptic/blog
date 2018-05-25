@@ -6,7 +6,7 @@ In the first half, Kyle's interview with Steve discusses how Microsoft currently
 
 In the second half, Kyle and Carlos discuss the cognitive services that are a part of Microsoft's AI Platform, particularly the Intelligent Kiosk, which is a collection of demos showcasing workflows and experiences built on top of the Microsoft Cognitive Services. Most of its demos are hands-free and autonomous, using the human faces in front of a web camera as the main form of input. Carlos also talks about how his team built a skin cancer prediction app with Azure Machine Learning, CoreML & Xamarin.
 
-Links to resources discussed:
+###Links to resources discussed:
 
 [Azure machine Learning Studio](https://azure.microsoft.com/en-us/services/machine-learning-studio/)
 
@@ -17,8 +17,4 @@ Links to resources discussed:
 [Intelligent Kiosk Sample (Github)](https://github.com/Microsoft/Cognitive-Samples-IntelligentKiosk)
 
 [Microsoft's blog post on building a prediction app to predict skin cancer](https://blogs.technet.microsoft.com/machinelearning/2018/04/03/intelligent-edge-building-a-skin-cancer-prediction-app-with-azure-machine-learning-coreml-xamarin/)
-
-
-
-
 
