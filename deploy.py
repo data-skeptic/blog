@@ -380,12 +380,15 @@ def replacement(match):
 def get_r_images(title, fname, bucketpath, c):
     logger.debug('get_r_images')
     cx = c
+    i = 0
+    ec = 0
     fname = fname[0:len(fname) - len(".html")]
     soup = bs4.BeautifulSoup(c, "lxml")
     imgtags = soup.find_all('img')
     imgs = []
     j = 0
     logger.debug(len(imgtags))
+    print(imgtags)
     for i, tag in enumerate(imgtags):
         tpl = "<img src='{src}' class='r-plot' alt='{alt}' title='{title}' />"
         oclass = tag.get('class')
@@ -400,22 +403,32 @@ def get_r_images(title, fname, bucketpath, c):
         elif alt is not None:
             print('alt', alt)
             if alt.startswith('plot of chunk'):
-                #is_r_plot = True
-                print("ignoring " + alt)
+                is_r_plot = True
+                #print("ignoring " + alt)
         if is_r_plot:
             print('IS R PLOT!!!!!!!!!!!!!!!')
             osrc = tag.get('src')
             src = bucketpath + fname + "_" + str(i) + ".png"
             alt = title + " image #" + str(i)
             newtag = tpl.format(src=src, alt=alt, title=alt)
+            print(newtag)
             s = str(tag)
-            j = cx.lower().find("<img", j)
-            cx = cx[0:j] + newtag + cx[j+len(s)+1:]
-            j = j + len(s) + 1
+            j = cx.find(s)
+            z = 0
+            q = len(s) - 2
+            print('[SEARCH]', s[0:q])
+            while z != -1:
+                z = cx.lower().find(s[0:q], z+1)
+                z2 = cx.find('>', z+1)
+                print("####", z, cx[z:z+200])
+                print(newtag)
+                print('______')
+                if z != -1:
+                    cx = cx[0:z] + newtag + cx[z2+1:]
             print('$$$$$$$$$$')
             print(osrc)
             print(src)
-            #imgs.append({"src": osrc, "dest": src})
+            imgs.append({"src": osrc, "dest": src})
     print(imgs)
     return cx, imgs
 
@@ -432,7 +445,27 @@ def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     i = absfile.rfind('/')
     buck = s3.Bucket(bucket)
     bucketpath = 'http://s3.amazonaws.com/' + bucket + '/' + absfile[0:i+1] + 'src-' + fname + '/'
+    i = 0
+    ec = 0
+    while i != -1:
+        i = contents.find('After reading', i+1)
+        print('i', i)
+        if i != -1:
+            ec += 1
+    if ec > 1:
+        for j in range(20):
+            print('________ERROR@c0@______', ec)
     c2, imgs = get_r_images(title, fname, bucketpath, contents)
+    i = 0
+    ec = 0
+    while i != -1:
+        i = c2.find('After reading', i+1)
+        print('i', i)
+        if i != -1:
+            ec += 1
+    if ec > 1:
+        for j in range(20):
+            print('________ERROR@c2@______', ec)
     imgs_to_s3(buck, imgs)
     if os.path.exists(fname + '.html'):
         os.remove(fname + '.html')

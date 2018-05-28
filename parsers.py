@@ -51,7 +51,17 @@ def md(absfile):
     while i != -1:
         j = c.find('```', i+3)
         if j != -1:
-            c = c[0:i] + '<code><pre>' + c[i+3:j] + '</pre></code>' + c[j+3:]
+            inner = c[i+3:j]
+            arr = inner.split('\n')
+            # Remove R formatting which is confusingly like markdown header 2
+            if len(arr)>1:
+                sharp_start_count = 0
+                for item in arr:
+                    if item.startswith('##'):
+                        sharp_start_count += 1
+                if sharp_start_count > 2:
+                    inner = inner.replace('##', '')
+            c = c[0:i] + '<code><pre>' + inner + '</pre></code>' + c[j+3:]
             i = c.find('```', j+3)
         else:
             i = -1
@@ -71,10 +81,14 @@ def nbconverter(absfile):
 
 
 def knitr(absfile):
+    print(absfile)
     i = absfile.rindex('/')
     j = absfile.find('.', i)
     s = absfile[0:j]
     figpath = s + '_img/'
+    f = open(absfile, 'r')
+    c = f.read()
+    f.close()
     reval = """
         knitr::opts_chunk$set(echo=FALSE, fig.path='{figpath}')
         library('knitr')
