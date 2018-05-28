@@ -227,6 +227,7 @@ def render_and_upload_latex(latex, fname, buck, s3key):
 
 def render_item(base_url, s3, s3client, bucket, srcfiles, item, env, blog_id):
     logger.debug("render_item")
+    print(srcfiles)
     ext = item['ext']
     parser = parsers[ext]
     absfile = item['absfile']
@@ -314,12 +315,16 @@ def render_blog(base_url, s3, s3client, item_metadata, blog_id):
     dname = 'src-' + s3key[a+1:b]
     keypath = s3key[0:len(s3key)-len(x)] + dname + '/'
     print("SRCFILES", len(srcfiles))
+    print(srcfiles)
+    print("END")
     for src in srcfiles:
-        s3key2 = keypath + src
-        logger.info('Deploying source file: ' + s3key2)
-        i = absfile.rfind('/')
-        abspath = absfile[0:i]
-        fp = open(abspath + '/' + dname + '/' + src, 'rb')
+        print(src)
+        s3key2 = keypath + os.path.basename(src)
+        logger.info('Deploying source file: ' + src + ' to ' + s3key2)
+        #i = absfile.rfind('/')
+        #abspath = absfile[0:i]
+        #fp = open(abspath + '/' + dname + '/' + src, 'rb')
+        fp = open(src, 'rb')
         data = fp.read()
         fp.close()
         res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data, ACL='public-read')
@@ -433,12 +438,33 @@ def render_one(base_url, s3, s3client, absfile, bucket, env):
     path = absfile[0:len(absfile) - len(fname)]
     p = fname.rfind('.')
     d = path + "src-" + fname[0:p]
-    srcfiles = []
     print("----------------------------------")
+    srcfiles = []
     if os.path.isdir(d):
-        srcfiles = os.listdir(d)
+        sf = os.listdir(d)
+        for src in sf:
+            if src != '.DS_Store':
+                sc = d + '/' + src
+                srcfiles.append(sc)
     print(d, len(srcfiles))
+    print("----------------------------------")
+    print(base_url, absfile, path, fname, p, d)
+    print("----------------------------------")
+    print("----------------------------------")
+    print("----------------------------------")
+    print("----------------------------------")
     contents = parser(absfile)
+    r_dir = path + fname[0:p] + '_img'
+    print('r_dir =', r_dir)
+    if os.path.isdir(r_dir):
+        srcfiles2 = os.listdir(r_dir)
+        for isrc in srcfiles2:
+            if isrc != '.DS_Store':
+                isrc = r_dir + '/' + isrc
+                srcfiles.append(isrc)
+    print("--ALL SRCFILES--------------------------------")
+    print(srcfiles)
+    print("----------------------------------")
     f = open(absfile, 'rb')
     c = f.read()
     f.close()
@@ -501,7 +527,6 @@ if __name__ == "__main__":
     bucket    = config['bucket']
     env = config_filename.replace('.json', '')
     base_url = config['api'] + env
-
     region = "us-east-1"
     s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
     s3client = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=region)
