@@ -139,12 +139,13 @@ def render_uri(s3, bucket, absfile, parser):
     a = absfile.rfind('/') + 1
     b = absfile.rfind('.')
     fname = absfile[a:b]
+    logger.debug('Now update for knitr images')
     updated_contents = knitr_img_handling(s3, title, absfile, updated_contents, bucket, fname)
     return updated_contents
 
 
 def escape_latex(latex):
-    return latex.replace("\\", "\\\\") \
+    fname = latex.replace("\\", "\\\\") \
     .replace(":", "%3A") \
     .replace(";", "%3B") \
     .replace('"', '\"') \
@@ -156,6 +157,9 @@ def escape_latex(latex):
     .replace("+", "%2B") \
     .replace("?", "%3F") \
     .replace("/", "%2F")
+    if fname.startswith('\\'):
+        fname = 'l_' + fname
+    return fname
 
 
 def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
@@ -198,7 +202,7 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         if rendered_map[s3key]:
             logger.debug("SVG already exists: " + s3key)
         else:
-            logger.debug("Going to render " + latex)
+            logger.debug("Going to render " + latex + ' as ' + fname)
             render_and_upload_latex(latex, fname, buck, s3key)
             rendered_map[s3key] = True
         imgTag = "<img className='latex-svg' src='" + svguri + "' alt='" + blatex + "' />"
@@ -374,28 +378,45 @@ def replacement(match):
 
 
 def get_r_images(title, fname, bucketpath, c):
+    logger.debug('get_r_images')
     cx = c
     fname = fname[0:len(fname) - len(".html")]
     soup = bs4.BeautifulSoup(c, "lxml")
     imgtags = soup.find_all('img')
     imgs = []
     j = 0
+    logger.debug(len(imgtags))
     for i, tag in enumerate(imgtags):
         tpl = "<img src='{src}' class='r-plot' alt='{alt}' title='{title}' />"
         oclass = tag.get('class')
+        alt = tag.get('alt')
+        is_r_plot = False
+        #print(oclass, alt, tag)
         if oclass is not None:
             if type(oclass) == list:
                 oclass = oclass[0]
             if oclass == 'plot':
-                osrc = tag.get('src')
-                src = bucketpath + fname + "_" + str(i) + ".png"
-                alt = title + " image #" + str(i)
-                newtag = tpl.format(src=src, alt=alt, title=alt)
-                s = str(tag)
-                j = cx.lower().find("<img", j)
-                cx = cx[0:j] + newtag + cx[j+len(s)+1:]
-                j = j + len(s) + 1
-                imgs.append({"src": osrc, "dest": src})
+                is_r_plot = True
+        elif alt is not None:
+            print('alt', alt)
+            if alt.startswith('plot of chunk'):
+                #is_r_plot = True
+                print("ignoring " + alt)
+        if is_r_plot:
+            print('IS R PLOT!!!!!!!!!!!!!!!')
+            osrc = tag.get('src')
+            src = bucketpath + fname + "_" + str(i) + ".png"
+            alt = title + " image #" + str(i)
+            newtag = tpl.format(src=src, alt=alt, title=alt)
+            s = str(tag)
+            j = cx.lower().find("<img", j)
+            cx = cx[0:j] + newtag + cx[j+len(s)+1:]
+            j = j + len(s) + 1
+            print('$$$$$$$$$$')
+            print(osrc)
+            print(src)
+            #imgs.append({"src": osrc, "dest": src})
+    print(imgs)
     return cx, imgs
 
 
@@ -416,7 +437,8 @@ def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     if os.path.exists(fname + '.html'):
         os.remove(fname + '.html')
     for img in imgs:
-        os.remove(img['src'])
+        pass
+        #os.remove(img['src'])
     return c2
 
 
