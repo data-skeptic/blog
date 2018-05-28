@@ -464,7 +464,7 @@ def render_one(base_url, s3, s3client, absfile, bucket, env):
                 srcfiles.append(isrc)
     print("--ALL SRCFILES--------------------------------")
     print(srcfiles)
-    print("----------------------------------")
+    print("----------------------------------------------")
     f = open(absfile, 'rb')
     c = f.read()
     f.close()

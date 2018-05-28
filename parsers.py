@@ -4,6 +4,18 @@ import shutil
 import base64
 import rpy2.robjects as robjects
 from nbconvert import HTMLExporter
+from contextlib import contextmanager
+import sys, os
+
+@contextmanager
+def suppress_stdout():
+    with open(os.devnull, "w") as devnull:
+        old_stdout = sys.stdout
+        sys.stdout = devnull
+        try:  
+            yield
+        finally:
+            sys.stdout = old_stdout
 
 def md(absfile):
     try:
@@ -69,13 +81,25 @@ def knitr(absfile):
         knit('{absfile}')
         """.format(figpath=figpath, absfile=absfile)
     print('--------------------------------------')
-    print(reval)
-    print(type(reval))
-    r2 = robjects.reval(reval)
+    #print(reval)
+    #print(type(reval))
+    with suppress_stdout():
+        r2 = robjects.reval(reval)
     fname = r2[0]
     f = open(fname, 'r')
     c = f.read()
     f.close()
+    if c[0:3] == '---':
+        j = c.find('---', 4)
+        c = c[j+3:]
+    fn = 'tmp.md'
+    f = open(fn, 'w')
+    f.write(c)
+    f.close()
+    c = md(fn)
+    #TODO: Remove header part
+    #TODO: handle markdown
+    #TODO: upload images
     return c
 
 
