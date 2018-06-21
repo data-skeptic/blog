@@ -1,0 +1,17 @@
+##Defending Against Adversarial Attacks
+
+In this week’s episode, our host Kyle interviews Gokula Krishnan from ETH Zurich, about his recent contributions to defenses against adversarial attacks. The discussion centers around his latest paper, titled “Defending Against Adversarial Attacks by Leveraging an Entire GAN,” and his proposed algorithm, aptly named ‘Cowboy.’
+
+Deep learning has had significant progresses in a wide spectrum of applications in machine learning: image classification, object detection, speech recognition, translation of languages, voice synthesis. However, deep neural networks have also been found to be vulnerable to well-designed input samples, known as adversarial examples. Adversarial examples are often indiscernible to humans but can easily fool deep neural networks in the testing/deploying stage. For instance, an adversary can construct physical adversarial examples to fool autonomous vehicles by manipulating a stop sign in a traffic sign recognition system. Hence, the vulnerability to adversarial examples poses as a major risk for applying deep neural networks in safety-critical scenarios.
+
+Generative Adversarial Networks (GANs) have been popular for a while, and involve two networks: a generator and a discriminator. The generator takes in a random input, like a vector of random numbers and it tries to generate realistic-looking images. The goal of the discriminator is then to distinguish whether its input is from the dataset or from the generator. These two networks play a game, in which at the end, the generator has learned to generate images that look like the data distribution. The common analogy used to describe the generator is the counterfeiter, and the discriminator as the police, where the counterfeiter learns how to fake money that looks real.
+
+People have proposed some approaches for defending against adversarial attacks. One approach known as adversarial training involves injecting adversarial samples into the training dataset. Another approach is to train a GAN that generates adversarial samples and then train the classifier on the augmented dataset.
+
+Gokul and his colleague offers news insights to defending against adversarial attacks. In his paper, Gokul postulates that ‘adversarial samples lie outside the ‘data manifold’ and the discriminator can effectively detect this.’ Here, the ‘data manifold’ can be thought of as the space in which all the images exist. Suppose you take the MNIST dataset, which is a collection of images. Each image is just a matrix of 1’s and 0’s. A manifold would be the space that all the data points belonging to MNIST lie on. With this insight, Gokul proposes a new technique in defending against adversarial attacks. His algorithm is aptly named, ‘Cowboy,’ and describes what’s going on: you had a nice data point that was inside the manifold that went rogue that became an adversarial sample, so you’re trying to bring it back to the manifold.
+
+The idea for Gokul’s approach came about when he went to a talk at the Google Zurich office, where Ian Goodfellow talked about how most people who use GANs for adversarial examples tend to throw out the discriminator. Gokul points out that the discriminator doesn’t know the probability distribution, but it knows that if the input is from the dataset, it would give a high score and if is not from dataset then it would give a low score.
+
+### Related Resources
+
+Gokul's paper, [Defending Against Adversarial Attacks by Leveraging an Entire GAN](https://arxiv.org/pdf/1805.10652.pdf)
