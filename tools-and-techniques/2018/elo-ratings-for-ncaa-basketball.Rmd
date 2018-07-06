@@ -1,21 +1,23 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
+## ELO Ratings for NCAA Basketball
 
 After reading Kyle's blog post on creating [ELO rankings for chess](https://dataskeptic.com/blog/methods/2017/calculating-an-elo-rating) and fivethirtyeight.com's articles for [basketball](https://fivethirtyeight.com/features/how-fivethirtyeight-is-forecasting-the-2016-ncaa-tournament/) and [football](https://fivethirtyeight.com/features/introducing-nfl-elo-ratings/), I was psyched to try and create my own rankings and test them out.  Each year, [kaggle.com](https://kaggle.com) hosts a machine learning competition where participants put their prediction skills to the test for the NCAA tournament.
 
-Most, if not all of you have probably filled out an NCAA tournament bracket where the goal is to pick the winner of each game.  Filling out a bracket gives you a rooting interest in each game and is one of the reasons the tournament is so popular. The kaggle competition is slightly different from the typical tournament pool because instead of picking winners of games, the predictions are the probability team 1 will beat team 2.  So, instead of thinking deterministically, this competition forces you to think probabilistically.
+Most, if not all of you have probably filled out an NCAA tournament bracket where the goal is to pick the winner of each game.  Filling out a bracket gives you a rooting interest in each game and is one of the reasons the tournament is so popular.
+
+The kaggle competition is slightly different from the typical tournament pool because instead of picking winners of games, the predictions are the probability team 1 will beat team 2.  So, instead of thinking deterministically, this competition forces you to think probabilistically.
+
 In order to score each participant's entry, kaggle uses a log loss function.  Below is the log loss function for this contest:
 
-$$-\frac{1}n \sum_{i=1}^{n} [y_i \log(\hat{y_i}) + (1-y_i) log (1 - \hat{y_i})] $$
+$\frac{-1}{n} \sum_{i=1}^{n} \big[y_i \log(\hat{y_i}) + (1-y_i) \cdot \log (1 - \hat{y_i})\big]$
 
-where:  
-* n is the number of games played  
-* $\hat{y_i}$ is the predicted probability of team 1 beating team 2  
-* $y_i$ is 1 if team 1 wins, 0 if team 2 wins  
-* log() is the natural (base e) logarithm  
+where:
+
+<ol>
+  <li>$n$ is the number of games played</li>
+  <li>$\hat{y_i}$ is the predicted probability of team 1 beating team 2</li>
+  <li>$y_i$ is 1 if team 1 wins, 0 if team 2 wins</li>
+  <li>`log()` is the natural (base $e$) logarithm</li>
+</ol>
 
 For this competition, a smaller log loss was better.  The use of the logarithm offers extreme punishment for high probabilities which are incorrect.  The graph below gives you a good indication of how this works.
 
@@ -58,7 +60,9 @@ test_k %>% group_by(k) %>%
 ```
 
 One factor I also wanted to account for in my model was home court advantage.  During the NCAA tournament, the games are played on a neutral court so there wouldn't be a home court advantage.  However, during the season most of the games are played at a home site and so I wanted to take that into account as I updated my rankings.  Based on my testing, playing at home was worth about four points to the home team.  
+
 So, how did I do?  When I back tested my model against the 2016 and 2017 tournaments my log loss was 0.5609 in 2016 and 0.5218 in 2017.  The log loss numbers themselves don't mean much, it just gives a way to compare the entries.  My 2016 entry would have finished in 135th place out of 598 teams and 210th place out of 442 teams in the 2017 competition.  
+
 Heading into this year's tournament, here were the top 10 teams in my ELO rankings in order of strength:
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
@@ -69,8 +73,8 @@ predictions %>%
   arrange(desc(Team1_elo)) %>%
   rename(Team = Team1_Name, ELO = Team1_elo) %>%
   head(10)
-
 ```
 
 Four of the top five teams in my ELO rankings heading into the tournament were number one seeds which made me feel like my rankings passed the smell test. At the end of the tournament I finished in 44th place out of 934 entries.  One of the reasons I feel like I finished as high as I did was due to the large number of upsets in the tournament.  When I compared my rankings to other competitors and fivethirtyeight.com, I consistently had smaller win probabilities for the favorites.  Therefore, my log loss for many of the games where upsets occurred was smaller than other participants in the contest.  
+
 In summary, a very simple ELO model with just two parameters was used to predict the  probabilities of one team beating another in the NCAA tournament.  The model outperformed more complex algorithms which were used by other participants in a kaggle competition.  In the future, I'd like to test if a simple ELO model could be used to create accurate rankings, win probabilities and point spreads for other sports.  
