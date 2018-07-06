@@ -1,0 +1,9 @@
+## First Order Logic
+
+Logic is a fundamental of mathematical systems.  It's roots are the values true and false and it's power is in what it's rules allow you to prove.  Prepositional logic provides it's user variables.  These are often $p$ and $q$ for some reason.  Users can also describe relationships like the implication $p \implies q$.
+
+What missing from prepositional logic is the ability to make blanket statements about a set of objects.  For example, $\exists x \text{s.t.} \text{is_podcast}(x) \land \text{about_ai}(x)$.  In English, this logic statement could be read "there exists $x$ such that $x$ is a podcast and $x$ is about AI.  That's a true statement.  Data Skeptic is currently all about AI.  However, starting next week, the theme of our show will change!  Yet even after that, this statement will remain true, because there are other examples of objects that satsify this statement.
+
+The $\exist$ (there exists) symbol is one of two universal quantifiers that are made available in first order logic.  The second is $\forall$, the "for all" quantifier.
+
+First order logic is relevant to artificial intelligence because it is one possible way of doing knowledge representation and allowing your intelligent machine to do inference.  If an AI is able to understand information, and "store" it as statements in first order logic, then that same system can generate lots of novel new information by applying the things it knows to the objects it knows about.  For example, upon discovering that Data Skeptic is a podcast, the system might infer that it can be listened to, assuming it already knows that podcasts are a thing that are listened to.  While certainly not a tool that can give us artificial general intelligence, first order logic remains a useful and powerful formalism for knowledge representation and inference.
