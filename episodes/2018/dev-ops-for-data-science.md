@@ -1,4 +1,4 @@
-## MS Build 2018 Part 2
+## Dev Ops for Data Science
 
 We revisit the 2018 Microsoft Build in this episode, focusing on the latest ideas in DevOps. Kyle interviews Cloud Developer Advocates Damien Brady, Paige Bailey and Donovan Brown to talk about DevOps and data science and DevOps for databases.
 
