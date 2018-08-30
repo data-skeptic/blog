@@ -1,0 +1,13 @@
+## Spam Filtering with Naive Bayes
+
+Today's spam filters are advanced data driven tools.  They rely on a variety of techniques to effectively and often seamlessly filter out junk email from good email.
+
+Whitelists, blacklists, traffic analysis, network analysis, and a variety of other tools are probably employed by most major players in this area.  Naturally content analysis can be an especially powerful tool for detecting spam.
+
+Given the binary nature of the problem ($Spam$ or $\neg Spam$) its clear that this is a great problem to use machine learning to solve.  In order to apply machine learning, you first need a labelled training set.  Thankfully, many standard corpora of labelled spam data are readily available.  Further, if you're working for a company with a spam filtering problem, often asking users to self-moderate or flag things as spam can be an effective way to generate a large amount of labels for "free".
+
+With a labeled dataset in hand, a data scientist working on spam filtering must next do feature engineering.  This should be done with consideration of the algorithm that will be used.  The Naive Bayesian Classifer has been a popular choice for detecting spam because it tends to perform pretty well on high dimensional data, unlike a lot of other ML algorithms.  It also is very efficient to compute, making it possible to train a per-user Classifier if one wished to.  While we might do some basic NLP tricks, for the most part, we can turn each word in a document (or perhaps each bigram or n-gram in a document) into a feature.
+
+The *Naive* part of the Naive Bayesian Classifier stems from the naive assumption that all features in one's analysis are considered to be independent.  If $x$ and $y$ are known to be independent, then $Pr(x \cap y) = Pr(x) \cdot Pr(y)$.  In other words, you just multiply the probabilities together.  Shh, don't tell anyone, but this assumption is actually wrong!  Certainly if a document contains the word *algorithm*, it's more likely to contain the word *probability* than some randomly selected document.  Thus, $Pr(\text{algorithm} \cap \text{probability}) > Pr(\text{algorithm}) \cdot Pr(\text{probability})$, violating the assumption.  Despite this "flaw", the Naive Bayesian Classifier works remarkably will on many problems.  If one employs the common approach of converting a document into bigrams (pairs of words instead of single words), then you can capture a good deal of this correlation indirectly.
+
+In the final leg of the discussion, we explore the question of whether or not a Naive Bayesian Classifier would be a good choice for detecting fake news.
