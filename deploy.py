@@ -181,9 +181,6 @@ def replace_latex_with_svgs(ranges, contents, buck, rendered_map):
         latex = latex.replace('&amp;', '&')
         latex = latex.replace('&lt;', '<')
         latex = latex.replace('&gt;', '>')
-        #fname = fname.replace('\\', '_')
-        #fname = fname.replace(' ', '_')
-        #fname = fname.replace('=', '_')
         blatex = latex
         fname = escape_latex(latex)
         fname = fname + ".svg"
