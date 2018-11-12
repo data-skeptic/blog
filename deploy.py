@@ -99,10 +99,7 @@ def next_delimiter(s, a, is_closing, delim='$'):
     i = s.find(delim, a)
     if i > 0:
         check_for_preceeding_whitespace = s[i-1:i]
-        if a==5559:
-            print("@", check_for_preceeding_whitespace, s[i-10:i+5])
         if not(is_closing) and not(check_for_preceeding_whitespace.isspace()) and not(check_for_preceeding_whitespace==">"):
-            print("here")
             return next_delimiter(s, is_closing, i+1)
         if contained_in_tag(s, i, "code"): # For R stuff
             return next_delimiter(s, is_closing, i+1)
@@ -231,7 +228,6 @@ def render_and_upload_latex(latex, fname, buck, s3key):
 
 def render_item(base_url, s3, s3client, bucket, srcfiles, item, env, blog_id):
     logger.debug("render_item")
-    print(srcfiles)
     ext = item['ext']
     parser = parsers[ext]
     absfile = item['absfile']
@@ -312,17 +308,12 @@ def render_blog(base_url, s3, s3client, item_metadata, blog_id):
         f.close()
     fake_handle = io.BytesIO(contents.encode('utf-8'))
     res = s3.Bucket(bucket).put_object(Key=s3key, Body=fake_handle)
-    print(s3key, res)
     x = os.path.basename(s3key)
     a = s3key.rfind('/')
     b = s3key.rfind('.')
     dname = 'src-' + s3key[a+1:b]
     keypath = s3key[0:len(s3key)-len(x)] + dname + '/'
-    print("SRCFILES", len(srcfiles))
-    print(srcfiles)
-    print("END")
     for src in srcfiles:
-        print(src)
         s3key2 = keypath + os.path.basename(src)
         logger.info('Deploying source file: ' + src + ' to ' + s3key2)
         #i = absfile.rfind('/')
@@ -332,7 +323,6 @@ def render_blog(base_url, s3, s3client, item_metadata, blog_id):
         data = fp.read()
         fp.close()
         res = s3.Bucket(bucket).put_object(Key=s3key2, Body=data, ACL='public-read')
-        print(s3key2, res)
     author = 'Kyle'
     ritem = {
         'uri': uri,
@@ -388,7 +378,6 @@ def get_r_images(title, fname, bucketpath, c):
     imgs = []
     j = 0
     logger.debug(len(imgtags))
-    print(imgtags)
     for i, tag in enumerate(imgtags):
         tpl = "<img src='{src}' class='r-plot' alt='{alt}' title='{title}' />"
         oclass = tag.get('class')
@@ -401,7 +390,6 @@ def get_r_images(title, fname, bucketpath, c):
             if oclass == 'plot':
                 is_r_plot = True
         elif alt is not None:
-            print('alt', alt)
             if alt.startswith('plot of chunk'):
                 is_r_plot = True
                 #print("ignoring " + alt)
@@ -411,23 +399,15 @@ def get_r_images(title, fname, bucketpath, c):
             src = bucketpath + fname + "_" + str(i) + ".png"
             alt = title + " image #" + str(i)
             newtag = tpl.format(src=src, alt=alt, title=alt)
-            print(newtag)
             s = str(tag)
             j = cx.find(s)
             z = 0
             q = len(s) - 2
-            print('[SEARCH]', s[0:q])
             while z != -1:
                 z = cx.lower().find(s[0:q], z+1)
                 z2 = cx.find('>', z+1)
-                print("####", z, cx[z:z+200])
-                print(newtag)
-                print('______')
                 if z != -1:
                     cx = cx[0:z] + newtag + cx[z2+1:]
-            print('$$$$$$$$$$')
-            print(osrc)
-            print(src)
             imgs.append({"src": osrc, "dest": src})
     print(imgs)
     return cx, imgs
@@ -449,7 +429,6 @@ def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     ec = 0
     while i != -1:
         i = contents.find('After reading', i+1)
-        print('i', i)
         if i != -1:
             ec += 1
     if ec > 1:
@@ -460,7 +439,6 @@ def knitr_img_handling(s3, title, absfile, contents, bucket, fname):
     ec = 0
     while i != -1:
         i = c2.find('After reading', i+1)
-        print('i', i)
         if i != -1:
             ec += 1
     if ec > 1:
@@ -493,7 +471,6 @@ def render_one(base_url, s3, s3client, absfile, bucket, env):
     path = absfile[0:len(absfile) - len(fname)]
     p = fname.rfind('.')
     d = path + "src-" + fname[0:p]
-    print("----------------------------------")
     srcfiles = []
     if os.path.isdir(d):
         sf = os.listdir(d)
@@ -501,25 +478,14 @@ def render_one(base_url, s3, s3client, absfile, bucket, env):
             if src != '.DS_Store':
                 sc = d + '/' + src
                 srcfiles.append(sc)
-    print(d, len(srcfiles))
-    print("----------------------------------")
-    print(base_url, absfile, path, fname, p, d)
-    print("----------------------------------")
-    print("----------------------------------")
-    print("----------------------------------")
-    print("----------------------------------")
     contents = parser(absfile)
     r_dir = path + fname[0:p] + '_img'
-    print('r_dir =', r_dir)
     if os.path.isdir(r_dir):
         srcfiles2 = os.listdir(r_dir)
         for isrc in srcfiles2:
             if isrc != '.DS_Store':
                 isrc = r_dir + '/' + isrc
                 srcfiles.append(isrc)
-    print("--ALL SRCFILES--------------------------------")
-    print(srcfiles)
-    print("----------------------------------------------")
     f = open(absfile, 'rb')
     c = f.read()
     f.close()
