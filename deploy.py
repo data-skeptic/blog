@@ -26,6 +26,16 @@ import six
 from summarizer import get_desc, get_title, get_pretty_name
 from parsers import parsers
 
+import json
+
+def lambda_handler(event, context):
+    # TODO implement
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
+
+
 logname = sys.argv[0]
 logger = logging.getLogger(logname)
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')

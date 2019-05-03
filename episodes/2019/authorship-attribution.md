@@ -1,24 +1,13 @@
+## Authorship Attribution
 
-Federalist papers in the intro
+In a recent paper, [Leveraging Discourse Information Effectively for Authorship Attribution](https://arxiv.org/abs/1709.02271), authors Su Wang, Elisa Ferracane, and Raymond J. Mooney describe a deep learning methodology for predict which of a collection of authors was the author of a given document.
 
-Leveraging Discourse Information Effectively for Authorship Attribution
-Su Wang, Elisa Ferracane, and Raymond J. Mooney
 
-* The entity grid model and why you chose this novel representation
-* Interpretation of the model
-* Experimental results
-* Future work
+### Some links from the interviews:
 
-https://arxiv.org/pdf/1709.02271.pdf
-
-narrative coherence
-
-Elisa Ferracane - light edit
-Su Wang - heavy edit
-
-Need to get all papers mentioned in Su's interview into the show notes
-
-Mentions...
-	embeddings
-	t-sne
+* [Stanford core NLP library co-reference resolution](https://nlp.stanford.edu/projects/coref.shtml)
+* [t-SNE visualization technique](https://lvdmaaten.github.io/tsne/)
+* [Project Gutenberg](https://www.gutenberg.org/)
+* [Rhetorical Structure Theory](http://www.sfu.ca/rst/01intro/intro.html)
+* [Authorship attribution of the Federalist Papers](https://blog.wolfram.com/2018/10/11/revisiting-the-disputed-federalist-papers-historical-forensics-with-the-chaos-game-representation-and-ai/)
 

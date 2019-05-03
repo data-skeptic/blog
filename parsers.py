@@ -2,7 +2,7 @@ import markdown
 import os
 import shutil
 import base64
-import rpy2.robjects as robjects
+#import rpy2.robjects as robjects
 from nbconvert import HTMLExporter
 from contextlib import contextmanager
 import sys, os
@@ -98,7 +98,8 @@ def knitr(absfile):
     #print(reval)
     #print(type(reval))
     with suppress_stdout():
-        r2 = robjects.reval(reval)
+        #r2 = robjects.reval(reval)
+        pass
     fname = r2[0]
     f = open(fname, 'r')
     c = f.read()

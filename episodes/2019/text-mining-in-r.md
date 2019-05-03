@@ -1,7 +1,8 @@
-Hello there, Kyle! While I am thinking about it, here are a couple of the projects I mentioned on the podcast.
+## Text Mining in R
 
-Data visualization of what users say about Stack Overflow
-Blog post on the most realistic developer in fiction
+Kyle interviews [Julia Silge](https://juliasilge.com/) about her path into data science, her book [Text Mining with R](https://www.tidytextmining.com/), and some of the ways in which she's used natural language processing in projects both personal and professional.
 
-I imagine most of the other resources I mentioned will be easy to find.
+### Related Links
 
+* [https://stack-survey-2018.glitch.me/](https://stack-survey-2018.glitch.me/)
+* [https://stackoverflow.blog/2017/03/28/realistic-developer-fiction/](https://stackoverflow.blog/2017/03/28/realistic-developer-fiction/)

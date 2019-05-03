@@ -1,3 +1,11 @@
+```
+zip deploy.zip *.py
+terraform apply
+```
+
+
+
+
 # dataskeptic.com blog
 
 This repository holds the source files and codebase for rendering blog posts from Jupyter notebooks, Rhtml files, and markdown.  It also contains the codebase to upload these into the dataskeptic cms.
