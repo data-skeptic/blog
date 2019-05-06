@@ -3,12 +3,20 @@ import json
 import boto3
 from botocore.vendored import requests
 import markdown
+from urllib.parse import unquote
 
-def lambda_handler(event, context):
-    accessKey = os.getenv("accessKey")
-    secretKey = os.getenv("secretKey")
-    s3 = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey)
-    sender = event['sender']
+from chalice import Chalice, Rate
+
+app = Chalice(app_name="blog")
+
+@app.route("/blog/deploy", methods=['POST'], content_types=['application/x-www-form-urlencoded'])
+def index():
+    prefix = 'payload='
+    payloadstr = app.current_request.raw_body.decode('utf-8')
+    payload = unquote(payloadstr[len(prefix):])
+    event = json.loads(payload)
+    s3 = boto3.resource('s3')
+    sender = {'login': event['sender']}
     login = sender['login']
     repo = event['repository']['full_name']
     ref = event['ref']
@@ -20,8 +28,18 @@ def lambda_handler(event, context):
         resp['commits'] += 1
     return {
         'statusCode': 200,
-        'body': json.dumps(resp)
+        'body': resp
     }
+
+
+@app.schedule(Rate(1, unit=Rate.HOURS))
+def scheduled(event):
+	print(event.to_dict())
+	pass
+
+
+#@app.on_s3_event(bucket='mybucket-name',
+#                 events=['s3:ObjectCreated:*'])
 
 
 def process_commit(s3, repo, branch, commit):
@@ -49,18 +67,34 @@ def render(s3, repo, branch, filepath):
     if doc_type is None:
         return
     s3key = "{branch}/{filepath}".format(branch=branch[1:], filepath=filepath)
+    save(s3, doc_type, s3key, r.content)
+    s3key = "{filepath}".format(branch=branch[1:], filepath=filepath)
+    save(s3, doc_type, s3key, r.content)
+
+
+def save(s3, doc_type, s3key, content):
     bucket_name = "dataskeptic.com"
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
-        obj.put(Body=r.content)
+        obj.put(Body=content)
     elif doc_type == 'md':
-        contents = r.content.decode('utf-8')
+        contents = content.decode('utf-8')
         html = markdown.markdown(contents, extensions=['markdown.extensions.tables'])
-      obj = s3.Object(bucket_name, s3key[:-3] + '.html')
-      obj.put(Body=html)
+        key = s3key[:-3] + '.html'
+        print(key)
+        obj = s3.Object(bucket_name, key)
+        obj.put(Body=html)
     else:
         raise Exception("Unknown filetype: " + doc_type)
 
 
 def remove(s3, s3key):
-    pass
+    bucket_name = "dataskeptic.com"
+    if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
+        obj = s3.Object(bucket_name, s3key)
+        obj.delete()
+    elif doc_type == 'md':
+        obj = s3.Object(bucket_name, s3key[:-3] + '.html')
+        obj.delete()
+    else:
+        raise Exception("Unknown filetype: " + doc_type)

@@ -1,11 +1,2 @@
-boto3
-wget
-uuid
 markdown
-nbformat
-nbconvert
-lxml
-bs4
-rpy2
-lxml==4.2.5
-rpy2==2.9.4
+
