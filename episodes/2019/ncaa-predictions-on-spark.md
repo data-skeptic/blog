@@ -8,3 +8,4 @@ In this episode, Kyle interviews Laura Edell at MS Build 2019.  The conversatio
 * [@Laura_E_Edell](https://twitter.com/laura_e_edell)
 * [lauraedell.com](https://lauraedell.com)
 * [Microsoft Machine Learning for Apache Spark](http://aka.ms/spark)
+
