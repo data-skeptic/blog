@@ -80,15 +80,19 @@ def replace_latex_with_svgs(s3, ranges, contents, bucket_name, prefix):
 def render_and_upload_latex(s3, latex, fname, bucket_name, s3key):
     cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
     cmd += '"' + latex + '"'
-    rendered = os.popen(cmd).read()
-    f = open(fname, 'w')
-    f.write(rendered)
-    f.close()
-    f = open(fname, 'rb')
-    fake_handle = f
-    fname = fname.encode('utf-8')
-    res = s3.Bucket(bucket_name).put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml', ACL='public-read')
-    os.remove(fname)
+    try:
+        rendered = os.popen(cmd).read()
+        f = open(fname, 'w')
+        f.write(rendered)
+        f.close()
+        f = open(fname, 'rb')
+        fake_handle = f
+        fname = fname.encode('utf-8')
+        res = s3.Bucket(bucket_name).put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml', ACL='public-read')
+        os.remove(fname)
+    except:
+        print("TODO: can't call tex2svg on lambda.")
+        print("TODO: Wrap it in a node lambda function and invoke it.")
 
 
 

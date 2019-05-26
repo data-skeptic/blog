@@ -1,8 +1,11 @@
-import string
 from botocore.vendored import requests
+import bs4 as soup
+import re
+import string
+
 from .formats import markdown, svg
 
-def render(s3, repo, branch, filepath):
+def render(s3, repo, branch, filepath, author):
     t = "https://raw.githubusercontent.com/{repo}{branch}/{filepath}"
     url = t.format(repo=repo, branch=branch, filepath=filepath)
     r = requests.get(url)
@@ -16,49 +19,21 @@ def render(s3, repo, branch, filepath):
     if repo == "kylepolich/bot-service-wiki":
         bucket_name = "dialog-creation-system"
         s3key = "wiki/" + s3key
-        save(s3, doc_type, bucket_name, 'wiki/latex', s3key, r.content, False)
+        save(s3, doc_type, author, bucket_name, 'wiki/latex', s3key, r.content)
     elif repo == "data-skeptic/blog":
         bucket_name = "dataskeptic.com"
-        save(s3, doc_type, bucket_name, 'latex', s3key, r.content, True)
-        api = 'https://4sevcujref.execute-api.us-east-1.amazonaws.com/prod'
-        ritem = {
-            'uri': uri,
-            'ext': ext,
-            'c_hash': chash,
-            'author': fix_string_for_db(author),
-            'desc': fix_string_for_db(desc),
-            'prettyname': prettyname,
-            's3key': s3key,
-            'title': fix_string_for_db(title),
-            'absfile': absfile
-        }
-        data = {
-            "blog_id": blog_id,
-            "details": ritem
-        }
-        url = api + "/blog/upsert"
-        r = requests.post(url, json.dumps(data))
-        s = r.content.decode('utf-8')
-        o = json.loads(s)
-        if o['success'] != 1:
-            print("FAILURE!")
-            print(s)
-        url = api + "/blog/index/update"
-        data = {'blog_id': blog_id}
-        r = requests.post(url, json.dumps(data))
-        print(r)
-        print(r.content)
+        s3key = "blog/" + s3key
+        save(s3, doc_type, author, bucket_name, 'latex', s3key, r.content)
     else:
         raise Exception("Unknown repo: " + repo)
 
 
-def save(s3, doc_type, bucket_name, prefix, s3key, content, legacy=False):
+def save(s3, doc_type, author, bucket_name, latex_prefix, s3key, content):
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.put(Body=content)
     elif doc_type == 'md':
-        # TODO: metadata
-        content2 = svg.render(content.decode('utf-8'), s3, bucket_name, prefix)
+        content2 = svg.render(content.decode('utf-8'), s3, bucket_name, latex_prefix)
         html = markdown.render(content2)
         key = s3key[:-3] + '.html'
         obj = s3.Object(bucket_name, key)
@@ -69,10 +44,8 @@ def save(s3, doc_type, bucket_name, prefix, s3key, content, legacy=False):
         if len(objs) > 0 and objs[0].key == key:
             exists = True
         obj.put(Body=html)
-        if legacy and not(exists):
-            title = get_title(s3key, contents)
-            desc = get_desc(contents)
-            update_database(title, desc, s3key)
+        if not(exists):
+            update_database(s3key, content, author)
     else:
         raise Exception("Unknown filetype: " + doc_type)
 
@@ -87,8 +60,11 @@ def get_type(s3key):
 
 def get_desc(contents):
     """Accepts a string in html format; returns a description"""
-    lcontents = contents.lower()
-    i = lcontents.find('<p>')
+    if type(contents) == str:
+        lcontents = contents.lower()
+    else:
+        lcontents = contents.decode('utf-8').lower()
+    i = lcontents.find("<p>")
     if i != -1:
         j = lcontents.find('</p>', i)
         desc = contents[i+3:j-4]
@@ -135,29 +111,17 @@ def get_title(absfilename, contents):
     return fname
 
 
-def update_database(title, desc, s3key):
-    blog_id = -1
-    author = 'Kyle'
-    prettyname = get_pretty_name(s3key, title)
+def generate_metadata(s3key, contents, author):
+    title = get_title(s3key, contents)
+    desc = get_desc(contents)
+    url = get_pretty_name(s3key, title)
     data = {
-        "blog_id": blog_id,
-        "details": {
-            'title': fix_string_for_db(title),
-            'author': fix_string_for_db(author),
-            'desc': fix_string_for_db(desc),
-            'prettyname': prettyname,
-            's3key': s3key
-        }
+        'title': fix_string_for_db(title),
+        'author': fix_string_for_db(author),
+        'description': fix_string_for_db(desc),
+        'url': url,
+        's3key': s3key
     }
-    base_url = "https://4sevcujref.execute-api.us-east-1.amazonaws.com/prod"
-    url = base_url + "/blog/upsert"
-    o = json.dumps(data)
-    print(o)
-    r = requests.post(url, o)
-    s = r.content.decode('utf-8')
-    o = json.loads(s)
-    if o['success'] == 1:
-        return o
-    else:
-        None
+    return data
+
 

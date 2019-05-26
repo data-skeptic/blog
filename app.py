@@ -5,7 +5,7 @@ import json
 import os
 from urllib.parse import unquote
 
-from core import renderer
+from core import renderer, podcast
 
 app = Chalice(app_name="blog")
 
@@ -39,27 +39,7 @@ def scheduled(event):
 	print(event.to_dict())
     url = 'http://dataskeptic.libsyn.com/rss'
     print(f'fetching {url}')
-    r = requests.get(url)
-    f = open(fname, 'wb')
-    f.write(r.text.encode('utf-8'))
-    f.close()
-    with open(fname) as fd:
-        xml = xmltodict.parse(fd.read())
-        emap = {}
-        episodes = xml['rss']['channel']['item']
-        n = len(episodes)
-        print(f'Number of episodes: {n}')
-        for episode in episodes:
-            guid = episode['guid']['#text']
-            url = episode['enclosure']['@url']
-            emap[guid] = url
-            do it with json metadata files
-            # TODO: check the rss feed for new episodes
-            if found
-            if not already attached to episodes
-            find episode that matches
-            if not found quit
-            link episode
+    podcast.update_podcast_rss(url)
 
 
 #@app.on_s3_event(bucket='mybucket-name', events=['s3:ObjectCreated:*'])
@@ -68,12 +48,13 @@ def scheduled(event):
 
 
 def process_commit(s3, repo, branch, commit):
+    author = commit['author']['email']
     for filepath in commit['added']:
-        renderer.render(s3, repo, branch, filepath)
+        renderer.render(s3, repo, branch, filepath, author)
     for filepath in commit['removed']:
         renderer.remove(s3, filepath)
     for filepath in commit['modified']:
-        renderer.render(s3, repo, branch, filepath)
+        renderer.render(s3, repo, branch, filepath, author)
 
 
 def remove(s3, s3key):
