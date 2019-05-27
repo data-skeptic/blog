@@ -3,39 +3,73 @@ import bs4 as soup
 import re
 import string
 
+from . import dao
 from .formats import markdown, svg
 
-def render(s3, repo, branch, filepath, author):
+def render(s3, bucket_name, repo, branch, filepath):
     t = "https://raw.githubusercontent.com/{repo}{branch}/{filepath}"
     url = t.format(repo=repo, branch=branch, filepath=filepath)
     r = requests.get(url)
-    print(r.status_code)
     if r.status_code != 200:
         raise Exception('TODO: handle Non-200 response retrieving content')
     doc_type  = get_type(filepath)
     if doc_type is None:
         return
     s3key = "{filepath}".format(branch=branch[1:], filepath=filepath)
+    # TODO: refactor this upstream
     if repo == "kylepolich/bot-service-wiki":
-        bucket_name = "dialog-creation-system"
         s3key = "wiki/" + s3key
-        save(s3, doc_type, author, bucket_name, 'wiki/latex', s3key, r.content)
+        renderedContent = save(s3, doc_type, bucket_name, 'wiki/latex', s3key, r.content)
     elif repo == "data-skeptic/blog":
-        bucket_name = "dataskeptic.com"
         s3key = "blog/" + s3key
-        save(s3, doc_type, author, bucket_name, 'latex', s3key, r.content)
+        renderedContent = save(s3, doc_type, bucket_name, 'latex', s3key, r.content)
     else:
         raise Exception("Unknown repo: " + repo)
+    is_new = renderedContent != None
+    return { "is_new": is_new, "s3key": s3key, "content": renderedContent }
 
 
-def save(s3, doc_type, author, bucket_name, latex_prefix, s3key, content):
+def render_one(database, s3, bucket_name, repo, branch, filepath, author):
+    updated = render(s3, bucket_name, repo, branch, filepath)
+    if updated['is_new']:
+        s3key = updated['s3key']
+        content = updated['content']
+        record = generate_metadata(s3key, content, author)
+        database[record['url']] = record
+        db_s3_key = "posts.db.parquet"
+        dao.update_database(s3, bucket_name, db_s3_key, database)
+
+
+def generate_metadata(s3key, content, author):
+    title = get_title(s3key, content)
+    desc = get_desc(content)
+    url = get_pretty_name(s3key, title)
+    data = {
+        'title': fix_string_for_db(title),
+        'author': fix_string_for_db(author),
+        'description': fix_string_for_db(desc),
+        'url': url,
+        's3key': s3key
+    }
+    return data
+
+
+def get_rendered_key_name(s3key):
+    return s3key[:-3] + '.html'
+
+
+def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
+    """Returns true if the database should have a new row inserted"""
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.put(Body=content)
     elif doc_type == 'md':
+        print('aa')
         content2 = svg.render(content.decode('utf-8'), s3, bucket_name, latex_prefix)
+        print('bb')
         html = markdown.render(content2)
-        key = s3key[:-3] + '.html'
+        print('cc')
+        key = get_rendered_key_name(s3key)
         obj = s3.Object(bucket_name, key)
         exists = False
         bucket = s3.Bucket(bucket_name)
@@ -45,14 +79,27 @@ def save(s3, doc_type, author, bucket_name, latex_prefix, s3key, content):
             exists = True
         obj.put(Body=html)
         if not(exists):
-            update_database(s3key, content, author)
+            return content2
+        else:
+            return None
     else:
         raise Exception("Unknown filetype: " + doc_type)
 
 
-def get_type(s3key):
-    i = s3key.rfind('.')
-    ext = s3key[i+1:].lower()
+def remove(s3, bucket_name, doc_type, s3key):
+    if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
+        obj = s3.Object(bucket_name, s3key)
+        obj.delete()
+    elif doc_type == 'md':
+        obj = s3.Object(bucket_name, s3key[:-3] + '.html')
+        obj.delete()
+    else:
+        raise Exception("Unknown filetype: " + doc_type)
+
+
+def get_type(filepath):
+    i = filepath.rfind('.')
+    ext = filepath[i+1:].lower()
     if ext in ['md']:
         return ext
     return None
@@ -109,19 +156,5 @@ def get_title(absfilename, contents):
     fname = fname.replace('-', ' ').replace('_', ' ')
     fname = fname.title()
     return fname
-
-
-def generate_metadata(s3key, contents, author):
-    title = get_title(s3key, contents)
-    desc = get_desc(contents)
-    url = get_pretty_name(s3key, title)
-    data = {
-        'title': fix_string_for_db(title),
-        'author': fix_string_for_db(author),
-        'description': fix_string_for_db(desc),
-        'url': url,
-        's3key': s3key
-    }
-    return data
 
 

@@ -1,25 +1,52 @@
 import boto3
-from core import podcast
-from core import renderer
+import glob
 
-s3 = boto3.resource('s3')
+from core import dao, podcast, renderer
 
 fname = "rss.xml"
 bucket_name = "dataskeptic.com"
 db_s3_key = "posts.db.parquet"
 
-database = podcast.get_database(s3, bucket_name, db_s3_key)
+s3 = boto3.resource('s3')
 
-repo = "data-skeptic/blog"
-branch = "/master"
-filepath = "episodes/2019/simultaneous-translation.md"
-author = "kyle@dataskeptic.com"
+mode = 'reload_rss'
 
-#renderer.render(s3, repo, branch, filepath, author)
+#mode = 'reload_one'
+#filepath = "episodes/2019/large-corpora-and-zipfs-law.md"
 
+mode = 'reload_all'
 
-updated = podcast.update_podcast_from_file(s3, database, fname)
-print(updated)
-if updated:
-    print("Podcast updates made")
-    podcast.update_database(s3, bucket_name, db_s3_key, database)
+#mode = 'delete'
+
+if mode == 'reload_rss':
+	url = 'http://dataskeptic.libsyn.com/rss'
+	print(f'fetching {url}')
+	database = dao.get_database(s3, bucket_name, db_s3_key)
+	podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
+elif mode == 'reload_one':
+	repo = "data-skeptic/blog"
+	branch = "/master"
+	author = "kyle@dataskeptic.com"
+	database = dao.get_database(s3, bucket_name, db_s3_key)
+	renderer.render_one(database, s3, bucket_name, repo, branch, filepath, author)
+elif mode == 'reload_all':
+	repo = "data-skeptic/blog"
+	branch = "/master"
+	author = "kyle@dataskeptic.com"
+	posts = glob.glob("episodes/**/*.md")
+	database = dao.get_database(s3, bucket_name, db_s3_key)
+	for post in posts:
+		renderer.render_one(database, s3, bucket_name, repo, branch, post, author)
+elif mode == 'delete':
+	filepath = 'episodes/2019/___aaron.md'
+	s3key = renderer.get_rendered_key_name(filepath)
+	doc_type = 'md'
+	renderer.remove(s3, bucket_name, doc_type, s3key)
+else:
+	raise Exception(f"Unknown mode: {mode}")
+
+#updated = podcast.update_podcast_from_file(s3, database, fname)
+#print(updated)
+#if updated:
+#    print("Podcast updates made")
+#    podcast.update_database(s3, bucket_name, db_s3_key, database)

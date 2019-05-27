@@ -5,7 +5,7 @@ import json
 import os
 from urllib.parse import unquote
 
-from core import renderer, podcast
+from core import dao, podcast, renderer
 
 app = Chalice(app_name="blog")
 
@@ -21,12 +21,18 @@ def index():
     sender = {'login': event['sender']}
     login = sender['login']
     repo = event['repository']['full_name']
+    if repo == 'data-skeptic/blog':
+        bucket_name = "dataskeptic.com"
+    elif repo == 'kylepolich/bot-service-wiki':
+        bucket_name = 'dialog'
     ref = event['ref']
     branch = ref[ref.rfind('/'):]
     commits = event['commits']
     resp = { "commits": 0, "login": login, "repo": repo }
+    db_s3_key = "posts.db.parquet"
+    database = dao.get_database(s3, bucket_name, db_s3_key)
     for filepath in commits:
-        process_commit(s3, repo, branch, filepath)
+        process_commit(database, s3, bucket_name, repo, branch, filepath)
         resp['commits'] += 1
     return {
         'statusCode': 200,
@@ -37,9 +43,14 @@ def index():
 @app.schedule(Rate(1, unit=Rate.MINUTES))
 def scheduled(event):
 	print(event.to_dict())
+    podcast.update_podcast_rss(url)
+    s3 = boto3.resource('s3', aws_access_key_id=access, aws_secret_access_key=secret)
+    bucket_name = 'dataskeptic.com'
+    db_s3_key = 'posts.db.parquet'
     url = 'http://dataskeptic.libsyn.com/rss'
     print(f'fetching {url}')
-    podcast.update_podcast_rss(url)
+    database = dao.get_database(s3, bucket_name, db_s3_key)    
+    podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
 
 #@app.on_s3_event(bucket='mybucket-name', events=['s3:ObjectCreated:*'])
@@ -47,23 +58,15 @@ def scheduled(event):
 #    TODO: resize uploaded images
 
 
-def process_commit(s3, repo, branch, commit):
+def process_commit(database, s3, bucket_name, repo, branch, commit):
     author = commit['author']['email']
     for filepath in commit['added']:
-        renderer.render(s3, repo, branch, filepath, author)
+        render.render_one(database, s3, bucket_name, repo, branch, filepath, author)
     for filepath in commit['removed']:
-        renderer.remove(s3, filepath)
+        doc_type = renderer.get_type(filepath)
+        renderer.remove(s3, bucket_name, doc_type, filepath)
+        # TODO: remove from elasic search
+        # TODO: remove from parquet database
     for filepath in commit['modified']:
-        renderer.render(s3, repo, branch, filepath, author)
+        renderer.render_one(database, s3, bucket_name, repo, branch, filepath, author)
 
-
-def remove(s3, s3key):
-    bucket_name = "dataskeptic.com"
-    if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
-        obj = s3.Object(bucket_name, s3key)
-        obj.delete()
-    elif doc_type == 'md':
-        obj = s3.Object(bucket_name, s3key[:-3] + '.html')
-        obj.delete()
-    else:
-        raise Exception("Unknown filetype: " + doc_type)

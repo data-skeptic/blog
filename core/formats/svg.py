@@ -4,6 +4,7 @@ from urllib.parse import quote
 def render(content, s3, bucket_name, prefix):
     i = 0
     ranges = []
+    print(content)
     while i < len(content):
         i = next_delimiter(content, i, False)
         if i != -1:
