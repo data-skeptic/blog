@@ -1,8 +1,7 @@
 ## Practicing and Communicating Data Science with Jeff Stanton
 
-<a href="http://jsresearch.net/">Jeff Stanton</a> 
-joins me in this episode to discuss his book 
-<a href="http://101.datascience.community/tag/jeffrey-m-stanton/">An Introduction to Data Science</a>,
+[Jeff Stanton](http://jsresearch.net/) joins me in this episode to discuss his book 
+[An Introduction to Data Science](http://101.datascience.community/tag/jeffrey-m-stanton/),
 and some of the unique challenges and issues faced by someone doing applied data science. 
 A challenge to any data scientist is making sure they have a good input data set and apply any
 necessary data munging steps before their analysis.  We cover some good advise for how
@@ -10,31 +9,21 @@ to approach such problems.
 
 Jeff's book is an accessible, free download that listeners can enjoy independently, or, while 
 participating in the linked 
-<a href="http://ischool.syr.edu/newsroom/news.aspx?recid=1532">Data Science MOOC</a>.
+[Data Science MOOC](http://ischool.syr.edu/newsroom/news.aspx?recid=1532).
 We talk a bit about the course as well as the growing 
-<a href="http://ischools.org/">iSchools</a> movement.
+[iSchools](http://ischools.org/) movement.
 
 Jeff teaches at Syracuse University which offers a 
-<a href="http://ischool.syr.edu/future/cas/datascience.aspx">Certificate of Advanced Studies in Data Science</a>
-and a <a href="http://ischool.syr.edu/future/doctoral/dps.aspx">Doctorate of Applied Studies</a>.
+[Certificate of Advanced Studies in Data Science](http://ischool.syr.edu/future/cas/datascience.aspx)
+and a [Doctorate of Applied Studies](http://ischool.syr.edu/future/doctoral/dps.aspx).
 
 During our conversation, Jeff recommended Gerd Gigerenzer's 
-<a href="http://www.amazon.com/Calculated-Risks-Know-Numbers-Deceive/dp/0743254236 ">Calculated Risks</a> 
+[Calculated Risks](http://www.amazon.com/Calculated-Risks-Know-Numbers-Deceive/dp/0743254236) 
 as a good read that listeners may enjoy.
 
 For his benevolent reference, Jeff recommends the the R 
-<a href="http://www.indiana.edu/~kruschke/BEST/">BEST package</a> which stands for "Bayesian 
+[BEST package](http://www.indiana.edu/~kruschke/BEST/) which stands for "Bayesian 
 Estimation Supersedes the T-Test".  If you listened to our recent mini-episode on the 
-<a href="http://dataskeptic.com/epnotes/t-test.php">t-test</a>, exploring this package 
+[t-test](http://dataskeptic.com/epnotes/t-test.php), exploring this package 
 would be a great next step in learning how to tackle problems of significance testing.
 
-
- <script type="text/javascript" 
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true, 
-        processEnvironments: false, inlineMath: [ ['$','$'] ], 
-        displayMath: [ ['$$','$$'] ] }, 
-        asciimath2jax: {delimiters: [ ['$','$'] ] }, 
-        "HTML-CSS": {minScaleAdjust: 125 } });
-    </script>
