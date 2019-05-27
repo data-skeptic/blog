@@ -62,6 +62,9 @@ def process_commit(database, s3, bucket_name, repo, branch, commit):
     author = commit['author']['email']
     for filepath in commit['added']:
         render.render_one(database, s3, bucket_name, repo, branch, filepath, author)
+        # TODO: add to elastic search
+        #elastic.add()
+
     for filepath in commit['removed']:
         doc_type = renderer.get_type(filepath)
         renderer.remove(s3, bucket_name, doc_type, filepath)

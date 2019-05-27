@@ -1,18 +1,35 @@
-# Blog Deployer
+# Blog
 
 This repo contains both our blog and the software which deploys it to our backend.
 
 We deploy onto AWS Lambda using the Chalice library and manually create a webhook in Github to trigger the lambda API on any database change.
 
-```
-python3 -m venv $(pwd)/venv
-pip3 install markdown --target ./venv/
-pip3 install bs4 --target ./venv/
-pip3 install lxml --target ./venv/
-```
+
+## Work in progress
+
+- [ ] Add bio
+- [ ] Lambda API which adds related_content to Parquet
+- [ ] Tool for June
+- [ ] Migrate related_content
+- [ ] SNS publish
+		- [ ] Slack message
+		- [ ] Auto-tweet
+		- [ ] Trigger feature engineering pipeline
+		- [ ] Trigger ad extraction
+		- [ ] Update Bot's Globals with latest episode info
+		- [ ] elastic search update
+- [ ] Delete
+- [ ] jupyter image to image file (jupyter.py TODO:)
+- [ ] Rmd: ./tools-and-techniques/2018/elo-ratings-for-ncaa-basketball.Rmd
+- [ ] chalice with new features added
 
 
 
+
+
+# Guests
+
+Send us a pull request to update photo or bio.
 
 
 # dataskeptic.com blog

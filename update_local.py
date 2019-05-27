@@ -9,14 +9,12 @@ db_s3_key = "posts.db.parquet"
 
 s3 = boto3.resource('s3')
 
-mode = 'reload_rss'
-
-#mode = 'reload_one'
-#filepath = "episodes/2019/large-corpora-and-zipfs-law.md"
-
+#mode = 'reload_rss'
 mode = 'reload_all'
-
 #mode = 'delete'
+#mode = 'reload_one'
+
+#filepath = "podcasting/2017/best-day-to-release-podcast.ipynb"
 
 if mode == 'reload_rss':
 	url = 'http://dataskeptic.libsyn.com/rss'
@@ -33,7 +31,7 @@ elif mode == 'reload_all':
 	repo = "data-skeptic/blog"
 	branch = "/master"
 	author = "kyle@dataskeptic.com"
-	posts = glob.glob("episodes/**/*.md")
+	posts = glob.glob("**/**/*.Rmd")
 	database = dao.get_database(s3, bucket_name, db_s3_key)
 	for post in posts:
 		renderer.render_one(database, s3, bucket_name, repo, branch, post, author)
