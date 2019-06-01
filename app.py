@@ -40,6 +40,36 @@ def index():
     }
 
 
+"""
+TODO: remember how to use SQS in Chalice
+@app.on_sqs_message(queue='myqueue')
+def handler(event):
+    app.log.info("Event: %s", event.to_dict())
+    for record in event:
+        app.log.info("Message body: %s", record.body)
+"""
+
+
+@app.route("/blog/update", methods=['POST'])
+def blog_attribute_add():
+    o = app.current_request.json_body
+    key = o['url']
+    attribute = o['attribute']
+    value = o['value']
+    s3 = boto3.resource('s3', aws_access_key_id=access, aws_secret_access_key=secret)
+    bucket_name = 'dataskeptic.com'
+    db_s3_key = 'posts.db.parquet'
+    database = dao.get_database(s3, bucket_name, db_s3_key)
+    if key not in database:
+        raise Exception(f"No record of {key}")
+    old_record = database[key]
+    new_record = json.loads(json.dumps(old_record))
+    new_record[attribute] = value
+    dao.update_database(s3, bucket_name, db_s3_key, database)
+    return {"old_record": old_record, "new_record": new_record}
+
+
+
 @app.schedule(Rate(1, unit=Rate.MINUTES))
 def scheduled(event):
 	print(event.to_dict())
@@ -53,9 +83,17 @@ def scheduled(event):
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
 
-#@app.on_s3_event(bucket='mybucket-name', events=['s3:ObjectCreated:*'])
-#def handle_image_upload(event):
-#    TODO: resize uploaded images
+@app.on_s3_event(bucket='dataskeptic.com', events=['s3:ObjectCreated:*'])
+def handle_image_upload(event):
+    print(event)
+    raise Exception("Not implemented yet!")
+
+
+def add_metadata(event, methods=['POST']):
+    print(event)
+    ! June
+    # TODO: insert into parquet file
+    raise Exception("Not implemented yet!")
 
 
 def process_commit(database, s3, bucket_name, repo, branch, commit):

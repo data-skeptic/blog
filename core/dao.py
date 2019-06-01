@@ -50,6 +50,10 @@ def initialize_database(s3, bucket_name, prefix):
 
 def update_database(s3, bucket_name, db_s3_key, database):
     print("save db")
+    ts = int(time.time())
+    backup_key = db_s3_key.replace(".parquet", f".{ts}.parquet")
+    s3.Object(bucket_name, backup_key).copy_from(CopySource=f'{bucket_name}/{db_s3_key}')
+    # TODO: copy the old one with a TTL as a backup
     records = list(database.values())
     df = pd.DataFrame(records)
     df.set_index('url', inplace=True)
