@@ -63,11 +63,11 @@ def replace_latex_with_svgs(s3, ranges, contents, bucket_name, prefix):
         blatex = latex
         fname = escape_latex(latex)
         fname = fname + ".svg"
-        s3key =  f"{prefix}/" + fname
+        s3key =  prefix + "/" + fname
         objs = list(s3.Bucket(bucket_name).objects.filter(Prefix=s3key))
         # TODO: don't re-create
         fnn = quote(fname).replace('%20', '+')
-        svguri = "http://s3.amazonaws.com/" + bucket_name + "/" + f"{prefix}/" + fnn
+        svguri = "http://s3.amazonaws.com/" + bucket_name + "/" + prefix + "/" + fnn
         render_and_upload_latex(s3, latex, fname, bucket_name, s3key)
         imgTag = "<img className='latex-svg' src='" + svguri + "' alt='" + blatex + "' />"
         if type(contents) != str:
