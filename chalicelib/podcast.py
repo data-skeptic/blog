@@ -24,7 +24,7 @@ def update_podcast_from_file(s3, database, fname):
         xml = xmltodict.parse(fd.read())
         episodes = xml['rss']['channel']['item']
         n = len(episodes)
-        print(f'Number of episodes: {n}')
+        print('Number of episodes: {n}'.format(n=n))
         for episode in episodes:
             result = update_episode(database, episode)
             updated = updated or result
