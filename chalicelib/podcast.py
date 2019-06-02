@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 import xmltodict
 
-from . import renderer
+from . import dao
 
 def update_podcast_rss(database, s3, bucket_name, db_s3_key, url):
     r = requests.get(url)

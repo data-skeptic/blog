@@ -1,5 +1,6 @@
 import botocore
 import pandas as pd
+import time
 
 from . import renderer
 
@@ -64,5 +65,7 @@ def update_database(s3, bucket_name, db_s3_key, database):
     f.close()
     obj = s3.Object(bucket_name, db_s3_key)
     obj.put(Body=content)
+    obj = s3.Object(bucket_name, db_s3_key.replace(".parquet", ".json"))
+    obj.put(Body=json.dumps(df.to_dict()))
 
 

@@ -2,6 +2,7 @@ from botocore.vendored import requests
 import bs4 as soup
 import re
 import string
+import json
 
 from . import dao
 from .formats import jupyter, markdown, svg
@@ -40,6 +41,7 @@ def render_one(database, s3, bucket_name, repo, branch, filepath, author):
         dao.update_database(s3, bucket_name, db_s3_key, database)
     return updated
 
+
 def generate_metadata(s3key, content, author):
     title = get_title(s3key, content)
     desc = get_desc(content)
@@ -66,11 +68,14 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.put(Body=content)
+        # TODO: update db
     elif doc_type == 'md':
         content2 = svg.render(content.decode('utf-8'), s3, bucket_name, latex_prefix)
         html = markdown.render(content2)
+        #?update db
     elif doc_type == 'ipynb':
         html = jupyter.render(content.decode('utf-8'))
+        #?update db
     else:
         raise Exception("Unknown filetype: " + doc_type)
     key = get_rendered_key_name(doc_type, s3key)
@@ -88,13 +93,15 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
         return None
 
 
-def remove(s3, bucket_name, doc_type, s3key):
+def remove(s3, bucket_name, db_s3_key, database, doc_type, s3key):
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.delete()
+        #?
     elif doc_type == 'md':
         obj = s3.Object(bucket_name, get_rendered_key_name(doc_type, s3key))
         obj.delete()
+        #?
     else:
         raise Exception("Unknown filetype: " + doc_type)
 
@@ -158,5 +165,7 @@ def get_title(absfilename, contents):
     fname = fname.replace('-', ' ').replace('_', ' ')
     fname = fname.title()
     return fname
+
+
 
 

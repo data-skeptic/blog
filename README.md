@@ -7,6 +7,7 @@ We deploy onto AWS Lambda using the Chalice library and manually create a webhoo
 
 ## Work in progress
 
+- [ ] chalice with new features added
 - [ ] Add bio
 - [ ] Lambda API which adds related_content to Parquet
 - [ ] Tool for June
@@ -21,7 +22,6 @@ We deploy onto AWS Lambda using the Chalice library and manually create a webhoo
 - [ ] Delete
 - [ ] jupyter image to image file (jupyter.py TODO:)
 - [ ] Rmd: ./tools-and-techniques/2018/elo-ratings-for-ncaa-basketball.Rmd
-- [ ] chalice with new features added
 
 
 
