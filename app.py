@@ -44,7 +44,7 @@ def scheduled(event):
     bucket_name = 'dataskeptic.com'
     db_s3_key = 'posts.db.parquet'
     url = 'http://dataskeptic.libsyn.com/rss'
-    print(f'fetching {url}')
+    print('fetching {url}'.format(url=url))
     database = dao.get_database(s3, bucket_name, db_s3_key)    
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
