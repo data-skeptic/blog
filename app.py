@@ -10,11 +10,13 @@ from chalicelib import blog, dao, podcast, renderer
 app = Chalice(app_name="blog")
 
 
-@app.route("/blog/posts", methods=['GET'], content_types=['application/x-www-form-urlencoded'])
+@app.route("/blog/posts", methods=['GET'])
 def blog_posts():
     params = app.current_request.query_params
-    if 'id' in params:
+    print(params)
+    if params is not None and 'id' in params:
         url = params['id']
+        print(url)
         return blog.get_blogs()[url]
     else:
         return blog.get_blogs()
