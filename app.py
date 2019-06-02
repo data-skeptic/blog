@@ -42,11 +42,11 @@ def blog_posts_update():
 
 @app.schedule(Rate(1, unit=Rate.MINUTES))
 def scheduled(event):
-    print(event.to_dict())
-    bucket_name = 'dataskeptic.com'
-    db_s3_key = 'posts.db.parquet'
     url = 'http://dataskeptic.libsyn.com/rss'
     print('fetching {url}'.format(url=url))
+    print(event)
+    bucket_name = 'dataskeptic.com'
+    db_s3_key = 'posts.db.parquet'
     database = dao.get_database(s3, bucket_name, db_s3_key)    
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
