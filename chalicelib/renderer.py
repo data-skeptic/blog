@@ -15,7 +15,7 @@ def render(s3, bucket_name, repo, branch, filepath, prefix="blog/"):
         raise Exception('TODO: handle Non-200 response retrieving content')
     doc_type  = get_type(filepath)
     if doc_type is None:
-        raise Exception(f"Unknown doc_type for {filepath}")
+        raise Exception("Unknown doc_type for {filepath}".format(filepath=filepath))
     s3key = "{filepath}".format(branch=branch[1:], filepath=filepath)
     # TODO: refactor this upstream
     if repo == "kylepolich/bot-service-wiki":
