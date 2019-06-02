@@ -57,7 +57,7 @@ def update_attributes(url, attribute, value):
     bucket_name = 'dataskeptic.com'
     database = dao.get_database(s3, bucket_name, db_s3_key)
     if url not in database:
-        raise Exception(f"No record of {url}")
+        raise Exception("No record of {url}".format(url=url))
     old_record = database[url]
     new_record = json.loads(json.dumps(old_record))
     if value is None and attribute in new_record:
@@ -72,7 +72,7 @@ def update_attributes(url, attribute, value):
 def get_attribute(s3, bucket_name, db_s3_key, url, attribute):
     database = dao.get_database(s3, bucket_name, db_s3_key)
     if url not in database:
-        raise Exception(f"No record of {url}")
+        raise Exception("No record of {url}".format(url=url))
     return database[url]
 
 
