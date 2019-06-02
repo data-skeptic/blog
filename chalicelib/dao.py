@@ -36,7 +36,8 @@ def initialize_database(s3, bucket_name, prefix):
     if len(objs) == 0:
         return {}
     else:
-        print(f"Found {len(objs)} existing blog posts to import.")
+        n = len(objs)
+        print("Found {n} existing blog posts to import.".format(n=n))
         database = {}
         for obj in objs:
             # TODO: render it and add it to the database
@@ -52,8 +53,8 @@ def initialize_database(s3, bucket_name, prefix):
 def update_database(s3, bucket_name, db_s3_key, database):
     print("save db")
     ts = int(time.time())
-    backup_key = db_s3_key.replace(".parquet", f".{ts}.parquet")
-    s3.Object(bucket_name, backup_key).copy_from(CopySource=f'{bucket_name}/{db_s3_key}')
+    backup_key = db_s3_key.replace(".parquet", ".{ts}.parquet".format(ts=ts))
+    s3.Object(bucket_name, backup_key).copy_from(CopySource='{bucket_name}/{db_s3_key}'.format(bucket_name=bucket_name, db_s3_key=db_s3_key))
     # TODO: copy the old one with a TTL as a backup
     records = list(database.values())
     df = pd.DataFrame(records)
