@@ -69,6 +69,6 @@ def update_episode(database, episode):
             return []
     else:
         # TODO: if episode is more than N minutes old, email Kyle once
-        print(f"********************* --- WTF is {prettyname}")
+        print("********************* --- WTF is {prettyname}".format(prettyname=prettyname))
         return []
 
