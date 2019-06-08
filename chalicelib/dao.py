@@ -51,13 +51,14 @@ def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
             raise e
 
 
-def update_database(s3, bucket_name, db_s3_key, df):
+def update_database(s3, bucket_name, db_s3_key, database):
     print("save db")
     ts = int(time.time())
     backup_key = db_s3_key.replace(".parquet", ".{ts}.parquet".format(ts=ts))
     #s3.Object(bucket_name, backup_key).copy_from(CopySource='{bucket_name}/{db_s3_key}'.format(bucket_name=bucket_name, db_s3_key=db_s3_key))
     # TODO: copy the old one with a TTL as a backup
     fn = 'temp.parquet'
+    df = pd.DataFrame(database)
     df.to_parquet(fn)
     f = open(fn, 'rb')
     content = f.read()

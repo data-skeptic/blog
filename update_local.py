@@ -1,7 +1,7 @@
 import boto3
 import glob
 
-from core import dao, podcast, renderer
+from chalicelib import dao, podcast, renderer
 
 fname = "rss.xml"
 bucket_name = "dataskeptic.com"
