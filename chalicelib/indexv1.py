@@ -1,21 +1,30 @@
-from elasticsearch import Elasticsearch
-
-def add(database, url, content):
-	pass
-
-
-def remove(url):
-	blog.get_blogs()[url]
-	pass
-
-
-
 import boto3
 import pandas as pd
 import sqlalchemy
 from elasticsearch import Elasticsearch
 import json
 import requests
+
+
+def get_blogs_to_update_from_api(api) :
+    url = api + "/blog/index/update_to_do"
+    print(url)
+    r = requests.get(url)
+    s = r.content.decode('utf-8')
+    o = json.loads(s)
+    return pd.DataFrame(o)
+
+
+
+
+def get_db_to_update_from_api(api, blog_id) :
+    url = api + "/blog/index/update"
+    data = {'blog_id': blog_id}
+    r = requests.post(url, json.dumps(data))
+    s = r.content.decode('utf-8')
+    o = json.loads(s)
+    return o
+
 
 def get_html_from_s3(blogs_df, s3, bucketname):
     html_dict = {}
@@ -101,4 +110,12 @@ if __name__ == '__main__':
     s3 = boto3.resource('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
     return_value = update_elastic_search(api, elastic_search_conn, s3, index_name)
     print(return_value)
+
+
+
+
+
+
+    
+
 

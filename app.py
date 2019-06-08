@@ -9,17 +9,23 @@ from chalicelib import blog, dao, podcast, renderer
 
 app = Chalice(app_name="blog")
 
+access = os.getenv('ACCESS_KEY')
+secret = os.getenv('SECRET_KEY')
+s3 = boto3.resource('s3', aws_access_key_id=access, aws_secret_access_key=secret)
+
 
 @app.route("/blog/posts", methods=['GET'])
 def blog_posts():
     params = app.current_request.query_params
     print(params)
+    blogs = blog.get_blogs()
     if params is not None and 'id' in params:
         url = params['id']
         print(url)
-        return blog.get_blogs()[url]
+        # TODO: prefix matching
+        return blogs[url]
     else:
-        return blog.get_blogs()
+        return blogs
 
 
 @app.route("/blog/deploy", methods=['POST'], content_types=['application/x-www-form-urlencoded'])
@@ -38,6 +44,16 @@ def blog_posts_update():
     attribute = o['attribute']
     value = o['value']
     return blog.update_attributes(url, attribute, value)
+
+
+@app.route("/blog/podcast/update", methods=['POST'])
+def update_podcast():
+    url = 'http://dataskeptic.libsyn.com/rss'
+    bucket_name = 'dataskeptic.com'
+    db_s3_key = 'posts.db.parquet'
+    database = dao.get_database(s3, bucket_name, db_s3_key)    
+    print('fetching {url}'.format(url=url))
+    podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
 
 @app.schedule(Rate(1, unit=Rate.MINUTES))

@@ -1,11 +1,16 @@
 import boto3
+import json
 import os
 
-from . import dao, renderer
+from . import dao, elastic, renderer
 
 access = os.getenv('ACCESS_KEY')
 secret = os.getenv('SECRET_KEY')
 s3 = boto3.resource('s3', aws_access_key_id=access, aws_secret_access_key=secret)
+sns = boto3.client('sns', aws_access_key_id=access, aws_secret_access_key=secret, region_name='us-east-2')
+#sns.setRegion(Region.getRegion(Regions.US_WEST_2));
+
+arn = 'arn:aws:sns:us-east-2:085318171245:blog-updates-topic'
 
 db_s3_key = 'posts.db.parquet'
 
@@ -37,18 +42,28 @@ def handle_update(github_webhook_event):
     }
 
 
+def publish():
+    message = {"foo": "bar"}
+    response = sns.publish(
+        TargetArn=arn,
+        Subject='huh?',
+        Message=json.dumps({'default': json.dumps(message)}),
+        MessageStructure='json'
+    )
+    if response['HTTPStatusCode'] != 200:
+        print(response)
+        raise Exception('Could not publish to sns')
+
+
 def process_commit(database, s3, bucket_name, repo, branch, commit):
     author = commit['author']['email']
     for filepath in commit['added']:
         render.render_one(database, s3, bucket_name, repo, branch, filepath, author)
-        # TODO: add to elastic search
-        #elastic.add()
-
+        publish()
     for filepath in commit['removed']:
         doc_type = renderer.get_type(filepath)
         renderer.remove(s3, bucket_name, doc_type, filepath)
-        # TODO: remove from elasic search
-        # TODO: remove from parquet database
+        dao.remove(filepath)
     for filepath in commit['modified']:
         renderer.render_one(database, s3, bucket_name, repo, branch, filepath, author)
 
@@ -66,6 +81,9 @@ def update_attributes(url, attribute, value):
         new_record[attribute] = value
     database[url] = new_record
     dao.update_database(s3, bucket_name, db_s3_key, database)
+    # TODO: add to elastic search
+    #blog_content = 
+    #elastic.add(database, url, blog_content)
     return {"old_record": old_record, "new_record": new_record}
 
 

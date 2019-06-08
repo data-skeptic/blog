@@ -1,4 +1,4 @@
-    updated_contents = knitr_img_handling(s3, title, absfile, updated_contents, bucket, fname)
+updated_contents = knitr_img_handling(s3, title, absfile, updated_contents, bucket, fname)
 
 def render_blog(base_url, s3, item_metadata, blog_id):
     logger.debug("render_blog")
