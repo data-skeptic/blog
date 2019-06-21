@@ -1,5 +1,4 @@
 import requests
-import bs4 as soup
 import re
 import os
 import string
@@ -82,7 +81,7 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
         files = os.listdir(".")
         for file in files:
             if file.endswith(".png"):
-                f = open(file, 'rb')
+                f = open('/tmp/' + file, 'rb')
                 content2 = f.read()
                 f.close()
                 i = s3key.rfind('/')
@@ -168,23 +167,20 @@ def fix_string_for_db(s):
     return s2
 
 
-def get_title(absfilename, contents):
+def get_title(absfilename, contents, header_num=1):
     """Accepts a filename AND it's contents; returns a title"""
+    if header_num == 7:
+        i = absfilename.rfind('/')
+        j = absfilename.rfind('.')
+        fname = absfilename[i+1:j]
+        fname = fname.replace('-', ' ').replace('_', ' ')
+        fname = fname.title()
+        return fname
     lcontents = contents.lower()
-    c = 1
-    b = soup.BeautifulSoup(contents, "lxml")
-    while c < 6:
-        tag = b.find('h' + str(c))
-        if tag != None:
-            return tag.text.replace('&#182;', '')
-        c += 1
-    i = absfilename.rfind('/')
-    j = absfilename.rfind('.')
-    fname = absfilename[i+1:j]
-    fname = fname.replace('-', ' ').replace('_', ' ')
-    fname = fname.title()
-    return fname
-
-
-
-
+    i = lcontents.find(f'<h{header_num}')
+    if i==-1:
+        return get_title(absfilename, contents, header_num+1)
+    j = lcontents.find('>', i)
+    k = lcontents.find(f'</h{header_num}>')
+    title = lcontents[j+1:k].title().replace('&#182;', '')
+    return title

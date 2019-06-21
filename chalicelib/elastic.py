@@ -12,7 +12,6 @@ def remove(url):
 
 import boto3
 import pandas as pd
-import sqlalchemy
 from elasticsearch import Elasticsearch
 import json
 import requests

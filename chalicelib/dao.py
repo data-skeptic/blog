@@ -16,27 +16,30 @@ def initialize_database(s3, bucket_name, prefix):
         database = {}
         for obj in objs:
             s3key = obj.key
-            obj2 = s3.Object(bucket_name, s3key)
-            content = obj2.get()['Body'].read().decode('utf-8')
-            author = ""
-            record = renderer.generate_metadata(s3key, content, author)
-            database[record['url']] = record
+            if s3key.endswith(".html"):
+                obj2 = s3.Object(bucket_name, s3key)
+                data = obj2.get()['Body'].read()
+                content = data.decode('utf-8')
+                author = ""
+                record = renderer.generate_metadata(s3key, content, author)
+                database[record['url']] = record
         return database
 
 
 def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
     obj = s3.Object(bucket_name, db_s3_key)
+    print(db_s3_key)
     try:
         content = obj.get()['Body'].read()
-        fn = 'temp.parquet'
+        fn = '/tmp/temp.csv'
         f = open(fn, 'wb')
         f.write(content)
         f.close()
-        df = pd.read_parquet(fn)
+        df = pd.read_csv(fn, sep="\t")
         #print(df)
         #df.reset_index(inplace=True)
         df.fillna('', inplace=True)
-        df.rename(columns={'index': 'url'}, inplace=True)
+        #df.rename(columns={'index': 'url'}, inplace=True)
         database = {}
         for r in range(df.shape[0]):
             row = df.iloc[r]
@@ -55,18 +58,18 @@ def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
 def update_database(s3, bucket_name, db_s3_key, database):
     print("save db")
     ts = int(time.time())
-    backup_key = db_s3_key.replace(".parquet", ".{ts}.parquet".format(ts=ts))
+    backup_key = db_s3_key.replace(".csv", ".{ts}.csv".format(ts=ts))
     #s3.Object(bucket_name, backup_key).copy_from(CopySource='{bucket_name}/{db_s3_key}'.format(bucket_name=bucket_name, db_s3_key=db_s3_key))
     # TODO: copy the old one with a TTL as a backup
-    fn = 'temp.parquet'
+    fn = 'temp.csv'
     df = pd.DataFrame(database)
-    df.to_parquet(fn)
+    df.to_csv(fn, index=False, sep='\t')
     f = open(fn, 'rb')
     content = f.read()
     f.close()
     obj = s3.Object(bucket_name, db_s3_key)
     obj.put(Body=content)
-    obj = s3.Object(bucket_name, db_s3_key.replace(".parquet", ".json"))
+    obj = s3.Object(bucket_name, db_s3_key.replace(".csv", ".json"))
     jdict = {}
     for r in range(df.shape[0]):
         row = df.iloc[r]
@@ -78,5 +81,5 @@ def update_database(s3, bucket_name, db_s3_key, database):
 def remove(filepath):
     dao.remove(filepath)
     elastic.remove(url)
-    # TODO: remove from parquet database
+    # TODO: remove from csv database
 

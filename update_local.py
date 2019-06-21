@@ -5,7 +5,7 @@ from chalicelib import dao, podcast, renderer
 
 fname = "rss.xml"
 bucket_name = "dataskeptic.com"
-db_s3_key = "posts.db.parquet"
+db_s3_key = "posts.db.csv"
 
 s3 = boto3.resource('s3')
 
@@ -15,7 +15,7 @@ s3 = boto3.resource('s3')
 mode = 'reload_one'
 #mode = 'update'
 
-filepath = "methods/2017/fft.ipynb"
+filepath = "episodes/2019/facebook-negotiating-bots-invented-a-language.md"
 
 database = dao.get_database(s3, bucket_name, db_s3_key)
 

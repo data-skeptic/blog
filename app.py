@@ -50,7 +50,7 @@ def blog_posts_update():
 def update_podcast():
     url = 'http://dataskeptic.libsyn.com/rss'
     bucket_name = 'dataskeptic.com'
-    db_s3_key = 'posts.db.parquet'
+    db_s3_key = 'posts.db.csv'
     database = dao.get_database(s3, bucket_name, db_s3_key)    
     print('fetching {url}'.format(url=url))
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
@@ -62,7 +62,7 @@ def scheduled(event):
     print('fetching {url}'.format(url=url))
     print(event)
     bucket_name = 'dataskeptic.com'
-    db_s3_key = 'posts.db.parquet'
+    db_s3_key = 'posts.db.csv'
     database = dao.get_database(s3, bucket_name, db_s3_key)    
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
