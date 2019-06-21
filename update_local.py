@@ -10,12 +10,12 @@ db_s3_key = "posts.db.parquet"
 s3 = boto3.resource('s3')
 
 #mode = 'reload_rss'
-mode = 'reload_all'
+#mode = 'reload_all'
 #mode = 'delete'
-#mode = 'reload_one'
-mode = 'update'
+mode = 'reload_one'
+#mode = 'update'
 
-#filepath = "podcasting/2017/best-day-to-release-podcast.ipynb"
+filepath = "methods/2017/fft.ipynb"
 
 database = dao.get_database(s3, bucket_name, db_s3_key)
 

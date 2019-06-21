@@ -1,5 +1,5 @@
 import boto3
-from botocore.vendored import requests
+import requests
 from chalice import Chalice, Rate
 import json
 import os

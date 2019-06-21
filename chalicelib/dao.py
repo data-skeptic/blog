@@ -33,14 +33,15 @@ def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
         f.write(content)
         f.close()
         df = pd.read_parquet(fn)
-        df.reset_index(inplace=True)
+        #print(df)
+        #df.reset_index(inplace=True)
         df.fillna('', inplace=True)
+        df.rename(columns={'index': 'url'}, inplace=True)
         database = {}
         for r in range(df.shape[0]):
             row = df.iloc[r]
             url = row['url']
             database[url] = row.to_dict()
-            print(url)
         return database
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "404" or e.response['Error']['Code'] == "NoSuchKey":

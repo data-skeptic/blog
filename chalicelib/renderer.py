@@ -1,6 +1,7 @@
-from botocore.vendored import requests
+import requests
 import bs4 as soup
 import re
+import os
 import string
 import json
 
@@ -12,6 +13,8 @@ def render(s3, bucket_name, repo, branch, filepath, prefix="blog/"):
     url = t.format(repo=repo, branch=branch, filepath=filepath)
     r = requests.get(url)
     if r.status_code != 200:
+        print(url)
+        print(r.status_code)
         raise Exception('TODO: handle Non-200 response retrieving content')
     doc_type  = get_type(filepath)
     if doc_type is None:
@@ -59,7 +62,6 @@ def generate_metadata(s3key, content, author):
 def get_rendered_key_name(doc_type, s3key):
     n = len(doc_type) + 1
     s = s3key[:-n] + '.html'
-    print(doc_type, s3key, s)
     return s
 
 
@@ -68,14 +70,30 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.put(Body=content)
+        print(f"saving image {s3key}")
         # TODO: update db
+        return
     elif doc_type == 'md':
         content2 = svg.render(content.decode('utf-8'), s3, bucket_name, latex_prefix)
         html = markdown.render(content2)
-        #?update db
+        # TODO: update db
     elif doc_type == 'ipynb':
         html = jupyter.render(content.decode('utf-8'))
-        #?update db
+        files = os.listdir(".")
+        for file in files:
+            if file.endswith(".png"):
+                f = open(file, 'rb')
+                content2 = f.read()
+                f.close()
+                i = s3key.rfind('/')
+                d = s3key[0:i]
+                j = s3key.rfind('.')
+                post = s3key[i+1:j]
+                s3key2 = f"{d}/{post}/{file}"
+                save(s3, 'png', bucket_name, latex_prefix, s3key2, content2)
+                os.remove(file)
+                html = html.replace(f'<img src="{file}"', f'<img src="{post}/{file}"')
+        # TODO: update db
     else:
         raise Exception("Unknown filetype: " + doc_type)
     key = get_rendered_key_name(doc_type, s3key)
@@ -146,7 +164,8 @@ def get_pretty_name(absfilename, title):
 
 
 def fix_string_for_db(s):
-    return s.replace(u"\u2018", "'").replace("’", "'").replace("'", "\\'")
+    s2 = s.replace(u"\u2018", "'").replace("’", "'").replace("'", "\\'").replace(u"¶", "")
+    return s2
 
 
 def get_title(absfilename, contents):
