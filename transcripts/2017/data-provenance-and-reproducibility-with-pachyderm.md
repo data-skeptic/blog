@@ -1,6 +1,6 @@
 **Intro:** Data Skeptic is the official podcast of DataSkeptic.com bringing you stories, interviews, and many episodes on topics of data science, machine learning, statistics and artificial intelligence. 
 
-**Host:** [Daniel Whitenack](https://www.linkedin.com/in/danielwhitenack) has a PhD in Computational Physics from Purdue University. He’s worked in a diverse set of industries developing data science applications and is a frequent speaker at conferences. He is the maintainer of the Go kernel for Project Jupyter and is presently a data scientist and lead developer advocate at Pachyderm Inc. 
+**Kyle:** [Daniel Whitenack](https://www.linkedin.com/in/danielwhitenack) has a PhD in Computational Physics from Purdue University. He’s worked in a diverse set of industries developing data science applications and is a frequent speaker at conferences. He is the maintainer of the Go kernel for Project Jupyter and is presently a data scientist and lead developer advocate at Pachyderm Inc. 
 
 [Daniel](https://twitter.com/dwhitena) also teaches corporate and public data science and engineering classes with [Arden Labs](https://www.ardanlabs.com). I invited Daniel on the show to discuss data reproducibility, provenance, and pipelines. 
 
@@ -8,13 +8,13 @@ Daniel, welcome to Data Skeptic.
 
 **Daniel:** Thanks. It’s a lot of fun to be here. 
 
-**Host:** So I find – starting with our first topic of reproducibility –  that word can mean different things to different people. I’m wondering if maybe you’ve had that same experience. And if so, could we start with [what the definition of reproducibility might be to an engineer](http://www.tss.trelleborg.com/wiki/Reproducibility). 
+**Kyle:** So I find – starting with our first topic of reproducibility –  that word can mean different things to different people. I’m wondering if maybe you’ve had that same experience. And if so, could we start with [what the definition of reproducibility might be to an engineer](http://www.tss.trelleborg.com/wiki/Reproducibility). 
 
 **Daniel:** Yeah, definitely. It definitely means different things to different people. I would say in the case of engineering, it means that machinery or code or systems behave consistently over time. In the case of like software engineering, we expect if we have a function that adds two numbers together, if we put in 1 plus 1 the first time, it should equal 2 and 1 plus 1 the second, it should equal 2. And then other people should be able to run that function and have the same result. 
 
 And in the same way in machinery and engineering in general, when you put your car into drive, you don’t want it to go into reverse. You want it to go into drive every time. So that’s kind of a big portion of what good engineering is. 
 
-**Host:** Now, you’ve got a scientific background as well and I suspect in that community, reproducibility can mean something not entirely different but there are a lot of nuances. Could you maybe share your perspective on the distinctions that a scientist would make over an engineer? 
+**Kyle:** Now, you’ve got a scientific background as well and I suspect in that community, reproducibility can mean something not entirely different but there are a lot of nuances. Could you maybe share your perspective on the distinctions that a scientist would make over an engineer? 
 
 **Daniel:** That kind of engineering reproducibility that we just talked about is kind of a precursor and part of scientific reproducibility. I mean scientists use machinery. They use code to do a research and to make predictions and to write algorithms and whatever it is. So having that consistent behavior in the engineering tools that they’re using is definitely a part of it. 
 
@@ -24,7 +24,7 @@ Part of reproducibility in science is you’re pushing that envelope, you’re t
 
 In science, people are always building on a scientific discovery of others. Just like in data science, we’re building on things that people have already developed in certain models and other things. But there’s this collaborative effort, if we’re not able to reproduce what other groups and what other people have done in the same way that they did it then we – that incremental improvement of our methods is hampered. 
 
-**Host:** That sort of confirmatory evidence makes a lot of sense of why we trust the scientific theory. In contrast, why is reproducibility critical in business? 
+**Kyle:** That sort of confirmatory evidence makes a lot of sense of why we trust the scientific theory. In contrast, why is reproducibility critical in business? 
 
 **Daniel:** That last answer kind of leads into this aspect. And I’d like to think about this in a few different ways. So first off, I think that reproducibility is a precursor to true incremental improvement in your methods within a business. If you’re not able to understand what you did before or what other people have done in the company and be able to reproduce it, it’s much more difficult to be able to improve on what has been done in the past. 
 
@@ -34,7 +34,7 @@ In other area, I think which is becoming a lot more important over time in a bus
 
 So it’s very possible that if you’re not able to reproduce what you did before or have some explanation of that or some understanding of what went into an analysis and how to reproduce that, then there could very well be compliance issues as we’re starting to see in the European Union and other places. 
 
-**Host:** So when I think about software engineering, a lot of the concepts of reproducibility and in being very deterministic make obvious sense to me. As you said, 2 plus 2 must always consistently equal 4 or even when I add something to my cart that should always have the same effect. 
+**Kyle:** So when I think about software engineering, a lot of the concepts of reproducibility and in being very deterministic make obvious sense to me. As you said, 2 plus 2 must always consistently equal 4 or even when I add something to my cart that should always have the same effect. 
 
 But when it comes to data science and I guess maybe I’m specifically thinking of machine learning, there are a lot of methods that have nondeterministic steps. How can we maintain some semblance of reproducibility when algorithms leveraged some random data to make a choice in formulating a model? 
 
@@ -46,11 +46,11 @@ So in the similar way to what we do in machine learning, we rely on a lot of sor
 
 Even if that’s not exactly the same over time, you should be able to run it over and over and understand the pattern within which you expect your model to behave otherwise you’re kind of just shooting in the dark because you don’t have proper expectations for how your model should behave. 
 
-**Host:** It’s actually a really interesting point I haven’t thought of that even though let’s say, you and I had the same data set and we both ran your algorithm of choice ran it for us some deep learning, whatever the case maybe, the insides that black box might not be the exact same floating point number calculations but our result should be more or less distributed in the same fashion otherwise why are the models erratically different? 
+**Kyle:** It’s actually a really interesting point I haven’t thought of that even though let’s say, you and I had the same data set and we both ran your algorithm of choice ran it for us some deep learning, whatever the case maybe, the insides that black box might not be the exact same floating point number calculations but our result should be more or less distributed in the same fashion otherwise why are the models erratically different? 
 
 **Daniel:** Exactly, yeah. And you should be able to come up with some expectations to say, “I expect this model based on what the data that I have trained it on in the past and exposed it to. I expect it to behave within this range of values in these scenarios.” And that way, you do have a sense of when something goes wrong and behaves outside of your expectations, either you can learn from that experience and adjust your expectations or you can really pinpoint something that went wrong with your model. 
 
-**Host:** So there are a number of tools that we leverage to do reproducibility. Everything form source control and containers and of course, Pachyderm, that we’re going to talk about in a bit, the one I want to touch on first was the Jupyter notebook. And I want to ask what you see is its role in reproducibility analysis. 
+**Kyle:** So there are a number of tools that we leverage to do reproducibility. Everything form source control and containers and of course, Pachyderm, that we’re going to talk about in a bit, the one I want to touch on first was the Jupyter notebook. And I want to ask what you see is its role in reproducibility analysis. 
 
 **Daniel:** [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) are amazing. As you mentioned, I’m working – I work on the Go kernel for Jupyter and I love using Jupyter and other things like Interact and other things that are going on. And I think these in some ways bring a lab notebook sort of aspect to what we do as data scientists and industry. And that’s really great because you can not only have your code there, you can have your visualizations and add kind of a story along with it. That’s why they are so great for tutorials is because you’re really explaining what you’re doing in your analysis. 
 
@@ -58,7 +58,7 @@ And I think that one extremely important piece of reproducibility is that aspect
 
 So I think it’s definitely a piece of the puzzle at the same time. I had a friend who expressed to me that even though there is these great things about Jupyter notebooks, they kind of leave out one of the great attributes of a “scientific lab notebook” in that there’s no permanent chronological record of work that is paired with some logical ordering of data and results because these things are kind of snapshots and you don’t really see how they have morphed over time if you don’t combine that with some sort of data versioning or other sort of versioning. 
 
-**Host:** Yeah. It’s interesting. They’re definitely a piece of the puzzle but they don’t tell the whole story. 
+**Kyle:** Yeah. It’s interesting. They’re definitely a piece of the puzzle but they don’t tell the whole story. 
 
 *Let’s take a quick break from this episode and talk about our sponsor for this week, which is [Periscope Data](https://www.periscopedata.com). What listeners might not know is that I import all the listeners’ stats from the podcast into a MySQL database. And I frequently put together a little manual dashboard that I cut and paste into an email that I send to Linda. *
 
@@ -94,7 +94,7 @@ So in companies, a lot of times there is these very complicated data pipelines a
 
 So all of those things that happened to your data before you see it, you should have an understanding of those, and provenance is really that understanding. It’s saying this is the record of what happened to my data so I can have an understanding and a confidence in the way that I’m processing it because I know where it came from, I know what happened to it. 
 
-**Host:** So, I want to pick your brain on what are some of the tools you think, we’ve talked about Jupyter, are there any other things that you find helpful in maintaining good provenance and reproducibility standards on a team? 
+**Kyle:** So, I want to pick your brain on what are some of the tools you think, we’ve talked about Jupyter, are there any other things that you find helpful in maintaining good provenance and reproducibility standards on a team? 
 
 **Daniel:** As you mentioned, we talked about Jupyter. I think keeping that sort of lab notebook mentality with Jupyter notebooks and whatever your docs are in an organization is important. So along with your project should come docs that explain the reasoning behind your analyses and that sort thing because people move from company to company and if you don’t have that, it’s also really hard for in the same way that people come in and out of research groups and academia, it’s hard for the incoming people to know what they can build on if that record isn’t there. 
 
@@ -110,13 +110,13 @@ The Elias Ponvert People Pattern, he has wrote a great database called LeVar whi
 
 Those are some of the things that I found pretty interesting in this space. 
 
-**Host:** So I know Pachyderm is a very popular project but I don’t want to take it for granted that every listener knows about it. You gave basically a high-level description of it but could we all go a step deeper and talk about how someone would get started using Pachyderm? 
+**Kyle:** So I know Pachyderm is a very popular project but I don’t want to take it for granted that every listener knows about it. You gave basically a high-level description of it but could we all go a step deeper and talk about how someone would get started using Pachyderm? 
 
 **Daniel:** Pachyderm provides two things. It provides data versioning that is very closely tied to data pipelining. We really think that this is super useful because again, you want to make sure that you have a good understanding of how your code is versioned and what analyses you’re running and tie that very closely to what data is input and output of the various stages of your analyses. So this is really the vision behind Pachyderm and what it provides along with some great advantages of distributing that analysis over a cluster. 
 
 To get started, it’s actually just a few commands to deploy Pachyderm locally on your laptop and try a few things. If you go to Pachyderm.io, there’s a link to the docs and there’s a “Getting Started” section there and you can deploy it in a few commands and then run for example a Tensor Flow example, a MapReduce sort of example, a web-scraping example. There are a few different ones in the docks that are pretty fun to play with. 
 
-**Host:** So pretty much every company I’ve ever consulted for has a unique mix of different persistent layer technologies or databases or whatever the case maybe in languages and who knows what else in terms of architecture. What is Pachyderm compatible with? 
+**Kyle:** So pretty much every company I’ve ever consulted for has a unique mix of different persistent layer technologies or databases or whatever the case maybe in languages and who knows what else in terms of architecture. What is Pachyderm compatible with? 
 
 **Daniel:** Well, Pachyderm is powered by the container ecosystem, and so its language and framework agnostic. In other words, you can do Python, Java, Scala, Go, R, MATLAB, whatever sort of analyses you want within Pachyderm. But as far as what it’s backed by the technology that it’s backed by, Pachyderm runs on top of Kubernetes, which if people aren’t familiar, that’s an open-source orchestration framework from Google that basically allows you to distribute container-based processing over a cluster. 
 
@@ -124,7 +124,7 @@ Data that’s stored in Pachyderm in this data versioning scheme that I mentione
 
 So there are a lot of options as far as compatibility. But I think one of the main things that I really enjoyed as a data scientist is you can utilize all these languages and frameworks so you don’t have to restrict yourself to only one. 
 
-**Host:** And what is the Pachyderm file system? 
+**Kyle:** And what is the Pachyderm file system? 
 
 **Daniel:** Yeah. So the Pachyderm File System is where the data versioning piece happens. So when you commit data into PFS or the Pachyderm File System, you can think about that kind of like you’re committing code into Get. When you commit data into Pachyderm, you commit that into “data repository.” So you could have any number of these repositories organized in whatever way makes sense for your project and then you commit that data into one of these repositories. 
 
@@ -136,7 +136,7 @@ But in the case where the forecast was not very predictive of the future, we’d
 
 **Daniel:** Yup. 
 
-**Host:** What sort of a better place would I have been if I had had Pachyderm available to me at the time? 
+**Kyle:** What sort of a better place would I have been if I had had Pachyderm available to me at the time? 
 
 **Daniel:** Yeah, exactly. So, if your forecasts were running in Pachyderm, every analysis that runs in Pachyderm or every transformation or processing stage, it outputs to another committed repository. So you might have your forecasting model outputting to a forecasting data repository in the future. 
 
@@ -144,11 +144,11 @@ Let’s say, tomorrow things don’t look so good, you can basically go back and
 
 And even in scenarios where let’s say that your data got corrupted and you committed bad data into something that eventually ended up producing bad results, you could see that bad data there or that corrupted data. Then in order to right the ship, basically, you would just need to commit the new good data into the repository and Pachyderm would then update everything and get everything in sync such that you don’t have to go through them manually to figure out the things you need to do just to make things better. 
 
-**Host:** We made some rough comparisons to Pachyderm being like yeah, one of the things I love about Git is if a bug ever introduced into some code, if I can just find the one commit right before the bug, I can go get its ID and I can pull from there and kind of start over. 
+**Kyle:** We made some rough comparisons to Pachyderm being like yeah, one of the things I love about Git is if a bug ever introduced into some code, if I can just find the one commit right before the bug, I can go get its ID and I can pull from there and kind of start over. 
 
 **Daniel:** Exactly. 
 
-**Host:** How secure is the workflow in Pachyderm. 
+**Kyle:** How secure is the workflow in Pachyderm. 
 
 **Daniel:** Yeah. So in Pachyderm, actually the language mirrors that of Git although the actual file structure is slightly different but the language is similar. So you make commits into a repository and then you have a list of those commits over time. 
 
@@ -156,7 +156,7 @@ And combined with this provenance thing, like let’s say in that scenario where
 
 So then you can go back and say, “Well, it was this commit that happened. What was the commit before that?” And then what you can do is roll back your data to that previous commit and update your analyses so that it’s like you’re going back in time to that previous snapshot. There is a lot of tooling around that currently in place and then we’re continually adding new things in the newest release in 1.4, which will be in March, there’s going to be even more tooling around those sorts of interactions. 
 
-**Host:** Very cool. So when I think about really high velocity applications maybe like credit card transactions or even page views or little counters on sites, it seems to me there are maybe hundreds or situations of hundreds or thousands of like transactions, individual updates per second. And if Pachyderm has something I could commit, that must add a little bit of overhead to generate that snapshot. [Are there any best practices](http://www.mdsiinc.com/news/5-reasons-business-invest-security-certifications/) or maybe can you describe how you would work with Pachyderm in situation where we have really high-velocity data? 
+**Kyle:** Very cool. So when I think about really high velocity applications maybe like credit card transactions or even page views or little counters on sites, it seems to me there are maybe hundreds or situations of hundreds or thousands of like transactions, individual updates per second. And if Pachyderm has something I could commit, that must add a little bit of overhead to generate that snapshot. [Are there any best practices](http://www.mdsiinc.com/news/5-reasons-business-invest-security-certifications/) or maybe can you describe how you would work with Pachyderm in situation where we have really high-velocity data? 
 
 **Daniel:** I forget the exact number off the top of my head but the overhead as far as the metadata that’s required with these commits is actually very minimal and it happens very quickly. So we’ve seen people very successfully implement very quick and streaming applications in Pachyderm. 
 
@@ -168,7 +168,7 @@ But they really don’t want to keep data around. And that might be because of p
 
 But in those cases, a lot of times, people will keep records around for a certain period of time and then kind of purge those if they have privacy concerns. Other cases, we’ve seen people that maybe they have events happening really quickly like you’re saying, but really the processing they’re doing is not stream processing. They’re aggregating those things maybe once a day or once a week to do something. In those cases, we’ve seen people batch those events into daily or weekly or whatever commits in Pachyderm. And so, you have those daily, weekly snapshots that also triggered daily, weekly analyses. 
 
-**Host:** So eventually, some hot and new no sequel technology is going to show up and I’m going to want to try it, and if I trust that their persistence layer isn’t really goofy where it kind of rewrites the entire archive for the slightest change to it, has some sort of partition quality to it if you will, can Pachyderm immediately be compatible with it or do I have to wait for it to become sort of context-aware of that new interesting technology? 
+**Kyle:** So eventually, some hot and new no sequel technology is going to show up and I’m going to want to try it, and if I trust that their persistence layer isn’t really goofy where it kind of rewrites the entire archive for the slightest change to it, has some sort of partition quality to it if you will, can Pachyderm immediately be compatible with it or do I have to wait for it to become sort of context-aware of that new interesting technology? 
 
 **Daniel:** No. Pachyderm is pretty much agnostic to those things. That being said, we have worked with users on specific types of connectors that we already have in place like people doing things with Postgres or other databases that we’ve worked with before. So those things we might have some existing connectors that would make things a little bit easier. But there’s nothing preventing working with the next no-sequel super fancy database.
 
@@ -176,7 +176,7 @@ The thoughts that would go into it is really what you want to get out of it. We 
 
 So question would really be around what you want to get out of it and then figuring out how to organize and orchestrate that interaction. 
 
-**Host:** That time machine quality is really one of the biggest appeals to me personally. So perhaps my questions even undervalued some of the pipelining issues you start to mention, could we talk about some of the generally used cases there? 
+**Kyle:** That time machine quality is really one of the biggest appeals to me personally. So perhaps my questions even undervalued some of the pipelining issues you start to mention, could we talk about some of the generally used cases there? 
 
 **Daniel:** As I mentioned, the data pipelining piece in [Pachyderm is language agnostic](http://www.pachyderm.io). And I think this is a really important piece to emphasize in the context of data science and data engineering. Because a lot of the friction and problems and the data team come about because you’re developing a model and some cool stuff that you like working with on your laptop but then maybe you have to hand off your model to Java engineers or something to implement for your data infrastructure or you got data engineers working over here in Scala and then you got people from scientific backgrounds coming in and working even in MatLab or whatever it is. 
 
@@ -188,7 +188,7 @@ So there is this setup of a language agnostic data pipeline and then also, there
 
 And as we’ve talked about before, it can be analyzed in terms of versioning and provenance to debug what went wrong in the past or incrementally improve on things and all of that. 
 
-**Host:** How interesting. So is it correct to say that there’s some sort of pole or hub-sub going on where a pipeline knows what it works on and as soon as it sees that that data has changed, it kicks itself off and it does its steps and outputs the results wherever they need to go? 
+**Kyle:** How interesting. So is it correct to say that there’s some sort of pole or hub-sub going on where a pipeline knows what it works on and as soon as it sees that that data has changed, it kicks itself off and it does its steps and outputs the results wherever they need to go? 
 
 **Daniel:** Exactly. So when you – in a simple example, let’s say that we’re doing a join of two data sets. We have a data repository A and a data repository B and then we have a Python script that uses Pandas to do the join. When we set up that pipeline, we would just create a very simple JSON specification that says, “Use this image, this Python image and run this Python script. Run that Python script on input from those two repositories, A and B.” 
 
@@ -196,11 +196,11 @@ So it’s going to listen on those two A and B repositories and when something i
 
 So yeah, it’s this idea that you have “input” to a pipeline or through a pipeline stage. And when that input is updated, that pipeline is updated as well. 
 
-**Host:** And that JSON file you were describing is that a Pachyderm specific like a recipe language? 
+**Kyle:** And that JSON file you were describing is that a Pachyderm specific like a recipe language? 
 
 **Daniel:** Yeah. It’s just a JSON specification that gives Pachyderm the things that it needs to know in order to set up the pipeline. So the image name that you’re running, what you want to run, what’s input. And then also this is where you specify, I mentioned you can distribute things over a certain number of workers, this is where you also specific parallelism. It’s not a very long JSON spec. It just specifies those things that you want to be run and how to run them. 
 
-**Host:** And is there any under the hood optimization that might see, let’s say that join operation kicks off and before it completes, one or both of the repositories have had several other commits that may be it would be appropriate to cancel the current operation and resume on the most current or is that out of scope for what Pachyderm does? 
+**Kyle:** And is there any under the hood optimization that might see, let’s say that join operation kicks off and before it completes, one or both of the repositories have had several other commits that may be it would be appropriate to cancel the current operation and resume on the most current or is that out of scope for what Pachyderm does? 
 
 **Daniel:** Remember that on each commit, you’re only processing what’s new. So there is some optimization in terms of let’s say, in one of our examples, we do some edge detection on images and we commit image 1, image 2, image 3 and then the output is the corresponding edge detected images. Let’s say we commit image 1 and then it processes and detects the edges. And then we commit five more images, so images 2 through to 6. And then another job spun up to process those new five images. It doesn’t reprocess the first one. It just reprocesses the new five. 
 
@@ -208,13 +208,13 @@ And then if you commit two more images in, while the five are being processed, t
 
 So really, you’re not spinning up jobs over and over and reprocess the same thing. 
 
-**Host:** Got you. What about cases where let’s say I want to compute the mean and the median of those two tables? In the case of the mean, I guess if there was some cleverness going on, we could just maintain the sum and the count and get it really quick. But the median, it’s almost a little bit hopeless to think I can store some interim representation. I feel like I have to go get it again. What happens in situations like that? 
+**Kyle:** Got you. What about cases where let’s say I want to compute the mean and the median of those two tables? In the case of the mean, I guess if there was some cleverness going on, we could just maintain the sum and the count and get it really quick. But the median, it’s almost a little bit hopeless to think I can store some interim representation. I feel like I have to go get it again. What happens in situations like that? 
 
 **Daniel:** In the most simple implementation, what you can do is play with a part of the specification that controls what parts of the repository and analysis will see. So when an analysis has spun up, basically, you mount that data that you put into your repository into the container that’s running the analysis. But you can either tell Pachyderm to say, “Only expose the new stuff to my analysis or expose everything in that repository.” 
 
 So in a simple case, you could just say, “OK, regardless I’m going to expose everything to that median analysis to be able to understand the full scope of the data.” And then if you really wanted to distribute that and you had something where you had many different commits and you need to distribute that, Pachyderm is smart enough to distribute, let’s say, you have 10 workers to give a tenth of the data to each worker and then you could just have kind of a MapReduce style, reduce stage that would take the median from all those ten stages and find the overall. 
 
-**Host:** In kind of wrapping up, I want to switch gears a little bit. And I’ll confess, I’m very ignorant to the Go language. It’s something I’ve never taken the time to gain an understanding or appreciation for. But I know you are an advocate for it and a contributor to the Go community, can you give us the pitch about why data scientists should consider Go for their work? 
+**Kyle:** In kind of wrapping up, I want to switch gears a little bit. And I’ll confess, I’m very ignorant to the Go language. It’s something I’ve never taken the time to gain an understanding or appreciation for. But I know you are an advocate for it and a contributor to the Go community, can you give us the pitch about why data scientists should consider Go for their work? 
 
 **Daniel:** Yeah. And I can give you kind of how I came to it because I also didn’t start out – well actually, I started out in physics writing some Python along with Fortran and did Python in industry for a while. And really what I came down to is the fact that for a data science application, this is an application where we want people to make decisions based on the predictions that we make or based on the metrics that we calculate or whatever it is. 
 
@@ -232,11 +232,11 @@ Pachyderm as well has [a Slack channel where you can come and ask questions](htt
 
 And yeah, I appreciate being here. It has been a great conversation. And I’ll be around at conferences this year so hope to meet some of the listeners and discuss a little bit about reproducibility. 
 
-**Host:** Excellent, Daniel. I hope to bump into you at a conference as well. I’ll have all those links you just mentioned in the show notes. And any of the ones that you’ll give me in my last question here, can you once again remind us where we would go to get started or even just dip our toe into the Pachyderm ecosystem? 
+**Kyle:** Excellent, Daniel. I hope to bump into you at a conference as well. I’ll have all those links you just mentioned in the show notes. And any of the ones that you’ll give me in my last question here, can you once again remind us where we would go to get started or even just dip our toe into the Pachyderm ecosystem? 
 
 **Daniel:** Yeah. So you can go to the website. That’s [Pachyderm.io](http://www.pachyderm.io/). And on that page, it will give you kind of a description of what Pachyderm is. And of course, Pachyderm is open source so it will link to our GitHub project where you can file issues and all that. It will also link to our documentation where you can go through the simple of getting started and local installation and see the examples. And there’s also a link to that Slack channel that I mentioned for questions. 
 
-**Host:** Excellent. Well, Daniel, I want to thank you once again for coming on and sharing your insights. This has been a really cool episode. I’m actually excited about giving Pachyderm a try myself. 
+**Kyle:** Excellent. Well, Daniel, I want to thank you once again for coming on and sharing your insights. This has been a really cool episode. I’m actually excited about giving Pachyderm a try myself. 
 
 **Daniel:** Great. Yeah. Hope it goes well and we definitely value feedback from the community. That’s what we’re looking for right now. I’m so excited to see all the things going on with it. 
 
