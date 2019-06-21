@@ -39,7 +39,7 @@ def render_one(database, s3, bucket_name, repo, branch, filepath, author):
         content = updated['content']
         record = generate_metadata(s3key, content, author)
         database[record['url']] = record
-        db_s3_key = "posts.db.parquet"
+        db_s3_key = "posts.db.json"
         dao.update_database(s3, bucket_name, db_s3_key, database)
     return updated
 
@@ -182,5 +182,6 @@ def get_title(absfilename, contents, header_num=1):
         return get_title(absfilename, contents, header_num+1)
     j = lcontents.find('>', i)
     k = lcontents.find(f'</h{header_num}>')
+    print(i, j, k, lcontents[j+1:k])
     title = lcontents[j+1:k].title().replace('&#182;', '')
     return title

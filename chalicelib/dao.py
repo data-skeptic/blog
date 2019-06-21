@@ -30,21 +30,7 @@ def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
     obj = s3.Object(bucket_name, db_s3_key)
     print(db_s3_key)
     try:
-        content = obj.get()['Body'].read()
-        fn = '/tmp/temp.csv'
-        f = open(fn, 'wb')
-        f.write(content)
-        f.close()
-        df = pd.read_csv(fn, sep="\t")
-        #print(df)
-        #df.reset_index(inplace=True)
-        df.fillna('', inplace=True)
-        #df.rename(columns={'index': 'url'}, inplace=True)
-        database = {}
-        for r in range(df.shape[0]):
-            row = df.iloc[r]
-            url = row['url']
-            database[url] = row.to_dict()
+        database = json.loads(obj.get()['Body'].read())
         return database
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "404" or e.response['Error']['Code'] == "NoSuchKey":
@@ -57,25 +43,13 @@ def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
 
 def update_database(s3, bucket_name, db_s3_key, database):
     print("save db")
-    ts = int(time.time())
-    backup_key = db_s3_key.replace(".csv", ".{ts}.csv".format(ts=ts))
-    #s3.Object(bucket_name, backup_key).copy_from(CopySource='{bucket_name}/{db_s3_key}'.format(bucket_name=bucket_name, db_s3_key=db_s3_key))
-    # TODO: copy the old one with a TTL as a backup
-    fn = 'temp.csv'
-    df = pd.DataFrame(database)
-    df.to_csv(fn, index=False, sep='\t')
-    f = open(fn, 'rb')
-    content = f.read()
-    f.close()
+    content = json.dumps(database)
     obj = s3.Object(bucket_name, db_s3_key)
     obj.put(Body=content)
-    obj = s3.Object(bucket_name, db_s3_key.replace(".csv", ".json"))
-    jdict = {}
-    for r in range(df.shape[0]):
-        row = df.iloc[r]
-        url = row.name
-        jdict[url] = row.to_dict()
-    obj.put(Body=json.dumps(jdict))
+    # TODO: copy the old one with a TTL as a backup
+    #ts = int(time.time())
+    #backup_key = db_s3_key.replace(".csv", ".{ts}.csv".format(ts=ts))
+    #s3.Object(bucket_name, backup_key).copy_from(CopySource='{bucket_name}/{db_s3_key}'.format(bucket_name=bucket_name, db_s3_key=db_s3_key))
 
 
 def remove(filepath):

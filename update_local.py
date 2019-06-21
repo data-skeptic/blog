@@ -5,7 +5,7 @@ from chalicelib import dao, podcast, renderer
 
 fname = "rss.xml"
 bucket_name = "dataskeptic.com"
-db_s3_key = "posts.db.csv"
+db_s3_key = "posts.db.json"
 
 s3 = boto3.resource('s3')
 
@@ -18,6 +18,7 @@ mode = 'reload_one'
 filepath = "episodes/2019/facebook-negotiating-bots-invented-a-language.md"
 
 database = dao.get_database(s3, bucket_name, db_s3_key)
+print(database)
 
 if mode == 'reload_rss':
 	url = 'http://dataskeptic.libsyn.com/rss'

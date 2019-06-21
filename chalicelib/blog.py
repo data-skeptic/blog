@@ -12,11 +12,11 @@ sns = boto3.client('sns', aws_access_key_id=access, aws_secret_access_key=secret
 
 arn = 'arn:aws:sns:us-east-2:085318171245:blog-updates-topic'
 
-db_s3_key = 'posts.db.parquet'
+db_s3_key = 'posts.db.json'
 
 def get_blogs():
     bucket_name = 'dataskeptic.com'
-    database = dao.get_database(s3, bucket_name, db_s3_key)    
+    database = dao.get_database(s3, bucket_name, db_s3_key)
     return database
 
 

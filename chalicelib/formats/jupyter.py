@@ -35,7 +35,7 @@ def render(content):
 	#(['metadata', 'output_extension', 'inlining', 'outputs', 'raw_mimetypes', 'global_content_filter'])
 	for output in x['outputs'].keys():
 		data = x['outputs'][output]
-		f = open(output, 'wb')
+		f = open('/tmp/' + output, 'wb')
 		f.write(data)
 		f.close()
 
