@@ -10,15 +10,14 @@ db_s3_key = "posts.db.json"
 s3 = boto3.resource('s3')
 
 #mode = 'reload_rss'
-#mode = 'reload_all'
+mode = 'reload_all'
 #mode = 'delete'
 mode = 'reload_one'
 #mode = 'update'
 
-filepath = "episodes/2019/facebook-negotiating-bots-invented-a-language.md"
+filepath = "polling/2017/src-crowd-wisdom.md"
 
 database = dao.get_database(s3, bucket_name, db_s3_key)
-print(database)
 
 if mode == 'reload_rss':
 	url = 'http://dataskeptic.libsyn.com/rss'
@@ -33,7 +32,7 @@ elif mode == 'reload_all':
 	repo = "data-skeptic/blog"
 	branch = "/master"
 	author = "kyle@dataskeptic.com"
-	posts = glob.glob("**/**/*.Rmd")
+	posts = glob.glob("**/**/*.md")
 	for post in posts:
 		renderer.render_one(database, s3, bucket_name, repo, branch, post, author)
 elif mode == 'update':

@@ -2,6 +2,8 @@ import boto3
 import json
 import os
 
+from chalice import Response
+
 from . import dao, elastic, renderer
 
 access = os.getenv('ACCESS_KEY')
@@ -36,14 +38,12 @@ def handle_update(github_webhook_event):
     for filepath in commits:
         process_commit(database, s3, bucket_name, repo, branch, filepath)
         resp['commits'] += 1
-    return {
-        'statusCode': 200,
-        'body': resp
-    }
+    return Response(resp, status_code=200, headers={"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"})
 
 
 def publish():
     message = {"foo": "bar"}
+    """
     response = sns.publish(
         TargetArn=arn,
         Subject='huh?',
@@ -53,12 +53,13 @@ def publish():
     if response['HTTPStatusCode'] != 200:
         print(response)
         raise Exception('Could not publish to sns')
+    """
 
 
 def process_commit(database, s3, bucket_name, repo, branch, commit):
     author = commit['author']['email']
     for filepath in commit['added']:
-        render.render_one(database, s3, bucket_name, repo, branch, filepath, author)
+        renderer.render_one(database, s3, bucket_name, repo, branch, filepath, author)
         publish()
     for filepath in commit['removed']:
         doc_type = renderer.get_type(filepath)

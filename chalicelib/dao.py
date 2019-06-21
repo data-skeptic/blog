@@ -28,7 +28,6 @@ def initialize_database(s3, bucket_name, prefix):
 
 def get_database(s3, bucket_name, db_s3_key, prefix="blog/"):
     obj = s3.Object(bucket_name, db_s3_key)
-    print(db_s3_key)
     try:
         database = json.loads(obj.get()['Body'].read())
         return database

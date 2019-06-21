@@ -33,6 +33,15 @@ def render(s3, bucket_name, repo, branch, filepath, prefix="blog/"):
 
 
 def render_one(database, s3, bucket_name, repo, branch, filepath, author):
+    i = filepath.rfind('.')
+    if i == -1:
+        return False
+    ext = filepath[i+1:].lower()
+    if ext not in ['png', 'jpg', 'jpeg', 'gif', 'md', 'ipynb', 'rmd']:
+        return False
+    if filepath.find('README.md') != -1:
+        return False
+    print(f">>>> Rendering {filepath}")
     updated = render(s3, bucket_name, repo, branch, filepath)
     if updated['is_new']:
         s3key = updated['s3key']
@@ -66,6 +75,9 @@ def get_rendered_key_name(doc_type, s3key):
 
 def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
     """Returns true if the database should have a new row inserted"""
+    i = s3key.rfind('/')
+    if s3key[i:i+5] == '/src-':
+        return    
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.put(Body=content)
@@ -73,7 +85,15 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
         # TODO: update db
         return
     elif doc_type == 'md':
-        content2 = svg.render(content.decode('utf-8'), s3, bucket_name, latex_prefix)
+        try:
+            content2 = content.decode('utf-8')
+        except:
+            content2 = content.decode('utf-8', errors='replace')
+            content2 = content2.replace('�', "'")
+            print(s3key)
+            offset = 26054
+            print(content2[offset-10:offset+10])
+        content2 = svg.render(content2, s3, bucket_name, latex_prefix)
         html = markdown.render(content2)
         # TODO: update db
     elif doc_type == 'ipynb':
@@ -140,7 +160,7 @@ def get_desc(contents):
     i = lcontents.find("<p>")
     if i != -1:
         j = lcontents.find('</p>', i)
-        desc = contents[i+3:j-4]
+        desc = contents[i+3:j]
         desc = re.sub('<[^<]+?>', '', desc)
     else:
         desc = ''
@@ -182,6 +202,5 @@ def get_title(absfilename, contents, header_num=1):
         return get_title(absfilename, contents, header_num+1)
     j = lcontents.find('>', i)
     k = lcontents.find(f'</h{header_num}>')
-    print(i, j, k, lcontents[j+1:k])
     title = lcontents[j+1:k].title().replace('&#182;', '')
     return title

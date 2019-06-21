@@ -30,11 +30,14 @@ def blog_posts():
 
 @app.route("/blog/deploy", methods=['POST'], content_types=['application/x-www-form-urlencoded'])
 def blog_deploy():
-    prefix = 'payload='
     payloadstr = app.current_request.raw_body.decode('utf-8')
-    payload = unquote(payloadstr[len(prefix):])
+    print(payloadstr)
+    prefix = 'payload='
+    if payloadstr.find(prefix) == 0:
+        payloadstr = payloadstr[len(prefix):]
+    payload = unquote(payloadstr)
     event = json.loads(payload)
-    return blog.handle_update(github_webhook_event)
+    return blog.handle_update(event)
 
 
 @app.route("/blog/posts/update", methods=['POST'])
@@ -65,6 +68,7 @@ def scheduled(event):
     db_s3_key = 'posts.db.csv'
     database = dao.get_database(s3, bucket_name, db_s3_key)    
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
+
 
 """
 @app.on_s3_event(bucket='dataskeptic.com', events=['s3:ObjectCreated:*'])

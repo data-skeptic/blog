@@ -4,7 +4,6 @@ from urllib.parse import quote
 def render(content, s3, bucket_name, prefix):
     i = 0
     ranges = []
-    print(content)
     while i < len(content):
         i = next_delimiter(content, i, False)
         if i != -1:
@@ -25,17 +24,17 @@ def next_delimiter(s, a, is_closing, delim='$'):
     if i > 0:
         check_for_preceeding_whitespace = s[i-1:i]
         if not(is_closing) and not(check_for_preceeding_whitespace.isspace()) and not(check_for_preceeding_whitespace==">"):
-            return next_delimiter(s, is_closing, i+1)
+            return next_delimiter(s, i+1, is_closing)
         if contained_in_tag(s, i, "code"): # For R stuff
-            return next_delimiter(s, is_closing, i+1)
+            return next_delimiter(s, i+1, is_closing)
         if contained_in_tag(s, i, "pre"):  # For R stuff
-            return next_delimiter(s, is_closing, i+1)
+            return next_delimiter(s, i+1, is_closing)
     if i == -1:
         return -1
     if i > 0:
         before = s[i-1]
         if before == '\\':
-            return next_delimiter(s, is_closing, a+1)
+            return next_delimiter(s, a+1, is_closing)
     return i
 
 
@@ -54,7 +53,6 @@ def replace_latex_with_svgs(s3, ranges, contents, bucket_name, prefix):
             sys.exit(-1)
         if m > 100:
             m = 100
-        print('latex raw:', latex[0:m])
         if type(latex) != str:
             latex = latex.decode('utf-8')
         latex = latex.replace('&amp;', '&')
@@ -79,8 +77,13 @@ def replace_latex_with_svgs(s3, ranges, contents, bucket_name, prefix):
 
 
 def render_and_upload_latex(s3, latex, fname, bucket_name, s3key):
+    b = s3.Bucket(bucket_name)
+    obj = list(b.objects.filter(Prefix=s3key))
+    if len(obj) > 0:
+        return  
     cmd = '/usr/local/lib/node_modules/mathjax-node/bin/tex2svg '
     cmd += '"' + latex + '"'
+    print(latex)
     try:
         rendered = os.popen(cmd).read()
         f = open(fname, 'w')
@@ -89,7 +92,7 @@ def render_and_upload_latex(s3, latex, fname, bucket_name, s3key):
         f = open(fname, 'rb')
         fake_handle = f
         fname = fname.encode('utf-8')
-        res = s3.Bucket(bucket_name).put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml', ACL='public-read')
+        res = b.put_object(Key=s3key, Body=fake_handle, ContentType='image/svg+xml', ACL='public-read')
         os.remove(fname)
     except:
         print("TODO: can't call tex2svg on lambda.")

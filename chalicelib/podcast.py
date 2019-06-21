@@ -51,7 +51,6 @@ def requires_update(ep, guid, duration):
 
 
 def update_episode(database, episode):
-    print(database.index)
     guid = episode['guid']['#text']
     url = episode['enclosure']['@url']
     link = episode['link']
