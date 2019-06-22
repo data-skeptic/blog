@@ -41,6 +41,9 @@ def render_one(database, s3, bucket_name, repo, branch, filepath, author):
         return False
     if filepath.find('README.md') != -1:
         return False
+    i = filepath.rfind('/')
+    if filepath[i:i+5] == '/src-':
+        return False
     print(f">>>> Rendering {filepath}")
     updated = render(s3, bucket_name, repo, branch, filepath)
     if updated['is_new']:
@@ -75,9 +78,6 @@ def get_rendered_key_name(doc_type, s3key):
 
 def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
     """Returns true if the database should have a new row inserted"""
-    i = s3key.rfind('/')
-    if s3key[i:i+5] == '/src-':
-        return    
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.put(Body=content)
@@ -130,7 +130,7 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
         return None
 
 
-def remove(s3, bucket_name, db_s3_key, database, doc_type, s3key):
+def remove(s3, bucket_name, database, doc_type, s3key):
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.delete()

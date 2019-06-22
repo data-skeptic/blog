@@ -63,7 +63,7 @@ def process_commit(database, s3, bucket_name, repo, branch, commit):
         publish()
     for filepath in commit['removed']:
         doc_type = renderer.get_type(filepath)
-        renderer.remove(s3, bucket_name, doc_type, filepath)
+        renderer.remove(s3, bucket_name, database, doc_type, filepath)
         dao.remove(filepath)
     for filepath in commit['modified']:
         renderer.render_one(database, s3, bucket_name, repo, branch, filepath, author)
