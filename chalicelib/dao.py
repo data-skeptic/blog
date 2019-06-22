@@ -52,7 +52,8 @@ def update_database(s3, bucket_name, db_s3_key, database):
 
 
 def remove(filepath):
-    dao.remove(filepath)
-    elastic.remove(url)
+    pass
+    #dao.remove(filepath)
+    #elastic.remove(url)
     # TODO: remove from csv database
 

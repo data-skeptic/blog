@@ -12,10 +12,10 @@ s3 = boto3.resource('s3')
 #mode = 'reload_rss'
 mode = 'reload_all'
 #mode = 'delete'
-#mode = 'reload_one'
+mode = 'reload_one'
 #mode = 'update'
 
-filepath = "polling/2017/src-crowd-wisdom.md"
+filepath = "episodes/2019/facebook-negotiating-bots-Invented-a-language.md"
 
 database = dao.get_database(s3, bucket_name, db_s3_key)
 
@@ -33,7 +33,8 @@ elif mode == 'reload_all':
 	branch = "/master"
 	author = "kyle@dataskeptic.com"
 	posts = glob.glob("**/**/*.md")
-	posts.reverse()
+	posts.extend(glob.glob("**/**/*.ipynb"))
+	#posts.extend(glob.glob("**/**/*.Rmd"))
 	for post in posts:
 		renderer.render_one(database, s3, bucket_name, repo, branch, post, author)
 elif mode == 'update':

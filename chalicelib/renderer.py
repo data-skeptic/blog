@@ -131,6 +131,7 @@ def save(s3, doc_type, bucket_name, latex_prefix, s3key, content):
 
 
 def remove(s3, bucket_name, database, doc_type, s3key):
+    ignorelist = ['py', 'txt']
     if doc_type in ['png', 'jpg', 'jpeg', 'gif']:
         obj = s3.Object(bucket_name, s3key)
         obj.delete()
@@ -138,7 +139,8 @@ def remove(s3, bucket_name, database, doc_type, s3key):
     elif doc_type == 'md':
         obj = s3.Object(bucket_name, get_rendered_key_name(doc_type, s3key))
         obj.delete()
-        #?
+    elif doc_type in ignorelist:
+        pass
     else:
         raise Exception("Unknown filetype: " + doc_type)
 
@@ -146,9 +148,7 @@ def remove(s3, bucket_name, database, doc_type, s3key):
 def get_type(filepath):
     i = filepath.rfind('.')
     ext = filepath[i+1:].lower()
-    if ext in ['md', 'ipynb']:
-        return ext
-    return None
+    return ext
 
 
 def get_desc(contents):
