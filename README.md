@@ -5,6 +5,51 @@ This repo contains both our blog and the software which deploys it to our backen
 We deploy onto AWS Lambda using the Chalice library and manually create a webhook in Github to trigger the lambda API on any database change.
 
 
+## Podcast Publishing Process
+
+- [ ] Finish editing, output first draft
+- [ ] Check in Audacity for normalized audio throughout
+
+```
+mv "/Users/kyle/Google Drive/__corp/2019/data-skeptic/nlp/episodes/transfer-learning/Bounces/transfer-learning.wav" ~/
+
+aws s3 cp transfer-learning.wav s3://dataskeptic.com/_audio/2019/transfer-learning/rough.wav --acl public-read
+
+curl -X POST https://auphonic.com/api/simple/productions.json \
+    -u "dataskeptic:9JPCeDS5pjoc" \
+    -F "input_file=@/Users/kyle/transfer-learning.wav" \
+    -F "action=start"
+
+    data = {'preset': preset, 'action': 'start', }
+    input_files = {}
+        input_files['input_file'] = open(f, 'rb')
+        requests.post(API_URL, data=data, files=input_files,
+                              auth=HTTPBasicAuth(str(username), str(password))) > auphonic.resp.json
+
+curl -X GET -u "dataskeptic:9JPCeDS5pjoc" \
+    https://auphonic.com/api/production/TyyvpvBVtqsDR9MfU6fXuh.json > auphonic.status.json
+
+curl -X GET -u "dataskeptic:9JPCeDS5pjoc" \
+    https://auphonic.com/api/download/audio-result/TyyvpvBVtqsDR9MfU6fXuh/transfer-learning.mp3 > transfer-learning.mp3
+
+aws s3 cp transfer-learning.mp3 s3://dataskeptic.com/_audio/2019/transfer-learning/transfer-learning.mp3
+
+rm transfer-learning.mp3
+
+zip -r logicpro.zip ~/Google\ Drive/__corp/2019/data-skeptic/nlp/episodes/transfer-learning/
+
+aws s3 cp logicpro.zip s3://dataskeptic.com/_audio/2019/transfer-learning/logicpro.zip
+
+rm logicpro.zip
+
+rm -R ~/Google\ Drive/__corp/2019/data-skeptic/nlp/episodes/transfer-learning/
+
+aws s3 sync ~/Dropbox/Apps/zencastr/sebastian-ruder/ s3://dataskeptic.com/_audio/2019/transfer-learning/recordings/
+
+rm -R ~/Dropbox/Apps/zencastr/sebastian-ruder/
+```
+
+
 ## Install
 
 ```
