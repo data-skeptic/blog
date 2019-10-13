@@ -1,3 +1,4 @@
-## Applied Data Science in Industry
+## Applied Data Science in Industry 
 
-Kyle sits down with [Jen Stirrup](https://jenstirrup.com/) to inquire about her experiences helping companies deploy data science solutions in a variety of different settings.
+ Kyle sits down with <a href="https://jenstirrup.com/">Jen Stirrup</a> to inquire about her experiences helping companies deploy data science solutions in a variety of different settings.
+
