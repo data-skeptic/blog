@@ -50,9 +50,10 @@ def render_one(database, s3, bucket_name, repo, branch, filepath, author):
         s3key = updated['s3key']
         content = updated['content']
         record = generate_metadata(s3key, content, author)
-        database[record['url']] = record
-        db_s3_key = "posts.db.json"
-        dao.update_database(s3, bucket_name, db_s3_key, database)
+        if database is not None:
+            database[record['url']] = record
+            db_s3_key = "posts.db.json"
+            dao.update_database(s3, bucket_name, db_s3_key, database)
     return updated
 
 
