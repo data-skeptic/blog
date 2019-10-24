@@ -1,18 +1,3 @@
-import boto3
-import requests
-from chalice import Chalice, Rate
-import json
-import os
-from urllib.parse import unquote
-
-from chalicelib import blog, dao, podcast, renderer
-
-app = Chalice(app_name="blog")
-
-access = os.getenv('ACCESS_KEY')
-secret = os.getenv('SECRET_KEY')
-s3 = boto3.resource('s3', aws_access_key_id=access, aws_secret_access_key=secret)
-
 
 @app.route("/blog/posts", methods=['GET'])
 def blog_posts():
@@ -54,7 +39,7 @@ def update_podcast():
     url = 'http://dataskeptic.libsyn.com/rss'
     bucket_name = 'dataskeptic.com'
     db_s3_key = 'posts.db.csv'
-    database = dao.get_database(s3, bucket_name, db_s3_key)    
+    database = dao.get_database(s3, bucket_name, db_s3_key)
     print('fetching {url}'.format(url=url))
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
 
@@ -66,22 +51,5 @@ def scheduled(event):
     print(event)
     bucket_name = 'dataskeptic.com'
     db_s3_key = 'posts.db.csv'
-    database = dao.get_database(s3, bucket_name, db_s3_key)    
+    database = dao.get_database(s3, bucket_name, db_s3_key)
     podcast.update_podcast_rss(database, s3, bucket_name, db_s3_key, url)
-
-
-"""
-@app.on_s3_event(bucket='dataskeptic.com', events=['s3:ObjectCreated:*'])
-def handle_image_upload(event):
-    print(event)
-    raise Exception("Not implemented yet!")
-
-
-TODO: remember how to use SQS in Chalice
-@app.on_sqs_message(queue='myqueue')
-def handler(event):
-    app.log.info("Event: %s", event.to_dict())
-    for record in event:
-        app.log.info("Message body: %s", record.body)
-"""
-
