@@ -7,6 +7,7 @@ Bilingual evaluation understudy (or BLEU) is a metric for evaluating the quality
 * [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/)
 * [Chris on Twitter](https://twitter.com/ccb)
 * [Moses](http://www.statmt.org/moses/)
-* [BLEU: a Method for Automatic Evaluation of Machine Translation](http://aclweb.org/anthology/P/P02/P02-1040.pdf) 
+* [BLEU: a Method for Automatic Evaluation of Machine Translation](http://aclweb.org/anthology/P/P02/P02-1040.pdf)
 * [Re-evaluating the Role of BLEU in Machine Translation Research](http://www.cs.jhu.edu/~ccb/publications/re-evaluating-the-role-of-bleu-in-mt-research.pdf)
 * [ACL 2019, Fourth conference on machine translation (WMT19)](http://www.statmt.org/wmt19/)
+

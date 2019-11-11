@@ -9,4 +9,3 @@ Finishing out the show is an interview with Lucy Park about her work on the KoN
 If you want to share your NLP project, please join our Slack channel.  We're eager to see what listeners are working on!
 
 [http://konlpy.org/en/latest/](http://konlpy.org/en/latest/)
-

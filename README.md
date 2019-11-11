@@ -1,16 +1,12 @@
 # Blog
 
-```
-python3 feaas.py post_episode
-```
-
 - [ ] some object that answers webhook and writes to s3 as .github.webhook
 - [ ] spider responds to .github.webhook, generates crawl requests
 - [ ] github2html
     - [ ] render (add/update)
     - [ ] handles images
     - [ ] delete ...?
-- [ ] spider decides to push to S3
+
 
 
 

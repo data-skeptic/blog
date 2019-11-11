@@ -5,4 +5,3 @@ While at NeurIPS 2018, Kyle chatted with Liang Huang about his work with Baidu r
 ### Related Links
 
 [Slides from Liang Huang's NeurIPS presentation](https://drive.google.com/file/d/16RcDSWto5Dk17EfXyWwfWEENrZ51DZER/view?usp=sharing)
-

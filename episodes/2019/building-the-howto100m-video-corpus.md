@@ -1,4 +1,4 @@
-## Building the howto100m Video Corpus 
+## Building the howto100m Video Corpus
 
  Video annotation is an expensive and time-consuming process. As a consequence, the available video datasets are useful but small. The availability of machine transcribed explainer videos offers a unique opportunity to rapidly develop a useful, if dirty, corpus of videos that are "self annotating", as hosts explain the actions they are taking on the screen.
 
@@ -11,4 +11,3 @@
  <a href="https://github.com/antoine77340">Antoine on Github</a>
 
  <a href="https://www.di.ens.fr/~miech/">Antoine's homepage</a>
-

@@ -17,4 +17,3 @@ In addition to translation, seq2seq models have been used in a number of other N
 
 * [Attend to You: Personalized Image Captioning
 with Context Sequence Memory Networks](https://arxiv.org/pdf/1704.06485.pdf)
-
