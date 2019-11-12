@@ -46,6 +46,7 @@ def render_one(database, s3, bucket_name, repo, branch, filepath, author):
     if filepath[i:i+5] == '/src-':
         return False
     print(f">>>> Rendering {filepath}")
+    updated = render(s3, bucket_name, repo, branch, filepath)
     if updated['is_new']:
         s3key = updated['s3key']
         content = updated['content']
