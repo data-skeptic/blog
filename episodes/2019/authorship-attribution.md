@@ -10,4 +10,3 @@ In a recent paper, [Leveraging Discourse Information Effectively for Authorship 
 * [Project Gutenberg](https://www.gutenberg.org/)
 * [Rhetorical Structure Theory](http://www.sfu.ca/rst/01intro/intro.html)
 * [Authorship attribution of the Federalist Papers](https://blog.wolfram.com/2018/10/11/revisiting-the-disputed-federalist-papers-historical-forensics-with-the-chaos-game-representation-and-ai/)
-

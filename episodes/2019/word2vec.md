@@ -9,3 +9,4 @@ The key algorithmic ideas involved in word2vec is the continuous bag of words mo
 
 * [Original paper](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf).
 * [Word2Vec visualizer](https://github.com/dominiek/word2vec-explorer)
+

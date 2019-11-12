@@ -6,3 +6,4 @@ Kyle interviews [Julia Silge](https://juliasilge.com/) about her path into data 
 
 * [https://stack-survey-2018.glitch.me/](https://stack-survey-2018.glitch.me/)
 * [https://stackoverflow.blog/2017/03/28/realistic-developer-fiction/](https://stackoverflow.blog/2017/03/28/realistic-developer-fiction/)
+

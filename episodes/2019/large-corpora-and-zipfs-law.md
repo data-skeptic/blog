@@ -9,3 +9,4 @@ Although not explicitly in about NLP, the noteworthy paper [The Unreasonable Eff
 In this episode Kyle, shares a few thoughts along these lines with Linh Da.
 
 The discussion winds up with a brief introduction to Zipf's law.  When applied to natural language, Zipf's law states that the frequency of any given word in a corpus (regardless of language) will be proportional to its rank in the frequency table.
+
