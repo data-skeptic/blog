@@ -10,6 +10,7 @@ from .formats import jupyter, markdown, svg
 def render(s3, bucket_name, repo, branch, filepath, prefix="blog/"):
     t = "https://raw.githubusercontent.com/{repo}{branch}/{filepath}"
     url = t.format(repo=repo, branch=branch, filepath=filepath)
+    url_lower = url.lower() # assuming all the github filenames are lower case
     r = requests.get(url)
     if r.status_code != 200:
         print(url)
@@ -45,7 +46,7 @@ def render_one(database, s3, bucket_name, repo, branch, filepath, author):
     if filepath[i:i+5] == '/src-':
         return False
     print(f">>>> Rendering {filepath}")
-    updated = render(s3, bucket_name, repo, branch, filepath)
+    updated = render(s3, bucket_name, repo, branch, filepath, prefix="")
     if updated['is_new']:
         s3key = updated['s3key']
         content = updated['content']
