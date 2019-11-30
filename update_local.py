@@ -7,15 +7,17 @@ fname = "rss.xml"
 bucket_name = "dataskeptic.com"
 db_s3_key = "posts.db.json"
 
-s3 = boto3.resource('s3')
+session = boto3.Session(profile_name='prod')
+
+s3 = session.resource('s3')
 
 #mode = 'reload_rss'
-mode = 'reload_all'
+# mode = 'reload_all'
 #mode = 'delete'
 mode = 'reload_one'
 #mode = 'update'
 
-filepath = "episodes/2019/facebook-negotiating-bots-Invented-a-language.md"
+filepath = "episodes/2019/what-bert-is-not.md"
 
 database = dao.get_database(s3, bucket_name, db_s3_key)
 
