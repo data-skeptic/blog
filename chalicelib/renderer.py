@@ -31,7 +31,7 @@ def render(s3, bucket_name, repo, branch, filepath, prefix="blog/"):
     is_new = renderedContent != None
     return { "is_new": is_new, "s3key": s3key, "content": renderedContent }
 
-
+# check descriptions in s3://dataskeptic.com/blog/episodes and s3://dataskeptic.com/episodes
 def render_one(database, s3, bucket_name, repo, branch, filepath, author):
     i = filepath.rfind('.')
     if i == -1:
