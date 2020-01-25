@@ -13,6 +13,3 @@ Thanks to our sponsor, the [Gartner Data & Analytics Summit](gartner.com/us/data
 Our new theme song is [#5](https://bigdandthekidstableofficial.bandcamp.com/track/5) by [Big D and the Kids Table](https://www.bigdandthekidstable.com/).
 
 Incidental music by [Tanuki Suit Riot](https://tanukisuitriot.bandcamp.com/album/the-edo-sessions).
-
-
-
