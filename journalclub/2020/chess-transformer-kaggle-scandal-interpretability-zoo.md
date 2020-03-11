@@ -10,4 +10,5 @@ Lan GPT-2 chess player
 
 George Kaggle
 
-Kyle lead a discussion on the paper [Towards A Rigorous Science of Interpretable Machine Learning](https://arxiv.org/abs/1702.08608) from Finale Doshi-Velez and Been Kim.  The paper is a great survey of the spectrum of interpretability techniques and some suggestions for how we describe the "taxonomy" of various methodologies.
+Kyle lead a discussion on the paper [Towards A Rigorous Science of Interpretable Machine Learning](https://arxiv.org/abs/1702.08608) from Finale Doshi-Velez and Been Kim.  The paper is a great survey of the spectrum of interpretability techniques and also contains suggestions for how we describe the "taxonomy" of various methodologies.
+
