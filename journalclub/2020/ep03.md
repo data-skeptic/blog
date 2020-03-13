@@ -1,6 +1,6 @@
 # Journal Club, episode 3
 
-George discusses [Google's Dataset Search](https://datasetsearch.research.google.com/).
+George discusses [Google's Dataset Search](https://datasetsearch.research.google.com/) leaving its closed beta program, and what potential applications it would have for businesses, scholars, and hobbyists.
 
 Alex brought an article about [Activation Atlases](https://www.theverge.com/2019/3/6/18251274/ai-artificial-intelligence-tool-machine-vision-algorithms) and we discussed the applicability to machine learning interpretability.
 
