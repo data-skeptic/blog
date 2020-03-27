@@ -1,4 +1,4 @@
-# Journal Club, episode 3
+## Google's New Data Engine, Activation Atlas, and Lime
 
 George discusses [Google's Dataset Search](https://datasetsearch.research.google.com/) leaving its closed beta program, and what potential applications it will have for businesses, scholars, and hobbyists.
 
