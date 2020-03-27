@@ -8,4 +8,3 @@ This is a preview of a new format for Data Skeptic.  Journal Club is a panel sho
 
 * [iTunes](https://podcasts.apple.com/us/podcast/journal-club/id1503082990)
 
-
