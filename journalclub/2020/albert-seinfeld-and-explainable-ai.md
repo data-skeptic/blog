@@ -1,4 +1,4 @@
-# Journal Club, episode 2
+# AlBert, Seinfeld, and Explainable AI
 
 Kyle discusses Google's recent open sourcing of [ALBERT](https://www.infoq.com/news/2020/01/google-albert-ai-nlp/), a variant of the famous BERT model for natural language processing.  ALBERT is more compact and uses fewer parameters.
 
