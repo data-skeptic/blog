@@ -1,6 +1,6 @@
 # GPT-2 writing comedy sitcom?
 
-Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2](https://github.com/openai/gpt-2) can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer](https://jalammar.github.io/illustrated-transformer/) learn from the best and start it off with the finest material.  [**Seinfeld**](https://www.imdb.com/title/tt0098904/) is my all time favorite comedy show on TV, that's what I'll go with!  
+Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2](https://github.com/openai/gpt-2) can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer](https://jalammar.github.io/illustrated-transformer/) learn from the best and start it off with the finest material.  [**Seinfeld**](https://www.imdb.com/title/tt0098904/) is my all time favorite comedy show on TV, that's what I'll go with!
 
 
 ## The training (fine-tuning) data
@@ -64,7 +64,7 @@ Another option, which I ended up doing, is to train with `--per_gpu_train_batch_
 
 
 ```
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_lm_finetuning.py \ 
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_lm_finetuning.py \
 --no_cuda \
 --output_dir=output \
 --model_type=gpt2 \
@@ -83,7 +83,7 @@ Training/evaluation parameters Namespace(adam_epsilon=1e-08, block_size=1024, ca
 This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz.  Running the fine-tuning script generates an `output` directory, with the specified checkpoints (in the default setting, every 50 steps) saved.  You will need this directory to load back the fine-tuned model and tokenizer configuration and weights.
 
 
-## Text generation 
+## Text generation
 
 Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that looks like a sitcom script and (dare we hope) is funny?  Let's find out:
 ```
@@ -93,7 +93,7 @@ Notice one of the parameter is the directory storing the fine-tuned model (`outp
 ```
 Model prompt >>> Elaine: Jerry! George! You guys, listen!
 
-Elaine: Jerry! George! You guys, listen! I'm gonna be here for a while. 
+Elaine: Jerry! George! You guys, listen! I'm gonna be here for a while.
 JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine)!
 ```
 Let's try to increase the length of generated text, as well as increase the repetition penalty (this changes the model behavior from always picking the predicted output with the highest likelihood to choosing somewhat randomly from the top N).  This generation unfortunately also needs to be run on CPU (with `--no_cuda`) since GPU quickly ran out of the 2GB memory.
@@ -104,7 +104,7 @@ It came up with something like this with the same prompt:
 ```
 Model prompt >>> Elaine: Jerry! George! You guys listen!
 
-Elaine: Jerry! George! You guys listen! 
+Elaine: Jerry! George! You guys listen!
 JERRY (to Elaine): Hey, I'm sorry. It's a little late for me to go out with you today but it was nice meeting ya again and we're gonna have some fun tonight...I'll see y'all later on in the day.." "Oh yeah? What are they doing here?" Kramer enters from his apartment wearing an orange jacket that he has been carrying since last night - this is what looks like something made of rubber gloves or plastic bags. He walks into another room where there isn't much else going around except one thing at least :) The door opens behind him, revealing himself as Mr Puddy Ross Jr., who sits down next Toppleman & Co.'s office building overlooking Broadway Street between Eighth Avenue Sandler Boulevard E-6A/B&C Blvd.(Jerry can hear them talking.) They've got their own offices right across street; so if!
 ```
 Hey, more interesting!
@@ -118,7 +118,7 @@ For example, it did not have much to say here:
 ```
 Model prompt >>> Kramer walks into the bar and headed towards the pool table
 
-Kramer walks into the bar and headed towards the pool table. 
+Kramer walks into the bar and headed towards the pool table.
 "Hey, Kramer!
 ```
 Notice the generated text stopped way before reaching the maximum length set (500). And here:
@@ -139,7 +139,7 @@ Here I used a super short and general prompt, and the model got quite talkative!
 ```
 Model prompt >>> Jerry: George!
 
-Jerry: George! 
+Jerry: George!
 GEORGE (to the crowd): Hey, hey. I'm gonna go get some coffee and a little something to eat tonight? You know what's better than that?! It'll be great!! Oh yeah...I got this one for you today..(he leaves)..and it was so good!!! So much fun watching your favorite show on TV....you're not even kidding me.....soooooo cool......it really is an amazing experience!!!!!!!!! Jerry : What are ya doing here?? Where do we start??? We gotta have dinner with Elaine right now.......she has no idea how she can make such incredible food out of nothing but her own imagination.........but then again maybe they don't want us there anymore because he doesn' think about them like Kramer does when his parents die.........................(George enters.)........Oh my God........that guy who made those pancakes in front Of The World That Wasn 'em all over him....He just couldn-t stop laughing at himself as if someone had said "Hey look man" or whatever else people say around these parts." He laughs back tearsful laughter from everyone except myself. And after seeing everything happen,the whole thing went down very quickly...then suddenly everybody started talking loudly --they were yelling loud enough--They yelled louder too -And by time somebody came up behind their backs screaming "...You wanna see more?" They screamed harder still."So why did anyone come forward? Because nobody wanted anything done against anybody other Than Himself! Why didn’s anyone tell Mr Seinfeld “Mr Larry David"? Well guess where would've been our next move anyway since Mrs Ollie left home last night................Well wait till tomorrow morning before going anywhere......We will find another place soon..........<|endoftext|>Episode 85 – A Very Merry Christmas
 
 A few weeks ago while working through work assignments during lunch break,... Free View In iTunes #1 Episode 83 This week Steve joins Andy & Julia along side host John Krasinski (@Kraigsberg). Today Tony talks w/ Jimmy Fallon regarding being fired due *not* having sex; getting married early into life without consenting adults involved); making friends outside marriage via dating sites etc.; meeting new women using fake names instead thereof ; trying different methods including taking off clothes whilst walking alone together under heavy traffic lights which led many men away ); finding love within hours upon arrival inside prison cell only once per day until finally returning safely afterwards ) How long should each episode take!
@@ -148,8 +148,4 @@ It even knows to insert some scene description, such as  "(George enters.)", epi
 
 ## Wrap up
 I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, if you have any comments or suggestions for things I can try, please leave a comment or get [in touch](https://github.com/LanGuo/seinfeldNLP/) with me!
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4NTA1Nzg3LDk5MDIwOTI5MywxMjg1Nj
-M2NDE2LC03OTc5NTcwNTQsLTU4MTM5NjQ0NSwtMzc4MjE1MTEw
-LDE2OTgyNjQ3MzEsMjA2NTQ1NDUwNl19
--->
+
