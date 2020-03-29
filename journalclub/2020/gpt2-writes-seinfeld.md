@@ -5,7 +5,7 @@ Hi! This is a first experiment to see if a state-of-the-art language model such 
 
 ## The training (fine-tuning) data
 
-I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with `<|endoftext|>` added to the end of each episode and stripped out excess `\t` and `\n` characters. Pretty minimal cleaning. This generated ~4.5MB of text.
+I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with `<|endoftext|>` added to the end of each episode and stripped out excess `\\t` and `\\n` characters. Pretty minimal cleaning. This generated ~4.5MB of text.
 
 **Data hosted [here](https://raw.githubusercontent.com/LanGuo/seinfeldNLP/master/all_scripts.txt).**
 
