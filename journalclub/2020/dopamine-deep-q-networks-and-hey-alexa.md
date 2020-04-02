@@ -4,4 +4,4 @@ Lan presents a blog post from Google Deepmind about [Dopamine and temporal diffe
 
 Kyle: Hey Alexa! Sorry I fooled you ...
 
-George presents his first attempts at designing an [Auto-Trading Agent with Deep Q Networks](link).
+George talks about his first attempts at designing an [Auto-Trading Agent with Deep Q Networks](https://dataskeptic.com/blog/journalclub/2020/trading-agents-dqn) and how he was outsmarted by a group of 20 neurons.
