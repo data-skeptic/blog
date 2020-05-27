@@ -1,5 +1,5 @@
 # Journal Club, Episode 12
-Kyle, [kids screen time](https://www.sciencedaily.com/releases/2020/04/200413103532.htm)  
+Kyle, [Time on screens has little impact on kids' social skills](https://www.sciencedaily.com/releases/2020/04/200413103532.htm)  
 
 Lan, [DeeplyTough](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00554)  
 
