@@ -1,4 +1,4 @@
-# Journal Club, episode 10
+# Journal Club, episode 11
 
 George talks about [OpenAI's Microscope](https://openai.com/blog/microscope/), a collection of visualisations of the neurons and layers in 6 famous vision models. This library hopes to make analysis of these models a community effort.
 
