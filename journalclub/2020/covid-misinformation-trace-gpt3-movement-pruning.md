@@ -1,4 +1,4 @@
-# Journal Club Episode 13
+# Journal Club, Episode 13
 
 Lan, [Using AI to detect COVID-19 misinformation and exploitative content](https://ai.facebook.com/blog/using-ai-to-detect-covid-19-misinformation-and-exploitative-content/)
 
