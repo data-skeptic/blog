@@ -6,3 +6,4 @@ Lan talks about [Exploring chemical space with AI](https://cen.acs.org/physical-
 
 Kyle leads a discussion about the paper [Extending Adversarial Attacks to Produce Adversarial Class Probability Distributions
 ](https://arxiv.org/abs/2004.06383) which shows another control that an adversarial attacker can put in place to better fool machine learning models.
+
