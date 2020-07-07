@@ -1,6 +1,6 @@
 # Journal Club, Episode 12
 
-Lan, [Animal AI Olympics](https://gab41.lab41.org/animal-ai-olympics-337df7ae16be)
+Lan talks about [Animal AI Olympics](https://gab41.lab41.org/animal-ai-olympics-337df7ae16be), a reinforcement learning environment focused on training agents to perform tasks "inspired by animal cognition".
 
 Kyle, [Whatsapp contact tracing](https://www.forbes.com/sites/zakdoffman/2020/05/05/all-whatsapp-users-must-now-install-this-new-app-heres-why/#46f44ce44221)
 
