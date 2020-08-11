@@ -14,14 +14,3 @@ Links to Check Out:
 <a target="_blank" href="https://www.amazon.com/Golden-Ticket-NP-Search-Impossible/dp/0691156492/ref=sr_1_2?ie=UTF8&amp;qid=1519425553&amp;sr=8-2&amp;keywords=the+golden+ticket&_encoding=UTF8&tag=dataskeptic-20&linkCode=ur2&linkId=21c6ec35a8daa4132d68f4a52cb10975&camp=1789&creative=9325">The Golden Ticket by Lance Fortnow</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=dataskeptic-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> – Lance Fortnow's book about the P-NP problem.
 
 [Computational Complexity](http://blog.computationalcomplexity.org/) – Lance’s long-running blog, and a great place to see what else is going on in theoretical computation.
-
-<div class="row">
-        <div class="col-xs-12 col-sm-3">
-                <img alt="Lance Fortnow" src="src-solving-the-p-np-problem/lance-fortnow.jpg" />
-                <br/>
-                <p><i>Lance Fortnow</i></p>
-        </div>
-        <div class="col-xs-12 col-sm-9">
-		Lance Fortnow received his Ph.D. in Applied Mathematics from MIT. He currently chairs the School of Computer Science of the College of Computing at the Georgia Institute of Technology and holds an adjunct professorship at the Toyota Technological Institute at Chicago. Previously, Fortnow was a professor at Northwestern University and the University of Chicago, a senior research scientist at the NEC Research Institute and a Fulbright Scholar in the Netherlands. His research focuses on computational complexity and its applications to economic theory. Fortnow authored the popular science book, *The Golden Ticket: P, NP and the Search for the Impossible*.
-        </div>
-</div>
