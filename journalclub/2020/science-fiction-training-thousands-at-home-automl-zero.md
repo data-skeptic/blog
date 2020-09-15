@@ -1,0 +1,3 @@
+# Science Fiction, Training Thousands at Home, and AutoML-Zero
+
+This week we are back with our regular panelists! Kyle brings us a short article exploring science fiction impacting AI titled "[Survey Finds Science Fiction One of Many Factors Impacting Views of AI Technology](https://techxplore.com/news/2020-08-survey-science-fiction-factors-impacting.html)." George brings us an article about using thousands of computers from universities, companies and volunteers to train one huge transformer, titled "[Train Vast Neural Networks Together](https://learning-at-home.github.io/)." Last but not least Lan brings us the paper this week! She discusses the paper "[AutoML-Zero: Evolving Machine Learning Algorithms From Scratch](https://arxiv.org/abs/2003.03384)."
