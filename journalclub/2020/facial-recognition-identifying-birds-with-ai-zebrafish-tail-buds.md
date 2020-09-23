@@ -1,7 +1,3 @@
-# Journal Club, Episode 21
+# Facial Recognition, Identifying Birds with AI, and Zebrafish Tail Buds
 
-George, [AI model developed to identify individual birds without tagging](https://www.theguardian.com/world/2020/jul/27/ai-model-developed-to-identify-individual-birds-without-tagging)
-
-Kyle, [New York legislature votes to halt facial recognition tech in schools for two years](https://techcrunch.com/2020/07/23/new-york-facial-recognition-moratorium/)
-
-Lan, [A deep learning approach for staging embryonic tissue isolates with small data](https://www.biorxiv.org/content/10.1101/2020.07.15.204735v1)
+Back again with our regular panelists! This week George brings us an interesting article about how an "[AI Developed to Identify Individual Birds Without Tagging](https://www.theguardian.com/world/2020/jul/27/ai-model-developed-to-identify-individual-birds-without-tagging)," Kyle discusses the news item "[New York legislature votes to halt facial recognition tech in schools for two years](https://techcrunch.com/2020/07/23/new-york-facial-recognition-moratorium/)." Last but not least, Lan brings the paper this week! She discusses the paper "[A deep learning approach for staging embryonic tissue isolates with small data](https://www.biorxiv.org/content/10.1101/2020.07.15.204735v1)."
