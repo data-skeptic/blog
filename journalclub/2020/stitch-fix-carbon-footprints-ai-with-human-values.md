@@ -1,7 +1,3 @@
-# Journal Club, Episode 23
+# Stitch Fix, Carbon Footprints, and AI with Human Values
 
-Lan, [Multi-Armed Bandits and the Stitch Fix Experimentation Platform](https://multithreaded.stitchfix.com/blog/2020/08/05/bandits/)
-
-Kyle, [Shrinking deep learning's carbon footprint](https://techxplore.com/news/2020-08-deep-carbon-footprint.html)
-
-George, [Aligning AI With Shared Human Values](https://arxiv.org/abs/2008.02275)
+Back with our regular panelists! This week Lan brings us an article about the clothing subscription service Stitch Fix called "[Multi-Armed Bandits and the Stitch Fix Experimentation Platform | Stitch Fix Technology – Multithreaded](https://multithreaded.stitchfix.com/blog/2020/08/05/bandits/)." Kyle discusses a news item titled "[Shrinking Deep Learning's Carbon Footprint](https://techxplore.com/news/2020-08-deep-carbon-footprint.html)." Last but not least George brings the paper this week titled "[Aligning AI With Shared Human Values](https://arxiv.org/abs/2008.02275)."
