@@ -1,0 +1,1 @@
+[Heidi Howard](https://hh360.user.srcf.net/blog/) joins us to discussed distributed consensus, in particular, Paxos.
