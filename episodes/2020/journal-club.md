@@ -17,4 +17,3 @@ Kyle shared some thoughts about the paper [Beyond R_0: the importance of contact
 * [iTunes](https://podcasts.apple.com/us/podcast/journal-club/id1503082990)
 
 * [Google Play](https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&apn=com.google.android.music&link=https://play.google.com/music/m/Igkfx65qbsvytowwk2xlkogkemm?t%3DJournal_Club%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16)
-
