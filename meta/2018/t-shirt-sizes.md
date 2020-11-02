@@ -69,4 +69,3 @@ What is probably more important to everyone is SIZING!  Below are our specificat
     <td>28</td>
   </tr>
 </table>
-
