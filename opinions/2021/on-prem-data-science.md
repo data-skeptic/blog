@@ -1,6 +1,6 @@
 ## On-prem Data Science
 
-I've helped several companies transition their data science efforts from on-prem solutions to the cloud.  Many years ago, this sometimes involved convincing executives that it was the right choice.  Today's executives know the cloud is the preferred solution and instead ask _how_ to make the transition.  Yet, there are still cases in which it's not clear what the right choice is.
+I've helped several companies transition their data science efforts from on-prem solutions to the cloud.  Many years ago, this sometimes involved convincing executives that it was the right choice.  Today's executives know the cloud is typically the best solution and instead ask _how_ to make the transition.  Yet, there are still cases in which it's not clear what the right choice is.
 
 When making a decision like this, there are four key areas to consider:
 
@@ -12,7 +12,7 @@ When making a decision like this, there are four key areas to consider:
 
 ### Finance
 
-Almost ever startup has to go through the growing pains of getting a series of sensationally high AWS bills.  This can sometimes lead inexperienced founders to fear the cloud, rather than optimize their usage of it.  When you consider the total cost of ownership, the cloud is almost always the fiscally responsible choice.  Thinking of the purchase of hardware as a one time cost is an easy mistake to make.  Maintenance costs are typically underestimated as is the time lost when auxiliary engineers outside your IT Ops group are pulled in to help solve especially puzzling problems in setup and configuration particular to your instance.
+Almost ever startup has to go through the growing pains of getting a series of sensationally high bills from their Cloud Provider (AWS, GCP, Azure, etc).  This can sometimes lead inexperienced founders to fear the cloud, rather than optimize their usage of it.  When you consider the total cost of ownership, the cloud is almost always the fiscally responsible choice.  Thinking of the purchase of hardware as a one time cost is an easy mistake to make.  Maintenance costs are typically underestimated as is the time lost when auxiliary engineers outside your IT Ops group are pulled in to help solve especially puzzling problems in setup and configuration particular to your instance.
 
 It's also easy to under-estimate how cloud savings can be achieved as the organization grows.  Cloud accounting is actually fairly intricate.  Most software engineers are not familiar with the intricacies of cost savings and reserved instances, nor are they often interested in these features.  Cost optimization for cloud infrastructure is actually a lucrative consulting practice for many professionals who specialize in this area.  Not considering how to minimize the bill is another way in which costs can get skewed.
 
