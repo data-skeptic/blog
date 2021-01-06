@@ -14,6 +14,8 @@ When making a decision like this, there are four key areas to consider:
 
 Almost ever startup has to go through the growing pains of getting a series of sensationally high bills from their Cloud Provider (AWS, GCP, Azure, etc).  This can sometimes lead inexperienced founders to fear the cloud, rather than optimize their usage of it.  When you consider the total cost of ownership, the cloud is almost always the fiscally responsible choice.  Thinking of the purchase of hardware as a one time cost is an easy mistake to make.  Maintenance costs are typically underestimated as is the time lost when auxiliary engineers outside your IT Ops group are pulled in to help solve especially puzzling problems in setup and configuration particular to your instance.
 
+<img style="float: right; margin: 0px 0px 15px 15px;" src="https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg" width="200" />
+
 It's also easy to under-estimate how cloud savings can be achieved as the organization grows.  Cloud accounting is actually fairly intricate.  Most software engineers are not familiar with the intricacies of cost savings and reserved instances, nor are they often interested in these features.  Cost optimization for cloud infrastructure is actually a lucrative consulting practice for many professionals who specialize in this area.  Not considering how to minimize the bill is another way in which costs can get skewed.
 
 The somewhat rare exception in which on-prem hardware can make sense for your data science needs is when you require GPUs for training or inference.  These machines are especially costly in the cloud and I have been in the room when it was rigorously determined that a cost savings could be achieved with a small GPU focused data center or rack is set up.  Even still, one needs to carefully consider the long term use.  Is your team really going to be running all those GPUs at 100% and taking advantage of the hardware you bought?  Or will they do that for a few months, solve the problem, and let them mostly sit idle?
@@ -33,6 +35,8 @@ The most common reason I hear about companies starting or expanding on-prem solu
 I occasionally meet professionals who hold the opinion that their deployments are more secure than what a cloud provider can offer.  This is possible, though not likely.  The cloud providers have entire teams dedicated to security.  They fight attacks and patch vulnerabilities across a wide portfolio of customers.  Often they have direct channels with key vendors or software providers.  They have the capital to entice the best talent money can buy and a motivation to do it.  They have teams whose entire mission is to keep software patched and up to date while delaying questionable patches that might not be urgent.  Are you seriously going to be Goliath?
 
 Despite my cynicism, there are some valid security use cases for when on-prem solutions are the right choice for data science projects.  In the simple case, when local law requires it and the cloud providers haven't yet developed compliant solutions!  But in all such cases, that's temporary.  Cloud providers will always need to prioritize compliance with laws to maintain a presence in the area.
+
+<img style="float: left; margin: 0px 0px 15px 15px;" src="https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg" width="200" />
 
 I've encountered executives who genuinely express a concern that the cloud provider (typically AWS) has the option to "peek" into the companies data.  In my opinion, this is "we didn't land on the moon" level of crazy.  It would be wrong to say that it's impossible Jeff Bezos took time out of his day to log into your private server and run some queries against your database, but I suspect he's got other things to be doing.  Yet could a rouge employee do something?  What about a government making secret requests which the cloud provider is forced to comply with and not notify you of?  There's plausibility in these arguments.  If your client data is _extra_ sensitive for some reason (e.g. medical health records), perhaps some component of your work should be managed on-prem.
 
@@ -70,6 +74,8 @@ You take security seriously and want to do everything you can to prevent, detect
 You can't fake your production data, but you can probably fake the rest of it.
 
 A common practice is to make a replica of production data for analytical or development purposes.  Rarely does this data need contain personally identifiable information.  So scrub it!  Add a small amount of gaussian noise to some values to increase anonymity.
+
+<img style="float: right; margin: 0px 0px 15px 15px;" src="https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg" width="200" />
 
 This can also be taken a step further where the entire environment is generated data - 100% fiction!  If this is appealing, you will need to invest a bit of effort into the software you use to generate this data.  If too simple, it will prevent your analytical or data science efforts from being successful.  But without a doubt, great progress can be made on fake data before ingesting production data in the final leg of your journey.
 
