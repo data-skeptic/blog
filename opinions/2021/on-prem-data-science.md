@@ -14,7 +14,7 @@ When making a decision like this, there are four key areas to consider:
 
 Almost ever startup has to go through the growing pains of getting a series of sensationally high bills from their Cloud Provider (AWS, GCP, Azure, etc).  This can sometimes lead inexperienced founders to fear the cloud, rather than optimize their usage of it.  When you consider the total cost of ownership, the cloud is almost always the fiscally responsible choice.  Thinking of the purchase of hardware as a one time cost is an easy mistake to make.  Maintenance costs are typically underestimated as is the time lost when auxiliary engineers outside your IT Ops group are pulled in to help solve especially puzzling problems in setup and configuration particular to your instance.
 
-![First image](https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg#right)
+<!-- ![First image](https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg#right) -->
 
 It's also easy to under-estimate how cloud savings can be achieved as the organization grows.  Cloud accounting is actually fairly intricate.  Most software engineers are not familiar with the intricacies of cost savings and reserved instances, nor are they often interested in these features.  Cost optimization for cloud infrastructure is actually a lucrative consulting practice for many professionals who specialize in this area.  Not considering how to minimize the bill is another way in which costs can get skewed.
 
@@ -36,7 +36,7 @@ I occasionally meet professionals who hold the opinion that their deployments ar
 
 Despite my cynicism, there are some valid security use cases for when on-prem solutions are the right choice for data science projects.  In the simple case, when local law requires it and the cloud providers haven't yet developed compliant solutions!  But in all such cases, that's temporary.  Cloud providers will always need to prioritize compliance with laws to maintain a presence in the area.
 
-![Second image](https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg#left)
+<!-- ![Second image](https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg#left) -->
 
 I've encountered executives who genuinely express a concern that the cloud provider (typically AWS) has the option to "peek" into the companies data.  In my opinion, this is "we didn't land on the moon" level of crazy.  It would be wrong to say that it's impossible Jeff Bezos took time out of his day to log into your private server and run some queries against your database, but I suspect he's got other things to be doing.  Yet could a rouge employee do something?  What about a government making secret requests which the cloud provider is forced to comply with and not notify you of?  There's plausibility in these arguments.  If your client data is _extra_ sensitive for some reason (e.g. medical health records), perhaps some component of your work should be managed on-prem.
 
@@ -75,7 +75,7 @@ You can't fake your production data, but you can probably fake the rest of it.
 
 A common practice is to make a replica of production data for analytical or development purposes.  Rarely does this data need contain personally identifiable information.  So scrub it!  Add a small amount of gaussian noise to some values to increase anonymity.
 
-![Third image](https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg#right)
+<!-- ![Third image](https://s3.amazonaws.com/dataskeptic.com/ds_sm.jpg#right) -->
 
 This can also be taken a step further where the entire environment is generated data - 100% fiction!  If this is appealing, you will need to invest a bit of effort into the software you use to generate this data.  If too simple, it will prevent your analytical or data science efforts from being successful.  But without a doubt, great progress can be made on fake data before ingesting production data in the final leg of your journey.
 
