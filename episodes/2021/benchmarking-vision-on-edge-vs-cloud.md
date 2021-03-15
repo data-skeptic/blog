@@ -6,4 +6,3 @@ Social Media
 
 * [@karthick_sh](https://twitter.com/karthick_sh)
 * [@somalichaterji](https://twitter.com/somalichaterji)
-
