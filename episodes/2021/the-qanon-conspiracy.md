@@ -1,6 +1,6 @@
 ## The QAnon Conspiracy
 
-QAnon is a conspiracy theory born in the underbelly of the internet.  While easy to disprove, these cryptic ideas captured the minds of many people and (in part) paved the way to the 2021 storming of the US Capital.
+QAnon is a conspiracy theory born in the underbelly of the internet.  While easy to disprove, these cryptic ideas captured the minds of many people and (in part) paved the way to the 2021 storming of the US Capital.  [Max Aliapoulios](https://twitter.com/maxzzze) joins us to discuss the paper [The Gospel According to Q: Understanding the QAnon Conspiracy from the Perspective of Canonical Information](https://arxiv.org/abs/2101.08750).
 
 This is a contemporary conspiracy which came into existence and grew in a very digital way.  This makes it possible for researchers to study this phenomenon in a way not accessible in previous conspiracy theories of similar popularity.
 
