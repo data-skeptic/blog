@@ -13,6 +13,6 @@ Co-Host of [Squaring the Strange Podcast](https://squaringthestrange.wordpress.c
 
 The image below is discussed in the show.  Thanks to [https://sarahdrawsacrowd.com/](https://sarahdrawsacrowd.com/)
 
-<img src="https://s3.amazonaws.com/dataskeptic.com/blog/episodes/2021/theyre-coming-for-our-jobs/auto-charicature.png" />
+<img src="https://s3.amazonaws.com/dataskeptic.com/blog/episodes/2021/theyre-coming-for-our-jobs/auto-charicature.png">
 
 
