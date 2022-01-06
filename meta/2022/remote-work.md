@@ -1,4 +1,4 @@
-Data Skeptic: Remote Work
+## Data Skeptic: Remote Work
 
 Remote work has historical roots but saw an order of magnitude increase as a result of the pandemic.  Two years later, in-person work has resumed for many, but a major and perhaps permanent shift has occurred in our economy.  Certainly, enough time has now passed that we have data that can tell the true story of the way in which work and employment have changed.
 
