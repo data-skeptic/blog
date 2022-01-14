@@ -1,3 +1,5 @@
 ## The Great Australian Prediction Project
 
-Richard Saunders, host of [The Skeptic Zone](https://www.skepticzone.tv/) Podcast, joins us today to talk about the [Great Australian Psychic Prediction Project](https://www.skeptics.com.au/2021/12/09/psychic-project-full-results-released/).
+Data scientists and psychics have at least one major thing in common.  Both professions attempt to predict the future.  In the case of a data scientist, this is done using algorithms, data, and often comes with some measure of quality such as a confidence interval or estimated accuracy.  In contrast, psychics rely on their intuition or an appeal to the supernatural as the source for their predictions.  Still, in the interest of empirical evidence, the quality of predictions made by psychics can be put to the test.
+
+[The Great Australian Psychic Prediction Project](https://www.skeptics.com.au/2021/12/09/psychic-project-full-results-released/) seeks to do exactly that.  It's the longest known project tracking annual predictions made by psychics, and the accuracy of those predictions in hindsight.  Richard Saunders, host of [The Skeptic Zone](https://www.skepticzone.tv/) Podcast, joins us to share the results of this decadal study.
