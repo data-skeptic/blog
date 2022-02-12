@@ -1,6 +1,4 @@
 # Tracking Elephant Clusters
-**
-
 In today’s episode, we interview Gregory Glatzer,  an undergraduate student at the Pennsylvania University, College of Information Science and Technology, studying applied Data Science. 
 
 He speaks about his work, especially in the intersection of wildlife conservation and data science. Gregory said more about his last research on understanding the settlement of wildlife animals, particularly elephants. He built a machine learning model that predicted the next settlement of elephants based on their historical track record. This would aid the protection of these animals from poachers. Gregory explained how they got the dataset for this study, and why it was critical to protect such data from the general public. 
@@ -14,5 +12,3 @@ Gregory extensively discussed why he used both algorithms in one project and how
 Going forward, Gregory touched on the anomaly he observed in the data due to environmental situations beyond his control. In the end however, the study results were impressive, even though he acknowledged that this was just the beginning. He virtually presented his result in the [Towiri Conference](https://tawiri.or.tz/) organized by the Tanzania Wildlife Institute.
 
 He rounded up by disclosing his passion for frontend development and how you can reach him at [g1776.github.io](http://g1776.github.io)
-
-**
