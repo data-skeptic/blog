@@ -129,12 +129,3 @@ To wind up, let's talk about two remaining topics I want to cover related to k-m
 So we've got the $k$ in k-means that we need to provide as input.  What's the best $k$?  There's not a provably best solution here.  It's more about trade offs.  As you use more clusters, those clusters obviously fit the data better, but at some point they undoubtable begin to over-fit the data.  To make a decision like this, most people will recommend the elbow method in which you create a plot with $k$ on the x axis and some metric on the y-axis, typically the explained variance, which measures how well the clusters fit the data.  With $k=N$, every data point lives in it's own cluster.  It's perfectly overfit.  There's no variance in the groups, so 100% of variance is explained.  The curve from $k=1$ to $k=N$ will be increasing and the hope is that this visualization will demonstrate an elbow in the curve - somewhere that is a sort of obvious point of inflection suggesting which $k$ can give you the best bang for your buck without being too large.  In practice, my personal experience is that this is a very subjective process.  Your mileage may vary.
 
 Silhouette scores, on the other hand, I really like.  Its a deterministic single value that's painless to compute and gives me a nice quantitative signal.  It's based on two variables.  First, the average distance all the points in a cluster have from their associated centroid. Naturally we want that to be small. Second, the average distance from each point to the other centroids.  That one should be large.  A little arithmetic and we've got ourselves a number between -1 and 1 that hints at the quality of the clusters we've calcuated.
-
-
-# Later
-
-building with k-means: image segmentation, speaker detection
-Gaussian Mixture Model
-Mini-batch k-means
-
-
