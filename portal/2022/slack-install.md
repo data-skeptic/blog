@@ -4,8 +4,16 @@
 
 - [ ] Go to [https://api.slack.com/apps](https://api.slack.com/apps) and click "Create New App"
 
-- [ ] When prompted to create an app "From scratch" or "From an app manifest", choose app manifest and use the provide the configuration below
+- [ ] When prompted to create an app "From scratch" or "From an app manifest", choose app manifest.
 
+- [ ] Select the workspace you want to install to.
+
+- [ ] In the **YAML** code below, replace **URL GOES HERE** with the URL provided.
+
+- [ ] Paste the **YAML** code found below in the space for the manifest.  **Be sure** to replace the `request_url` with the provided 
+
+ and use the provide the configuration below
+https://4nbaxdraua.execute-api.us-east-1.amazonaws.com/api/api/kyle@dataskeptic.com/slack/5c131033-34ed-4127-b319-45a03f7398aa
 ```
 display_information:
   name: Adam
@@ -33,7 +41,7 @@ oauth_config:
       - users:read
 settings:
   event_subscriptions:
-    request_url: **Put your custom CURL here**
+    request_url: **URL GOES HERE**
     bot_events:
       - app_home_opened
       - app_uninstalled
@@ -49,4 +57,7 @@ settings:
   token_rotation_enabled: false
 ```
 
-- [ ] 
+- [ ] Advance through the other steps
+
+- [ ] Click "Install to Workspace"
+
