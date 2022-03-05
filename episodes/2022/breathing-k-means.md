@@ -1,6 +1,4 @@
-**
-
-# Bernd Show note
+# Breathing K-means
 
 In this episode, we interview Bernd Fritzke, an experienced financial expert and academic researcher. Bernd has research experience in self-organizing networks from the 90s and recently started a research study in K-means algorithms. He specifically discusses his latest work with us - The breathing K-means algorithm.
 
@@ -18,4 +16,4 @@ Another important subject of discussion was the interpretation of results. While
 
 Wrapping up, Bernd discussed other similar similar works to the breathing K-means algorithm. That includes the [simple random swap algorithm](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-018-0122-y) and [genetic algorithm](https://scholar.google.com.au/citations?view_op=view_citation&hl=th&user=gOBacy8AAAAJ&citation_for_view=gOBacy8AAAAJ:u-x6o8ySG0sC) by Pasi Fränti from Finland.
 
-Finally, Berned discussed an important attribute of breathing K-means – the ability to freeze (or delete) centroids without plunging the algorithm’s performance.  Interestingly, Bernd created a PyPI package where you can install breathing K-means on your local machine. The PyPI package is called [bkmeans](https://pypi.org/project/bkmeans/) and can simply be installed with pip.**
+Finally, Berned discussed an important attribute of breathing K-means – the ability to freeze (or delete) centroids without plunging the algorithm’s performance.  Interestingly, Bernd created a PyPI package where you can install breathing K-means on your local machine. The PyPI package is called [bkmeans](https://pypi.org/project/bkmeans/) and can simply be installed with pip.
