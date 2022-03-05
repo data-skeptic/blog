@@ -1,6 +1,4 @@
-**
-
-# Show notes for Jason
+# Power K-Means
 
 Today, we speak with Jason Xu, an Assistant Professor of Statistical Science at Duke University who also has an affiliation with biostatistics and bioinformatics. In this episode, Jason talks about his power K-means clustering paper.   
 
@@ -18,4 +16,4 @@ Jason then dwelled on the specific kind of tweaking you can do to boost the algo
 
 The Assistant Professor then spoke about how other contexts can be merged with K-power means, particularly in feature selection. Here, the model does not only determine the clusters but also points out the most useful features in finding the clusters. H has other research works in spectral clustering, stochastic problem models with missing data, solving problems that were classically not solvable, and so on. 
 
-You can reach Jason on his [website](https://jasonxu90.github.io/) where you would find links to his works.**
+You can reach Jason on his [website](https://jasonxu90.github.io/) where you would find links to his works.
