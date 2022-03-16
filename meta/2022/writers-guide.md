@@ -8,7 +8,7 @@ We use github for publishing.  Your final draft should be submitted as a markdow
 
 ## Tone and Content
 
-As a podcast, Data Skeptic is known for cutting away the fluff and focusing dicussions on the aspects of research and data science that are impactful in practice.  Our episodes are relatively short compared to other shows, but backed with content from original, insightful sources.  Our content focuses on key insights for people interested in methodology, engineering, and analysis.
+As a podcast, Data Skeptic is known for cutting away the fluff and focusing dicussions on the aspects of research and data science that are impactful in practice.  Our episodes are relatively short compared to other shows, but packed with content from original, insightful sources.  Our content focuses on key insights for people interested in methodology, engineering, and analysis.
 
 We want to capture the same virtues in our blog posts by writing concise, original, interesting content that leaves the reader satisfied that they invested their time reading our posts.  Every article should have at least one useful takeaway or recommendation.
 
@@ -18,31 +18,52 @@ Our blog focuses on writing articles that fit one of a few templates.  For examp
 
 ### Career Profile
 
-Regardless of where someone is on their professional journey, the path ahead of them is rarely clear.  Hearing the stories of experienced professionals who have already achieved what readers seek to achieve.  Our career profiles contain the narrative of one individual's professional life from it's starting point to where they are today.
+Regardless of where someone is on their professional journey, the path ahead of them is rarely clear.  The stories of experienced professionals contain insights and wisdom for readers seek to achieve similar professional goals.  Our career profiles contain the narrative of one individual's professional life from it's starting point to where they are today.
 
 The Career Profile is **not** an opportunity to segway into an unrelated story about the subject's recent vacation, adorable puppy, or unrelated hobby.  If personal elements have an important overlap with their story (e.g. a hobby that became part of their career, an insight found on a trip) it may be a good inclusion.  Otherwise leave personal trivia out and focus on their professional accomplishments.
 
-Career Profiles are written by our blog contributors in collaboration with the individual the post will feature.  You should find a time to chat either via phone or virtual meeting to get aquainted and correspond via email as the article develops.
+Career Profiles are written by our blog contributors in collaboration with the individual the post will feature.  We call this person the "subject" of the profile.  You should make personal contact with your subject and introduce yourself.  Then, find a time to chat either via phone or virtual meeting to get aquainted and correspond via email as the article develops.
 
 Below is a list of recommended questions that you should consider asking your interviewee.
 
 * What is your educational background?
 * What was your original planned career path?  Does it differ from your actual career path?
 * What's the first major break that gets your career going?
+* What are some of the most helpful tools or technologies that you use?
 * What was the biggest struggle in your career?
 * With the benefit of hindsight, what do you wish you had learned or done sooner?
-* How has your profession changed since you first took an interest in it?
+* How has your profession changed since you started working?
 
 ### Company Profile
 
 A Company Profile should come in 3 parts:
 
 1) The company's products or services
+
 2) Their history or founding story
+
 3) Their current mission
 
 First introduce readers to a company by explaining what value the company provides its customers.  Describe the products or services that they offer.  How do their customers get a benefit?  Next, explore the history (for established companies) or find novel aspects of the founding of the company that contribute to the overall narrative you want to tell.  Lastly, establish what the company is working on currently and what they plan to achieve in the near future.
 
+Below is a list of recommended questions that you should consider asking your interviewee.
+
+* What product or services are offered?
+* How large is the team?
+* What types of professionals are part of the organization?
+* How is the organization structured (e.g. two offices, fully remote)?
+* What's the current mission of the organization?
+* In business, a "moat" is a competitive advantage you have.  Does your organization have a moat?  Are you creating on?
+* What are some of the technologies used?
+* How does the organization use data?
+* What does the team look for when hiring?
+* What roles are you looking to fill?
+* Where does the company hope to be in 3-5 years?
+
+
+## Editorial Process
+
+You'll work directly with our founder Kyle Polich when authoring articles.  Attention to detail is important, as is this guide.  Thus, please stop what you're doing right now and send Kyle a message on Slack or LinkedIn letting him know you actually took the time to read this writer's guide.  Your message shows you can follow directions and that's very appreciated.
 
 ## Writing Checklist
 
