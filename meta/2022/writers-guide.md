@@ -1,6 +1,6 @@
 # Data Skeptic Writer's Guide
 
-This document is a style guide for writers contributing to Data Skeptic.  Please review before contributing your first article for us.  Before submitting an article, it's worth reviewing to ensure your draft aligns well with the details shared below.  If you have any questions or feedback, please reach out to Kyle and share.
+This document is a style guide for writers contributing to Data Skeptic.  Please review before contributing your first article for us.  After each article you complete, it's worth reviewing this guide to ensure your draft aligns well with the details shared below.  If you have any questions or feedback, please reach out to Kyle and share.
 
 ## Publishing
 
