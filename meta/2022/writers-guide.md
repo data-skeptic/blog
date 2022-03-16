@@ -86,5 +86,3 @@ Articles should meet most of the following qualifications:
 **Good**
 
 > Machine learning is typically categorized as supervised or unsupervised.  The primary distinction is whether the training data includes labels (supervised) or labels are not available (unsupervised).
-
-
