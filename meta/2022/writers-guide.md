@@ -61,9 +61,48 @@ Below is a list of recommended questions that you should consider asking your in
 * Where does the company hope to be in 3-5 years?
 
 
+### Proof of Concept
+
+Many readers are hands on technical users that are interested in finding elegant, ergonomic technology that can be useful in their work, research, or projects.
+
+Our proof of concept posts should accomplish the following goals:
+
+* Introduce a user to a new tool, library, technology, etc. assuming limited prior knowledge
+* Include links to prerequisite reading if needed
+* Very early in your article, explain concisely what purpose the solution serves
+* Provide _working_ source code snippets or link to your code in github (preferably both)
+* Step the user through any tricky steps or "gotchas".
+* In 5-12 steps, take the user from an empty canvas to a working prototype
+* Comment on any limitations for the solution.  For example, how will it scale?
+* Speculate about situations in which this tool is the best choice.
+* Is there a cost?
+
+
+### Where are they now?
+
+Find a previous guest of Data Skeptic.  Independently research them online to see if their career has maintained momentum and relevance.  If so, a blog post featuring what has happened since the time of the interview can make a great feature for our "where are the now?" style of post.
+
+### Best of Data Skeptic
+
+After eight years and hundreds of episodes, few listeners have explored the entire Data Skeptic archives.  Some of episodes are timely, and therefore, not as relevant.  Yet, for many of our episodes, they still have modern relevance.
+
+Our "Best of Data Skeptic" series will be a short essay that recommends 6-10 episodes sharing a common theme or connection.  The essay should comment on lessons learned from listening to the episodes, common ideas that connect the episodes, and share at least one novel insight that is not included in the episode but enriches and extends the material.  For example, if the interview guest has gone on to publish further related work, a summary of it is strongly encouraged.
+
+1. Use or site's search functionality to look up common themes or ideas you feel experienced enough to write about.
+
+2. Try to identify a collection of 6-10 episodes that come from many different years but share a common theme or idea.
+
+3. Review other "Best of Data Skeptic" style posts to make sure yours is unique.
+
+4. Write an essay that summaries some key insight gained from listening to this collection of episodes.
+
+5. Find at least one novel fact or element that goes beyond the episodes and include it in your essay.
+
+
 ## Editorial Process
 
 You'll work directly with our founder Kyle Polich when authoring articles.  Attention to detail is important, as is this guide.  Thus, please stop what you're doing right now and send Kyle a message on Slack or LinkedIn letting him know you actually took the time to read this writer's guide.  Your message shows you can follow directions and that's very appreciated.
+
 
 ## Writing Checklist
 
@@ -79,10 +118,3 @@ Articles should meet most of the following qualifications:
 
 * **Eliminate fluff content** - Readers want fast insights.  Their time is valuable.  Don't waste it by padding your content with unnecessary filler text.  When you review your text, consider what can be eliminated or how each sentence could be compressed.
 
-**Bad**
-
-> In machine learning, supervised learning is a type of learning in which the algorithm is provided with data in which eaceh element has a label attached to it.  On the other hand, in contrast to supervised learning, there is also unsupervised learning.  In unsupervised learning, most researchers will agree, the problem is more difficult.  In this situation, no labels are provided.
-
-**Good**
-
-> Machine learning is typically categorized as supervised or unsupervised.  The primary distinction is whether the training data includes labels (supervised) or labels are not available (unsupervised).
