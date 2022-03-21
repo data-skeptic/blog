@@ -1,6 +1,4 @@
 # Quantum K-means
-**
-
 In this episode, we speak with Jonas Landman, a Postdoc candidate in Quantum Machine Learning at the University of Scotland, Edinburg. His Ph.D. and Postdoc thesis is centered around quantum algorithms for machine learning. Jonas speaks with us about quantum computing in machine learning. 
 
 He begins by elucidating on the general idea that quantum computing is better than classical computing in all use cases. The postdoc candidate then gave an overview of how quantum computing works. Additionally, Jonas talked about the use of quantum computing in solving machine learning problems, particularly k-means using different strategies.
@@ -17,4 +15,4 @@ Jonas also spoke about the shallow quantum problem and how it applied in their w
 
 Wrapping up, Jonas slightly touched on his [study](https://arxiv.org/abs/2007.00280) around spectral clustering in quantum computing and the findings from that study.
 
-You can follow his work on the [Archive](https://arxiv.org/search/quant-ph?searchtype=author&query=Landman%2C+J) or check some of his [Medium posts](https://medium.com/@jonasldmn).  **
+You can follow his work on the [Archive](https://arxiv.org/search/quant-ph?searchtype=author&query=Landman%2C+J) or check some of his [Medium posts](https://medium.com/@jonasldmn).
