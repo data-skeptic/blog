@@ -1,0 +1,14 @@
+# COVID-19 Impact on Bicycle Usage
+Today, we speak with Abdullah Kirkcu, a Lead Traffic Modeler. Abdullah did his Master's and Ph.D. programs in Transportation Engineering and has since been involved in research in the field. For the most part, transportation engineering involves working with transportation data to make predictions. In this episode, Abdullah discusses his work around bicycle usage in the US and how it has been affected by COVID-19. 
+
+As a way of introduction, Abdullah gave an overview of what transportation engineers do and explained why they are critical, especially in big cities. To build and optimize transportation models, however, data are an important ingredient. Abdullah explained how the evolution of smartphones has helped in capturing the necessary data for his analysis. Specifically, he used the [Colorado dataset](https://data.colorado.gov/Transportation/Bicycle-and-Pedestrian-Counts-in-Colorado/q2qp-xhnj/data?no_mobile=true) of bicycle and pedestrian count.
+
+He also gave an intuition of how he approached the bicycle dataset and his initial reservations about COVID-19 on bicycle usage for transportation.  The Traffic Modeler discussed his discoveries in the peak hours before and after COVID. Abdullah also talked about the multiple stations in the system and the measures he took to differentiate the stations. 
+
+Abdullah then discussed the bias in the data. Bias was primarily from insufficient data. Of course, the data of bicycle riders are not as abundant as vehicle transportation data and the few available are not willing to answer survey questions. Abdullah also talked about the observation between the features, the trends he observed before his analysis, and whether they agreed with his results. He also explained why he accounted for collinearity in the feature engineering process. 
+
+He then talked about how he modeled the problem. It appears that having two timestamps - before and after COVID - is not the best way to model the problem. Abdullah detailed the intuition behind the problem modeling process and why it was necessary to get a holistic understanding of COVID's effect on bicycle usage. 
+
+[Partial Least Square Regression (PLSR)](https://www.sciencedirect.com/topics/nursing-and-health-professions/partial-least-squares-regression) was the regression technique used for this problem. The Transportation Engineer explained why this was his preferred algorithm amidst other counterparts such as Random Forest or XGBoost. Needless to say, he talked about how PLSR worked.
+
+He left with takeaways from the study and the prospect for further studies. Abdullah has a [website](https://abdullahkurkcu.com/) where you can follow him. He writes on [Medium](https://abdullahkurkcu.medium.com/) and you can also see more of his studies on his [Google Scholar page](https://scholar.google.com/citations?user=CKTFnzYAAAAJ&hl=en).
