@@ -1,5 +1,5 @@
 # Learning Digital Fabrication Remotely
-Today, we are joined by Jennifer Jacobs and Nadya Peek. Jennifer is an Assistant Professor of Media Arts and Technology at the University of California while Nadya is an Assistant Professor in the Department of Human Centered Design, at the University of Washington. They both run research labs that focus on human creativity and technology. Jennifer and Nadia join us to talk about digital fabrication and how they teach the course remotely to students.
+Today, we are joined by Jennifer Jacobs and Nadya Peek. Jennifer is an Assistant Professor of Media Arts and Technology at the University of California while Nadya is an Assistant Professor in the Department of Human Centered Design, at the University of Washington. They both run research labs that focus on human creativity and technology. Jennifer and Nadya join us to talk about digital fabrication and how they teach the course remotely to students.
 
 Jennifer started off by explaining what digital fabrication is about. Technologies such as 3D printers, laser cutters, computer-controlled cutting machines, etc can all be classified as digital fabrication. Nadya, on the other hand, spoke broadly about the premise upon which digital fabrication was found and the key problem it solves. 
 
