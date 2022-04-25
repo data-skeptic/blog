@@ -9,6 +9,6 @@ Gregory went on to discuss the algorithms he used for this task. He explained th
 
 Gregory extensively discussed why he used both algorithms in one project and how they played out. He mentioned using other algorithms such as [Optics](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html) to evaluate how it would measure up against the first two.
 
-Going forward, Gregory touched on the anomaly he observed in the data due to environmental situations beyond his control. In the end however, the study results were impressive, even though he acknowledged that this was just the beginning. He virtually presented his result in the [Towiri Conference](https://tawiri.or.tz/) organized by the Tanzania Wildlife Institute.
+Going forward, Gregory touched on the anomaly he observed in the data due to environmental situations beyond his control. In the end however, the study results were impressive, even though he acknowledged that this was just the beginning. He virtually presented his results in the [Towiri Conference](https://tawiri.or.tz/) organized by the Tanzania Wildlife Institute.
 
 He rounded up by disclosing his passion for frontend development and how you can reach him at [g1776.github.io](http://g1776.github.io)
