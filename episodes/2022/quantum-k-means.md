@@ -15,4 +15,4 @@ Jonas also spoke about the shallow quantum problem and how it applied in their w
 
 Wrapping up, Jonas slightly touched on his [study](https://arxiv.org/abs/2007.00280) around spectral clustering in quantum computing and the findings from that study.
 
-You can follow his work on the [Archive](https://arxiv.org/search/quant-ph?searchtype=author&query=Landman%2C+J) or check some of his [Medium posts](https://medium.com/@jonasldmn).
+You can follow his work on the [arxiv](https://arxiv.org/search/quant-ph?searchtype=author&query=Landman%2C+J) or check some of his [Medium posts](https://medium.com/@jonasldmn).
