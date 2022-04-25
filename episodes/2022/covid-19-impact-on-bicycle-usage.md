@@ -11,4 +11,4 @@ He then talked about how he modeled the problem. It appears that having two time
 
 [Partial Least Square Regression (PLSR)](https://www.sciencedirect.com/topics/nursing-and-health-professions/partial-least-squares-regression) was the regression technique used for this problem. The Transportation Engineer explained why this was his preferred algorithm amidst other counterparts such as Random Forest or XGBoost. Needless to say, he talked about how PLSR worked.
 
-He left with takeaways from the study and the prospect for further studies. Abdullah has a [website](https://abdullahkurkcu.com/) where you can follow him. He writes on [Medium](https://abdullahkurkcu.medium.com/) and you can also see more of his studies on his [Google Scholar page](https://scholar.google.com/citations?user=CKTFnzYAAAAJ&hl=en).
+He left with takeaways from the study and the prospect for further studies. Abdullah writes about related topics on [Medium](https://abdullahkurkcu.medium.com/). You can also see more of his academic papers on his [Google Scholar page](https://scholar.google.com/citations?user=CKTFnzYAAAAJ&hl=en).
