@@ -14,6 +14,6 @@ Jason also spoke about the mathematical framework that makes power K-means a rel
 
 Jason then dwelled on the specific kind of tweaking you can do to boost the algorithm's performance. Jason later spoke about when the K-power means would feature in popular machine learning libraries. He is optimistic that with the steps being taken, it is only a matter of time.  
 
-The Assistant Professor then spoke about how other contexts can be merged with K-power means, particularly in feature selection. Here, the model does not only determine the clusters but also points out the most useful features in finding the clusters. H has other research works in spectral clustering, stochastic problem models with missing data, solving problems that were classically not solvable, and so on. 
+The Assistant Professor then spoke about how other contexts can be merged with K-power means, particularly in feature selection. Here, the model does not only determine the clusters but also points out the most useful features in finding the clusters. He has other research works in spectral clustering, stochastic problem models with missing data, solving problems that were classically not solvable, and so on. 
 
 You can reach Jason on his [website](https://jasonxu90.github.io/) where you would find links to his works.
