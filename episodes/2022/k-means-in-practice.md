@@ -1,4 +1,5 @@
-# K-Means in Practice
+## K-Means in Practice
+
 In today’s episode, Mujtaba Anwer joins us to discuss the real-life applications of k-means clustering. Mujtaba is a researcher, Data Scientist, a policy adviser to the government on digital and data entities. 
 
 Mujtaba started by discussing his first encounter with k-means in the workplace. It was a fraud detection where he had to classify fraudulent customers. Since the dataset was without labels, Mujtaba was forced to use an unsupervised learning approach. He talked about the hypothesis used when modeling the problem, and the challenges he faced when interpreting the results. 
