@@ -1,5 +1,5 @@
 # Fair Hierarchical Clustering
-In this episode, we interview Anshuman Chabra, a Ph.D. candidate from the University of California, Davis. Anshuman's educational background is in electronics but he gravitated towards machine learning through conferences. His current research focuses on building robust machine learning models from two standpoints; adversarial robustness and social robustness. 
+In this episode, we interview Anshuman Chhabra, a Ph.D. candidate from the University of California, Davis. Anshuman's educational background is in electronics but he gravitated towards machine learning through conferences. His current research focuses on building robust machine learning models from two standpoints; adversarial robustness and social robustness. 
 
   
 
