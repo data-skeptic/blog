@@ -5,7 +5,7 @@ Kasey is a lecturer in the Department of Physics at Princeton University. He sta
 
 Kasey analyzed the results from the students’ feedback and revealed which of the experiments was their favorite. More details of the study can be found in his paper: [How Well Do Remote Labs Work? A Case Study at Princeton University](https://arxiv.org/abs/2008.04499). Kasey closed by giving his thoughts on the future of remote learning and how it would evolve going forward.
 
-Moving on to the second part, Tahiya Chowdhury also shared the insights from her study titled: [The Other Side of Black Screen: Rethinking Interaction in Synchronous Remote Learning for Collaborative Programming](https://arxiv.org/abs/2111.06013). Tahiya is a doctoral researcher in Computer Engineering at Rutgers University, with research interest in Artificial Intelligence and Human-Computer Interaction.
+Moving on to the second part, Tahiya Chowdhury shared the insights from her study titled: [The Other Side of Black Screen: Rethinking Interaction in Synchronous Remote Learning for Collaborative Programming](https://arxiv.org/abs/2111.06013). Tahiya is a doctoral researcher in Computer Engineering at Rutgers University, with research interest in Artificial Intelligence and Human-Computer Interaction.
 
 She started by giving an intuition into how Machine Learning is important and the specific use cases in her research. This includes applications in healthcare, home automations, policy making, etc. 
 
