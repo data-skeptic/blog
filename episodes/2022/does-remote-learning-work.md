@@ -1,5 +1,6 @@
 # Does Remote Learning Work?
-In today's episode, Kasey Wagoner and Tahiya Chowdury join us to discuss their studies in remote learning. The interview was split into two sections - the first being with Kasey. 
+
+In today's episode, Kasey Wagoner and Tahiya Chowdhury join us to discuss their studies in remote learning. The interview was split into two sections - the first being with Kasey. 
 
 Kasey is a lecturer in the Department of Physics at Princeton University. He started teaching labs online in March 2020 due to the COVID-19 pandemic. Kasey discussed how he developed three kinds of remote lab sessions and evaluated which one worked best. He spoke about the limitations he encountered during this experiment and the culminating result. The survey series, called E-CLASS, was done before and after the lab sessions. It measured the extent to which the students thought like a professional physicist after the remote lab sessions. 
 
