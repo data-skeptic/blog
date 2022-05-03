@@ -1,0 +1,12 @@
+# Remote Learning in Applied Engineering
+Today, Mouhamed Abdulla joins us to speak about remote learning in applied engineering. Mouhamed is a professor of Electrical Engineering at Sheridan Institute of Technology.
+
+He began with an insight into how he taught engineering courses before and after the pandemic. Before the pandemic, he and his colleagues scarcely used online learning tools but the story changed after the pandemic. Mouhamed explained how he had to learn to use learning management tools for online classes and labs. 
+
+The professor spoke about the challenges he faced with the new style of teaching. He explained how it was difficult for international students to get the necessary equipment for the online lab sessions. Also, he talked about the challenge with purchasing more expensive equipment and how he had to restructure the labs from scratch to fit the new reality. He further discussed the key takeaways from the entire experience.
+
+Mouhamed then delved deeper into his paper, [Remote Teaching and Learning in Applied Engineering](https://arxiv.org/abs/2108.02714), where he indicated the three waves of COVID-19 in Toronto, Canada. He discussed how he and the students went through those periods of uncertainties in the classroom. In addition, he highlighted the bottlenecks in evaluating the effectiveness of the online classes as students were more prone to not contribute in an online lecture. Mouhamed explained the present state of things in the classroom after over two years since the pandemic. He also talked about the projections for a hybrid learning post-COVID. 
+
+Winding up, Mouhamed touched on how he and his colleagues have managed to deal with a major challenge with online learning - plagiarism. He explained how plagiarism checkers such as Turnitin were not enough to establish the integrity of a student’s assignment submission. Meanwhile, speaking of the positives of remote teaching, he revealed how the pandemic opened up the possibilities for an effective yet cheaper alternative to labs. 
+
+Finally, he spoke about a book he is currently working on for educators. The book discusses how different countries approached teaching during the pandemic and the future of education. You can follow up on Mouhamed’s work on his [Google’s Scholar page](https://scholar.google.ca/citations?user=N3w6vnkAAAAJ&hl=en).
