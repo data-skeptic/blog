@@ -1,0 +1,12 @@
+# School Reopening Analysis
+In today’s episode, we are joined by Carly Lupton-Smith, a doctoral researcher in Biostatistics at Johns Hopkins Bloomberg School of Public Health. Her research interest lies in causal inference with mental health applications. Carly joins us to discuss findings from her [study](https://arxiv.org/abs/2103.13296) on the consistency between household and county measures of schools reopening.
+
+She began with an overview of the data used for her analysis. She talked about the availability of the data, the methodology for data collection and the challenges the data had. In a bid to assess the impact of virtual school, Carly found a survey done by Delphi Group in partnership with Facebook, called the [COVID-19 Trends and Impact Survey](https://delphi.cmu.edu/covid19/ctis/). The researcher explained how the survey questions have evolved over time until they captured the effect of school experiences.
+
+Carly then discussed an important observation from the survey results. There had been some discrepancies between the schools' onsite learning policies and the reality in households. She explained some of the reasons for this and the factors affecting the discrepancy. Carly further discussed how policymakers can make informed decisions from the survey findings to open up onsite learning whilst reducing the risk of COVID-19 spread.
+
+She also highlighted other useful datasets for the research. Data such as the [Burbio dataset](https://info.burbio.com/school-tracker-update-latest/), the [U.S. School Closure and Distance Database](https://osf.io/tpwqf/), and the [MCH Strategic data](https://www.mchdata.com/). She discussed the peculiarity of each dataset and their use cases. 
+
+Carly went on to discuss how despite the discrepancy in the county level survey and household-level data, none are intrinsically wrong. She gave her thoughts on the validity of both data and the best situations for one over the other. Going further, she outlined potentials of the data for further analysis.
+
+Carly rounded off with her take on how to find a sweet spot between onsite learning and minimal exposure to COVID-19. She mentioned how a [research paper](https://www.science.org/doi/10.1126/science.abh2939) published by Justin Lessler and her team, showed that taking mitigative measures has a strong effect on COVID-19 spread in onsite learning. You can follow Carly on [LinkedIn](https://www.linkedin.com/in/carly-lupton-smith/) or [Twitter](https://twitter.com/cluptonsmith) to stay updated with her work.
