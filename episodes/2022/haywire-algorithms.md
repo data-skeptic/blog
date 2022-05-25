@@ -1,0 +1,10 @@
+# Haywire Algorithms
+We are joined by Ravi Krishna, an AI Scientist. Ravi was a researcher in the Department of Electrical Engineering and Computer Sciences at UC Berkeley. He joins us to discuss his recent work on the implementation of a [differentiable NAS framework for ads CTR prediction](https://arxiv.org/abs/2110.14812). 
+
+Ravi began with an explanation of what CTR (click-through rate) is about and why it is a vital AI problem today. While the highest bidder mechanism for ad selection seems profitable, Ravi pointed out why it is unsustainable and should not be solely encouraged. He also spoke on the features that fueled his analysis. The data he used was the [CriteoLabs Display Advertising Challenge](https://www.kaggle.com/c/criteo-display-ad-challenge).
+
+The CTR prediction problem has been for some time. Ravi explained why using the deep neural network approach stood out as an alternative to other approaches such as collaborative filtering. He cited the [Deep & Cross Network for Ad Click Predictions paper](https://arxiv.org/abs/1708.05123) that efficiently learned feature interaction for ads recommendation. He however identified the limitation to the network.
+
+Ravi then discussed the model evaluation metrics for the problem. He advanced to the NAS (neural architecture search) side of his research - explaining what NAS is, why it is important, how the framework was built and the commensurate result. His NAS framework could reduce the embedded table compression 15.1X whilst only increasing the loss from 0.4442 to 0.4454. This loss can be brought down with expertise. Still on the perks of his model, he discussed how his framework stacked up against other models trained on the same dataset.
+
+Ravi spoke on the future applications of his work in recommendation systems, mentioning [Facebook’s DLRM](https://ai.facebook.com/blog/dlrm-an-advanced-open-source-deep-learning-recommendation-model/). In addition, he outlined how third-part users can implement his framework for research purposes. Ravi is on [LinkedIn](https://www.linkedin.com/in/ravi-k-a10287122/).
