@@ -1,0 +1,12 @@
+# The Reliability of Mobile Data
+Nishant Kishore, a PhD graduate in Infectious Disease Epidemiology from Harvard University, joins us today. Nishant discusses his research work on identifying, studying and incorporating novel data, particularly mobile phone data, in tackling the spread of infectious diseases.
+
+Mobile phone data has become an alternative for gathering relevant information for public health. Nishant started by discussing the various ways mobile phones generate data. The conventional way is for phones to exchange data with cell towers during calls. But beyond that, installed applications also generate a massive amount of data which could also be useful in understanding public movement and planning public health policies. 
+
+Nishant emphasized the need to understand the data generation pipeline to determine whether a mobile phone dataset is a valid representation of human mobility. In cases where the apps have a vague data generation pipeline, Nishant discussed how aggregation can help in confirming the integrity of the data. He pointed out some observed discrepancies between data output from different locations and why this happened.
+
+Mobility data from mobile phones' GPS were usually laced with noise and thus, difficult to interpret. Nishant discussed a few instances where data transformation helps to make more sense of the noisy GPS data.
+
+Going forward, Nishant explained his model validation process. He explained other challenges with the data which make it difficult for policymakers to make quick inferences. This birthed the [COVID-19 Mobility Data Network](https://www.covid19mobility.org/) where researchers collectively study the data to generate simple feedback for local and state policy-makers. Nishant also discussed efforts to build public confidence in the data by creating data anonymity without causing intrinsic bias.
+
+Wrapping up, Nishant highlighted the key takeaways from collecting and studying mobile data. He also pointed out prospective areas for future study. To learn more about public mobility in response to disasters and the data readiness methods, visit [CrisisReady](https://www.crisisready.io/). You can directly follow Nishant on Twitter [@nish_epi](https://twitter.com/nish_epi?lang=en).
