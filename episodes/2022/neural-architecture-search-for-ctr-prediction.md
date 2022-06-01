@@ -1,4 +1,4 @@
-# Haywire Algorithms
+# Neural Architecture Search for CTR Prediction
 We are joined by Ravi Krishna, an AI Scientist. Ravi was a researcher in the Department of Electrical Engineering and Computer Sciences at UC Berkeley. He joins us to discuss his recent work on the implementation of a [differentiable NAS framework for ads CTR prediction](https://arxiv.org/abs/2110.14812). 
 
 Ravi began with an explanation of what CTR (click-through rate) is about and why it is a vital AI problem today. While the highest bidder mechanism for ad selection seems profitable, Ravi pointed out why it is unsustainable and should not be solely encouraged. He also spoke on the features that fueled his analysis. The data he used was the [CriteoLabs Display Advertising Challenge](https://www.kaggle.com/c/criteo-display-ad-challenge).
