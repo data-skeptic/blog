@@ -1,7 +1,7 @@
 # Neural Architecture Search for CTR Prediction
 We are joined by Ravi Krishna, an AI Scientist. Ravi was a researcher in the Department of Electrical Engineering and Computer Sciences at UC Berkeley. He joins us to discuss his recent work on the implementation of a [differentiable NAS framework for ads CTR prediction](https://arxiv.org/abs/2110.14812). 
 
-Ravi began with an explanation of what CTR (click-through rate) is about and why it is a vital AI problem today. While the highest bidder mechanism for ad selection seems profitable, Ravi pointed out why it is unsustainable and should not be solely encouraged. He also spoke on the features that fueled his analysis. The data he used was the [CriteoLabs Display Advertising Challenge](https://www.kaggle.com/c/criteo-display-ad-challenge).
+Ravi began with an explanation of what CTR (click-through rate) is about and why it is a vital AI problem today. He pointed out that ad model design decisions are taken with not just revenue but also user experience metrics in mind, as increasing either one at the other's expense is not ideal. He also spoke on the features that fueled his analysis. The data he used was the [CriteoLabs Display Advertising Challenge](https://www.kaggle.com/c/criteo-display-ad-challenge) data.
 
 The CTR prediction problem has been for some time. Ravi explained why using the deep neural network approach stood out as an alternative to other approaches such as collaborative filtering. He cited the [Deep & Cross Network for Ad Click Predictions paper](https://arxiv.org/abs/1708.05123) that efficiently learned feature interaction for ads recommendation. He however identified the limitation to the network.
 
