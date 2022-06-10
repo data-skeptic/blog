@@ -1,0 +1,10 @@
+# Remote Productivity
+We are joined by Darja Šmite, a professor of Software Engineering at the Blekinge Institute of Technology. She is also an expert in distributed development and outsourcing. Darja joins us to discuss findings from her research paper titled, [From Forced Working-From-Home to Working-From-Anywhere: Two Revolutions in Telework](https://arxiv.org/abs/2101.08315).
+
+Darja started off talking about the state of remote working before the pandemic. Before COVID-19, a few factors such as the nature of the profession and the company’s location determined whether a company embraced distributed work. She also spoke about the disparity between how workers welcomed the new routine after the lockdown. She mentioned the general demography of workers that loved to work from home and those that do not.
+
+Going forward, Darja explained how she and her research team analyzed several data such as the number of calendar invitations, accepted invitations, number of meetings, minutes spent in meetings, etc. for her research. She also discussed the method she adopted in measuring the productivity of software developers before and after the pandemic. 
+
+Upon analyzing the data, Darja highlighted some key findings. She revealed whether online meetings have been wholesomely positive or negative. Furthermore, she explained how companies can find a sweet spot between online meetings and physical gatherings. Delving deeper, she talked about the discrepancy she observed in her results based on the company's location and workers’ background (using the United States, the UK and Sweden as case studies). 
+
+In closing, she also discussed how companies are handling remote working today. While some allow for a completely flexible work routine, some others still enforce compulsory on-site work for some days of the week. You can follow up with Darja Šmite’s work on [arxiv](https://arxiv.org/search/?query=Darja+Smite&searchtype=all&source=header) or her [website](https://darjasmite.net/). She also posts blog articles on [LinkedIn](https://se.linkedin.com/in/darja-smite-745a743).
