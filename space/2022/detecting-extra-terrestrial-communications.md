@@ -1,12 +1,14 @@
 # Detecting Extra-Terrestrial Communications
 
-The debate of whether life exists outside earth has lingered for many years. In 1976, the first effort toward exploring the possibilities of life outside earth began when [NASA sent two space probes (Viking 1 and 2) to Mars](https://astrobiology.nasa.gov/missions/viking-1-and-2/). The probes collected samples of the soil, microbes and other nutrients. They thereafter monitored the bioactivities of these samples for a period of time. 
+The debate of whether life exists outside earth has lingered for years. In 1976, the first effort toward exploring the possibilities of life outside earth began when [NASA sent two space probes (Viking 1 and 2) to Mars](https://astrobiology.nasa.gov/missions/viking-1-and-2/). The probes collected samples of the soil, microbes and other nutrients. They thereafter monitored the bioactivities of these samples for a period of time. 
 
 The first result from Walking 1 looked interesting. It revealed that radiolabeled gasses were emitted from the samples when treated. While this was an indication of biology on Mars, the results from other experiments did not corroborate that. 
 
-![](https://lh3.googleusercontent.com/0pazsCu3Jm7LhF29aoCbmUCNTRLPQiA4FXBpSuF0FJrsJuOeM_tNBHWrctjCqxJbdIvo9l6YFH3rgR5re1a9gCkldLCCahaOVJykcAgV5mjIEy3CYoHHKGiNqNsatg77YBX13ezcKJ-g7X4OCg)
+<p align="center">
+<img src="https://github.com/dayvheed/blog/blob/master/images/nasa-Yj1M5riCKk4-unsplash.jpg" height="400">
+    </p>
 
-The other experiments from the Vikings' expedition showed only a sparing amount of organic molecules such as chloro- and dichloromethane were present. The absence of complex organic molecules was sufficient to disprove the initial results of possible biology on Mars. Supplementary experiments on the samples yielded no compelling results as well. 
+The other experiments from the Vikings' expedition showed only a sparing amount of organic molecules such as chloro- and dichloromethane. The absence of complex organic molecules was sufficient to disprove the initial results of possible biology on Mars. Supplementary experiments on the samples yielded no compelling results as well. 
 
 After many years of back and forth, the scientific community concluded that the observations from the experiment were from nonliving processes and not an indication of extraterrestrial life. But one should not be quick to disregard non-living processes in the search for life outside earth. After all, primitive life can emerge from nonliving matter. This is termed abiogenesis.
 
@@ -16,11 +18,13 @@ Abiogenesis is the notion that living things can stem from non-living things. Be
 
 In his experiment, he put meat in 3 separate containers and left them for a while. Some of the containers were completely sealed, while others were left open. Francesco observed that the containers of meat left open invited flies, whose eggs produced maggots. In the containers where the flies could not penetrate, no maggot appeared on the meat. He concluded that maggots did not come from the meat but from the eggs laid by flies on the meat. This is one of the many experiments that disproved abiogenesis.
 
-![](https://lh3.googleusercontent.com/Ql9RtgrD7rdnYoD5-nfUTfX9iUh2dAXdGoT32cTpF5KE3h0QeMYpj_speWmQyVCTOIPc7apaHzR8AryLF3LHS_iuf-PGZzf-A1TssGGF9qGHk1kW89Ar8mE3vju6K3tjO-SKJiyeCK_hr2cuug)
+<p align="center">
+<img src="https://github.com/dayvheed/blog/blob/master/images/Redi_experiment.jpg">
+    </p>
 
 Source: [Memorial University](https://www.mun.ca/biology/scarr/4270_Redi_experiment.html#:~:text=Redi%20went%20on%20to%20demonstrate,fresh%20air%20to%20generate%20life.)
 
-In spite of all these, the idea of abiogenesis has been tweaked to have a slightly different meaning. Looking holistically, it is believed that primitive life on earth originated through biogenesis. The earth is said to be about 4.5 billion years, whereas life on earth began 3.5 billion years ago. Primitive life was a gradual process of RNA-based biomolecules transforming non-living matter. RNA intrinsically had genetic and catalytic properties - making living things adapt to their environment and become more sophisticated as time progressed. They are the major reason life was formed on earth 1 billion years after its existence.
+In spite of all these, the idea of abiogenesis has been tweaked to have a slightly different meaning. Looking holistically, it is believed that primitive life on earth originated through abiogenesis. The earth is said to be about 4.5 billion years, whereas life on earth began 3.5 billion years ago. Primitive life was a gradual process of RNA-based biomolecules transforming non-living matter. RNA intrinsically had genetic and catalytic properties - making living things adapt to their environment and become more sophisticated as time progressed. They are the major reason life was formed on earth 1 billion years after its existence.
 
 But where does RNA come from? NASA had [reported](https://www.nasa.gov/topics/solarsystem/features/dna-meteorites.html) that RNA and DNA must have come from asteroids from outer space, in the form of meteorites. They propagated on earth and with other biomolecules such as amino acids, carbohydrates and lipids, led to the creation of life.
 
@@ -47,9 +51,11 @@ The search for extraterrestrial intelligence (SETI) has built radio telescopes a
 
 Unidentified flying objects (UFOs) are another phenomenon that suggests that aliens exist. But just as the name suggests, they are still unidentified. In 2017, US pilots reported that they saw strange objects in the sky. Their observation was received by the government and probed. 
 
-![](https://lh3.googleusercontent.com/ev7R4FTh_3_9ynuRtjcOVWN4ziSZ79jwHmiaME6cTvqW9AmtE8qCWGeaSoEQvJ2grdmXV91EH2XcqUdNR3oow-P-qqPkFanryTAvID0WmDYGd_4wEGBSJpltxpPl0Hat1WKkhh9wFh0Cd5h2fQ)
+<p align="center">
+<img src="https://github.com/dayvheed/blog/blob/master/images/albert-antony-HWQXIYbs8PM-unsplash.jpg" width="500">
+    </p>
 
-The final report of the probe by the Pentagon, however, stated that there was no tangible explanation for the flying objects. Perhaps, they were physical objects created by China or Russia.
+The final report of the investigation by the Pentagon, however, stated that there was no tangible explanation for the flying objects. Perhaps, they were physical objects created by China or Russia.
 
 ## How to ascertain life outside earth?
 
