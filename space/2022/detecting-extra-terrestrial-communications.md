@@ -5,7 +5,7 @@ The debate of whether life exists outside earth has lingered for years. In 1976,
 The first result from Walking 1 looked interesting. It revealed that radiolabeled gasses were emitted from the samples when treated. While this was an indication of biology on Mars, the results from other experiments did not corroborate that. 
 
 <p align="center">
-<img src="https://github.com/dayvheed/blog/blob/master/images/nasa-Yj1M5riCKk4-unsplash.jpg" height="400">
+<img src="/images/nasa-Yj1M5riCKk4-unsplash.jpg" height="400">
     </p>
 
 The other experiments from the Vikings' expedition showed only a sparing amount of organic molecules such as chloro- and dichloromethane. The absence of complex organic molecules was sufficient to disprove the initial results of possible biology on Mars. Supplementary experiments on the samples yielded no compelling results as well. 
@@ -19,7 +19,7 @@ Abiogenesis is the notion that living things can stem from non-living things. Be
 In his experiment, he put meat in 3 separate containers and left them for a while. Some of the containers were completely sealed, while others were left open. Francesco observed that the containers of meat left open invited flies, whose eggs produced maggots. In the containers where the flies could not penetrate, no maggot appeared on the meat. He concluded that maggots did not come from the meat but from the eggs laid by flies on the meat. This is one of the many experiments that disproved abiogenesis.
 
 <p align="center">
-<img src="https://github.com/dayvheed/blog/blob/master/images/Redi_experiment.jpg">
+<img src="/images/Redi_experiment.jpg">
     </p>
 
 Source: [Memorial University](https://www.mun.ca/biology/scarr/4270_Redi_experiment.html#:~:text=Redi%20went%20on%20to%20demonstrate,fresh%20air%20to%20generate%20life.)
@@ -52,10 +52,12 @@ The search for extraterrestrial intelligence (SETI) has built radio telescopes a
 Unidentified flying objects (UFOs) are another phenomenon that suggests that aliens exist. But just as the name suggests, they are still unidentified. In 2017, US pilots reported that they saw strange objects in the sky. Their observation was received by the government and probed. 
 
 <p align="center">
-<img src="https://github.com/dayvheed/blog/blob/master/images/albert-antony-HWQXIYbs8PM-unsplash.jpg" width="500">
+<img src="/images/albert-antony-HWQXIYbs8PM-unsplash.jpg" width="500">
     </p>
 
 The final report of the investigation by the Pentagon, however, stated that there was no tangible explanation for the flying objects. Perhaps, they were physical objects created by China or Russia.
+
+UFOs can safely be classified as conspiracy theories. This happens when people do not completely understand a concept but tend to hold certain unproven beliefs. In our interview with Mick West, he discussed how conspiracy theories are propagated and spread using social media. He also highlighted steps that can be taken to bring people out of the rabbit hole. Mick recently put out a [video](https://www.metabunk.org/threads/gimbal-ufo-a-new-analysis.12333/) that explained how the 'Gimbal' UFO is fictitious.
 
 ## How to ascertain life outside earth?
 
