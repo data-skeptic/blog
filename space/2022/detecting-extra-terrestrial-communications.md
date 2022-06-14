@@ -57,6 +57,8 @@ Unidentified flying objects (UFOs) are another phenomenon that suggests that ali
 
 The final report of the investigation by the Pentagon, however, stated that there was no tangible explanation for the flying objects. Perhaps, they were physical objects created by China or Russia.
 
+UFOs can safely be classified as conspiracy theories. This happens when people do not completely understand a concept but tend to hold certain unproven beliefs. In our interview with Mick West, he discussed how conspiracy theories are propagated and spread using social media. He also highlighted steps that can be taken to bring people out of the rabbit hole. Mick recently put out a [video](https://www.metabunk.org/threads/gimbal-ufo-a-new-analysis.12333/) that explained how the 'Gimbal' UFO is fictitious.
+
 ## How to ascertain life outside earth?
 
 Amidst these strange occurrences, the crux of the matter is to identify whether life exists outside Earth. While at that, it is important to clearly define what life is exactly. Apparently, the presence of a biochemical in another planet, however active, does not sufficiently conclude that life exists there. 
