@@ -4,6 +4,10 @@ The debate of whether life exists outside earth has lingered for years. In 1976,
 
 The first result from Walking 1 looked interesting. It revealed that radiolabeled gasses were emitted from the samples when treated. While this was an indication of biology on Mars, the results from other experiments did not corroborate that. 
 
+<p align="center">
+<img src="https://s3.amazonaws.com/dataskeptic.com/imgs/test/space1.jpeg" height="400">
+    </p>
+
 The other experiments from the Vikings' expedition showed only a sparing amount of organic molecules such as chloro- and dichloromethane. The absence of complex organic molecules was sufficient to disprove the initial results of possible biology on Mars. Supplementary experiments on the samples yielded no compelling results as well. 
 
 After many years of back and forth, the scientific community concluded that the observations from the experiment were from nonliving processes and not an indication of extraterrestrial life. But one should not be quick to disregard non-living processes in the search for life outside earth. After all, primitive life can emerge from nonliving matter. This is termed abiogenesis.
@@ -13,6 +17,13 @@ After many years of back and forth, the scientific community concluded that the 
 Abiogenesis is the notion that living things can stem from non-living things. Before the 15th century, it was popularly believed that a few living things could be born from inanimate objects. Mice appeared in stored grains from nowhere, maggots appeared in spoiled meats, and frogs were found on the bank of River Nile during the annual flooding. However, in 1668, Francesco Redi carried out [research](https://www.mun.ca/biology/scarr/4270_Redi_experiment.html#:~:text=Redi%20went%20on%20to%20demonstrate,fresh%20air%20to%20generate%20life.) that disproved abiogenesis. He attempted to understand how maggots were formed in spoiled meat.
 
 In his experiment, he put meat in 3 separate containers and left them for a while. Some of the containers were completely sealed, while others were left open. Francesco observed that the containers of meat left open invited flies, whose eggs produced maggots. In the containers where the flies could not penetrate, no maggot appeared on the meat. He concluded that maggots did not come from the meat but from the eggs laid by flies on the meat. This is one of the many experiments that disproved abiogenesis.
+
+<p align="center">
+<img src="https://s3.amazonaws.com/dataskeptic.com/imgs/test/meatjar.jpeg">
+    </p>
+
+
+Source: [Memorial University](https://www.mun.ca/biology/scarr/4270_Redi_experiment.html#:~:text=Redi%20went%20on%20to%20demonstrate,fresh%20air%20to%20generate%20life.)
 
 In spite of all these, the idea of abiogenesis has been tweaked to have a slightly different meaning. Looking holistically, it is believed that primitive life on earth originated through abiogenesis. The earth is said to be about 4.5 billion years, whereas life on earth began 3.5 billion years ago. Primitive life was a gradual process of RNA-based biomolecules transforming non-living matter. RNA intrinsically had genetic and catalytic properties - making living things adapt to their environment and become more sophisticated as time progressed. They are the major reason life was formed on earth 1 billion years after its existence.
 
@@ -40,6 +51,10 @@ The search for extraterrestrial intelligence (SETI) has built radio telescopes a
 ## How about UFOs?
 
 Unidentified flying objects (UFOs) are another phenomenon that suggests that aliens exist. But just as the name suggests, they are still unidentified. In 2017, US pilots reported that they saw strange objects in the sky. Their observation was received by the government and probed. 
+
+<p align="center">
+<img src="https://s3.amazonaws.com/dataskeptic.com/imgs/test/ufo1.jpeg" width="500">
+    </p>
 
 The final report of the investigation by the Pentagon, however, stated that there was no tangible explanation for the flying objects. Perhaps, they were physical objects created by China or Russia.
 
