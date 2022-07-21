@@ -1,5 +1,5 @@
 # Political Digital Advertising Analysis
-On the show today, we are joined by NaLette Brodnax, a political scientist and an Assistant Professor in the McCourt School of Public Policy at Georgetown University. She joins us to discuss her work around [analyzing digital advertisements for elections](https://arxiv.org/abs/2012.05859).
+On the show today, we are joined by NaLette Brodnax, a political scientist and an Assistant Professor in the McCourt School of Public Policy at Georgetown University, who co-authored [analyzing digital advertisements for elections]([https://arxiv.org/abs/2012.05859](https://journals.sagepub.com/doi/full/10.1177/10659129221078046)) with Piotr Sapiezynski.
 
 NaLette kicked off the discussion with an overview of how she got interested in digital advertising. Having learned how digital ads work, she wanted to delve into how governments are exploiting this technology for more reach during elections. She spoke about why advertisers are shifting away from long-standing television ads to digital ads. She also explained how digital ads started for political campaigns in the 2008 US presidential election and have progressed over the years.
 
@@ -9,6 +9,6 @@ Afterwards, she went into her data analysis activities. She outlined the hypothe
 
 Her second hypothesis was that campaigns majorly targeted swing states. Again, she discussed whether or not this hypothesis turned out to be true. She gave a further explanation of the observation from her analysis.
 
-NaLette also explained how she applied the Regression Framework in the analysis. Also, she discussed her inferences regarding the impact of February primaries vs Super Tuesday primaries. She also talked about the effect of digital advising on winning the primary nomination. 
+NaLette also explained she and Piotr applied the Regression Framework in the analysis. Also, she discussed her inferences regarding the impact of February primaries vs Super Tuesday primaries. She also talked about the effect of digital advising on winning the primary nomination. 
 
 Wrapping up, she outlined open questions that require further research. It includes the problem of incomplete data, money in politics, circulation of misinformation and so on. You can follow NaLette on Twitter [@nbrodnax](https://twitter.com/nbrodnax)
