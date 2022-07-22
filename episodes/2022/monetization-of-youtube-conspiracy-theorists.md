@@ -1,0 +1,11 @@
+## Monetization of YouTube Conspiracy Theorists
+
+Today, Cameron Ballard joins us to discuss his research paper titled, [Conspiracy Brokers: Understanding the Monetization of YouTube Conspiracy Theories](https://arxiv.org/abs/2205.15943). Cameron’s research is centered around algorithmic transparency, misinformation, cybersecurity and conspiracy theories. 
+
+He started by discussing some of the adverse effects of conspiracy theories using real-life stories. Cameron however, pointed out that conspiracies are not completely unwanted. While some are false, others have some element of truth. In addition, he discussed the motives behind individuals who cook false information.
+
+Going forward, he talked about how ads on YouTube, particularly for conspiracy theory videos, are targeted behind the scenes.  Cameron spoke about the challenges he and his coauthors faced when replicating the YouTube ad targeting data for their research. He also discussed why he rather used content-based targeting for his analysis. The data focused on two features – the viewer's location and the time of the day. He also explained how he sourced the control video data. 
+
+After collecting and analysing the data, Cameron discussed some observations he found. One of his observations was that conspiracy theory videos had lesser ads compared to mainstream videos. He then spoke about the activities of blanket advertisers (advertisers willing to feed their ads to a massive audience) and how they affect ads on conspiracy videos. Another observation was that predatory advertisements were more common in conspiracy videos. In other words, ads likely to be financial scams or ads with fake promises take advantage of conspiracy videos for more reach. Interestingly, these predatory ads seem to be successful for that demography. Cameron gave some explanations for these observations.
+
+Going forward, Cameron discussed how YouTube and other stakeholders can take action to forestall the advancement of predatory or scam ads. Wrapping up, Cameron spoke about the [Raditube project](https://www.raditube.com/). You can follow Cameron on Twitter [@Camq543](https://twitter.com/Camq543).
