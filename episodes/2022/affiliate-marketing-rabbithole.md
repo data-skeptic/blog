@@ -1,10 +1,12 @@
 # Affiliate Marketing Rabbithole
 
-On the show today, we are joined by Brian Dunning, the host of the [Skeptoid podcast](https://skeptoid.com/). Skeptoid podcast is a weekly podcast focused on conversations around skepticism and pseudoscience. Today, Brian shares his personal story about affiliate marketing and the civil case he had with eBay between 2008 and 2014.
+Affiliate marketing creates an opportunity for marketers to gain a commission by promoting a product or service.  Cookies are typically used for tracking and the advertiser whose product or service is being featured pays the marketing only on transactions.  Today's episode covers those approaches and is also a story of conflict between two large companies and how one affiliate marketer got caught in the middle.
 
-Brian began with a background about himself and how he started podcasting in 2006. He then got into affiliate marketing. Brian explained how affiliate marketing works in simple terms, and how people make money off it. He talked about his time of work with Commission Junction and eBay. At the time, he built widgets — WhoLinked and Profile Maps — to increase the reach of affiliate links. 
+Our guest is Brian Dunning, the host of the [Skeptoid podcast](https://skeptoid.com/). Skeptoid podcast is a weekly podcast focused on conversations around skepticism and pseudoscience. Today, Brian shares his personal story about affiliate marketing and the case he had with eBay between 2008 and 2014.
 
-Brian discussed the conflict of interest between eBay and Commission Junction at the time and his being at the center of it. He also talked about the civil case with eBay and how he eventually used the [Nuisance Settlement](https://www.upcounsel.com/nuisance-fee-settlement#:~:text=Nuisance%20Fee%20Settlement-,A%20nuisance%20fee%20settlement%2C%20or%20nuisance%20value%20settlement%2C%20is%20a,the%20claim%20in%20the%20courts.) to conclude the case.
+Brian began with a background about himself and how he started podcasting in 2006. He then got into affiliate marketing. Brian explained how affiliate marketing works in simple terms, and how people make money off it. He talked about his time of work with Commission Junction and eBay. At the time, he built widgets — WhoLinked and Profile Maps — to increase the reach of affiliate links.
+
+Brian discussed the conflict of interest between eBay and Commission Junction at the time and how he ended up in the center of it.
 
 ## Resources
 
