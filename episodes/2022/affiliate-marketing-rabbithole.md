@@ -4,7 +4,7 @@ Affiliate marketing creates an opportunity for marketers to gain a commission by
 
 Our guest is Brian Dunning, the host of the [Skeptoid podcast](https://skeptoid.com/). Skeptoid podcast is a weekly podcast focused on conversations around skepticism and pseudoscience. Today, Brian shares his personal story about affiliate marketing and the case he had with eBay between 2008 and 2014.
 
-Brian began with a background about himself and how he started podcasting in 2006. He then got into affiliate marketing. Brian explained how affiliate marketing works in simple terms, and how people make money off it. He talked about his time of work with Commission Junction and eBay. At the time, he built widgets — WhoLinked and Profile Maps — to increase the reach of affiliate links.
+Brian began with a background about himself and how he started podcasting. He was involved in affiliate marketing from 2002 to 2006. Brian explained how affiliate marketing works in simple terms, and how people make money off it. He talked about his time of work with Commission Junction and eBay. At the time, he built widgets — WhoLinked and Profile Maps — to increase the reach of affiliate links.
 
 Brian discussed the conflict of interest between eBay and Commission Junction at the time and how he ended up in the center of it.
 
