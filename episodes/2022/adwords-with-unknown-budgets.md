@@ -8,4 +8,4 @@ Rajan also spoke about the greedy approach and the bid shading approach. He expl
 
 Rajan explained the model evaluation process for the problem. He corroborated his results with practical applications of his model for AdWords with an unknown budget. Also, he discussed other applications of his model such as in the allocation of online resources. 
 
-Concluding, Rajan discussed two other ideas (throttling and bid scaling) that can better optimize ad allocation with unknown budgets. You can follow Rajan on his [Google Scholar page](https://scholar.google.com/citations?user=SkvTDXUAAAAJ&hl=en) or his [webpage](https://vcresearch.berkeley.edu/faculty/rajan-udwani).
+Concluding, Rajan discussed two other ideas (throttling and bid scaling) that can better optimize ad allocation. You can follow Rajan on his [Google Scholar page](https://scholar.google.com/citations?user=SkvTDXUAAAAJ&hl=en) or his [webpage](https://vcresearch.berkeley.edu/faculty/rajan-udwani).
