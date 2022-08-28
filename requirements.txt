@@ -1,7 +1,7 @@
 markdown
 requests==2.20.1
 nbformat==4.4.0
-nbconvert==6.3.0
+nbconvert==6.5.1
 traitlets==4.3.2
 jsonschema==2.6.0
 pyelasticsearch==1.4.1
