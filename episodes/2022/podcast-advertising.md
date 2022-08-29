@@ -1,6 +1,6 @@
 # Podcast Advertising
 
-Today, we are joined by Rob Walsh, the VP of Podcast Relations at Libsyn. Libsyn is a popular podcast hosting platform, where the Data Skeptic podcast is hosted. Rob tells us about podcast advertising on the show.
+Today, we are joined by Rob Walch, the VP of Podcast Relations at Libsyn. Libsyn is a popular podcast hosting platform, where the Data Skeptic podcast is hosted. Rob tells us about podcast advertising on the show.
 
 Rob began with what a podcast is and the place of podcast hosting services. He then explained why everyone should have their podcast on Apple Podcast. He also touched on situations where people try to boost their analytics by hiring companies to listen to their podcasts over and over. Rob outlined strategies Libsyn uses to identify such spammy listens.
 
