@@ -1,6 +1,6 @@
 # Nano-targetted Facebook Ads
 
-Today, we are joined by Ángel Cuevas Rumín, an Associate Professor in the Telematic Engineering Department at Universidad Carlos III de Madrid. Ángel research interest focuses on ensuring transparency on the internet through machine learning techniques.
+Today, we are joined by Ángel Cuevas Rumín, an Associate Professor in the Telematic Engineering Department at Universidad Carlos III de Madrid. Ángel research interest focuses on ensuring transparency on the internet through machine learning techniques. He joins us to discuss one of his recent work on [<ins>nano-targetting individuals online with non-PII data</ins>](https://arxiv.org/pdf/2110.06636.pdf).
 
 Ángel began why his research field is critical, citing how the big players such as Facebook have a huge impact on our society today. He discussed how he got the data for his work using Facebook API. He also discussed the limitation of this approach and how he intuitively develop his additional software that scraps the data he needs. 
 
