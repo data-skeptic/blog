@@ -8,7 +8,13 @@ Peter then focuses on his research and his self-made tool called the [tribe find
 
 Given that people are susceptible to change, the research scientist also discussed how the model accounts for a mindset change from a major player or a new tribe in general. Peter also discussed the practical use cases of his tribe classification model. He discussed the prospect of expanding his data source to other social media platforms as well.
 
-Peter then spoke about ways the technology can be further advanced in the future. He touched on privacy concerns and how the model ensures to not infringe on people’s privacy. He wrapped up talking about [Galaxy Advisors](https://www.google.com/search?q=galaxy+advisors&oq=galaxy+advisors&aqs=chrome..69i57j0i19i22i30l9.3372j0j9&sourceid=chrome&ie=UTF-8) and what they do. You can check out his upcoming Happy Metrics book which teaches how to use the Galaxy Advisors platform. The book would be published in October and can be gotten [here](https://vm-sc.galaxyadvisors.com/). 
+Peter then spoke about ways the technology can be further advanced in the future. He touched on privacy concerns and how the model ensures to not infringe on people’s privacy. He wrapped up talking about [Galaxy Advisors](https://www.google.com/search?q=galaxy+advisors&oq=galaxy+advisors&aqs=chrome..69i57j0i19i22i30l9.3372j0j9&sourceid=chrome&ie=UTF-8) and what they do. You can check out his upcoming Happy Metrics book which teaches how to use the Galaxy Advisors platform. The book would be published in October and can be gotten [here](https://vm-sc.galaxyadvisors.com/).
+
+## Work Mentions
+Paper: [Your Face Mirrors Your Deepest Beliefs—Predicting Personality and Morals through Facial Emotion Recognition](https://www.mdpi.com/1999-5903/14/1/5)
+
+Paper: [Happimetrics: Leveraging AI to Untangle the Surprising Link Between Ethics, Happiness and Business Success](https://www.e-elgar.com/shop/gbp/happimetrics-9781803924014.html)
+
 ## Resources
 
 Paper: [Predicting Dog Emotions Based on Posture Analysis Using DeepLabCut](https://www.mdpi.com/1999-5903/14/4/97)
