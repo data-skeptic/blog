@@ -10,13 +10,14 @@ Given that people are susceptible to change, the research scientist also discuss
 
 Peter then spoke about ways the technology can be further advanced in the future. He touched on privacy concerns and how the model ensures to not infringe on people’s privacy. He wrapped up talking about [Galaxy Advisors](https://www.google.com/search?q=galaxy+advisors&oq=galaxy+advisors&aqs=chrome..69i57j0i19i22i30l9.3372j0j9&sourceid=chrome&ie=UTF-8) and what they do. You can check out his upcoming Happy Metrics book which teaches how to use the Galaxy Advisors platform. The book would be published in October and can be gotten [here](https://vm-sc.galaxyadvisors.com/).
 
-## Work Mentions
-Paper: [Your Face Mirrors Your Deepest Beliefs—Predicting Personality and Morals through Facial Emotion Recognition](https://www.mdpi.com/1999-5903/14/1/5)
-
-Paper: [Happimetrics: Leveraging AI to Untangle the Surprising Link Between Ethics, Happiness and Business Success](https://www.e-elgar.com/shop/gbp/happimetrics-9781803924014.html)
-
-## Resources
+## Works Mentioned in Episode
 
 Paper: [Predicting Dog Emotions Based on Posture Analysis Using DeepLabCut](https://www.mdpi.com/1999-5903/14/4/97)
 
 Paper: [Eurythmic Dancing with Plants - Measuring Plant Response to Human Body Movement in an Anthroposophic Environment](https://arxiv.org/pdf/2012.12978.pdf).
+
+## Other Resources
+
+Paper: [Your Face Mirrors Your Deepest Beliefs—Predicting Personality and Morals through Facial Emotion Recognition](https://www.mdpi.com/1999-5903/14/1/5)
+
+Paper: [Happimetrics: Leveraging AI to Untangle the Surprising Link Between Ethics, Happiness and Business Success](https://www.e-elgar.com/shop/gbp/happimetrics-9781803924014.html)
