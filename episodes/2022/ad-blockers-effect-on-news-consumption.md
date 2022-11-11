@@ -8,4 +8,4 @@ Shunyao also discussed how she used an NLP tool called Information Seeking Argum
 
 Shunyao extensively discussed the effect of Apple’s policy to enable ad blocking on their gadgets. She explained why this event was critical in her research and suggested ways news publishers can optimize revenue without hurting user experience through excessive ads. 
 
-You can follow Shunyao on Twitter [@ShunyaoYan](https://twitter.com/ShunyaoYan) or on [LinkedIn](https://www.linkedin.com/in/shunyao-yan-142b8b158/). You can also reach out to Shunyao to further discuss the possible application of the NLP tool she mentioned to your research.
+You can follow Shunyao on Twitter [@ShunyaoYan](https://twitter.com/ShunyaoYan) or on [LinkedIn](https://www.linkedin.com/in/shunyao-yan-142b8b158/). You can also reach out to Shunyao to further discuss the possible application of the [NLP tool](https://www.argumentsearch.com/) mentioned to your research.
