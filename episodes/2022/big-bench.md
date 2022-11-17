@@ -3,8 +3,8 @@ Today, we are joined by Mor Geva, a researcher at the Allen Institute for AI, wi
 
 She started by discussing a pattern she observed with datasets from crowdfunded workers. This was largely due to the instructions given to annotators by the researcher. She then detailed ways researchers can frame questions/instructions to avoid propagating bias when hiring crowdfunded workers.
 
-Mor spoke about the [StrategyQA dataset](https://allenai.org/data/strategyqa), the dataset on which the language model was trained. She discussed how the data was gathered and the steps taken to ensure the data was diversified in terms of topics and reasoning types.
+Mor spoke about the [StrategyQA dataset](https://allenai.org/data/strategyqa), a question-answering benchmark for testing the ability of models to perform implicit reasoning. She discussed how the data was gathered and the steps taken to ensure the data was diversified in terms of topics and reasoning types.
 
-Mor then discussed how well the trained model answered questions from prompts. She spoke about other models that were trained on the StrategyQA dataset and the results they obtained. She highlighted possible reasons the [top-ranking models in the Leaderboard](https://leaderboard.allenai.org/) performed well.
+StrategyQA is one of the challenging tasks in the Big Bench benchmark, a collaborative benchmark for measuring the capabilities of large language models. The construction of Big Bench was led by Google and involved contributions from over 400 researchers in the NLP community. She highlighted possible reasons the [top-ranking models in the Leaderboard](https://leaderboard.allenai.org/) performed well.
 
 Mor then discussed the place of benchmarks in advancing language models. She particularly spoke about [BigBench](https://github.com/google/BIG-bench), a Google benchmark that measures the capabilities of language models. In closing, she gave her take on whether the trajectory in language models will lead to AGI. She highlighted some limitations with large language models. You can follow Mor on Twitter [@megamor2](https://twitter.com/megamor2) or on her [webpage](https://mega002.github.io/).
