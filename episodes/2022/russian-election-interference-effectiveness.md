@@ -1,0 +1,11 @@
+# Russian Election Interference Effectiveness
+
+Today, we are joined by Koustuv Saha, a researcher at Microsoft Research in the Montreal Lab. His works with the Fairness, Accountability, Transparency, and Ethics (FATE) in AI group. Koustuv's research lies in social computing, computational social science, and human-centered machine learning. On the show, he talks about [targeted ads for political campaigns using Russian interference in the 2016 election as a case study](https://arxiv.org/abs/1808.09218).
+
+Koustuv started by explaining what human-centered machine learning is about. He gave examples of the use of passive sensors to get data on social media. This data is then used for building human-centric technological solutions. However, microtargeted ads on social media are also being used for political campaigns. Koustuv discussed the problem with this. He then pointed out the sweet spot for using microtargeted ads on social media.
+
+Koustuv spoke about another approach for targeting an audience on social media — rather than using demographic data, he used behavioral data for a given time. Using the 2016 US election as an example, Koustuv discussed how political organizations can use targeted ads for political gains. He further discussed scenarios where targeted ads help propagate fake news online rather than having them reported.
+
+Koustuv outlined the three research major research questions for his study and his findings after his study. From his results, Koustuv spoke about the effect of the Internet Research Agency (IRA) on the 2016 election. He spoke about the efforts social media platforms such as Facebook are making to mitigate such micro-targeted ads for political campaigns.
+
+Concluding, Koustuv discussed the other similar studies he is working on such as building an ad targeting tool to understand people's likes, interests, and awareness. You can learn more about Koustuv’s work on his [website](https://koustuv.com/) or follow him on Twitter [@kous2v](https://twitter.com/kous2v).
