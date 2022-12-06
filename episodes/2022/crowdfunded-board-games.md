@@ -1,0 +1,9 @@
+# Crowdfunded Board Games
+
+We are joined by Johannes Wachs, an assistant professor at the Vienna University of Economics and Business. Johannes is also an affiliated researcher at the [Complexity Science Hub.](https://www.csh.ac.at/) His research interest centers on understanding how the internet broadly affects our society. Today, he discusses the findings of his study on [whether crowdfunding truly drives innovation, using board games as a case study](https://arxiv.org/abs/2101.02683).
+
+Johannes started with a background on how he made a decision to research this field. Since the internet skyrocketed crowdfunding, Johannes wanted to understand how crowdfunded projects differ from traditional projects. He talked about how he and his co-authors collected the board games data for their research. He discussed some observations about crowdfunded games after analyzing the data.
+
+Johannes spoke about the three research questions the study aimed at investigating. The research questions revolved around checking if crowdfunded games were more innovative and novel than traditional ones. Johannes then delved into the technical details of quantifying innovation and novelty. He shared the findings from his analysis.
+
+Johannes spoke about the possibility of using his study analysis to reverse engineer innovative games. He referenced [Matt Leacock's board game talks](https://www.leacock.com/talks) on the need for extensive play testing to build a solid board game. He also discussed the prospect of crowdfunding-driven innovation scaling to other industries. Joannes's next research idea is to study digital human cooperation using GitHub. You can follow him online on Twitter [@johannes_wachs](https://twitter.com/johannes_wachs) and learn more about his studies on his [webpage](https://johanneswachs.com/).
