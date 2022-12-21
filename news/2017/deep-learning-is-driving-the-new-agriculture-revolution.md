@@ -25,4 +25,3 @@ A group of researchers from the [Descartes Labs](http://www.descarteslabs.com/) 
 
 ### Reducing the Use of Pesticides
 As weeds are becoming more resistant to herbicides, chemical treatments are becoming less available. To address this problem, Blue River Technology from Silicon Valley came up with a deep learning solution, called the [LettuceBot](http://smartmachines.bluerivert.com/), that can help minimize the use of pesticides and herbicides. The LettuceBot rolls through a field photographing 5,000 young plants a minute and identifies each sprout as lettuce or a weed using algorithms and machine vision. It can automatically pinpoint weeds, unfledged sprouts, and overcrowded areas and then apply tiny doses of herbicide, thereby maximizing crop production and reducing the use of unnecessary chemicals.
-
