@@ -1,6 +1,5 @@
 ## Difficulties Finding Scientifically Based Nutritional Data
 
-
 When it comes to feeding your family and taking care of your health, you want to have the most accurate nutrition information at your disposal. Unfortunately, with the rise of social media and numerous "expert" blogs, finding trustworthy data is difficult.
 
 Although nutrition labels are more accurate now than in the past, it's legal for them to have [up to a 20 percent margin of error](http://nutritionovereasy.com/2011/04/can-you-trust-the-nutrition-facts/). What reliable sources does that leave the average consumer concerned about their health?
