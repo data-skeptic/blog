@@ -1,6 +1,6 @@
 # Do Results Generalize for Privacy and Security Surveys
 
-On the show today, we are joined by Jenny Tang, a Ph.D. student of societal computing at Carnegie Mellon University. She is also affiliated with Skylab, the security and privacy institute of the university. She joins us to discuss her study that assessed the use of online surveys by privacy and security researchers.
+On the show today, we are joined by Jenny Tang, a Ph.D. student of societal computing at Carnegie Mellon University. She is also affiliated with CyLab, the security and privacy institute of the university. She joins us to discuss her study that assessed the use of online surveys by privacy and security researchers.
 
 Jenny began by discussing why surveys are important to get a generalized perspective. She also explained how your population can differ depending on the goal of the research. She expatiated on the two kinds of population — target population and sample population. 
 
