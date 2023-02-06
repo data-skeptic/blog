@@ -1,0 +1,10 @@
+# Opinion Dynamics Models
+We are joined by Dino Carpentras, a post-doctoral researcher at the Computational Social Science group at ETH Zürich. His research revolves around opinion dynamics where he attempts to understand agent-based models on people’s opinions. On the show, Dino discusses his study on [building opinion dynamics models](v). 
+
+Dino began by discussing how opinions are represented mathematically. He discussed how the model accounts for opinion changes. Dino then talked about how abstract entities such as opinions can be measured, a concept called latent construct. He discussed how to check the validity of the questions when crafting a question that measures opinions. He also shared strategies to correctly frame questions depending on what is intended to be measured.
+
+Dino discussed the concept of distortions and transformations when measuring the opinions of multiple people. He also shared how distortions can be reduced during opinion transformation. He also discussed how networks are used to conceptualize people’s opinions. Dino also explained how researchers use simple rules to explain complex patterns.
+
+Going forward, Dino discussed how to perform model validation, i.e., confirming that the predicted opinion is similar to the opinion in the test data. He explained why this process can be hard. He also discussed possible ways to capture historical data for opinions that change over time. For instance, public opinion on vaccines. He additionally shared his observation on public opinions on vaccines.
+
+Rounding up, he discussed the possibility of getting policymakers to adopt the results of opinion dynamics models. He also shared plausible limitations when building models for opinion measurement. You can follow Dino on his [website](https://www.dinocarp.com/) or on Twitter [@JustaNormalDino](https://twitter.com/JustaNormalDino).
