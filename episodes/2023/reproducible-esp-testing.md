@@ -1,0 +1,11 @@
+# Reproducible Esp Testing
+
+Zoltán Kekecs, a Ph.D. holder in Behavioural Science and an Assistant Professor at the Elte Institute of Psychology, joins us today. His research centers around mind-body medicine, interventions used in medicine, and the mechanisms underlying the effects of these interventions. Zoltán joins us to discuss his research on [replicating research findings](https://psyarxiv.com/uwk7y/).
+
+Zoltán began by discussing the current problem with biomedicine and social science journals — the low replication rates of research findings. He stated how low replicability affects the trustworthiness of published papers. He also mentioned reasons for the low replicability. One such reason is the use of incomplete information in published journals. In such cases, other researchers need to contact the authors to reproduce their work.
+
+Zoltán delved into the approach he deploys when contacting authors for extracting additional information. He particularly discussed the design process for interacting with psychologist Daryl Bem to test the famous Bem experiment. He explained what the Bam experiment was and the debatable findings of the experiment. Zoltán used a Delphi survey of both proponents and opponents of Bem’s hypothesis as participants of the study. He also had a hybrid hypothesis and explained why he adopted this approach.
+
+Zoltán extensively talked about the process of data collection for his study. He listed the three key efforts made for ensuring the replicability of his study. He also discussed other steps taken to avoid artificial bias during the experiments. 
+
+Concluding, Zoltán disclosed his results after reproducing the Bem experiment using his approach. He concluded that Bem’s findings could not be replicated given the discrepancy between both results. He also discussed a project in the works that seek to develop a trust list survey platform for easy research replication. You can reach Zoltán via email at kekecs.zoltan@ppk.elte.hu, and follow him on Twitter [@kekecs_zoltan](https://twitter.com/kekecs_zoltan).
