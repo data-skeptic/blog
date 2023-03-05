@@ -1,0 +1,11 @@
+# Casual Affective Triggers
+
+Today, we are joined by Alexander Nolte, an Associate Professor at the University of Tartu and an Adjunct Associate Professor at Carnegie Mellon University. Alexander's research borders on understanding social interaction in hackathons and other similar social events. He joins us to discuss his research work on the [effect of Casual Affective Triggers (CAT) on surveys’ response rate](https://arxiv.org/abs/2203.04211). 
+
+He began by explaining the kind of data used in capturing human interaction. This includes qualitative methods such as interviews and surveys. Alexander spoke more about how surveys are done for online and in-person events. He discussed the best strategies to get the most out of the participants’ responses in both types of events. He also discussed factors that affect the response rates of surveys.
+
+Alexander pointed out things to be done when crafting an invitation email for better responses. He then delved into what CAT is and how they are used. He shared parameters used in measuring the success of invitations. Alexander then shared the methodology for his study and discussed the impact of using CATs on response and completion rates.
+
+In addition, Alexander revealed whether the use of CATs can cause a bias in the responses. He corroborated his observations with results from similar studies. He also discussed the possibility of fatigue effects when applying CATs over time.
+
+Alexander shared branching research areas similar to understanding hackathons. Wrapping up, he discussed his other research interest which includes collaboration analytics, understanding the human components of hackathons, and much more. You can follow Alexander on Twitter [@alexander_nolte](https://twitter.com/alexander_nolte) or on [LinkedIn](https://www.linkedin.com/in/alexandernolte/). If you’re interested in organizing a hackathon or understanding the hackathon space, visit the [Hackathon Planning Kit website](https://hackathon-planning-kit.org/) to get a ton of resources on how to organize a hackathon.
