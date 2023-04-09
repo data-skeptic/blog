@@ -1,0 +1,9 @@
+# Non-response bias
+
+In this episode, Kyle speaks with Yajuan Si, a Research Associate Professor at the Survey Research Center at the University of Michigan. The research center trains students across several backgrounds to analyze survey data. On the show, Yajuan discusses how to deal with survey non-response bias.
+
+Yajuan started by emphasizing the importance of having a survey sample that represents the target population well. One of the causes of this misrepresentation is the low response rate from respondents. Yujuan shared what causes non-response across different levels. She also discussed strategies such as weighting and multiple imputations to counter the bias caused by non-response.
+
+Yajuan then spoke about the longitudinal study of the National Center of Educational Statistics. She highlighted the challenge of students dropping out of the survey, leading to missing data. She also explained the concepts of monotonic and non-monotonic missing values in the context of this survey. In a study, Yujuan compared the results of weighting imputation to the modeling approaches.
+
+She also shared the result of the approach comparison. Yajuan discussed some steps she took to perform as much accuracy in data imputation. She shared the software used to aid multiple imputations. She also discussed how researchers could estimate the bias caused by non-response. She concluded by discussing how data collection organizations can help improve survey research. You can learn more about Yajuan on her [official website](http://www-personal.umich.edu/~yajuan/) or the [University of Michigan’s Survey Research Center website](https://www.src.isr.umich.edu/).
