@@ -1,6 +1,6 @@
 # Measuring User’s Perception
 
-Today, Mariah Schrum and Matthew Gombolay join us. Maria is a Ph.D. student in the CORE Robotics Lab at Georgia Institute of Technology. Matthew is an Assistant Professor in the School of Interactive Computing at Georgia Institute of Technology. He is also the Director of the CORE Robotics Lab. They discuss best practices for measuring a respondent’s perception in a survey.
+Today, Mariah Schrum and Matthew Gombolay join us. Mariah is a Ph.D. student in the CORE Robotics Lab at Georgia Institute of Technology. Matthew is an Assistant Professor in the School of Interactive Computing at Georgia Institute of Technology. He is also the Director of the CORE Robotics Lab. They discuss best practices for measuring a respondent’s perception in a survey.
 
 Matthew began by giving some insight into the kind of work done at his laboratory. Putting it simply, they build robots with a core focus on their interaction with humans. Matthew explained how robots differ from LLMs such as ChatGPT. He also discussed how robots' performance can be measured. It was more complicated than conventional machine learning models. Mariah spoke about the Likert scale, a metric to measure respondents’ attitudes. 
 
