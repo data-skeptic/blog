@@ -1,0 +1,13 @@
+# A Psychopathological Approach to Safety in AGI.
+
+In this episode, we are joined by Vahid Behzadan, an Assistant Professor of Computer Science and Data science at the University of New Haven. He is also the director of the Secure and Assured Intelligent Learning (SAIL) research group. Vahid joins us to discuss the safety of AGIs from a psychopathological standpoint.
+
+Vahid began by discussing how new AI trends are a force for good but can also be a force for evil. He discussed how AI systems' misgivings are hinged on the inability to adequately capture their objectives during training. He also discussed the complexity of the universe, which force machine learning engineers to develop models with abstractions.
+
+Vahid stated that there’d always be some unpredictability with AGIs and why. He also gave his take on the possibility of AGI’s unpredictable actions cascading into multiple failures. Vahid discussed the communication barrier between human and machine agents. If the communication policy for a reflex agent is complex enough, its behavior will become more sophisticated. He cited the work of the [Foerster Lab for AI Research (FLAIR) lab](https://foersterlab.com/) focused on emergent communications for machine learning. He also mentioned the paper on the [Emergence of Adversarial Communication in Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2008.02616).
+
+Vahid spoke about the potential of training machines to replicate human-level cognitive abilities. He discussed two-side effects that will emerge from this, citing his work, [A Psychopathological Approach to Safety Engineering in AI and AGI](https://arxiv.org/abs/1805.08915). He also shared how the development of psychopathology and AI studies began. Vahid shared his reservations on whether Isaac Asimov’s three laws of robotics guarantee the safety of AGIs.
+
+Vahid discussed how modeling large language models such as ChatGPT differs from the modeling behaviors of AGIs. Using the [boat racing game](https://openai.com/research/faulty-reward-functions) as an example, he iterated how RL agents can behave unusually in a complex system. Wrapping up, Vahid gave his thoughts on future developments in AGI.
+
+You can learn more about Vahid’s line of work on his [Google Scholar page](https://scholar.google.com/citations?user=MYMANOYAAAAJ&hl=en) or the [SAIL research group website.](https://sail-lab.org/) Vahid also recommends [Less Wrong](https://www.lesswrong.com/) for conversations and blogs about AI safety. The [AAAI Workshop](https://aaai-23.aaai.org/ws23/) is another great platform for academics to learn about the field.
