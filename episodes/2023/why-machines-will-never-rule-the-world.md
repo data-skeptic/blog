@@ -7,3 +7,8 @@ Barry started by giving a background on the need for the book. At the core, it s
 Going forward, Jobst defined what intelligence is. He also discussed why machines can not provide solutions to novel problems. They both also gave reasons why machines cannot excellently engage in dialogues.
 
 You can learn more about Barry’s work on his [website](http://ontology.buffalo.edu/smith/). You may also follow Jobst on [LinkedIn](https://de.linkedin.com/in/jobst-landgrebe-165103a).
+
+
+<hr />
+
+Thanks to our sponsor [EOS Data Analytics](https://bit.ly/EOS_Data_Analytics).
