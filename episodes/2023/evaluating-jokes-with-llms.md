@@ -7,3 +7,8 @@ Fabricio started with some background about computational creativity. He defined
 Fabricio delved into some real-world applications of LLMs for creativity. First, he discussed the use of GPT-4 for creating Walt Whitman-like poems. He also discussed the use of GPT for creating and evaluating jokes. He detailed the process of evaluating jokes with GPT-3 and GPT-4.
 
 Fabricio hinted at his future research involving multiple LLMs communicating to evaluate jokes together. He also shared his thoughts on the future possibilities with LLMs. You can learn more about Fabricio and his work on his [University of Leicester page](https://le.ac.uk/people/fabricio-goes).
+## Resources
+
+Joe Toplyn’s Paper: [<ins>Witscript 2: A System for Generating Improvised Jokes Without Wordplay</ins>](https://computationalcreativity.net/iccc22/papers/ICCC-2022_paper_92.pdf)
+
+Fabricio Goes’ Paper: [<ins>Crowd Score: A Method for the Evaluation of Jokes using Large Language Model AI Voters as Judges</ins>](https://arxiv.org/abs/2212.11214).
