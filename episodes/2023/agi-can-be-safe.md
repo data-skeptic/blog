@@ -10,6 +10,7 @@ Koen spoke about the problem of AGIs not being able to allow changing their util
 
 Koen discussed the ultimate goal of a safe AI system and how to check that an AI system is indeed safe. He discussed the intersection between large language Models (LLMs) and MDPs. He shared the key ingredients to scale the current AI implementations. Wrapping up, he discussed plans for his research. To learn more about Koen, follow him on [LinkedIn](https://nl.linkedin.com/in/koen-holtman-2312844) or [his website](https://holtmansystemsresearch.nl/)
 
-This conversation was recorded on 5/27/2023, previous to the EU Parliament vote. 
+This conversation was recorded on 5/27/2023, previous to the EU Parliament vote.
 
-More information about the EU AI Act legislative process: https://www.euractiv.com/section/artificial-intelligence/news/ai-act-enters-final-phase-of-eu-legislative-process/
+More information about the EU AI Act legislative process: 
+[https://www.euractiv.com/section/artificial-intelligence/news/ai-act-enters-final-phase-of-eu-legislative-process/](https://www.euractiv.com/section/artificial-intelligence/news/ai-act-enters-final-phase-of-eu-legislative-process/)
