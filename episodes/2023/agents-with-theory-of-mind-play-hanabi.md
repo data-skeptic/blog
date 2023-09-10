@@ -1,8 +1,6 @@
 # Agents with Theory of Mind Play Hanabi
 
-Nieves Montes, a Ph.D. student at the Artificial Intelligence Research Institute in Barcelona, Spain, joins us. Her PhD research revolves around value-based reasoning in relation to norms. She shares her latest study, [Combining theory of mind and abductive reasoning](https://dl.acm.org/doi/abs/10.1007/s10458-023-09613-w#:~:text=By%20combining%20the%20previous%20capability,to%20their%20own%20decision%2Dmaking.)
-
-[in agent‑oriented programming](https://dl.acm.org/doi/abs/10.1007/s10458-023-09613-w#:~:text=By%20combining%20the%20previous%20capability,to%20their%20own%20decision%2Dmaking.).
+Nieves Montes, a Ph.D. student at the Artificial Intelligence Research Institute in Barcelona, Spain, joins us. Her PhD research revolves around value-based reasoning in relation to norms. She shares her latest study, [Combining theory of mind and abductive reasoning in agent‑oriented programming](https://dl.acm.org/doi/abs/10.1007/s10458-023-09613-w#:~:text=By%20combining%20the%20previous%20capability,to%20their%20own%20decision%2Dmaking.)
 
 Nieves gave an introduction to what multiagent systems are and how they fit into other machine-learning applications. She also explained how societal values are quantified and applied in agent-based multi-agent research.  
 
