@@ -7,3 +7,6 @@ Thilo discussed how machine psychology is useful in machine learning tasks. He s
 Thilo defined deception and discussed how he studied deception in LLMs experimentally. He shared the experiments he used to evaluate LLM’s deception abilities. He also shared how LLMs compare to humans in cognitive reflective tasks and deception tasks.
 
 Thilo explained why LLMs can develop deception abilities. He also discussed how these deceptive abilities can be mitigated. Rounding up, he discussed his future research. You can learn more about Thilo’s work on his [website](https://www.thilo-hagendorff.info/).
+
+## Resource
+Talk: [Do AI systems discriminate against animals, too?](https://www.youtube.com/watch?v=JU3zH_SqxlQ)
