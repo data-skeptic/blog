@@ -1,4 +1,4 @@
-# Program-aided-language-models
+# Program-aided Language Models
 
 We are joined by Aman Madaan and Shuyan Zhou. They are both PhD students at the Language Technology Institute at Carnegie Mellon University. They join us to discuss their latest published paper, [PAL: Program-aided Language Models](https://reasonwithpal.com/).
 
