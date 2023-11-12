@@ -9,3 +9,6 @@ They discussed the kind of mistakes LLMs tend to make and how the PAL’s model 
 Rounding up, Amen discussed the [CoCoGen project](https://github.com/reasoning-machines/CoCoGen), a project that enables NLP tasks to be converted to graphs. Shuyan and Aman shared her next research steps. 
 
 Follow Shuyan on Twitter [@shuyanzhxyc](https://twitter.com/shuyanzhxyc). Follow Aman on [@aman_madaan](https://twitter.com/aman_madaan).
+
+Further reading includes [this mentioned paper](https://arxiv.org/abs/2308.07921), which solves high-school math problems using text (chain of thought) and code (PaL).
+
