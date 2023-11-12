@@ -6,7 +6,7 @@ Aman and Shuyan started by sharing how the application of LLMs has evolved. They
 
 They discussed the kind of mistakes LLMs tend to make and how the PAL’s model circumvents these limitations. They also discussed how these developments in LLMS can improve kids learning. 
 
-Rounding up, Amen discussed the [CoCoGen project](https://github.com/reasoning-machines/CoCoGen), a project that enables NLP tasks to be converted to graphs. Shuyan and Aman shared her next research steps. 
+Rounding up, Aman discussed the [CoCoGen project](https://github.com/reasoning-machines/CoCoGen), a project that enables NLP tasks to be converted to graphs. Shuyan and Aman shared their next research steps. 
 
 Follow Shuyan on Twitter [@shuyanzhxyc](https://twitter.com/shuyanzhxyc). Follow Aman on [@aman_madaan](https://twitter.com/aman_madaan).
 
