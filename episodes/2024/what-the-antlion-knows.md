@@ -15,4 +15,9 @@ Becky gave her thoughts on the findings of the paper and the methodologies used.
 
 [Operant conditioning in antlion larvae and its impairment following exposure to elevated temperatures](https://pubmed.ncbi.nlm.nih.gov/34689302/)
 
+## Follow our guest
+[X](https://twitter.com/grlwdarwintat)
+
+[Website](https://girlwiththedarwintattoo.wordpress.com/)
+
 _This season’s cover art features original photographs by Becky Hansis-O’Neil_
