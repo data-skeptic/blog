@@ -1,6 +1,6 @@
 # Optimal Foraging
 
-Claire Hemmingway, an assistant professor in the Department of Psychology and Ecology and Evolutionary Biology at the University of Tennessee in Knoxville, is our guest today. Her research is on decision-making in animal cognition, focusing on neotropical bats and bumblebees.
+Claire Hemingway, an assistant professor in the Department of Psychology and Ecology and Evolutionary Biology at the University of Tennessee in Knoxville, is our guest today. Her research is on decision-making in animal cognition, focusing on neotropical bats and bumblebees.
 
 Claire discussed how bumblebees make foraging decisions and how they communicate when foraging. She discussed how they set up experiments in the lab to address questions about bumblebees foraging. She also discussed some nuances between bees in the lab and those in the wild.
 
@@ -15,4 +15,4 @@ Claire discussed how bats respond to calling frogs when foraging. She also spoke
 
 [X](https://twitter.com/cthemingway12)
 
-[Hemmingway Lab](https://www.thebatsandthebees.com/about)
+[Hemingway Lab](https://www.thebatsandthebees.com/about)
