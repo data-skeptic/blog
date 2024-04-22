@@ -15,4 +15,3 @@ Rounding up, he gave some advice for students who wish to get into the field.
 [A new model for self-organized dynamics and its flocking behavior](https://arxiv.org/abs/1102.5575)
 
 [Heterophilious dynamics enhances consensus](https://arxiv.org/abs/1301.4123)
-
