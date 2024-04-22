@@ -15,9 +15,3 @@ Rounding up, he gave some advice for students who wish to get into the field.
 [A new model for self-organized dynamics and its flocking behavior](https://arxiv.org/abs/1102.5575)
 
 [Heterophilious dynamics enhances consensus](https://arxiv.org/abs/1301.4123)
-
-## Resource
-
-* [Boltzmann equation](https://en.wikipedia.org/wiki/Boltzmann_equation)
-
-* [Navier-Stokes equation](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations)
