@@ -1,5 +1,5 @@
 markdown
-requests==2.31.0
+requests==2.32.0
 nbformat==4.4.0
 nbconvert==6.5.1
 traitlets==4.3.2
