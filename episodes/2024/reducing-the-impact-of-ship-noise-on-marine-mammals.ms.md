@@ -11,6 +11,6 @@ Akash discussed how he determined the most optimized objective parameters. He al
 
 [A multi-objective optimization framework for reducing the impact of ship noise on marine mammals](https://arxiv.org/abs/2402.02647)
 
-Learn more about our guest
+## Learn more about our guest
 
 [Research Gate](https://www.researchgate.net/profile/Akash-Venkateshwaran)
