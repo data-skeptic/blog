@@ -1,6 +1,6 @@
 # Biodiversity Monitoring
 
-Hager Hadi, a senior applied scientist at Mila, joins us on this episode. She discussed her paper, [Predicting species occurrence patterns from partial observations](https://arxiv.org/abs/2403.18028).
+Hager Radi, a senior applied scientist at Mila, joins us on this episode. She discussed her paper, [Predicting species occurrence patterns from partial observations](https://arxiv.org/abs/2403.18028).
 
 She highlighted the significance of biodiversity monitoring, emphasizing its role in preserving our ecosystem. She discussed the data used in her research and the specific scrapped parameters. She explained why satellite imagery was also important.
 
