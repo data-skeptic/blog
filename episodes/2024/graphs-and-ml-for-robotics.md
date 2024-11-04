@@ -8,7 +8,7 @@ Our guest shares his insights on using Graph Neural Networks (GNNs) for complex 
 
 ## Follow our guest
 
-* [Homepage](https://abpaudel.com/)
+* [Abhishek's Homepage](https://abpaudel.com/)
 
 * [Linkedin](https://www.linkedin.com/in/abpaudel/)
 
