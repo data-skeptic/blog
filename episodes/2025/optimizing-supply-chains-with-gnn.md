@@ -9,9 +9,7 @@ Key insights include the application of Graph Neural Networks to predict deliver
 
 Thibaut’s work underscores the potential for GNN to reduce costs, enhance operational efficiency, and provide better working conditions for teams through improved route familiarity and workload balance.
 
-Listeners are encouraged to read the paper DistrictNet: Decision-aware learning for geographical districting (link below) as a continuation of these discussions.
-
-https://arxiv.org/abs/2412.08287
+Listeners are encouraged to read the paper [DistrictNet: Decision-aware learning for geographical districting](https://arxiv.org/abs/2412.08287) as a continuation of these discussions.
 
 
 
