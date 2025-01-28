@@ -20,3 +20,6 @@ Listeners are encouraged to read the paper [DistrictNet: Decision-aware learning
 
 ## Papers in focus
 [Deep Learning for Data-Driven Districting-and-Routing, 2024](https://arxiv.org/pdf/2402.06040)
+
+[DistrictNet: Decision-aware learning for geographical districting, 2024](https://arxiv.org/abs/2412.08287)
+
