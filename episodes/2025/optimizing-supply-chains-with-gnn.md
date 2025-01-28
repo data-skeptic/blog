@@ -1,12 +1,17 @@
 # Optimizing supply chains with GNN
 
-Thibault Vidal, a professor at Polytechnique Montreal, specializes in leveraging advanced algorithms and machine learning to optimize supply chain operations. 
+
+Thibaut Vidal, a professor at Polytechnique Montreal, specializes in leveraging advanced algorithms and machine learning to optimize supply chain operations. 
 
 In this episode, listeners will learn how graph-based approaches can transform supply chains by enabling more efficient routing, districting, and decision-making in complex logistical networks.
 
 Key insights include the application of Graph Neural Networks to predict delivery costs, with potential to improve districting strategies for companies like UPS or Amazon and overcoming limitations of traditional heuristic methods. 
 
-Thibault’s work underscores the potential for GNN to reduce costs, enhance operational efficiency, and provide better working conditions for teams through improved route familiarity and workload balance.
+Thibaut’s work underscores the potential for GNN to reduce costs, enhance operational efficiency, and provide better working conditions for teams through improved route familiarity and workload balance.
+
+Listeners are encouraged to read the paper [DistrictNet: Decision-aware learning for geographical districting](https://arxiv.org/abs/2412.08287) as a continuation of these discussions.
+
+
 
 ## Follow our guest
 
