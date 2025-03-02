@@ -19,3 +19,5 @@ Key insights include how the structure of organizational networks—such as the 
 
 ## Papers in focus
 [Extracting Network Structures from Corporate Organization Charts Using Heuristic Image Processing, 2023](https://arxiv.org/abs/2311.02460)
+
+[Effects of network connectivity and functional diversity distribution on human collective ideation](https://www.nature.com/articles/s44260-024-00025-9)
