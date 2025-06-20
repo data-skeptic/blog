@@ -6,7 +6,7 @@ Our guest, Professor Baruch Barzel of Bar-Ilan University, is a leading research
 
 What Prof. Barzel discovered was that there are universality classes in dynamic behavior, where different systems fall into categories based on the function of the hubs in the network; Do they act as amplifiers, bottlenecks, or neutral conduits of information? This can help us understand how diseases spread through social networks or how to make power grids more resilient. 
 
-Prof. Barzel also shares his current work with the startup ArcMed AI where he utilizes network science to optimize hospital scheduling to save resources, create a more stable environment but first and foremost – save lives by shortening the waiting time for patients.
+Prof. Barzel also shares his current work with the startup Opmed AI where he utilizes network science to optimize hospital scheduling to save resources, create a more stable environment but first and foremost – save lives by shortening the waiting time for patients.
 
 ## Follow our guest
 [BarzelLab](https://www.barzellab.com)
